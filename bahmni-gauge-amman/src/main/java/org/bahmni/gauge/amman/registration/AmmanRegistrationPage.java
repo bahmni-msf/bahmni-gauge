@@ -10,6 +10,7 @@ import org.bahmni.gauge.rest.BahmniRestClient;
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -40,6 +41,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     }
 
     public void verifyLegalRepValues() {
+        scrollToBottom();
         compareFields(Fields.caretakerNameEnglish, Fields.legalRepFullNameEnglish);
         compareFields(Fields.caretakerNameArabic, Fields.legalRepFullNameArabic);
         compareFields(Fields.caretakerGender, Fields.legalRepGender);
@@ -93,6 +95,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     }
 
     public void verifyLegalRepAfterSave() {
+        scrollToBottom();
         compareFields(Fields.legalRepFullNameEnglish, Fields.legalRepFullNameEnglish);
         compareFields(Fields.legalRepFullNameArabic, Fields.legalRepFullNameArabic);
         compareFields(Fields.legalRepGender, Fields.legalRepGender);
@@ -101,6 +104,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     }
 
     public void verifyCaretakerAfterSave() {
+        scrollToBottom();
         compareFields(Fields.caretakerNameEnglish, Fields.caretakerNameEnglish);
         compareFields(Fields.caretakerNameArabic, Fields.caretakerNameArabic);
         compareFields(Fields.caretakerGender, Fields.caretakerGender);
@@ -109,6 +113,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     }
 
     public void verifyIDDocumentsAfterSave() {
+        scrollToBottom();
         compareFields(Fields.id1DocNumber, Fields.id1DocNumber);
         compareFields(Fields.id1DocumentType, Fields.id1DocumentType);
         compareFields(Fields.id1FullNameEnglish, Fields.id1FullNameEnglish);
