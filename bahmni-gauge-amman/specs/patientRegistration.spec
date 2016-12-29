@@ -13,8 +13,8 @@ Patient Registration Scenarios
 Create Patient Under Age 18 and Fill Legal Rep
 ----------------------------------------------
 * Enter Legal Rep Details
-| legalRepFullNameEnglish | legalRepFullNameArabic | legalRepRelationWithPatient | legalRepGender | legalRepDob | legalRepNationality |
-| Al Bangalore            | حسن                    | Brother                     | Male           | 10-10-1980  | Egyptian            |
+| legalRepFullNameEnglish | legalRepFullNameArabic | legalRepRelationWithPatient | legalRepGender |  legalRepNationality |
+| Al Bangalore            | حسن                    | Brother                     | Male           |  Egyptian            |
 * Save Patient and refresh page
 * Verify Legal Rep Details after Save
 
@@ -24,12 +24,12 @@ Create Patient And Verify Legal Rep Same As Caretaker
 | isCareTakerRequiredCheckBox |
 | True                        |
 * Enter Caretaker Details
-| caretakerNameEnglish | caretakerNameArabic | caretakerGender | caretakerDob | caretakerNationality | legalRepalsoCaretaker |
-| Shruthi Hassan       | سن                  | Female          | 01-01-1986   | Iraqi                | Yes                   |
+| caretakerNameEnglish | caretakerNameArabic | caretakerGender | caretakerNationality | legalRepalsoCaretaker |
+| Shruthi Hassan       | سن                  | Female          | Iraqi                | Yes                   |
 * Verify Legal Rep Values for autocomplete
 * Save Patient and refresh page
 * Verify caretaker details after save
-* Verify Legal Rep Values for autocomplete
+* Verify Legal Rep Details after Save
 
 Create Patient and Fill ID Documents
 ------------------------------------

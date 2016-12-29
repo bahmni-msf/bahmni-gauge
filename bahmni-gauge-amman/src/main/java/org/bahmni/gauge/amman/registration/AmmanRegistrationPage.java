@@ -65,12 +65,12 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
             try {
                 Date expectedDate = simpleDateFormat1.parse(expectedValue);
                 Date actualDate = simpleDateFormat2.parse(actualValue);
-                Assert.assertEquals(String.format("actual %s is not same as expected %s", actualDate,expectedDate),expectedDate,actualDate);
+                Assert.assertEquals(expectedDate,actualDate);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         } else {
-            Assert.assertEquals(String.format("actual %s is not same as expected %s", actualValue,expectedValue),expectedValue,actualValue);
+            Assert.assertEquals(expectedValue,actualValue);
         }
     }
 
@@ -99,7 +99,6 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         compareFields(Fields.legalRepFullNameEnglish, Fields.legalRepFullNameEnglish);
         compareFields(Fields.legalRepFullNameArabic, Fields.legalRepFullNameArabic);
         compareFields(Fields.legalRepGender, Fields.legalRepGender);
-        compareFields(Fields.legalRepDob, Fields.legalRepDob);
         compareFields(Fields.legalRepNationality, Fields.legalRepNationality);
     }
 
@@ -108,7 +107,6 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         compareFields(Fields.caretakerNameEnglish, Fields.caretakerNameEnglish);
         compareFields(Fields.caretakerNameArabic, Fields.caretakerNameArabic);
         compareFields(Fields.caretakerGender, Fields.caretakerGender);
-        compareFields(Fields.caretakerDob, Fields.legalRepDob);
         compareFields(Fields.caretakerNationality, Fields.caretakerNationality);
     }
 
