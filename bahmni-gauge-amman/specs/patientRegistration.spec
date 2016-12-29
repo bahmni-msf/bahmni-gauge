@@ -29,7 +29,6 @@ Create Patient And Verify Legal Rep Same As Caretaker
 * Verify Legal Rep Values for autocomplete
 * Save Patient and refresh page
 * Verify caretaker details after save
-* Verify Legal Rep Details after Save
 
 Create Patient and Fill ID Documents
 ------------------------------------
