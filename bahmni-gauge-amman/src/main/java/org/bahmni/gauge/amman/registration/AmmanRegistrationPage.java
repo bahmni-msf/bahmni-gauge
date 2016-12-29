@@ -65,12 +65,12 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
             try {
                 Date expectedDate = simpleDateFormat1.parse(expectedValue);
                 Date actualDate = simpleDateFormat2.parse(actualValue);
-                Assert.assertTrue(actualDate.equals(expectedDate));
+                Assert.assertEquals(String.format("actual %s is not same as expected %s", actualDate,expectedDate),expectedDate,actualDate);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         } else {
-            Assert.assertTrue(actualValue.equals(expectedValue));
+            Assert.assertEquals(String.format("actual %s is not same as expected %s", actualValue,expectedValue),expectedValue,actualValue);
         }
     }
 
