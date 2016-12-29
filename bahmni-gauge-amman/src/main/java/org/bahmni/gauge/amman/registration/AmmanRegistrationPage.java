@@ -45,7 +45,6 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         compareFields(Fields.caretakerNameEnglish, Fields.legalRepFullNameEnglish);
         compareFields(Fields.caretakerNameArabic, Fields.legalRepFullNameArabic);
         compareFields(Fields.caretakerGender, Fields.legalRepGender);
-        compareFields(Fields.caretakerDob, Fields.legalRepDob);
         compareFields(Fields.caretakerNationality, Fields.legalRepNationality);
     }
 
