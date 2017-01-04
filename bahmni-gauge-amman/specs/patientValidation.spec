@@ -31,7 +31,6 @@ Tags: regression
 | Date of injury               | 01/01/2016     |
 | Cause of injury              | Burns          |
 | If caretaker is needed, why? | Under 18 years |
-//Verify details of Medical History in Patient Dashboard
 
 * Select template "First Stage Validation" from observation page and fill details
 | FIELD                                     | VALUE      |
@@ -40,7 +39,6 @@ Tags: regression
 | Outcome for 1st stage surgical validation | Valid      |
 | Priority                                  | Low        |
 * Save the consultation
-//Verify details of 1st Stage Validation in Patient Dashboard
 
 
 Follow up Validation
@@ -58,4 +56,30 @@ Follow up Validation
 | Stage                                     | 2          |
 | Outcome for follow-up surgical validation | MBA        |
 * Save the consultation
-//Verify details of Final Validation in Patient Dashboard
+
+
+Verify Display Controls on dashboard
+---------------------
+* On the login page
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on programs app
+* Search and select patient "Gaman Sayed" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Verify following details of "Medical History" in Patient Dashboard
+| FIELD           | VALUE          |
+| Name of MLO     | Dr. Feras Nasr |
+| Network Area    | Sana'a Network |
+| Date of injury  | 01 Jan 16      |
+| Cause of injury | Burns          |
+| Stage           | 2              |
+| Stage           | 2              |
+| Specialty       | Orthopedic     |
+* Verify following details of "First Stage Validation" in Patient Dashboard
+| FIELD                                     | VALUE     |
+| Date of presentation                      | 07 Jul 16 |
+| Outcome for 1st stage surgical validation | Valid     |
+| Priority                                  | Low       |
+* Verify following details of "Followup Validation" in Patient Dashboard
+| FIELD                                     | VALUE     |
+| Date of presentation                      | 07 Jul 16 |
+| Outcome for follow-up surgical validation | MBA       |
