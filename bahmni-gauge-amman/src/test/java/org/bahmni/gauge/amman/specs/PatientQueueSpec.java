@@ -31,10 +31,11 @@ public class PatientQueueSpec {
     }
 
     @Step("Search patient <patientName> from <queue> queue")
-    public void searchPatientFromTab(String patientName, String queueName) {
+    public void searchPatientFromTab(String patientName, String queueName) throws InterruptedException {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         patientQueuePage.clickTab(queueName);
         patientQueuePage.enterPatientIDOrName(patientName);
+        Thread.sleep(500);
     }
 
     @Step("Verify patient details of <patientName> in queue <table>")
