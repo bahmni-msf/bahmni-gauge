@@ -35,7 +35,6 @@ public class PatientQueueSpec {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         patientQueuePage.clickTab(queueName);
         patientQueuePage.enterPatientIDOrName(patientName);
-        Thread.sleep(500);
     }
 
     @Step("Verify patient details of <patientName> in queue <table>")

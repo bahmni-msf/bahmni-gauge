@@ -25,6 +25,15 @@ public class PatientQueuePage extends PatientListingPage{
     @FindBy(how= How.CSS, using = ".table tbody tr")
     public List<WebElement> rowsList;
 
+    public void enterPatientIDOrName(String Patient){
+        searchbox_txt.sendKeys(Patient);
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getColumnData(String columnName){
         int columnIndex = getColumnIndex(columnName);
         if (rowsList.isEmpty()){Assert.fail("Patient not found in queue");}
