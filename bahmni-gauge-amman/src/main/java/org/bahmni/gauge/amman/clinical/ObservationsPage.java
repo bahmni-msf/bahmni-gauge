@@ -53,18 +53,24 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                         new Select(observationNode.findElement(By.tagName("select"))).selectByVisibleText(value);
                     }
                     else if (hasTag(observationNode, "button")){
-                       for(WebElement button: observationNode.findElements(By.tagName("button"))){
-                           if (button.getText().contains(value)){
-                               button.click();
-                               break;
-                           }
-                       }
+                        List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
+                        String[] multiSelect = value.split(";");
+                        for (String val: multiSelect) {
+                            for(WebElement button: buttons){
+                                if (button.getText().contains(val.trim())){
+                                    button.click();
+                                    break;
+                                }
+                            }
+
+                        }
                     }
 
                 }
             }
             if (!fieldFound){
-                Assert.fail("Field "+ fieldName + " not found or disabled");}
+                Assert.fail("Field "+ fieldName + " not found or disabled");
+            }
         }
 
     }
