@@ -4,9 +4,8 @@ import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.common.BahmniPage;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
@@ -34,17 +33,16 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
 
     public void fillTemplateData(Table table){
         List<TableRow> rows = table.getTableRows();
-
         for (TableRow row: rows){
             boolean fieldFound = false;
-            String fieldName = row.getCell("FIELD");
+            String fieldName = row.getCell("FIELD").trim();
             String value = row.getCell("VALUE");
             for (WebElement observationNode: observationNodes) {
-                String observLabel = observationNode.findElement(By.tagName("label")).getText();
-                if (observLabel.contains(fieldName)){
+                String observLabel = observationNode.findElement(By.tagName("label")).getText().trim();
+                if (observLabel.equals(fieldName)){
                     fieldFound = true;
                     if (hasTag(observationNode, "input")){
-                        observationNode.findElement(By.tagName("input")).sendKeys(value);
+                        observationNode.findElement(By.tagName("input")).sendKeys(value, Keys.TAB);
                     }
                     else if (hasTag(observationNode, "textarea")){
                         observationNode.findElement(By.tagName("textarea")).sendKeys(value);
@@ -57,22 +55,27 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                         String[] multiSelect = value.split(";");
                         for (String val: multiSelect) {
                             for(WebElement button: buttons){
-                                if (button.getText().contains(val.trim())){
-                                    button.click();
-                                    break;
+                                if (button.getText().contains(val)) {
+                                    try {
+                                        button.click();
+                                        break;
+                                    } catch (WebDriverException e) {
+                                        JavascriptExecutor js = ((JavascriptExecutor) driver);
+                                        js.executeScript("scrollBy(0,1000)");
+                                        Actions actions = new Actions(driver);
+                                        actions.moveToElement(button).click().build().perform();
+                                        break;
+                                    }
                                 }
                             }
-
                         }
                     }
-
                 }
             }
             if (!fieldFound){
                 Assert.fail("Field "+ fieldName + " not found or disabled");
             }
         }
-
     }
 
     private boolean fieldEnabled(WebElement observationNode) {

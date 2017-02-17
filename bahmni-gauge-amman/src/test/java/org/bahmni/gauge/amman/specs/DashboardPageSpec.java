@@ -1,5 +1,6 @@
 package org.bahmni.gauge.amman.specs;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.thoughtworks.gauge.BeforeClassSteps;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
@@ -13,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -64,15 +66,30 @@ public class DashboardPageSpec {
     public void implementation3(String displayControlName , Table table) {
         DashboardPage dashboardPage = PageFactory.get(DashboardPage.class);
         WebElement displayControlElement = dashboardPage.findElementById(displayControlName.replace(" ", "-"));
-        List<WebElement> actualObservationList = displayControlElement.findElements(By.tagName("show-observation"));
+        List<WebElement> actualObservationList = getChildObsTags(displayControlElement);
         List<TableRow> expectedObservationList = table.getTableRows();
         Assert.assertEquals(expectedObservationList.size(),actualObservationList.size());
 
         for (int i = 0 ; i < actualObservationList.size();i ++){
-            String fieldName = expectedObservationList.get(i).getCell("FIELD");
-            String value = expectedObservationList.get(i).getCell("VALUE");
-            Assert.assertTrue(String.format("Field Name %s did not match in display control",fieldName),actualObservationList.get(i).getText().contains(fieldName));
-            Assert.assertTrue(String.format("Value %s did not match in display control",value),actualObservationList.get(i).getText().contains(value));
+            String fieldName = expectedObservationList.get(i).getCell("FIELD").trim();
+            String value = expectedObservationList.get(i).getCell("VALUE").trim();
+            String actualField = actualObservationList.get(i).findElement(By.cssSelector("span")).getText().trim();
+            String actualValue = actualObservationList.get(i).findElement(By.cssSelector(".value-text-only")).getText().replace("\n","").trim();
+            Assert.assertTrue(String.format("Field Name %s did not match in display control in text %s ",fieldName, actualField),actualField.contains(fieldName));
+            for (String val: value.split(",")) Assert.assertTrue(String.format("value %s did not match in display control in text %s ",val, actualValue),actualValue.contains(val.trim()));
         }
+    }
+
+    private List<WebElement> getChildObsTags(WebElement displayControlElement) {
+        List<WebElement> op = new ArrayList<>();
+        List<WebElement> tmp = displayControlElement.findElements(By.tagName("show-observation"));
+        for (WebElement element: tmp){
+            try {
+                element.findElement(By.tagName("show-observation"));
+            } catch (NoSuchElementException e){
+                op.add(element);
+            }
+        }
+        return op;
     }
 }

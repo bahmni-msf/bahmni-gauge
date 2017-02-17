@@ -8,18 +8,12 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 First Stage Validation
 ---------------------
 Tags: regression
-
+* Create patient "Gaman Sayed" using API with "First Stage Validation" visit
+* Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on registration app
-* Click on create new patient link
-* Enter Patient Details
-| firstName | lastName | givenNameArabic | familyNameArabic | gender | age | governorate | country | phoneNumber1 | spokenLanguages | nationality1 |
-| Gaman     | Sayed    | أل              | حسن              | Male   | 12  | Amman       | Jordan  | +9898989898  | English         | Egyptian     |
-* Start "First Stage Validation" visit and navigate to Programs page
-* Register the patient to following program
-| name                   | dateOfRegistration | programStatus  |
-| Reconstructive Surgery | 01/01/2016         | Identification |
+* Click on programs app
+* Search and select patient "Gaman Sayed" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
