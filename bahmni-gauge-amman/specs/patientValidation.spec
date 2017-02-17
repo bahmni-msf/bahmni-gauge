@@ -8,12 +8,12 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 First Stage Validation
 ---------------------
 Tags: regression
-* Create patient "Gaman Sayed" using API with "First Stage Validation" visit
+* Create patient "Gamansayed" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Gaman Sayed" from "Programs" queue
+* Search and select patient "Gamansayed" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -40,7 +40,7 @@ Follow up Validation
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Gaman Sayed" from "Programs" queue
+* Search and select patient "Gamansayed" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -57,7 +57,7 @@ Verify Display Controls on dashboard
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Gaman Sayed" from "Programs" queue
+* Search and select patient "Gamansayed" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Verify following details of "Medical History" in Patient Dashboard
 | FIELD           | VALUE          |
