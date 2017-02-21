@@ -69,7 +69,7 @@ Nursing Assessment
 | Date recorded           | 01 Jan 17       |
 | Weight                  | 80Kg            |
 | Height                  | 90cm            |
-| BMI                     | 98.77kg/m��     |
+| BMI                     | 98.77kg/m²      |
 | Respiratory rate        | 2breaths/minute |
 | Temperature             | 36C             |
 | Pulse                   | 8bpm            |
