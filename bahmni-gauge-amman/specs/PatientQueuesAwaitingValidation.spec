@@ -46,8 +46,8 @@ Test for queue when Date of presentation of First stage validation is captured
 * Refresh the queues page
 * Verify patient "Nasim" is not present in any queue
 
-Test for queue when Date of presentatin of Final validation is captured
------------------------------------------------------------------------
+Test for queue when Date of presentation of Final validation is captured in "First Stage Validation" visit
+-----------------------------------------------------------------------------------------------------------
 * Start "First Stage Validation" visit using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
@@ -92,8 +92,8 @@ Test for queue when Date of Presentation of Followup validation is captured
 * Refresh the queues page
 * Verify patient "Nasim" is not present in any queue
 
-Test for queue when Date of Presentation of Final validation is captured
----------------------------------------------------------------------------
+Test for queue when Date of Presentation of Final validation is captured in "Follow-Up Validation" visit
+---------------------------------------------------------------------------------------------------------
 * Start "Follow-Up Validation" visit using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"

@@ -5,8 +5,8 @@ Created by swarup on 2/16/17
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
      
-Nursing Assessment Vital signs
-----------------
+Nursing Assessment Baseline Vital Signs
+---------------------------------------
 * Create patient "Shafiqi" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
@@ -16,7 +16,7 @@ Nursing Assessment Vital signs
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
-* Select template "Vital Signs" from observation page and fill details
+* Select template "Baseline Vital Signs" from observation page and fill details
 | FIELD                             | VALUE      |
 | Date recorded                     | 01/01/2017 |
 | Weight (Kg)                       | 80         |
@@ -28,12 +28,12 @@ Nursing Assessment Vital signs
 * Save the consultation
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
-* Verify following details of "Vital Signs" in Patient Dashboard
+* Verify following details of "Baseline Vital Signs" in Patient Dashboard
 | FIELD                   | VALUE           |
 | Date recorded           | 01 Jan 17       |
 | Weight                  | 80Kg            |
 | Height                  | 90cm            |
-| BMI                     | 98.77kg/m²      |
+| BMI                     | 98.77Kg/m2      |
 | Respiratory rate        | 2breaths/minute |
 | Temperature             | 36C             |
 | Pulse                   | 8bpm            |
@@ -54,7 +54,7 @@ Nursing Assessment Social and Medical History
 | Marital status                 | Single                    |
 | Highest education level        | No formal education       |
 | Pregnancy status               | No                        |
-| Smoking history                | Yes                       |
+| Current smoker                 | Yes                       |
 | Number of cigarettes per day   | 1                         |
 | Duration of smoking (in years) | 2                         |
 | Drug and Alcohol use           | Never                     |
@@ -76,13 +76,13 @@ Nursing Assessment Social and Medical History
 * Save the consultation
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
-* Verify following details of "Social and Medical History" in Patient Dashboard
+* Verify following details of "Nursing Assessment" in Patient Dashboard
 | FIELD                          | VALUE                      |
 | Date of consultation           | 01 Jan 17                  |
 | Marital status                 | Single                     |
 | Highest education level        | No formal education        |
 | Pregnancy status               | No                         |
-| Smoking history                | Yes                        |
+| Current smoker                 | Yes                        |
 | Number of cigarettes per day   | 1                          |
 | Duration of smoking (in years) | 2                          |
 | Drug and Alcohol use           | Never                      |
@@ -101,37 +101,37 @@ Nursing Assessment Social and Medical History
 | Description                    | None                       |
 | Nursing notes                  | captured                   |
 
-Nursing Assessment Health Education
------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
-* Click on programs app
-* Search and select patient "Shafiqi" from "Programs" queue
-* Navigate to "Reconstructive Surgery" program dashboard
-* Navigate to consultation
-* Go to "Observations" tab
-* Select template "Health Education" from observation page and fill details
-| FIELD                                           | VALUE          |
-| Date of consultation                            | 01/01/2017     |
-| External devices, present                       | Big tube;Other |
-| Other type of external device                   | Some device    |
-| Nutritional Assessment                          | Regular        |
-| Personal hygiene (presence of head lice / bugs) | No             |
-| SMFA functional index                           | 1              |
-| SMFA bothersome index                           | 2              |
-| Education learning needs                        | Yes            |
-| Referral care plan                              | No care plan   |
-* Save the consultation
-* Navigate to patient dashboard
-* Click on "Patient Summary" dashboard
-* Verify following details of "Health Education" in Patient Dashboard
-| FIELD                                           | VALUE           |
-| Date of consultation                            | 01 Jan 17       |
-| External devices, present                       | Big tube, Other |
-| Other type of external device                   | Some device     |
-| Nutritional Assessment                          | Regular         |
-| Personal hygiene (presence of head lice / bugs) | No              |
-| SMFA functional index                           | 1               |
-| SMFA bothersome index                           | 2               |
-| Education learning needs                        | Yes             |
-| Referral care plan                              | No care plan    |
+//Nursing Assessment Health Education
+//-----------------------------------
+//* On the login page
+//* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+//* Click on programs app
+//* Search and select patient "Shafiqi" from "Programs" queue
+//* Navigate to "Reconstructive Surgery" program dashboard
+//* Navigate to consultation
+//* Go to "Observations" tab
+//* Select template "Health Education" from observation page and fill details
+//| FIELD                                           | VALUE          |
+//| Date of consultation                            | 01/01/2017     |
+//| External devices, present                       | Big tube;Other |
+//| Other type of external device                   | Some device    |
+//| Nutritional Assessment                          | Regular        |
+//| Personal hygiene (presence of head lice / bugs) | No             |
+//| SMFA functional index                           | 1              |
+//| SMFA bothersome index                           | 2              |
+//| Education learning needs                        | Yes            |
+//| Referral care plan                              | No care plan   |
+//* Save the consultation
+//* Navigate to patient dashboard
+//* Click on "Patient Summary" dashboard
+//* Verify following details of "Health Education" in Patient Dashboard
+//| FIELD                                           | VALUE           |
+//| Date of consultation                            | 01 Jan 17       |
+//| External devices, present                       | Big tube, Other |
+//| Other type of external device                   | Some device     |
+//| Nutritional Assessment                          | Regular         |
+//| Personal hygiene (presence of head lice / bugs) | No              |
+//| SMFA functional index                           | 1               |
+//| SMFA bothersome index                           | 2               |
+//| Education learning needs                        | Yes             |
+//| Referral care plan                              | No care plan    |

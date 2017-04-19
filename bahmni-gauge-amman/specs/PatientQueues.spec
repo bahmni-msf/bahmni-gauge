@@ -120,9 +120,11 @@ Patient In Awaiting Follow up validation queue
 Patient In Continue Follow up validation queue
 ----------------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_VC_MEMBER_USER" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
-* Click on programs app
-* Search and select patient "Al Padasd Hassan" from "Programs" queue
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on registration app
+* Search patient with name "Al Padasd Hassan"
+* Select the patient from the search results
+* Start "Follow-Up Validation" visit and navigate to Programs page
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -148,5 +150,5 @@ Patient In Expected arrival queue
 * Click on programs app
 * Search patient "Al Padasd Hassan" from "Expected Arrival" queue
 * Verify patient details of "Al Padasd Hassan" in queue
-| Name             | Country | Nationality | Specialty  | Expected Date Of Arrival |
-| Al Padasd Hassan | Jordan  | Egyptian    | Orthopedic | 11/11/2016               |
+| Name             | Country | Age | Specialty  | Expected Date Of Arrival |
+| Al Padasd Hassan | Jordan  | 12    | Orthopedic | 11/11/2016               |
