@@ -13,7 +13,7 @@ Create Patient and Verify Programs Queue
 * Click on create new patient link
 * Enter Patient Details
 | firstName | lastName | givenNameArabic | familyNameArabic | gender | age | governorate | country | phoneNumber1 | spokenLanguages | nationality1 | expectedDateofArrival |
-| Al Padasd | Hassan   | أل              | حسن              | Male   | 12  | Amman       | Jordan  | +9898989898  | English         | Egyptian     | r 11-11-2016          |
+| Al Padasd | Hassan   | أل              | حسن              | Male   | 12  | Amman       | Jordan  | +9898989898  | English         | Egyptian     | 11-11-2016            |
 * Start "First Stage Validation" visit and navigate to Programs page
 * Enroll patient to the following program
 | name                   | dateOfRegistration | programStatus  |
