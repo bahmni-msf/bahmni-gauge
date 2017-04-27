@@ -1,9 +1,6 @@
 package org.bahmni.gauge.common.specs;
 
-import com.thoughtworks.gauge.BeforeClassSteps;
-import com.thoughtworks.gauge.Gauge;
-import com.thoughtworks.gauge.Step;
-
+import com.thoughtworks.gauge.*;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
@@ -12,6 +9,8 @@ import org.bahmni.gauge.common.home.HomePage;
 import org.bahmni.gauge.data.StoreHelper;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Date;
 
 public class HomeSpec {
     private final WebDriver driver;
@@ -25,6 +24,7 @@ public class HomeSpec {
     public void waitForAppReady() {
         BahmniPage.waitForSpinner(driver);
     }
+
 
     @Step("Click on registration app")
     public void goToRegistrationPage() {
@@ -43,6 +43,34 @@ public class HomeSpec {
     public void goToClinicalPage() {
         homePage = PageFactory.getHomePage();
         homePage.clickClinicalApp();
+    }
+
+    @Step("Click on implementer interface app")
+    public void goToImplementerInterfacePage() {
+        homePage = PageFactory.getHomePage();
+        homePage.clickImplementerInterfaceApp();
+    }
+
+    @ContinueOnFailure
+    @Step("Verify page load time for <app> app is less than <time> seconds")
+    public void verifyPageLoadForClinical(String app, long loadTime) {
+        homePage = PageFactory.getHomePage();
+        Date beforeTime = new Date();
+        switch (app) {
+            case "Clinical"    :homePage.clickClinicalApp();
+                                break;
+            case "Programs"    :homePage.clickProgramsApp();
+                                break;
+            case "ADT"         :homePage.clickInpatientApp();
+                                break;
+            case "Registration":homePage.clickRegistrationApp();
+                                break;
+                        default:break;
+        }
+        BahmniPage.waitForSpinner(driver);
+        Date afterTime = new Date();
+        long difference = (afterTime.getTime()-beforeTime.getTime())/1000;
+        Assert.assertTrue("Actual Time to load " + app + " app is " + Long.toString(difference) +" seconds", difference <= loadTime);
     }
 
     @Step("Click on inpatient app")
@@ -139,4 +167,11 @@ public class HomeSpec {
         Assert.assertTrue(homePage.exports.isDisplayed());
     }
 
+
+    @Step("Verify only the following application is available <table>")
+    public void verifyAppPresent(Table application){
+        homePage = PageFactory.getHomePage();
+        homePage.verifyAppPresent(application);
+
+    }
 }

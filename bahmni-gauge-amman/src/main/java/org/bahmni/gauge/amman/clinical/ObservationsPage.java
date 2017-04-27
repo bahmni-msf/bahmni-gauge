@@ -2,7 +2,6 @@ package org.bahmni.gauge.amman.clinical;
 
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
-import org.bahmni.gauge.common.BahmniPage;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -76,13 +75,6 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                 Assert.fail("Field "+ fieldName + " not found or disabled");
             }
         }
-    }
-
-    private boolean fieldEnabled(WebElement observationNode) {
-        if (observationNode.getAttribute("disabled") == null){
-            return true;
-        }
-        return false;
     }
 
     private boolean hasTag(WebElement answer, String input) {

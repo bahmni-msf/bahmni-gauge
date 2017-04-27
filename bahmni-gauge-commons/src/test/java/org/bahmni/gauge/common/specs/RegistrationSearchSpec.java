@@ -8,13 +8,18 @@ import org.bahmni.gauge.common.PageFactory;
 import org.bahmni.gauge.common.registration.RegistrationSearch;
 import org.bahmni.gauge.common.registration.domain.Patient;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class RegistrationSearchSpec {
 
 	@BeforeClassSteps
 	public void waitForAppReady(){
 		BahmniPage.waitForSpinner(DriverFactory.getDriver());
+	}
+
+	@Step("Verify createNewButton is notPresent")
+	public void verifyLinksonRegistrationPage() {
+		RegistrationSearch registrationSearch = PageFactory.get(RegistrationSearch.class);
+		registrationSearch.verifyCreateNewIconNotDisplayed();
 	}
 
 	@Step("Click on create new patient link")

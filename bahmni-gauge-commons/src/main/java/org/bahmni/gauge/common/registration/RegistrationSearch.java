@@ -1,6 +1,5 @@
 package org.bahmni.gauge.common.registration;
 
-import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.registration.domain.Patient;
@@ -8,13 +7,10 @@ import org.bahmni.gauge.data.BahmniTable;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -56,19 +52,23 @@ public class RegistrationSearch extends BahmniPage{
     public void clickSearch() {
     	iconSearch.click();
     }
-    
+
     public void clickHome() {
     	iconHome.click();
     }
-    
+
     public void clickCreateNew() {
     	iconCreateNew.click();
     }
 
+    public void verifyCreateNewIconNotDisplayed(){
+    		Assert.assertFalse(driver.findElements(By.cssSelector("i.fa-plus")).size() != 0);
+	}
+
     public void enterName(String name) {
     	txtName.sendKeys(name,Keys.ENTER);
     }
-    
+
     public void searchByExactIdentifier(String prefix, String id){
 	    selectPrefix(prefix);
 

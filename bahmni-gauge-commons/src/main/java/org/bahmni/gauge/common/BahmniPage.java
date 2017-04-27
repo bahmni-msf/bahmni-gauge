@@ -3,12 +3,12 @@ package org.bahmni.gauge.common;
 import com.thoughtworks.gauge.TableRow;
 import com.thoughtworks.gauge.datastore.DataStore;
 import com.thoughtworks.gauge.datastore.DataStoreFactory;
-
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.bahmni.gauge.common.admin.domain.OrderSet;
 import org.bahmni.gauge.common.clinical.domain.DrugOrder;
 import org.bahmni.gauge.common.clinical.domain.ObservationForm;
+import org.bahmni.gauge.common.formBuilder.domain.Form;
 import org.bahmni.gauge.common.home.HomePage;
 import org.bahmni.gauge.common.program.domain.PatientProgram;
 import org.bahmni.gauge.common.program.domain.Program;
@@ -17,20 +17,11 @@ import org.bahmni.gauge.data.BahmniTable;
 import org.bahmni.gauge.data.StoreHelper;
 import org.bahmni.gauge.util.TableTransformer;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,8 +52,16 @@ public class BahmniPage {
         StoreHelper.store(Patient.class, value);
     }
 
+    public void storeFormInSpecStore(Form value) {
+        StoreHelper.store(Form.class, value);
+    }
+
     public Patient getPatientFromSpecStore() {
         return StoreHelper.getLatest(Patient.class);
+    }
+
+    public Form getObsFormFromSpecStore() {
+        return StoreHelper.getLatest(Form.class);
     }
 
     public List<DrugOrder> getDrugOrderFromSpecStore() {
@@ -75,8 +74,6 @@ public class BahmniPage {
     }
 
     public void storeBaselineFormInSpecStore(ObservationForm baselineForm) {
-//        DataStore specStore = DataStoreFactory.getSpecDataStore();
-//        specStore.put(BASELINE_KEY, baselineForm);
         StoreHelper.store(ObservationForm.class, baselineForm);
     }
 
@@ -183,7 +180,7 @@ public class BahmniPage {
 
     public static <T> T waitForElement(WebDriver driver, ExpectedCondition<T> expectedCondition) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 60);
+            WebDriverWait wait = new WebDriverWait(driver, 180);
             return wait.until(expectedCondition);
         } catch (Exception e) {
             e.printStackTrace();
@@ -310,7 +307,7 @@ public class BahmniPage {
         try {
             return null != parent.findElement(child);
         } catch (NoSuchElementException e) {
-            return false;
+              return false;
         }
     }
 
@@ -369,63 +366,25 @@ public class BahmniPage {
 
     }
 
-    protected void uploadFile(String s) throws AWTException, IOException {
-        String sPath = new java.io.File(".").getCanonicalPath() + "/src/main/resources/upload/" + s;
-        File file = new File(sPath);
-        StringSelection stringSelection = new StringSelection(file.getAbsolutePath());
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+    protected void uploadFile(int visitNumber, String image) {
+        String sPath = getImagePath(image);
+        driver.findElements(By.cssSelector("input[type=\"file\"]")).get(visitNumber).sendKeys(sPath);
 
-        Robot robot = new Robot();
+    }
 
-// Cmd + Tab is needed since it launches a Java app and the browser looses focus
+    protected void uploadFile(WebElement root, String image) {
+        String sPath = getImagePath(image);
+        root.findElement(By.cssSelector("input[type=\"file\"]")).sendKeys(sPath);
+    }
 
-        robot.keyPress(KeyEvent.VK_META);
-
-        robot.keyPress(KeyEvent.VK_TAB);
-
-        robot.keyRelease(KeyEvent.VK_META);
-
-        robot.keyRelease(KeyEvent.VK_TAB);
-
-        robot.delay(500);
-
-//Open Goto window
-
-        robot.keyPress(KeyEvent.VK_META);
-
-        robot.keyPress(KeyEvent.VK_SHIFT);
-
-        robot.keyPress(KeyEvent.VK_G);
-
-        robot.keyRelease(KeyEvent.VK_META);
-
-        robot.keyRelease(KeyEvent.VK_SHIFT);
-
-        robot.keyRelease(KeyEvent.VK_G);
-
-//Paste the clipboard value
-
-        robot.keyPress(KeyEvent.VK_META);
-
-        robot.keyPress(KeyEvent.VK_V);
-
-        robot.keyRelease(KeyEvent.VK_META);
-
-        robot.keyRelease(KeyEvent.VK_V);
-
-//Press Enter key to close the Goto window and Upload window
-
-        robot.keyPress(KeyEvent.VK_ENTER);
-
-        robot.keyRelease(KeyEvent.VK_ENTER);
-
-        robot.delay(1000);
-
-        robot.keyPress(KeyEvent.VK_ENTER);
-
-        robot.keyRelease(KeyEvent.VK_ENTER);
-
-        robot.delay(1000);
+    private String getImagePath(String image) {
+        String sPath = null;
+        try {
+            sPath = new File(".").getCanonicalPath() + "/src/main/resources/upload/" + image;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return sPath;
     }
 
     public void switchToLatestTab() {

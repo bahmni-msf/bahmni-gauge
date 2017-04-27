@@ -40,13 +40,21 @@ public class LoginSpec {
 		loginPage.waitForElementOnPage("#username");
 		loginPage.login(System.getenv(username), System.getenv(password), System.getenv(location));
 	}
+
+	@Step("Login with user <username> and password <password> with location <location>")
+	public void loginWith(String username, String password, String location){
+		LoginPage loginPage = PageFactory.get(LoginPage.class);
+		loginPage.waitForElementOnPage("#username");
+		loginPage.login(username, System.getenv(password),System.getenv(location));
+	}
 	@Step("Close current browser tab")
 	public void closeCurrentBrowserTab(){
 		LoginPage loginPage = PageFactory.get(LoginPage.class);
 		loginPage.closeCurrentBrowserTab();
 	}
+
     @Step("Login to the application")
-    public void login() {
-        login("BAHMNI_GAUGE_APP_USER", "BAHMNI_GAUGE_APP_PASSWORD");
-    }
+	public void login() {
+		login("BAHMNI_GAUGE_APP_USER", "BAHMNI_GAUGE_APP_PASSWORD");
+	}
 }

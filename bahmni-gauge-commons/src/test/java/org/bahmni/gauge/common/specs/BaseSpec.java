@@ -3,6 +3,7 @@ package org.bahmni.gauge.common.specs;
 import com.thoughtworks.gauge.AfterSpec;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.admin.domain.OrderSet;
+import org.bahmni.gauge.common.formBuilder.domain.Form;
 import org.bahmni.gauge.common.registration.domain.Patient;
 import org.bahmni.gauge.data.StoreHelper;
 import org.bahmni.gauge.rest.BahmniRestClient;
@@ -42,17 +43,22 @@ public class BaseSpec {
  */
     @AfterSpec @Deprecated
     public void teardown() {
-//        PreTearDownHooks.executeAll();
         List<Patient> patients = StoreHelper.getAll(Patient.class);
         for (Patient patient : patients) {
             if (patient != null) {
-                String uuid = patient.getUuid();
                 BahmniRestClient.get().retirePatient(patient);
             }
         }
         OrderSet orderSet = new BahmniPage().getOrderSetInSpecStore();
         if (orderSet != null) {
             BahmniRestClient.get().retireOrderSet(orderSet);
+        }
+
+        List<Form> forms = StoreHelper.getAll(Form.class);
+        for(Form form : forms) {
+            if(form != null) {
+                BahmniRestClient.get().retireObsForm(form);
+            }
         }
     }
 }

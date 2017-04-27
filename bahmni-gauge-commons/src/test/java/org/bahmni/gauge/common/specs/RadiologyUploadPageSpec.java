@@ -4,11 +4,8 @@ import com.thoughtworks.gauge.BeforeClassSteps;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import org.bahmni.gauge.common.PageFactory;
-import org.bahmni.gauge.common.radiologyUpload.RadiologyUploadPage;
+import org.bahmni.gauge.common.radiology.RadiologyUploadPage;
 
-/**
- * Created by atmaramn on 17/11/2016.
- */
 public class RadiologyUploadPageSpec {
     private RadiologyUploadPage radiologyUploadPage;
 
@@ -30,4 +27,18 @@ public class RadiologyUploadPageSpec {
         radiologyUploadPage.save();
     }
 
+    @Step("Create new visit on radiology upload page <table>")
+    public void createNewVisit(Table table) {
+        radiologyUploadPage.createNewVisit(table);
+    }
+
+    @Step({"Remove image no <1> on current visit", "Undo Remove image no <1> on current visit"})
+    public void removeImage(int imageNumber) {
+        radiologyUploadPage.removeImage(imageNumber);
+    }
+
+    @Step("Expand current visit")
+    public void expandCurrentVisit() {
+        radiologyUploadPage.expandCurrentVisit();
+    }
 }

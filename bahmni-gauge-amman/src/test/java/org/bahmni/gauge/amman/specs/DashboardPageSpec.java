@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by swarup on 1/2/17.
@@ -63,33 +64,52 @@ public class DashboardPageSpec {
     }
 
     @Step("Verify following details of <Medical History> in Patient Dashboard <Table>")
-    public void implementation3(String displayControlName , Table table) {
+    public void implementation3(String displayControlName, Table table) {
         DashboardPage dashboardPage = PageFactory.get(DashboardPage.class);
         WebElement displayControlElement = dashboardPage.findElementById(displayControlName.replace(" ", "-"));
         List<WebElement> actualObservationList = getChildObsTags(displayControlElement);
         List<TableRow> expectedObservationList = table.getTableRows();
-        Assert.assertEquals(expectedObservationList.size(),actualObservationList.size());
+        Assert.assertEquals(expectedObservationList.size(), actualObservationList.size());
 
-        for (int i = 0 ; i < actualObservationList.size();i ++){
+        for (int i = 0; i < actualObservationList.size(); i++) {
             String fieldName = expectedObservationList.get(i).getCell("FIELD").trim();
             String value = expectedObservationList.get(i).getCell("VALUE").trim();
             String actualField = actualObservationList.get(i).findElement(By.cssSelector("span")).getText().trim();
-            String actualValue = actualObservationList.get(i).findElement(By.cssSelector(".value-text-only")).getText().replace("\n","").trim();
-            Assert.assertTrue(String.format("Field Name %s did not match in display control in text %s ",fieldName, actualField),actualField.contains(fieldName));
-            for (String val: value.split(",")) Assert.assertTrue(String.format("value %s did not match in display control in text %s ",val, actualValue),actualValue.contains(val.trim()));
+            String actualValue = actualObservationList.get(i).findElement(By.cssSelector(".value-text-only")).getText().replace("\n", "").trim();
+            Assert.assertTrue(String.format("Field Name %s did not match in display control in text %s ", fieldName, actualField), actualField.contains(fieldName));
+            for (String val : value.split(","))
+                Assert.assertTrue(String.format("value %s did not match in display control in text %s ", val, actualValue), actualValue.contains(val.trim()));
         }
     }
 
     private List<WebElement> getChildObsTags(WebElement displayControlElement) {
         List<WebElement> op = new ArrayList<>();
         List<WebElement> tmp = displayControlElement.findElements(By.tagName("show-observation"));
-        for (WebElement element: tmp){
+        for (WebElement element : tmp) {
             try {
                 element.findElement(By.tagName("show-observation"));
-            } catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 op.add(element);
             }
         }
         return op;
+    }
+
+    @Step("Wait for the scheduler to run and close the visit")
+    public void waitForScheduler() {
+        try {
+            TimeUnit.MINUTES.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Step("Verify visit is closed")
+    public void verifyConsultationIsNotPresent() {
+        org.bahmni.gauge.amman.clinical.DashboardPage dashboardPage;
+        dashboardPage = PageFactory.get(org.bahmni.gauge.amman.clinical.DashboardPage.class);
+
+
+        Assert.assertFalse("Consultation button is present", dashboardPage.isEnterDataPresent());
     }
 }

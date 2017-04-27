@@ -7,12 +7,12 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Nursing Assessment Baseline Vital Signs
 ---------------------------------------
-* Create patient "Shafiqi" using API with "First Stage Validation" visit
+* Create patient "Yahya" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Shafiqi" from "Programs" queue
+* Search and select patient "Yahya" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -25,6 +25,7 @@ Nursing Assessment Baseline Vital Signs
 | Temperature (C)                   | 36         |
 | Pulse (bpm)                       | 8          |
 | Blood oxygen saturation (%)       | 92         |
+
 * Save the consultation
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
@@ -44,7 +45,7 @@ Nursing Assessment Social and Medical History
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Shafiqi" from "Programs" queue
+* Search and select patient "Yahya" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -73,6 +74,7 @@ Nursing Assessment Social and Medical History
 | Site                           | Ear;Nose                  |
 | Description                    | None                      |
 | Nursing notes                  | captured                  |
+
 * Save the consultation
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
@@ -95,6 +97,7 @@ Nursing Assessment Social and Medical History
 | Dose and freqency              | daily                      |
 | Date of last dose              | 01 Jan 17                  |
 | Pain severity (0 - 10)         | 2                          |
+| Side of pain                   | Right                      |
 | Site of pain                   | Arm                        |
 | Number of wounds               | 2                          |
 | Site                           | Nose, Ear                  |
@@ -106,7 +109,7 @@ Nursing Assessment Social and Medical History
 //* On the login page
 //* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 //* Click on programs app
-//* Search and select patient "Shafiqi" from "Programs" queue
+//* Search and select patient "Yahya" from "Programs" queue
 //* Navigate to "Reconstructive Surgery" program dashboard
 //* Navigate to consultation
 //* Go to "Observations" tab

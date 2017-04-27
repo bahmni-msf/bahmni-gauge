@@ -1,0 +1,4 @@
+# Create and admit a patient through API
+* Create a new patient through API
+* Open visit of type "OPD" in "BAHMNI_GAUGE_APP_LOCATION" location for previous patient using api
+* Admit the patient through api

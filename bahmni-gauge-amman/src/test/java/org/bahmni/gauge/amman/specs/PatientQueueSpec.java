@@ -9,13 +9,9 @@ import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-/**
- * Created by swarup on 10/25/16.
- */
 public class PatientQueueSpec {
     @BeforeClassSteps
     public void waitForAppReady() {
@@ -61,13 +57,13 @@ public class PatientQueueSpec {
         DriverFactory.getDriver().navigate().refresh();
     }
 
-    @Step("Verify patient <Kasm> is present only in <Awaiting Validation - 1st Stage > following queue")
+    @Step("Verify patient <Kasm> is present only in <Awaiting Validation - 1st Stage > queue")
     public void implementation1(String patientName, String queueName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         Assert.assertTrue(patientQueuePage.isPatientPresentOnlyInGivenTab(patientName, queueName));
     }
 
-    @Step("Verify patient <Kasm> is not present in any queue")
+    @Step("Verify patient <Kasm> is not present in any queue except Programs and All queues")
     public void implementation2(String patientName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         Assert.assertTrue(patientQueuePage.isNotPatientPresentInAnyTab(patientName));

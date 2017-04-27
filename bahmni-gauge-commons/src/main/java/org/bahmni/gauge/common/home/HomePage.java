@@ -1,9 +1,15 @@
 package org.bahmni.gauge.common.home;
 
+import com.thoughtworks.gauge.Table;
+import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.common.BahmniPage;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import java.util.List;
 
 public class HomePage extends BahmniPage {
 
@@ -39,10 +45,16 @@ public class HomePage extends BahmniPage {
 	@FindBy(how = How.CSS, using = "#bahmni\\.orders")
 	public WebElement orders;
 
+	@FindBy(how = How.ID, using = "bahmni.implementer.interface")
+	public WebElement implementerInterface;
+
 	@FindBy(how = How.CSS, using = "#bahmni\\.radiology\\.document\\.upload")
 	public WebElement radiologyUpload;
 
-    public void clickRegistrationApp(){
+	@FindBy(how = How.CSS, using = "i.fa-user-secret")
+	public WebElement formBuilder;
+
+	public void clickRegistrationApp(){
     	registration.click();
     }
 
@@ -73,10 +85,32 @@ public class HomePage extends BahmniPage {
 
 	public void clickOrdersApp() {
 		orders.click();
-		
+	}
+
+	public void clickImplementerInterfaceApp(){
+		implementerInterface.click();
 	}
 
 	public void clickRadiologyUploadApp() {
 		radiologyUpload.click();
+	}
+
+	public void verifyAppPresent(Table application) {
+		List<TableRow> rows = application.getTableRows();
+		List<String> columnName = application.getColumnNames();
+		String value;
+		for (TableRow row : rows) {
+			value = row.getCell(columnName.get(0)).toLowerCase();
+
+			if(row.getCell(columnName.get(1)).equals("true")) {
+				Assert.assertTrue(isElementPresent(value));
+			} else {
+				Assert.assertFalse(isElementPresent(value));
+			}
+		}
+	}
+
+	private boolean isElementPresent(String value) {
+		return driver.findElements(By.xpath(".//*[contains(@id,'"+ value +"')]")).size() != 0;
 	}
 }

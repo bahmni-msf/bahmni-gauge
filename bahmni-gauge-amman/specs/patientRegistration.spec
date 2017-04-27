@@ -7,14 +7,14 @@ Patient Registration Scenarios
 * Click on create new patient link
 * Enter Patient Details
 | firstName | lastName | givenNameArabic | familyNameArabic | gender | age | governorate | country | phoneNumber1 | spokenLanguages | nationality1 |
-| Al adasd  | Hassan   | أل              | حسن              | Male   | 12  | Amman       | Jordan  | +9898989898  | English         | Egyptian     |
+| Albert    | Hassan   | أل              | حسن              | Male   | 12  | Amman       | Jordan  | +9898989898  | English         | Egyptian     |
 
 
 Create Patient Under Age 18 and Fill Legal Rep
 ----------------------------------------------
 * Enter Legal Rep Details
 | legalRepFullNameEnglish | legalRepFullNameArabic | legalRepRelationWithPatient | legalRepGender |  legalRepNationality |
-| Al Bangalore            | حسن                    | Brother                     | Male           |  Egyptian            |
+| Newton                  | حسن                    | Brother                     | Male           |  Egyptian            |
 * Save Patient and refresh page
 * Verify Legal Rep Details after Save
 

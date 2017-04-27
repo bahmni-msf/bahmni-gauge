@@ -1,32 +1,36 @@
 package org.bahmni.gauge.common;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.lang.reflect.Field;
+import java.util.List;
+import java.util.Objects;
 
 public enum FormElement {
     INPUT("input") {
         public void fillUp(WebElement observationNode, String value) {
             WebElement element = observationNode.findElement(getSelector());
-            try {
+            if (!Objects.equals(element.getAttribute("type"), "date"))
                 element.clear();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             element.sendKeys(value);
+            if (element.getAttribute("role") != null){
+                element.sendKeys(Keys.ENTER);
+            }
         }
     },
     TEXT_AREA("textarea") {
         public void fillUp(WebElement observationNode, String value) {
-            WebElement element = observationNode.findElement(getSelector());
-            element.clear();
-            observationNode.findElement(getSelector()).sendKeys(value);
+            List<WebElement> elementList = observationNode.findElements(getSelector());
+
+            for (WebElement element : elementList) {
+                if(element.getText().isEmpty()){
+                    element.clear();
+                    element.sendKeys(value);
+                    break;
+                }
+            }
         }
     },
     SELECT("select") {
@@ -52,24 +56,36 @@ public enum FormElement {
             }
         }
     },
+    DIV_SELECT_SINGLE(".Select--single") {
+        public void fillUp(WebElement observationNode, String value) {
+            WebElement selector = observationNode.findElement(getSelector());
+            selector.click();
+            List<WebElement> selections = selector.findElement(By.cssSelector(".Select-menu-outer")).findElements(By.cssSelector("div"));
+            for(WebElement selection : selections) {
+                if (selection.getText().equals(value)) {
+                    selection.click();
+                    break;
+                }
+            }
+        }
+    },
     UNKNOWN("") {
         public void fillUp(WebElement observationNode, String value) {
             System.out.println("Value :" + value + " not entered.");
         }
     };
 
-    private final String tagName;
+    public static final FormElement[] allTypes = {INPUT, TEXT_AREA, SELECT, BUTTON, DIV_SELECT_SINGLE};
 
-    FormElement(String tagName) {
-        this.tagName = tagName;
+    private final String cssSelector;
+    FormElement(String cssSelector) {
+        this.cssSelector = cssSelector;
     }
-
-    public static final FormElement[] allTypes = {INPUT, TEXT_AREA, SELECT, BUTTON};
 
     abstract public void fillUp(WebElement observationNode, String value);
 
     public By getSelector() {
-        return By.tagName(tagName);
+        return By.cssSelector(cssSelector);
     }
 
     public WebDriver getCurrentDriver(WebElement element) {

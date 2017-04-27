@@ -1,11 +1,16 @@
 package org.bahmni.gauge.common.clinical;
 
+import com.thoughtworks.gauge.Table;
+import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.clinical.domain.Diagnosis;
 import org.bahmni.gauge.util.StringUtil;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.util.List;
 
@@ -18,6 +23,10 @@ public class DiagnosisPage extends BahmniPage {
     By bAcceptButton=By.cssSelector(".accept-btn");
     By bCertainty=By.cssSelector("[model=\"diagnosis.certainty\"] button");
     By bStatus=By.cssSelector("[model=\"diagnosis.diagnosisStatus\"] button");
+
+    @FindBy(how = How.CSS, using = ".save-consultation")
+    public WebElement save;
+
     public void enterDiagnoses(List<Diagnosis> diagnoses) {
         int index=0;
         for(Diagnosis diagnosis : diagnoses){
@@ -51,7 +60,10 @@ public class DiagnosisPage extends BahmniPage {
     }
 
     public void verifyCurrentDisplayControl(List<Diagnosis> diagnoses) {
-        int index=0;
+        List<WebElement> pastDiagnosis = driver.findElements(By.xpath("//div[contains(@class,'past-diagnosis')]"));
+        if(pastDiagnosis.size() > 0){
+            pastDiagnosis.get(0).click();
+        }
         for (Diagnosis diagnosis:diagnoses) {
             List<WebElement> rows = driver.findElements(By.cssSelector(".diagnosis-row"));
             boolean bFound = false;
@@ -81,21 +93,21 @@ public class DiagnosisPage extends BahmniPage {
             if(row.getText().contains(diagnosis.getDiagnosis())){
                     row.findElement(By.cssSelector(".toggle.fr")).click();
 
-                    if(diagnosis.getOrder().toLowerCase().equals("primary")){
+                    if(diagnosis.getOrder().equalsIgnoreCase("primary")){
                         if(!row.findElements(bOrder).get(0).getAttribute("class").contains("active"))
                             row.findElements(bOrder).get(0).click();
                     }else {
                         if(!row.findElements(bOrder).get(1).getAttribute("class").contains("active"))
                             row.findElements(bOrder).get(1).click();
                     }
-                    if(diagnosis.getCertainty().toLowerCase().equals("confirmed")){
+                    if(diagnosis.getCertainty().equalsIgnoreCase("confirmed")){
                         if(!row.findElements(bCertainty).get(0).getAttribute("class").contains("active"))
                             row.findElements(bCertainty).get(0).click();
                     }else {
                         if(!row.findElements(bCertainty).get(1).getAttribute("class").contains("active"))
                             row.findElements(bCertainty).get(1).click();
                     }
-                    if(diagnosis.getStatus().toLowerCase().equals("inactive")){
+                    if(diagnosis.getStatus().equalsIgnoreCase("inactive")){
                         if(!row.findElement(bStatus).getAttribute("class").contains("active"))
                             row.findElement(bStatus).click();
                     }
@@ -131,4 +143,27 @@ public class DiagnosisPage extends BahmniPage {
             }
         }
     }
+
+
+    public void removeDiagnosis(Table data) {
+        List<TableRow> rows = data.getTableRows();
+        int rowSize=driver.findElements(By.xpath("(.//*[contains(@class,'diagnosis-name')])/span[1]")).size();
+        List<String> columnNames = data.getColumnNames();
+        String value;
+        int rowCount=1;
+        for (TableRow row : rows) {
+            value = row.getCell(columnNames.get(0));
+            for (rowCount = 1; rowCount <=rowSize; rowCount++) {
+                WebElement element = driver.findElement(By.xpath(("((.//*[contains(@class,'diagnosis-name')])/span[1])[" + rowCount + "]")));
+                if (value.equals(element.getText())){
+                    driver.findElement(By.xpath(("(.//*[contains(@id,'deleteDiagnosis')])[" + rowCount + "]"))).click();
+                    acceptAlert(driver);
+                }
+                waitForSpinner();
+            }
+        }
+
+        save.click();
+    }
+
 }

@@ -7,6 +7,8 @@ import org.bahmni.gauge.data.Model;
 import org.bahmni.gauge.data.ModelMetaData;
 import org.bahmni.gauge.rest.BahmniRestClient;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,6 +85,7 @@ public class Patient extends Model {
         if (visitType != null && visitTypeUuid == null) {
             visitTypeUuid = BahmniRestClient.get().getUuidwithDisplayOnPartialUrl(this.visitType, "visittype");
         }
+     //   visitTypeUuid = "c1e42932-3f10-11e4-adec-0800271c1b75";
         return visitTypeUuid;
     }
 
@@ -220,8 +223,10 @@ public class Patient extends Model {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDateOfBirth(String dateOfBirth) throws ParseException {
+        SimpleDateFormat userFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat serverFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        this.dateOfBirth = serverFormat.format(userFormat.parse(dateOfBirth));
     }
 
     public String getDistrict() {
