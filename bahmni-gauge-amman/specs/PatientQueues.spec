@@ -27,6 +27,11 @@ Create Patient and Verify Programs Queue
 | Name             |
 | Abdulla Yonus    |
 
+* Search patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage " queue
+* Verify patient details of "Abdulla Yonus" in queue
+| Name             |
+| Abdulla Yonus    |
+
 
 Patient In Medical File incomplete queue
 ----------------------------------------
@@ -211,12 +216,13 @@ Patient In Expected arrival queue
 |expectedDateofArrival  |
 |04/20/2017             |
 
-* Save Patient and refresh page
-* Navigate to queues
-* Search patient "Abdulla Yonus" from "Expected Arrival" queue
+* Save Patient
+* Go to Home Page
+* Click on programs app
+* Search patient "Abdulla Yonus" from "Expected Arrival " queue
 * Verify patient details of "Abdulla Yonus" in queue
-| Name          | Country | Age | Specialty  | Expected Date Of Arrival |
-| Abdulla Yonus | Jordan  | 30  | Orthopedic | 20/04/2017               |
+| Name          | Age   | Country | Specialty  | Priority   | Expected Date Of Arrival |
+| Abdulla Yonus | 30    | Jordan  | Orthopedic | Low        | 20/04/2017               |
 
 
 Patient In Hospital RSP queue

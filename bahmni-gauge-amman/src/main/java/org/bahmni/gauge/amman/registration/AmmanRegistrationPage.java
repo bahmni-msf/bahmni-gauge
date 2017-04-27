@@ -21,6 +21,9 @@ import java.util.List;
 
 public class AmmanRegistrationPage extends RegistrationFirstPage {
 
+    @FindBy(how=How.CSS, using = ".back-btn")
+    public WebElement backButton;
+
     @FindBy(how = How.CSS, using = ".submit-btn")
     public WebElement save;
 
@@ -111,5 +114,9 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         compareFields(Fields.id1DocNumber, Fields.id1DocNumber);
         compareFields(Fields.id1DocumentType, Fields.id1DocumentType);
         compareFields(Fields.id1FullNameEnglish, Fields.id1FullNameEnglish);
+    }
+
+    public void clickBackButton(){
+        backButton.click();
     }
 }

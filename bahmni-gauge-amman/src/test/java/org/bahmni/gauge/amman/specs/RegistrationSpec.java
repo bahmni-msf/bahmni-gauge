@@ -39,6 +39,18 @@ public class RegistrationSpec {
         DriverFactory.getDriver().navigate().refresh();
     }
 
+    @Step("Save Patient")
+    public void clickSavePatient() {
+        registrationPage.clickSave();
+        waitForAppReady();
+    }
+
+    @Step("Go to Home Page")
+    public void clickBackButton() {
+        registrationPage.clickBackButton();
+        waitForAppReady();
+    }
+
     @Step("Enter Clinical Details")
     public void enterClinicalDetails() {
         registrationPage.enterVisitDetailsPage();
