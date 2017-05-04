@@ -233,8 +233,8 @@ Patient In Hospital RSP queue
 * Search patient with name "Abdulla Yonus"
 * Select the patient from the search results
 * Enter Patient Details
-|dateofArrival|
-|04/20/2017   |
+|dateofArrival  |
+|02/23/2017     |
 
 * Start "First Stage Validation" visit and navigate to Programs page
 * Edit "Reconstructive Surgery" Program with following details
@@ -244,5 +244,5 @@ Patient In Hospital RSP queue
 * Navigate to queues
 * Search patient "Abdulla Yonus" from "Hospital RSP" queue
 * Verify patient details of "Abdulla Yonus" in queue
-| Name          | Country | Age      | Specialty    |
-| Abdulla Yonus | Jordan  | 30       | Orthopedic   |
+| Date Of Arrival   | Name          | Age   | Country   | Is Caretaker Required?    | Specialty    |
+| 23/02/2017        | Abdulla Yonus | 30    | Jordan    | Yes                       | Orthopedic   |

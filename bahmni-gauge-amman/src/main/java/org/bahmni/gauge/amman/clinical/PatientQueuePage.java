@@ -88,6 +88,7 @@ public class PatientQueuePage extends PatientListingPage {
         if (rowsList.size() > 0) presentOneInGivenTab = true;
 
         for (WebElement tab : tabs) {
+            //System.out.println(tab.getText());
             if (tab.getText().contains("Program") || tab.getText().contains("All") || tab.getText().contains(queueName))
                 continue;
             new Actions(driver).moveToElement(tab).click().perform();
@@ -97,6 +98,7 @@ public class PatientQueuePage extends PatientListingPage {
                 Assert.fail("patient also found in" + tab.findElement(By.tagName("span")).getText());
             }
         }
+        //System.out.println(presentOneInGivenTab);
         return presentOneInGivenTab;
     }
 }

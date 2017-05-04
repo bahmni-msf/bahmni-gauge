@@ -39,7 +39,10 @@ public enum Fields {
     legalRepDob("legalRepDob", "date", "#legalRepDob"),
     legalRepNationality("legalRepNationality", "dropdown", "#legalRepNationality"),
     legalRepalsoCaretaker("legalRepalsoCaretaker", "dropdown", "#legalRepalsoCaretaker"),
-    expectedDateofArrival("expectedDateofArrival","date","#expectedDateofArrival");
+    expectedDateofArrival("expectedDateofArrival","date","#expectedDateofArrival"),
+    dateofArrival("dateofArrival","date","#dateofArrival");
+
+
 
     private PatientAttribute patientAttribute;
 

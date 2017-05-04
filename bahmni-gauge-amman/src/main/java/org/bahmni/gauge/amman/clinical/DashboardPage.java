@@ -14,14 +14,4 @@ import java.util.List;
  */
 public class DashboardPage extends org.bahmni.gauge.common.clinical.DashboardPage {
 
-//    private boolean isConsultationButtonPresent() {
-//        boolean val = true;
-//        try{
-//            if(clinical.)
-//        } catch (NoSuchElementException e){
-//            val =  false;
-//        }
-//        return  val;
-//    }
-
 }
