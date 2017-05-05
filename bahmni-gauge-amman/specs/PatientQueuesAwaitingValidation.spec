@@ -1,6 +1,6 @@
 Scenarios for awaiting validation queues
 ==========================================
-Created by swarup on 12/23/16
+Created by swarup, jaseena on 12/23/16
 
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
@@ -15,6 +15,7 @@ Test for queue when Medical File is required
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
+* Verify patient "Nizam" is present only in "Awaiting Validation - 1st Stage" queue
 * Search and select patient "Nizam" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
@@ -66,12 +67,13 @@ Test for queue when Date of presentation of Final validation is captured in "Fir
 * Refresh the queues page
 * Verify patient "Nizam" is not present in any queue except Programs and All queues
 
-Test for queue when Date of Presentation of Followup validation is captured
+Test for queue when Date of presentation of Follow-up validation is captured
 ---------------------------------------------------------------------------
 * Start "Follow-Up Validation" visit using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
+* Verify patient "Nizam" is present only in "Awaiting Validation - 1st Stage" queue
 * Search and select patient "Nizam" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details
 | programStatus     |
@@ -82,9 +84,9 @@ Test for queue when Date of Presentation of Followup validation is captured
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
-* Select template "Final Validation" from observation page and fill details
+* Select template "Follow-up Validation" from observation page and fill details
 | FIELD                                     | VALUE                   |
-| Date of Presentation                      | 10/10/2016              |
+| Date of presentation                      | 10/10/2016              |
 * Save the consultation
 * Navigate to queues
 * Verify patient "Nizam" is not present in any queue except Programs and All queues
