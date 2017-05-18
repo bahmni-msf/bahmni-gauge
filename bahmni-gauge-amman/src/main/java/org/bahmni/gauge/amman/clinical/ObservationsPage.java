@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ObservationsPage extends org.bahmni.gauge.common.clinical.ObservationsPage {
 
-    @FindBy(how= How.CSS, using = ".leaf-observation-node")
+    @FindBy(how = How.CSS, using = ".leaf-observation-node")
     public List<WebElement> observationNodes;
 
     @Override
@@ -21,8 +21,8 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         clickTemplateButton();
         List<WebElement> allForms = templatePanel.findElements(By.tagName("button"));
 
-        for (WebElement form: allForms){
-            if (form.getText().contains(templateName)){
+        for (WebElement form : allForms) {
+            if (form.getText().contains(templateName)) {
                 form.click();
                 break;
             }
@@ -30,30 +30,27 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
     }
 
 
-    public void fillTemplateData(Table table){
+    public void fillTemplateData(Table table) {
         List<TableRow> rows = table.getTableRows();
-        for (TableRow row: rows){
+        for (TableRow row : rows) {
             boolean fieldFound = false;
             String fieldName = row.getCell("FIELD").trim();
             String value = row.getCell("VALUE");
-            for (WebElement observationNode: observationNodes) {
+            for (WebElement observationNode : observationNodes) {
                 String observLabel = observationNode.findElement(By.tagName("label")).getText().trim();
-                if (observLabel.equals(fieldName)){
+                if (observLabel.equals(fieldName)) {
                     fieldFound = true;
-                    if (hasTag(observationNode, "input")){
+                    if (hasTag(observationNode, "input")) {
                         observationNode.findElement(By.tagName("input")).sendKeys(value, Keys.TAB);
-                    }
-                    else if (hasTag(observationNode, "textarea")){
+                    } else if (hasTag(observationNode, "textarea")) {
                         observationNode.findElement(By.tagName("textarea")).sendKeys(value);
-                    }
-                    else if (hasTag(observationNode, "select")){
+                    } else if (hasTag(observationNode, "select")) {
                         new Select(observationNode.findElement(By.tagName("select"))).selectByVisibleText(value);
-                    }
-                    else if (hasTag(observationNode, "button")){
+                    } else if (hasTag(observationNode, "button")) {
                         List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
                         String[] multiSelect = value.split(";");
-                        for (String val: multiSelect) {
-                            for(WebElement button: buttons){
+                        for (String val : multiSelect) {
+                            for (WebElement button : buttons) {
                                 if (button.getText().contains(val)) {
                                     try {
                                         button.click();
@@ -71,19 +68,29 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                     }
                 }
             }
-            if (!fieldFound){
-                Assert.fail("Field "+ fieldName + " not found or disabled");
+            if (!fieldFound) {
+                Assert.fail("Field " + fieldName + " not found or disabled");
             }
         }
     }
 
     private boolean hasTag(WebElement answer, String input) {
         boolean val = true;
-        try{
+        try {
             answer.findElement(By.tagName(input));
-        } catch (NoSuchElementException e){
-            val =  false;
+        } catch (NoSuchElementException e) {
+            val = false;
         }
-        return  val;
+        return val;
+    }
+
+
+    public void verifyFormSaved(Table table) {
+        List<TableRow> rows = table.getTableRows();
+        for (TableRow row : rows) {
+            String formName = row.getCell("FORM").trim();
+            Boolean isDisabled = getDisabledValue(formName);
+            Assert.assertTrue(isDisabled);
+        }
     }
 }

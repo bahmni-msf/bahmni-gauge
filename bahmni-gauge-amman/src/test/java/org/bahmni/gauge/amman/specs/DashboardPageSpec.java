@@ -108,8 +108,7 @@ public class DashboardPageSpec {
     public void verifyConsultationIsNotPresent() {
         org.bahmni.gauge.amman.clinical.DashboardPage dashboardPage;
         dashboardPage = PageFactory.get(org.bahmni.gauge.amman.clinical.DashboardPage.class);
-
-
         Assert.assertFalse("Consultation button is present", dashboardPage.isEnterDataPresent());
     }
+
 }

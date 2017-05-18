@@ -16,10 +16,17 @@ public class ObservationsSpec {
     }
 
     @Step("Select template <template> from observation page and fill details <table>")
-    public void clickOnTreatmentEnrollment(String template, Table table){
+    public void selectTemplateAndFillData(String template, Table table) {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
         observationsPage.selectTemplate(template);
         waitForAppReady();
         observationsPage.fillTemplateData(table);
+    }
+
+    @Step("Verify these forms are saved and disabled to add <table>")
+    public void verifyFormsSavedAndDisabledToAdd(Table table) {
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.verifyFormSaved(table);
+
     }
 }
