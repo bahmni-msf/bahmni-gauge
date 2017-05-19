@@ -181,8 +181,36 @@ Observation Forms
 | Nursing consultation notes                | recorded      |
 * Verify "OPD Nursing Note" is added to the left pane
 
+* Select template "Surgical Ward Admission Nursing Assessment" from observation page and fill details
+| FIELD                                     | VALUE         |
+| Date recorded                             | 05/11/2017    |
+| Reason for admission                      | Other         |
+| Reason for admission, other               | Physio        |
+| Temperature (C)                           | 32            |
+| Pulse (bpm)                               | 77            |
+| Respiratory rate (breaths/minute)         | 85            |
+| Systolic blood pressure (mmHg)            | 120           |
+| Diastolic blood pressure (mmHg)           | 80            |
+| Blood oxygen saturation (%)               | 56            |
+| Blood glucose (mg/dl)                     | 59            |
+| Pain Severity                             | 1             |
+| Side of pain                              | Right         |
+| Type of pain                              | severe        |
+| When does the pain occur                  | always        |
+| Patient mood                              | Other         |
+| Patient mood, other                       | Excited       |
+| Does the patient have suicidal or depressive thoughts?    | No        |
+| Number of wounds                          | 4             |
+| Description                               | Wound needs dressing      |
+| Nutritional Assessment                    | Regular;Low salt;High protein;Diabetic diet;Other |
+| Nutritional Assessment, other             | Bitter        |
+| Admission Nursing Notes                   | Admit by tomorrow morning |
+| Orientation of the patient                | Environment;General Hygiene;Medication;Visiting hours;Isolation instructions;Sleeping time;Meal time;Smoking;Discharge plan   |
+* Verify "Surgical Ward Admission Nursing Assessment" is added to the left pane
+
 * Save the consultation
 * Verify these forms are saved and disabled to add
-| FORM                              |
-| Health Education                  |
-| OPD Nursing Note                  |
+| FORM                                          |
+| Health Education                              |
+| OPD Nursing Note                              |
+| Surgical Ward Admission Nursing Assessment    |
