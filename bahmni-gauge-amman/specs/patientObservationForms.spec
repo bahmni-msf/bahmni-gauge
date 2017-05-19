@@ -108,6 +108,32 @@ Nursing Assessment - Social and Medical History
 | Description                    | None                       |
 | Nursing notes                  | captured                   |
 
+Physical Examination
+--------------------
+* On the login page
+* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Click on programs app
+* Search and select patient "Niya" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Go to "Observations" tab
+* Select the template "Physical Examination" from on the observation page
+* Verify "Physical Examination" is added to the left pane
+* Save the consultation
+* Verify "Physical Examination" is disabled to add
+* Navigate to patient dashboard
+* Click on "Patient Summary" dashboard
+* Verify following details of "Physical Examination" in Patient Dashboard
+| FIELD                             | VALUE                                                                                             |
+| General examination               | Well developed female / male in no acute distress                                                 |
+| HEENT examination                 | Pupils equal, regular, reactive to light and accomodation, normal extraocular muscles, normocephalic, normal dentition, clear throat, normal neck motion, no jugular vien distension  |
+| Chest examination                 | Clear lung bilaterally to auscultation and percussion, normal chest wall motion                   |
+| Heart examination                 | Normal S1 & S2, no murmurs, intact pulses                                                         |
+| Abdomen examination               | Soft, no hepatosplenomegaly, no tenderness, no mass                                               |
+| Rectal and genitalia examination  | Deferred                                                                                          |
+| Extremities examination           | No clubbing, cyanosis or edema, normal joints with full range of motion                           |
+| Neurologic examination            | Cranial nerves intact, normal muscular deep tendon reflexes, normal strength, normal sensitivity  |
+
 Observation Forms
 -----------------
 * On the login page
@@ -130,7 +156,33 @@ Observation Forms
 | Referral care plan                              | No care plan   |
 * Verify "Health Education" is added to the left pane
 
+* Select template "OPD Nursing Note" from observation page and fill details
+| FIELD                                     | VALUE         |
+| Date recorded                             | 05/11/2017    |
+| Temperature (C)                           | 32            |
+| Pulse (bpm)                               | 77            |
+| Respiratory rate (breaths/minute)         | 85            |
+| Systolic blood pressure (mmHg)            | 120           |
+| Diastolic blood pressure (mmHg)           | 80            |
+| Pain Severity                             | 1             |
+| Side of pain                              | Right         |
+| Type of pain                              | severe        |
+| When does the pain occur                  | always        |
+| Does the patient have a dressing?         | Yes           |
+| Side of dressing                          | Right         |
+| Description of wound                      | Other         |
+| Description of wound, other               | wet wound     |
+| Dressing, comments                        | dressed       |
+| Does the patient have a tissue expander?  | Yes           |
+| Quantity injected                         | 1             |
+| Quantity withdrawn                        | 2             |
+| Total volume in tissue expander           | 3             |
+| Condition of tissue expander              | normal        |
+| Nursing consultation notes                | recorded      |
+* Verify "OPD Nursing Note" is added to the left pane
+
 * Save the consultation
 * Verify these forms are saved and disabled to add
 | FORM                              |
 | Health Education                  |
+| OPD Nursing Note                  |
