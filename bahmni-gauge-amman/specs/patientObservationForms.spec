@@ -5,52 +5,33 @@ Created by jaseena, swarup on 2/16/17
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
      
-Baseline Vital Signs
---------------------
+OPD Nurse and HE - Baseline Vital Signs, Social and Medical History, Health Education forms
+-------------------------------------------------------------------------------------------
 * Create patient "Niya" using API with "Hospital" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_USER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
 * Search and select patient "Niya" from "Programs" queue
+* Edit "Reconstructive Surgery" Program with following details
+| programStatus     |
+| Pre-Operative     |
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
-* Go to "Observations" tab
-* Select template "Baseline Vital Signs" from observation page and fill details
-| FIELD                             | VALUE      |
-| Date recorded                     | 01/01/2017 |
-| Weight (Kg)                       | 80         |
-| Height (cm)                       | 90         |
-| Respiratory rate (breaths/minute) | 2          |
-| Temperature (C)                   | 36         |
-| Pulse (bpm)                       | 8          |
-| Blood oxygen saturation (%)       | 92         |
-
 * Verify "Baseline Vital Signs" is added to the left pane
-* Save the consultation
-* Verify "Baseline Vital Signs" is disabled to add
-* Navigate to patient dashboard
-* Click on "Patient Summary" dashboard
-* Verify following details of "Baseline Vital Signs" in Patient Dashboard
-| FIELD                   | VALUE           |
-| Date recorded           | 01 Jan 17       |
-| Weight                  | 80Kg            |
-| Height                  | 90cm            |
-| BMI                     | 98.77Kg/m2      |
-| Respiratory rate        | 2breaths/minute |
-| Temperature             | 36C             |
-| Pulse                   | 8bpm            |
-| Blood oxygen saturation | 92%             |
+* Verify "Social and Medical History" is added to the left pane
+* Verify "Health Education" is added to the left pane
+* Select template "Baseline Vital Signs" from observation page and fill details
+| FIELD                                 | VALUE         |
+| Date recorded                         | 01/01/2017    |
+| Weight (Kg)                           | 80            |
+| Height (cm)                           | 90            |
+| Respiratory rate (breaths/minute)     | 2             |
+| Temperature (C)                       | 36            |
+| Pulse (bpm)                           | 8             |
+| Blood oxygen saturation (%)           | 92            |
+| Comments about baseline vital signs   | Low pressure  |
 
-Nursing Assessment - Social and Medical History
------------------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
-* Click on programs app
-* Search and select patient "Niya" from "Programs" queue
-* Navigate to "Reconstructive Surgery" program dashboard
-* Navigate to consultation
-* Go to "Observations" tab
 * Select template "Social and Medical History" from observation page and fill details
 | FIELD                          | VALUE                     |
 | Date of consultation           | 01/01/2017                |
@@ -77,11 +58,32 @@ Nursing Assessment - Social and Medical History
 | Description                    | None                      |
 | Nursing notes                  | captured                  |
 
-* Verify "Social and Medical History" is added to the left pane
+* Select template "Health Education" from observation page and fill details
+| FIELD                                           | VALUE          |
+| Date of consultation                            | 01/01/2017     |
+| External devices, present                       | Big tube;Other |
+| Other type of external device                   | Some device    |
+| Nutritional Assessment                          | Regular        |
+| Personal hygiene (presence of head lice / bugs) | No             |
+| SMFA functional index                           | 1              |
+| SMFA bothersome index                           | 2              |
+| Education learning needs                        | Yes            |
+| Referral care plan                              | No care plan   |
+
 * Save the consultation
-* Verify "Social and Medical History" is disabled to add
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
+* Verify following details of "Baseline Vital Signs" in Patient Dashboard
+| FIELD                   | VALUE           |
+| Date recorded           | 01 Jan 17       |
+| Weight                  | 80Kg            |
+| Height                  | 90cm            |
+| BMI                     | 98.77Kg/m2      |
+| Respiratory rate        | 2breaths/minute |
+| Temperature             | 36C             |
+| Pulse                   | 8bpm            |
+| Blood oxygen saturation | 92%             |
+
 * Verify following details of "Nursing Assessment" in Patient Dashboard
 | FIELD                          | VALUE                      |
 | Date of consultation           | 01 Jan 17                  |
@@ -143,19 +145,6 @@ Observation Forms
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
-* Select template "Health Education" from observation page and fill details
-| FIELD                                           | VALUE          |
-| Date of consultation                            | 01/01/2017     |
-| External devices, present                       | Big tube;Other |
-| Other type of external device                   | Some device    |
-| Nutritional Assessment                          | Regular        |
-| Personal hygiene (presence of head lice / bugs) | No             |
-| SMFA functional index                           | 1              |
-| SMFA bothersome index                           | 2              |
-| Education learning needs                        | Yes            |
-| Referral care plan                              | No care plan   |
-* Verify "Health Education" is added to the left pane
-
 * Select template "OPD Nursing Note" from observation page and fill details
 | FIELD                                     | VALUE         |
 | Date recorded                             | 05/11/2017    |
@@ -211,6 +200,5 @@ Observation Forms
 * Save the consultation
 * Verify these forms are saved and disabled to add
 | FORM                                          |
-| Health Education                              |
 | OPD Nursing Note                              |
 | Surgical Ward Admission Nursing Assessment    |

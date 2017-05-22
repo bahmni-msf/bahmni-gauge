@@ -192,7 +192,6 @@ Patient In Continue Follow up validation queue
 * Select template "Follow-up Validation" from observation page and fill details
 | FIELD                                      | VALUE                    |
 | Date of presentation                       | 10/10/2016               |
-| Stage                                      | 2                        |
 | Outcome for follow-up surgical validation  | Continue under follow-up |
 | Time for next medical follow-up to be done | 1 month                  |
 | Comments about next follow-up              | Followup After 1 month   |

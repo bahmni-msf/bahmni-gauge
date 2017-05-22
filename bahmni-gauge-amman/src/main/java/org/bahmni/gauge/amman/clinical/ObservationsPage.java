@@ -18,13 +18,23 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
 
     @Override
     public void selectTemplate(String templateName) {
-        clickTemplateButton();
-        List<WebElement> allForms = templatePanel.findElements(By.tagName("button"));
-
-        for (WebElement form : allForms) {
-            if (form.getText().contains(templateName)) {
-                form.click();
+        List <WebElement> templateList = driver.findElements(By.cssSelector("section.concept-set-panel-left  li .concept-set-name"));
+        if (templateList.size()>0) {
+            for (WebElement form : templateList) {
+                if (form.getText().contains(templateName))
+                    form.click();
                 break;
+            }
+        }
+        else {
+            clickTemplateButton();
+            List<WebElement> allForms = templatePanel.findElements(By.tagName("button"));
+
+            for (WebElement form : allForms) {
+                if (form.getText().contains(templateName)) {
+                    form.click();
+                    break;
+                }
             }
         }
     }
