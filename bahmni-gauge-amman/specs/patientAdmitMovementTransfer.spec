@@ -41,7 +41,7 @@ Admit Patient in RC
 * Navigate to "Rehabilitation Center 4th floor"
 * Assign an empty bed to the patient
 * Navigate to patient ADT queues
-Verify patient "Sid rc" is present only in "Admitted" queue
+* Verify patient "Sid rc" is present only in "Admitted" queue
 
 Verify Admit to Ward flow through Disposition
 ---------------------------------------------
@@ -81,7 +81,7 @@ Admit Patient in Ward
 * Navigate to "Ward 2nd floor"
 * Assign an empty bed to the patient
 * Navigate to patient ADT queues
-Verify patient "Sid ward" is present only in "Admitted" queue
+* Verify patient "Sid ward" is present only in "Admitted" queue
 
 Verify Admit to Kahramana Patient flow through Disposition
 ----------------------------------------------------------
@@ -120,4 +120,4 @@ Admit Patient in Kahramana
 * Navigate to "Kahramana 1st floor"
 * Assign an empty bed to the patient
 * Navigate to patient ADT queues
-Verify patient "Sid kahramana" is present only in "Admitted" queue
+* Verify patient "Sid kahramana" is present only in "Admitted" queue

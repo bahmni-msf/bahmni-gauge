@@ -54,6 +54,7 @@ Patient In Medical File incomplete queue
 
 * Select template "First Stage Validation" from observation page and fill details
 | FIELD                             | VALUE      |
+| Type of medical information received  |   New medical file    |
 | Date Received                     | 09/28/2016 |
 | Is the medical file complete?     | No         |
 | Document(s) needed to be complete | Sample     |
