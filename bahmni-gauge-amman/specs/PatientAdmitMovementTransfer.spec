@@ -10,9 +10,11 @@ Verify Admit to RC flow through Disposition
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "Sid rc" from "Programs" queue
-* Edit "Reconstructive Surgery" Program with following details
-| programStatus |
-| Surgical      |
+* Edit "Reconstructive Surgery" Program with following details 
+
+     |programStatus|
+     |-------------|
+     |Surgical     |
 
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
@@ -32,9 +34,11 @@ Admit Patient in RC
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on bed management app
 * Search patient "Sid rc" from "Admit to RC" queue
-* Verify patient details of "Sid rc" in queue
-|Name           | Age   | Gender    |
-|Sid rc Hasan   | 11	| M         |
+* Verify patient details of "Sid rc" in queue 
+
+     |Name        |Age|Gender|
+     |------------|---|------|
+     |Sid rc Hasan|11 |M     |
 
 * Click on "Admit To RC" link
 * Click on "Rehabilitation Center" button
@@ -51,9 +55,11 @@ Verify Admit to Ward flow through Disposition
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "Sid ward" from "Programs" queue
-* Edit "Reconstructive Surgery" Program with following details
-| programStatus |
-| Surgical      |
+* Edit "Reconstructive Surgery" Program with following details 
+
+     |programStatus|
+     |-------------|
+     |Surgical     |
 
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
@@ -73,9 +79,12 @@ Admit Patient in Ward
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on bed management app
 * Search patient "Sid ward" from "Admit to Ward" queue
-* Verify patient details of "Sid ward" in queue
-|Name           | Age   | Gender    |
-|Sid ward Hasan   | 11	| M         |
+* Verify patient details of "Sid ward" in queue 
+
+     |Name          |Age|Gender|
+     |--------------|---|------|
+     |Sid ward Hasan|11 |M     |
+     
 * Click on "Admit To Ward" link
 * Click on "Ward" button
 * Navigate to "Ward 2nd floor"
@@ -91,9 +100,12 @@ Verify Admit to Kahramana Patient flow through Disposition
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "Sid kahramana" from "Programs" queue
-* Edit "Reconstructive Surgery" Program with following details
-| programStatus |
-| Surgical      |
+* Edit "Reconstructive Surgery" Program with following details 
+
+     |programStatus|
+     |-------------|
+     |Surgical     |
+     
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Disposition" tab
@@ -112,9 +124,12 @@ Admit Patient in Kahramana
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on bed management app
 * Search patient "Sid kahramana" from "Admit to Kahramana" queue
-* Verify patient details of "Sid kahramana" in queue
-|Name           | Age   | Gender    |
-|Sid kahramana Hasan   | 11	| M         |
+* Verify patient details of "Sid kahramana" in queue 
+
+     |Name               |Age|Gender|
+     |-------------------|---|------|
+     |Sid kahramana Hasan|11 |M     |
+     
 * Click on "Admit to Kahramana" link
 * Click on "Kahramana" button
 * Navigate to "Kahramana 1st floor"
