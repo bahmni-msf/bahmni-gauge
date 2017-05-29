@@ -9,7 +9,7 @@ Patient Registration Scenarios
 
      |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
      |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
-     |Albert   |Hassan  |أل           |حسن          |Male  |12 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
+     |Albert   |Hassan  |أل             |حسن             |Male  |12 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
 
 Create Patient Under Age 18 and Fill Legal Rep
 ----------------------------------------------
@@ -17,7 +17,7 @@ Create Patient Under Age 18 and Fill Legal Rep
 
      |legalRepFullNameEnglish|legalRepFullNameArabic|legalRepRelationWithPatient|legalRepGender|legalRepNationality|
      |-----------------------|----------------------|---------------------------|--------------|-------------------|
-     |Newton                 |حسن                |Brother                    |Male          |Egyptian           |
+     |Newton                 |حسن                   |Brother                    |Male          |Egyptian           |
 
 * Save Patient and refresh page
 * Verify Legal Rep Details after Save
@@ -34,7 +34,7 @@ Create Patient And Verify Legal Rep Same As Caretaker
 
      |caretakerNameEnglish|caretakerNameArabic|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
      |--------------------|-------------------|---------------|--------------------|---------------------|
-     |Shruthi Hassan      |سن               |Female         |Iraqi               |Yes                  |
+     |Shruthi Hassan      |سن                 |Female         |Iraqi               |Yes                  |
 
 * Verify Legal Rep Values for autocomplete
 * Save Patient and refresh page

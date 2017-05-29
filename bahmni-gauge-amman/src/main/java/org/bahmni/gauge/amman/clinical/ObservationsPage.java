@@ -58,7 +58,15 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                 if (observLabel.equals(fieldName)) {
                     fieldFound = true;
                     if (hasTag(observationNode, "input")) {
-                        observationNode.findElement(By.tagName("input")).sendKeys(value, Keys.TAB);
+                        WebElement autoComplete = observationNode.findElement(By.tagName("input"));
+                        if (autoComplete.getAttribute("class").contains("ui-autocomplete-input"))
+                            fillAutocomplete(autoComplete, value);
+                        else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
+                            fillAutocomplete(autoComplete, value);
+                        }
+                        else {
+                            observationNode.findElement(By.tagName("input")).sendKeys(value, Keys.TAB);
+                        }
                     } else if (hasTag(observationNode, "textarea")) {
                         observationNode.findElement(By.tagName("textarea")).sendKeys(value);
                     } else if (hasTag(observationNode, "select")) {
@@ -101,6 +109,12 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         return val;
     }
 
+    public void fillAutocomplete(WebElement autoComplete, String value){
+            autoComplete.sendKeys(value);
+            autoComplete.sendKeys(Keys.DOWN);
+            waitForElementOnPage(By.xpath(".//a[text()=\"" + value + "\"]"));
+            findElement(By.xpath(".//a[text()=\"" + value + "\"]")).click();
+    }
 
     public void verifyFormSaved(Table table) {
         List<TableRow> rows = table.getTableRows();

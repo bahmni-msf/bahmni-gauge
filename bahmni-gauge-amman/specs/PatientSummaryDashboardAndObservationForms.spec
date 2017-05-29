@@ -1,12 +1,12 @@
-Observation Forms and Patient Summary Dashboard
+Patient Summary Dashboard and Observation Forms
 ===============================================
 Created by jaseena, swarup on 2/16/17
 
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
-OPD Nurse and HE - Baseline Vital Signs, Social and Medical History, Health Education forms
--------------------------------------------------------------------------------------------
+OPD Nurse and HE - Baseline Vital Signs, Social and Medical History forms
+-------------------------------------------------------------------------
 * Create patient "Niya" using API with "Hospital" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
@@ -23,7 +23,6 @@ OPD Nurse and HE - Baseline Vital Signs, Social and Medical History, Health Educ
 * Navigate to consultation
 * Verify "Baseline Vital Signs" is added to the left pane
 * Verify "Social and Medical History" is added to the left pane
-* Verify "Health Education" is added to the left pane
 * Select template "Baseline Vital Signs" from observation page and fill details 
 
      |FIELD                              |VALUE       |
@@ -64,20 +63,6 @@ OPD Nurse and HE - Baseline Vital Signs, Social and Medical History, Health Educ
      |Site                          |Ear;Nose                 |
      |Description                   |None                     |
      |Nursing notes                 |captured                 |
-
-* Select template "Health Education" from observation page and fill details 
-
-     |FIELD                                          |VALUE         |
-     |-----------------------------------------------|--------------|
-     |Date of consultation                           |01/01/2017    |
-     |External devices, present                      |Big tube;Other|
-     |Other type of external device                  |Some device   |
-     |Nutritional Assessment                         |Regular       |
-     |Personal hygiene (presence of head lice / bugs)|No            |
-     |SMFA functional index                          |1             |
-     |SMFA bothersome index                          |2             |
-     |Education learning needs                       |Yes           |
-     |Referral care plan                             |No care plan  |
 
 * Save the consultation
 * Navigate to patient dashboard
@@ -173,14 +158,17 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
      |Diastolic blood pressure (mmHg)         |80        |
      |Pain Severity                           |1         |
      |Side of pain                            |Right     |
+     |Site of pain                            |Site, Face|
      |Type of pain                            |severe    |
      |When does the pain occur                |always    |
      |Does the patient have a dressing?       |Yes       |
      |Side of dressing                        |Right     |
+     |Site of dressing                        |Site, Ear |
      |Description of wound                    |Other     |
      |Description of wound, other             |wet wound |
      |Dressing, comments                      |dressed   |
      |Does the patient have a tissue expander?|Yes       |
+     |Site of tissue expander                 |Site, Leg |
      |Quantity injected                       |1         |
      |Quantity withdrawn                      |2         |
      |Total volume in tissue expander         |3         |
@@ -190,42 +178,47 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
 * Verify "OPD Nursing Note" is added to the left pane
 * Select template "Ward Nursing Note" from observation page and fill details 
 
-     |FIELD                                   |VALUE     |
-     |----------------------------------------|----------|
-     |Date recorded                           |05/10/2017|
-     |Temperature (C)                         |32        |
-     |Pulse (bpm)                             |77        |
-     |Respiratory rate (breaths/minute)       |85        |
-     |Systolic blood pressure (mmHg)          |120       |
-     |Diastolic blood pressure (mmHg)         |80        |
-     |Pain Severity                           |1         |
-     |Side of pain                            |Right     |
-     |Type of pain                            |severe    |
-     |When does the pain occur                |always    |
-     |Does the patient have a drain?          |Yes       |
-     |Side of drain                           |Left      |
-     |Drainage                                |1         |
-     |Change Position                         |Done      |
-     |Does the patient have a dressing?       |Yes       |
-     |Side of dressing                        |Right     |
-     |Description of wound                    |Other     |
-     |Description of wound, other             |wet wound |
-     |Dressing, comments                      |dressed   |
-     |Does the patient have a peripheral line?|Yes       |
-     |Date of insertion, peripheral line      |05/10/2017|
-     |Date of removal, peripheral line        |05/10/2017|
-     |Comments, peripheral line               |comments  |
-     |Does the patient have a PICC line?      |Yes       |
-     |Date of insertion, PICC line            |05/10/2017|
-     |Date of dressing                        |05/10/2017|
-     |Comments, dressing PICC line            |comments  |
-     |Date of removal, PICC line              |05/10/2017|
-     |Does the patient have a tissue expander?|Yes       |
-     |Quanity injected                        |1         |
-     |Quantity withdrawn                      |2         |
-     |Total volume in tissue expander         |3         |
-     |Condition of tissue expander            |no        |
-     |Nursing consultation notes              |done      |
+     |FIELD                                   |VALUE       |
+     |----------------------------------------|------------|
+     |Date recorded                           |05/10/2017  |
+     |Temperature (C)                         |32          |
+     |Pulse (bpm)                             |77          |
+     |Respiratory rate (breaths/minute)       |85          |
+     |Systolic blood pressure (mmHg)          |120         |
+     |Diastolic blood pressure (mmHg)         |80          |
+     |Pain Severity                           |1           |
+     |Side of pain                            |Right       |
+     |Site of pain                            |Site, Hand  |
+     |Type of pain                            |severe      |
+     |When does the pain occur                |always      |
+     |Does the patient have a drain?          |Yes         |
+     |Side of drain                           |Left        |
+     |Site of drain                           |Site, Arm   |
+     |Drainage                                |1000        |
+     |Change Position                         |Done        |
+     |Does the patient have a dressing?       |Yes         |
+     |Side of dressing                        |Right       |
+     |Site of dressing                        |Site, Finger|
+     |Description of wound                    |Other       |
+     |Description of wound, other             |wet wound   |
+     |Dressing, comments                      |dressed     |
+     |Does the patient have a peripheral line?|Yes         |
+     |Site of peripheral line                 |Site, Wrist |
+     |Date of insertion, peripheral line      |05/10/2017  |
+     |Date of removal, peripheral line        |07/10/2017  |
+     |Comments, peripheral line               |comments    |
+     |Does the patient have a PICC line?      |Yes         |
+     |Date of insertion, PICC line            |05/10/2017  |
+     |Date of dressing                        |05/10/2017  |
+     |Comments, dressing PICC line            |comments    |
+     |Date of removal, PICC line              |08/10/2017  |
+     |Does the patient have a tissue expander?|Yes         |
+     |Site of tissue expander                 |Site, Toe   |
+     |Quanity injected                        |1           |
+     |Quantity withdrawn                      |2           |
+     |Total volume in tissue expander         |3           |
+     |Condition of tissue expander            |no          |
+     |Nursing consultation notes              |done        |
 
 * Verify "Ward Nursing Note" is added to the left pane
 * Select template "Surgical Ward Admission Nursing Assessment" from observation page and fill details 
@@ -244,6 +237,7 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
      |Blood glucose (mg/dl)                                 |59                                                                                                                         |
      |Pain Severity                                         |1                                                                                                                          |
      |Side of pain                                          |Right                                                                                                                      |
+     |Site of pain                                          |Site, Leg                                                                                                                  |
      |Type of pain                                          |severe                                                                                                                     |
      |When does the pain occur                              |always                                                                                                                     |
      |Patient mood                                          |Other                                                                                                                      |
