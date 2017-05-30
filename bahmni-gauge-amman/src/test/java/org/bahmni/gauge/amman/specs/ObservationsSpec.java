@@ -29,4 +29,11 @@ public class ObservationsSpec {
         observationsPage.verifyFormSaved(table);
 
     }
+
+    @Step("Select template <template> from the Observation Page")
+    public void selectTemplate(String template) {
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.selectTemplate(template);
+        waitForAppReady();
+    }
 }

@@ -10,7 +10,7 @@ OPD Nurse and HE - Health Education form
 * Create patient "Sara" using API with "Hospital" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_OPD_USER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Login with user "alaa_s" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
 * Search and select patient "Sara" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 

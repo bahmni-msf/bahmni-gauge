@@ -9,14 +9,14 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 Create Patient and Verify Programs Queue
 ----------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
 * Enter Patient Details 
 
-     |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|isCareTakerRequiredCheckBox|statusofOfficialIDdocuments|
-     |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|---------------------------|---------------------------|
-     |Abdulla  |Yonus   |عبدالله |حسن          |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |
+     |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|isCareTakerRequiredCheckBox|statusofOfficialIDdocuments|caretakerNameEnglish|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
+     |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|---------------------------|---------------------------|--------------------|---------------|--------------------|---------------------|
+     |Abdulla  |Yonus   |عبدالله |حسن          |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
 
 * Start "First Stage Validation" visit and navigate to Programs page
 * Enroll patient to the following program 
@@ -33,20 +33,19 @@ Create Patient and Verify Programs Queue
      |-------------|
      |Abdulla Yonus|
 
-* Search patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage " queue
+* Search patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage" queue
 * Verify patient details of "Abdulla Yonus" in queue 
 
-     |Name         |
-     |-------------|
-     |Abdulla Yonus|
-
+     |Name         |Nationality|
+     |-------------|-----------|
+     |Abdulla Yonus|Egyptian   |
 
 Patient In Medical File incomplete queue
 ----------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with user "ajeeb_am" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Abdulla Yonus" from "Programs" queue
+* Search and select patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -86,9 +85,9 @@ Patient In Medical File incomplete queue
 Patient In Awaiting 1st stage validation queue
 ----------------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with user "mahmoud_h" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Abdulla Yonus" from "Programs" queue
+* Search and select patient "Abdulla Yonus" from "Incomplete Medical File" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -109,12 +108,12 @@ Patient In Awaiting 1st stage validation queue
      |10/10/2016           |Abdulla Yonus|Dr. Feras Nasr|Egyptian   |Orthopedic|
 
 
-Patient In MoreInformation/ Postponed queue
--------------------------------------------
+Patient In MoreInformation/ Postponed queue when FSTG Outcome is Postponed
+--------------------------------------------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_VC_MEMBER_USER" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Login with user "nabil_j" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
 * Click on programs app
-* Search and select patient "Abdulla Yonus" from "Programs" queue
+* Search and select patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -125,33 +124,71 @@ Patient In MoreInformation/ Postponed queue
      |Date of presentation                     |10/09/2016             |
      |Outcome for 1st stage surgical validation|Postponed              |
      |Postpone Reason                          |P2: Waiting for healing|
+     |Comments about postpone reason           |postponed for a month  |
 
 * Save the consultation
 * Navigate to queues
-* Search patient "Abdulla Yonus" from "More Information / Postponed " queue
+* Search patient "Abdulla Yonus" from "More Information / Postponed" queue
 * Verify patient details of "Abdulla Yonus" in queue 
 
-     |Date Of Presentation|Name         |Outcomes For 1st Stage Surgical Validation|Postpone Reason        |
-     |--------------------|-------------|------------------------------------------|-----------------------|
-     |09/10/2016          |Abdulla Yonus|Postponed                                 |P2: Waiting for healing|
+     |Date Of Presentation|Name         |Nationality|Name Of MLO   |Specialty |Outcomes For 1st Stage Surgical Validation|Postpone Reason        |Comments About Postpone Reason|
+     |--------------------|-------------|-----------|--------------|----------|------------------------------------------|-----------------------|------------------------------|
+     |09/10/2016          |Abdulla Yonus|Egyptian   |Dr. Feras Nasr|Orthopedic|Postponed                                 |P2: Waiting for healing|postponed for a month         |
 
 Wait for the scheduler to run and close the visit
 * Search and select patient "Abdulla Yonus" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Verify Consultation button is not present
 
-Patient in Validated Patients queue
------------------------------------
+Patient In MoreInformation/ Postponed queue when FSTG Outcome is More Information
+---------------------------------------------------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Search patient with name "Abdulla Yonus"
 * Select the patient from the search results
 * Start "First Stage Validation" visit and navigate to Programs page
 * On the login page
-* Login with username "BAHMNI_GAUGE_VC_MEMBER_USER" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Login with user "nabil_j" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
 * Click on programs app
+* Search and select patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Go to "Observations" tab
+* Select template "First Stage Validation" from observation page and fill details 
+
+     |FIELD                                                 |VALUE            |
+     |------------------------------------------------------|-----------------|
+     |Date of presentation                                  |10/09/2016       |
+     |Outcome for 1st stage surgical validation             |More Information |
+     |Type of medical information needed for next submission|more medical info|
+
+* Save the consultation
+* Navigate to queues
+* Search patient "Abdulla Yonus" from "More Information / Postponed " queue
+* Verify patient details of "Abdulla Yonus" in queue 
+
+     |Date Of Presentation|Name         |Nationality|Name Of MLO   |Specialty |Outcomes For 1st Stage Surgical Validation|Type Of Medical Information Needed For Next Submission|
+     |--------------------|-------------|-----------|--------------|----------|------------------------------------------|------------------------------------------------------|
+     |09/10/2016          |Abdulla Yonus|Egyptian   |Dr. Feras Nasr|Orthopedic|More Information                          |more medical info                                     |
+
+Wait for the scheduler to run and close the visit
 * Search and select patient "Abdulla Yonus" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Verify Consultation button is not present
+
+Patient in Validated Patients queue - FSTG
+------------------------------------------
+* On the login page
+* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on registration app
+* Search patient with name "Abdulla Yonus"
+* Select the patient from the search results
+* Start "First Stage Validation" visit and navigate to Programs page
+* On the login page
+* Login with user "hani_i" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Click on programs app
+* Search and select patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -185,12 +222,57 @@ Patient in Validated Patients queue
      |--------------------|-------------|---|-------|--------------|-----|----------|--------|-------------------------|-----------------------------------------------|----------------------|-------------------------------|
      |08/10/2016          |Abdulla Yonus|30 |Jordan |Dr. Feras Nasr|2    |Orthopedic|Low     |validation done          |Yes                                            |Yes                   |Waiting                        |
 
-
-Patient In Awaiting Follow up validation queue
-----------------------------------------------
+Patient In Expected arrival queue
+---------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with user "mahmoud_h" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Click on registration app
+* Search patient with name "Abdulla Yonus"
+* Select the patient from the search results
+* Enter Patient Details 
+
+     |expectedDateofArrival|
+     |---------------------|
+     |06/01/2017           |
+
+* Save Patient
+* Go to Home Page
 * Click on programs app
+* Search patient "Abdulla Yonus" from "Expected Arrival" queue
+* Verify patient details of "Abdulla Yonus" in queue 
+
+     |Name         |Age|Country|Specialty |Stage|Priority|Comments About Validation|Expected Date Of Arrival|Patient General Condition|Is Caretaker Required?|Caretaker Gender|Caretaker Name|
+     |-------------|---|-------|----------|-----|--------|-------------------------|------------------------|-------------------------|----------------------|----------------|--------------|
+     |Abdulla Yonus|30 |Jordan |Orthopedic|2    |Low     |validation done          |01/06/2017              |Walking Alone            |Yes                   |Female          |Nadira        |
+
+
+Patient In Hospital RSP queue
+-----------------------------
+* On the login page
+* Login with user "mahmoud_h" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Click on registration app
+* Search patient with name "Abdulla Yonus"
+* Select the patient from the search results
+* Enter Patient Details 
+
+     |dateofArrival|
+     |-------------|
+     |05/23/2017   |
+* Start "Hospital" visit and navigate to Programs page
+* Edit "Reconstructive Surgery" Program with following details 
+
+     |programStatus|
+     |-------------|
+     |Pre-Operative|
+
+* Navigate to queues
+* Search patient "Abdulla Yonus" from "Hospital RSP" queue
+* Verify patient details of "Abdulla Yonus" in queue 
+
+     |Date Of Arrival|Name         |Age|Country|Is Caretaker Required?|Specialty |Stage|Phase Of Treatment|
+     |---------------|-------------|---|-------|----------------------|----------|-----|------------------|
+     |23/05/2017     |Abdulla Yonus|30 |Jordan |Yes                   |Orthopedic|2    |Pre-Operative     |
+
 * Search and select patient "Abdulla Yonus" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 
 
@@ -199,7 +281,20 @@ Patient In Awaiting Follow up validation queue
      |Network Follow-up|
 
 * Navigate to queues
-* Search patient "Abdulla Yonus" from "Awaiting Validation - Follow Up Stage " queue
+* Verify patient "Abdulla Yonus" is not present in any queue except Programs and All queues
+
+Patient In Awaiting Follow up validation queue
+----------------------------------------------
+* On the login page
+* Login with user "mahmoud_h" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on registration app
+* Search patient with name "Abdulla Yonus"
+* Select the patient from the search results
+* Start "Follow-Up Validation" visit and navigate to Programs page
+* On the login page
+* Login with user "hani_i" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Click on programs app
+* Search patient "Abdulla Yonus" from "Awaiting Validation - Follow Up Stage" queue
 * Verify patient details of "Abdulla Yonus" in queue 
 
      |Name         |Name Of MLO   |Nationality|Specialty |
@@ -211,11 +306,9 @@ Patient In Awaiting Follow up validation queue
 Patient In Continue Follow up validation queue
 ----------------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on registration app
-* Search patient with name "Abdulla Yonus"
-* Select the patient from the search results
-* Start "Follow-Up Validation" visit and navigate to Programs page
+* Login with user "mahmoud_h" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Click on programs app
+* Search and select patient "Abdulla Yonus" from "Awaiting Validation - Follow Up Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -237,55 +330,50 @@ Patient In Continue Follow up validation queue
      |--------------------|-------------|-------------------------------|----------------------|
      |10/10/2016          |Abdulla Yonus|1 month                        |Followup After 1 month|
 
-
-Patient In Expected arrival queue
----------------------------------
+Patient in Validated Patients queue - FUP
+-----------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
-* Search patient with name "Abdulla Yonus"
-* Select the patient from the search results
+* Click on create new patient link
 * Enter Patient Details 
 
-     |expectedDateofArrival|
-     |---------------------|
-     |04/20/2017           |
+     |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|isCareTakerRequiredCheckBox|statusofOfficialIDdocuments|caretakerNameEnglish|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
+     |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|---------------------------|---------------------------|--------------------|---------------|--------------------|---------------------|
+     |Abdul    |Bari    |عبدالله        |حسن             |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
 
-* Save Patient
-* Go to Home Page
-* Click on programs app
-* Search patient "Abdulla Yonus" from "Expected Arrival " queue
-* Verify patient details of "Abdulla Yonus" in queue 
+* Start "Follow-Up Validation" visit and navigate to Programs page
+* Enroll patient to the following program 
 
-     |Name         |Age|Country|Specialty |Priority|Expected Date Of Arrival|
-     |-------------|---|-------|----------|--------|------------------------|
-     |Abdulla Yonus|30 |Jordan |Orthopedic|Low     |20/04/2017              |
+     |name                  |dateOfRegistration|programStatus    |
+     |----------------------|------------------|-----------------|
+     |Reconstructive Surgery|09/09/2016        |Network Follow-up|
 
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Go to "Observations" tab
+* Select template "Follow-up Validation" from observation page and fill details 
 
-Patient In Hospital RSP queue
------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
-* Click on registration app
-* Search patient with name "Abdulla Yonus"
-* Select the patient from the search results
-* Enter Patient Details 
+     |FIELD                                           |VALUE                           |
+     |------------------------------------------------|--------------------------------|
+     |Qualitative outcome-Union                       |Non united                      |
+     |Qualitative outcome - Infection                 |Pin tract infection             |
+     |Qualitative outcome - SMFA                      |Done                            |
+     |Date of presentation                            |07/05/2016                      |
+     |Outcome for follow-up surgical validation       |Further stage admission         |
+     |Reason for further stage admission              |Complementary surgery           |
+     |Stage                                           |3                               |
+     |Priority                                        |Moderate                        |
+     |Name of Surgeon 1                               |Dr. Rasheed Al Samerai          |
+     |Name of Surgeon 2                               |Dr. Ashraf Nabhan               |
+     |Does the Patient need Surgical Final Validation?|Yes                             |
+     |Comments about further stage admission          |further stage admission comments|
 
-     |dateofArrival|
-     |-------------|
-     |02/23/2017   |
-
-* Start "First Stage Validation" visit and navigate to Programs page
-* Edit "Reconstructive Surgery" Program with following details 
-
-     |programStatus|
-     |-------------|
-     |Surgical     |
-
+* Save the consultation
 * Navigate to queues
-* Search patient "Abdulla Yonus" from "Hospital RSP" queue
-* Verify patient details of "Abdulla Yonus" in queue 
+* Search patient "Abdul Bari" from "Validated Patients" queue
+* Verify patient details of "Abdul Bari" in queue 
 
-     |Date Of Arrival|Name         |Age|Country|Is Caretaker Required?|Specialty |
-     |---------------|-------------|---|-------|----------------------|----------|
-     |23/02/2017     |Abdulla Yonus|30 |Jordan |Yes                   |Orthopedic|
+     |Date Of Presentation|Name      |Age|Country|Stage|Priority|Comments About Validation       |Does The Patient Need Surgical Final Validation|Is Caretaker Required?|Status Of Official ID Documents|
+     |--------------------|----------|---|-------|-----|--------|--------------------------------|-----------------------------------------------|----------------------|-------------------------------|
+     |05/07/2016          |Abdul Bari|30 |Jordan |3    |Moderate|further stage admission comments|Yes                                            |Yes                   |Waiting                        |

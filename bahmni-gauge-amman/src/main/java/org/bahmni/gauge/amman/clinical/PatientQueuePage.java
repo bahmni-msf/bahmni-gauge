@@ -46,7 +46,7 @@ public class PatientQueuePage extends PatientListingPage {
             Assert.fail("Patient not found in queue");
         }
         for (WebElement row : rowsList) {
-            String data = row.findElements(By.tagName("span")).get(columnIndex).getText();
+            String data = row.findElements(By.tagName("td")).get(columnIndex).getText();
             if (data.contains(patientName)) {
                 row.findElement(By.tagName("a")).click();
                 return;
