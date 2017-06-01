@@ -112,8 +112,8 @@ OPD Nurse - Baseline Vital Signs, Social and Medical History forms
      |Description                   |None                      |
      |Nursing notes                 |captured                  |
 
-MD - MD Initial Assessment, Physical Examination and Medical Diagnoses forms
-----------------------------------------------------------------------------
+MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complications and Physician Progress Note-Ward forms
+----------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with user "zaid_se" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
@@ -179,9 +179,66 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses forms
      |Other ROS musculoskeletal symptoms                          |other                                                                                                         |
 
 * Select template "Physical Examination" from the Observation Page
+* Select template "Complications" from observation page and fill details 
+
+     |FIELD                                      |VALUE                                                                                    |
+     |-------------------------------------------|-----------------------------------------------------------------------------------------|
+     |Patient complication                       |Anaesthetic complication in OT                                                           |
+     |Start date of complication                 |12/30/2016                                                                               |
+     |Anaesthetic complication in OT, description|Hypoxia;Severe nausea and vomiting;Hypotension;Spinal headache;Aspiration;Pneumonia;Other|
+     |Outcome of complication                    |Resolved                                                                                 |
+     |End date of complication                   |02/20/2017                                                                               |
+
+* Verify "Complications" is added to the left pane
+* Select template "Physician Progress Note-Ward" from observation page and fill details 
+
+     |FIELD                                 |VALUE                                                                    |
+     |--------------------------------------|-------------------------------------------------------------------------|
+     |Date recorded                         |04/30/2017                                                               |
+     |Patient complaints                    |None;Pain;Nausea and vomiting;Diarrhea;Fever;Dyspnea;Abdominal Pain;Other|
+     |Patient complaints, other             |Chilling                                                                 |
+     |Patient appetite                      |Poor                                                                     |
+     |Side of wound                         |Right                                                                    |
+     |Site of wound                         |Site, Ankle                                                              |
+     |Wound assessment                      |Wound seen                                                               |
+     |Description of wound                  |Healing                                                                  |
+     |Drainage                              |Serous                                                                   |
+     |Assessment of patient                 |Stable                                                                   |
+     |Surgeon informed of patient assessment|Yes                                                                      |
+     |Surgical ward patient care plan       |Removal of drain                                                         |
+     |Specify side of drain removal         |Right                                                                    |
+
 * Save the consultation
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
+* Verify following details of "Complications" in Patient Dashboard 
+
+     |FIELD                                      |VALUE                                                                                          |
+     |-------------------------------------------|-----------------------------------------------------------------------------------------------|
+     |Patient complication                       |Anaesthetic complication in OT                                                                 |
+     |Start date of complication                 |30 Dec 16                                                                                      |
+     |Anaesthetic complication in OT, description|Hypoxia, Hypotension, Pneumonia, Aspiration, Severe nausea and vomiting, Other, Spinal headache|
+     |Outcome of complication                    |Resolved                                                                                       |
+     |End date of complication                   |20 Feb 17                                                                                      |
+
+* Verify following details of "Physician Progress Note-Ward" in Patient Dashboard 
+
+     |FIELD                                 |VALUE                                                                           |
+     |--------------------------------------|--------------------------------------------------------------------------------|
+     |Date recorded                         |30 Apr 17                                                                       |
+     |Patient complaints                    |Other, Diarrhea, Fever, None, Dyspnea, Pain, Abdominal Pain, Nausea and vomiting|
+     |Patient complaints, other             |Chilling                                                                        |
+     |Patient appetite                      |Poor                                                                            |
+     |Side of wound                         |Right                                                                           |
+     |Site of wound                         |Ankle                                                                           |
+     |Wound assessment                      |Wound seen                                                                      |
+     |Description of wound                  |Healing                                                                         |
+     |Drainage                              |Serous                                                                          |
+     |Assessment of patient                 |Stable                                                                          |
+     |Surgeon informed of patient assessment|Yes                                                                             |
+     |Surgical ward patient care plan       |Removal of drain                                                                |
+     |Specify side of drain removal         |Right                                                                           |
+
 * Verify following details of "MD Initial Assessment" in Patient Dashboard 
 
      |FIELD                                                       |VALUE                                                                                                                  |
@@ -350,8 +407,8 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |Pre-anaesthesia orders|LFT, CBC, KFT, Electrolytes, CRP                      |
      |Investigations needed |Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
 
-Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Admission Nursing Assessment
----------------------------------------------------------------------------------------------------------
+Other Observation Forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
@@ -382,13 +439,26 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
      |Dressing, comments                      |dressed   |
      |Does the patient have a tissue expander?|Yes       |
      |Site of tissue expander                 |Site, Leg |
-     |Quantity injected                       |1         |
-     |Quantity withdrawn                      |2         |
-     |Total volume in tissue expander         |3         |
+     |Quantity injected (cc)                  |1         |
+     |Quantity withdrawn (cc)                 |2         |
+     |Total volume in tissue expander (cc)    |3         |
      |Condition of tissue expander            |normal    |
      |Nursing consultation notes              |recorded  |
 
 * Verify "OPD Nursing Note" is added to the left pane
+* Select template "Nursing Needs - Ward" from observation page and fill details 
+
+     |FIELD                    |VALUE                                                   |
+     |-------------------------|--------------------------------------------------------|
+     |Date recorded            |06/11/2016                                              |
+     |Draining wound(s)?       |Yes                                                     |
+     |IV/IM needed?            |IV Antibiotics;PICC line;IM Narcotics;IV Narcotics;Other|
+     |Twice daily Physiotherapy|No                                                      |
+     |Non-ambulatory?          |Yes                                                     |
+     |Special needs?           |Yes                                                     |
+     |Injection (subcutaneous)?|Insulin;DVT Prophylaxis;Other                           |
+
+* Verify "Nursing Needs - Ward" is added to the left pane
 * Select template "Ward Nursing Note" from observation page and fill details 
 
      |FIELD                                   |VALUE       |
@@ -425,13 +495,20 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
      |Date of dressing                        |05/10/2017  |
      |Comments, dressing PICC line            |comments    |
      |Date of removal, PICC line              |08/10/2017  |
+     |Does the patient have a Foley catheter? |No          |
      |Does the patient have a tissue expander?|Yes         |
      |Site of tissue expander                 |Site, Toe   |
-     |Quanity injected                        |1           |
-     |Quantity withdrawn                      |2           |
-     |Total volume in tissue expander         |3           |
+     |Quantity injected (cc)                  |1           |
+     |Quantity withdrawn (cc)                 |2           |
+     |Total volume in tissue expander (cc)    |3           |
      |Condition of tissue expander            |no          |
      |Nursing consultation notes              |done        |
+     |Blood sugar                             |Yes         |
+     |RBS before meal                         |6           |
+     |RBS after meal                          |7           |
+     |FBS                                     |10          |
+     |Insulin given                           |Yes         |
+     |How much insulin given                  |15          |
 
 * Verify "Ward Nursing Note" is added to the left pane
 * Select template "Surgical Ward Admission Nursing Assessment" from observation page and fill details 
@@ -464,6 +541,38 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
      |Orientation of the patient                            |Environment;General Hygiene;Medication;Visiting hours;Isolation instructions;Sleeping time;Meal time;Smoking;Discharge plan|
 
 * Verify "Surgical Ward Admission Nursing Assessment" is added to the left pane
+* Select template "Post-Op Ward Monitoring" from observation page and fill details 
+
+     |FIELD                            |VALUE                |
+     |---------------------------------|---------------------|
+     |Date recorded                    |05/11/2017           |
+     |Consciousness                    |Awake                |
+     |Oxygen (L/min)                   |80                   |
+     |Blood oxygen saturation (%)      |56                   |
+     |Respiration rate (breaths/minute)|85                   |
+     |Pulse (bpm)                      |77                   |
+     |Systolic blood pressure (mmHg)   |120                  |
+     |Diastolic blood pressure (mmHg)  |80                   |
+     |Temperature (C)                  |32                   |
+     |Pain Severity                    |1                    |
+     |Side of pain                     |Right                |
+     |Site of pain                     |Site, Leg            |
+     |Type of pain                     |severe               |
+     |When does the pain occur         |always               |
+     |Nausea                           |Yes                  |
+     |Vomiting                         |No                   |
+     |Side of dressing                 |Right                |
+     |Site of dressing                 |Site, Leg            |
+     |Description of wound             |Other                |
+     |Description of wound, other      |fresh since one month|
+     |Urine                            |Yes                  |
+     |Does the patient have a drain?   |Yes                  |
+     |Side of drain                    |Left                 |
+     |Site of drain                    |Site, Toe            |
+     |Drainage                         |2000                 |
+     |Patient Position                 |sitting              |
+
+* Verify "Post-Op Ward Monitoring" is added to the left pane
 * Save the consultation
 * Verify these forms are saved and disabled to add 
 
@@ -472,3 +581,147 @@ Other Observation Forms - OPD Nursing Note, Ward Nursing Note, Surgical Ward Adm
      |OPD Nursing Note                          |
      |Ward Nursing Note                         |
      |Surgical Ward Admission Nursing Assessment|
+     |Nursing Needs - Ward                      |
+     |Post-Op Ward Monitoring                   |
+
+* Navigate to patient dashboard
+* Click on "Patient Summary" dashboard
+* Verify following details of "OPD Nursing Note" in Patient Dashboard 
+
+     |FIELD                                   |VALUE           |
+     |----------------------------------------|----------------|
+     |Date recorded                           |11 May 17       |
+     |Temperature                             |32C             |
+     |Pulse                                   |77bpm           |
+     |Respiratory rate                        |85breaths/minute|
+     |Systolic blood pressure                 |120mmHg         |
+     |Diastolic blood pressure                |80mmHg          |
+     |Pain Severity                           |1               |
+     |Side of pain                            |Right           |
+     |Site of pain                            |Face            |
+     |Type of pain                            |severe          |
+     |When does the pain occur                |always          |
+     |Does the patient have a dressing?       |Yes             |
+     |Side of dressing                        |Right           |
+     |Site of dressing                        |Ear             |
+     |Description of wound                    |Other           |
+     |Description of wound, other             |wet wound       |
+     |Dressing, comments                      |dressed         |
+     |Does the patient have a tissue expander?|Yes             |
+     |Site of tissue expander                 |Leg             |
+     |Quantity injected                       |1cc             |
+     |Quantity withdrawn                      |2cc             |
+     |Total volume in tissue expander         |3cc             |
+     |Condition of tissue expander            |normal          |
+     |Nursing consultation notes              |recorded        |
+
+* Verify following details of "Ward Nursing Note" in Patient Dashboard 
+
+     |FIELD                                   |VALUE           |
+     |----------------------------------------|----------------|
+     |Date recorded                           |10 May 17       |
+     |Temperature                             |32C             |
+     |Pulse                                   |77bpm           |
+     |Respiratory rate                        |85breaths/minute|
+     |Systolic blood pressure                 |120mmHg         |
+     |Diastolic blood pressure                |80mmHg          |
+     |Pain Severity                           |1               |
+     |Side of pain                            |Right           |
+     |Site of pain                            |Hand            |
+     |Type of pain                            |severe          |
+     |When does the pain occur                |always          |
+     |Does the patient have a drain?          |Yes             |
+     |Side of drain                           |Left            |
+     |Site of drain                           |Arm             |
+     |Drainage                                |1000            |
+     |Change Position                         |Done            |
+     |Does the patient have a dressing?       |Yes             |
+     |Side of dressing                        |Right           |
+     |Site of dressing                        |Finger          |
+     |Description of wound                    |Other           |
+     |Description of wound, other             |wet wound       |
+     |Dressing, comments                      |dressed         |
+     |Does the patient have a peripheral line?|Yes             |
+     |Site of peripheral line                 |Wrist           |
+     |Date of insertion, peripheral line      |10 May 17       |
+     |Date of removal, peripheral line        |10 Jul 17       |
+     |Comments, peripheral line               |comments        |
+     |Does the patient have a PICC line?      |Yes             |
+     |Date of insertion, PICC line            |10 May 17       |
+     |Date of dressing                        |10 May 17       |
+     |Comments, dressing PICC line            |comments        |
+     |Date of removal, PICC line              |10 Aug 17       |
+     |Does the patient have a Foley catheter? |No              |
+     |Does the patient have a tissue expander?|Yes             |
+     |Site of tissue expander                 |Toe             |
+     |Quantity injected                       |1cc             |
+     |Quantity withdrawn                      |2cc             |
+     |Total volume in tissue expander         |3cc             |
+     |Condition of tissue expander            |no              |
+     |Nursing consultation notes              |done            |
+     |Blood sugar                             |Yes             |
+     |RBS before meal                         |6               |
+     |RBS after meal                          |7               |
+     |FBS                                     |10              |
+     |Insulin given                           |Yes             |
+     |How much insulin given                  |15              |
+
+* Verify following details of "Surgical Ward Assessment" in Patient Dashboard
+
+     |FIELD                                                 |VALUE                                                                                                                              |
+     |------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+     |Date recorded                                         |11 May 17                                                                                                                          |
+     |Reason for admission                                  |Other                                                                                                                              |
+     |Reason for admission, other                           |Physio                                                                                                                             |
+     |Temperature                                           |32C                                                                                                                                |
+     |Pulse                                                 |77bpm                                                                                                                              |
+     |Respiratory rate                                      |85breaths/minute                                                                                                                   |
+     |Systolic blood pressure                               |120mmHg                                                                                                                            |
+     |Diastolic blood pressure                              |80mmHg                                                                                                                             |
+     |Blood oxygen saturation                               |56%                                                                                                                                |
+     |Blood glucose                                         |59mg/dl                                                                                                                            |
+     |Pain Severity                                         |1                                                                                                                                  |
+     |Side of pain                                          |Right                                                                                                                              |
+     |Site of pain                                          |Leg                                                                                                                                |
+     |Type of pain                                          |severe                                                                                                                             |
+     |When does the pain occur                              |always                                                                                                                             |
+     |Patient mood                                          |Other                                                                                                                              |
+     |Patient mood, other                                   |Excited                                                                                                                            |
+     |Does the patient have suicidal or depressive thoughts?|No                                                                                                                                 |
+     |Number of wounds                                      |4                                                                                                                                  |
+     |Description                                           |Wound needs dressing                                                                                                               |
+     |Nutritional Assessment                                |High protein, Diabetic diet, Regular, Low salt, Other                                                                              |
+     |Nutritional Assessment, other                         |Bitter                                                                                                                             |
+     |Admission Nursing Notes                               |Admit by tomorrow morning                                                                                                          |
+     |Orientation of the patient                            |Meal time, Sleeping time, Smoking, Environment, Isolation instructions, General Hygiene, Medication, Discharge plan, Visiting hours|
+
+* Verify following details of "Post-Op Ward Monitoring" in Patient Dashboard 
+
+     |FIELD                         |VALUE                |
+     |------------------------------|---------------------|
+     |Date recorded                 |11 May 17            |
+     |Consciousness                 |Awake                |
+     |Oxygen                        |80L/min              |
+     |Blood oxygen saturation       |56%                  |
+     |Respiration rate              |85breaths/minute     |
+     |Pulse                         |77bpm                |
+     |Systolic blood pressure       |120mmHg              |
+     |Diastolic blood pressure      |80mmHg               |
+     |Temperature                   |32C                  |
+     |Pain Severity                 |1                    |
+     |Side of pain                  |Right                |
+     |Site of pain                  |Leg                  |
+     |Type of pain                  |severe               |
+     |When does the pain occur      |always               |
+     |Nausea                        |Yes                  |
+     |Vomiting                      |No                   |
+     |Side of dressing              |Right                |
+     |Site of dressing              |Leg                  |
+     |Description of wound          |Other                |
+     |Description of wound, other   |fresh since one month|
+     |Urine                         |Yes                  |
+     |Does the patient have a drain?|Yes                  |
+     |Side of drain                 |Left                 |
+     |Site of drain                 |Toe                  |
+     |Drainage                      |2000                 |
+     |Patient Position              |sitting              |

@@ -7,7 +7,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 
 Create Patient Via Api
 ----------------------
-* Create patient "Nizam" using API with "First Stage Validation" visit
+* Create patient "Ameer" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 
 Test for queue when Medical File is required
@@ -15,8 +15,8 @@ Test for queue when Medical File is required
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Verify patient "Nizam" is present only in "Awaiting Validation - 1st Stage" queue
-* Search and select patient "Nizam" from "Programs" queue
+* Verify patient "Ameer" is present only in "Awaiting Validation - 1st Stage" queue
+* Search and select patient "Ameer" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -29,14 +29,14 @@ Test for queue when Medical File is required
      
 * Save the consultation
 * Navigate to queues
-* Verify patient "Nizam" is present only in "Awaiting Validation - 1st Stage" queue
+* Verify patient "Ameer" is present only in "Awaiting Validation - 1st Stage" queue
 
 Test for queue when Date of presentation of First stage validation is captured
 ------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Nizam" from "Programs" queue
+* Search and select patient "Ameer" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -48,10 +48,10 @@ Test for queue when Date of presentation of First stage validation is captured
      
 * Save the consultation
 * Navigate to queues
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 
 Test for queue when Date of presentation of Final validation is captured in "First Stage Validation" visit
 ----------------------------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ Test for queue when Date of presentation of Final validation is captured in "Fir
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Nizam" from "Programs" queue
+* Search and select patient "Ameer" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -71,10 +71,10 @@ Test for queue when Date of presentation of Final validation is captured in "Fir
      
 * Save the consultation
 * Navigate to queues
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 
 Test for queue when Date of presentation of Follow-up validation is captured
 ----------------------------------------------------------------------------
@@ -82,8 +82,8 @@ Test for queue when Date of presentation of Follow-up validation is captured
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Verify patient "Nizam" is present only in "Awaiting Validation - 1st Stage" queue
-* Search and select patient "Nizam" from "Programs" queue
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
+* Search and select patient "Ameer" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 
 
      |programStatus    |
@@ -91,8 +91,8 @@ Test for queue when Date of presentation of Follow-up validation is captured
      |Network Follow-up|
      
 * Navigate to queues
-* Verify patient "Nizam" is present only in "Awaiting Validation - Follow Up Stage " queue
-* Search and select patient "Nizam" from "Programs" queue
+* Verify patient "Ameer" is present only in "Awaiting Validation - Follow Up Stage" queue
+* Search and select patient "Ameer" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -104,10 +104,10 @@ Test for queue when Date of presentation of Follow-up validation is captured
      
 * Save the consultation
 * Navigate to queues
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 
 Test for queue when Date of Presentation of Final validation is captured in "Follow-Up Validation" visit
 --------------------------------------------------------------------------------------------------------
@@ -115,7 +115,8 @@ Test for queue when Date of Presentation of Final validation is captured in "Fol
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Nizam" from "Programs" queue
+* Verify patient "Ameer" is present only in "Awaiting Validation - Follow Up Stage" queue
+* Search and select patient "Ameer" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -127,8 +128,7 @@ Test for queue when Date of Presentation of Final validation is captured in "Fol
      
 * Save the consultation
 * Navigate to queues
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
+* Verify patient "Ameer" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Nizam" is not present in any queue except Programs and All queues
-
+* Verify patient "Ameer" is not present in any queue except Programs and All queues

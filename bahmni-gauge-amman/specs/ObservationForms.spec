@@ -78,3 +78,34 @@ Physio - Physiotherapy Initial Assessment form
      |Physiotherapy remarks initial assessment             |comments                                                                                         |
 
 * Save the consultation
+
+Psych - Psycho-Social Initial Assessment form
+---------------------------------------------
+* On the login page
+* Login with user "muntaha_m" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Click on programs app
+* Search and select patient "Sara" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Verify "Psycho-Social Initial Assessment" is added to the left pane
+* Select template "Psycho-Social Initial Assessment" from observation page and fill details 
+
+     |FIELD                                                             |VALUE                                                                                 |
+     |------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+     |Date of consultation                                              |05/23/2017                                                                            |
+     |Future expectations about care plan                               |Different from medical plan                                                           |
+     |Comments about expectations                                       |care plan comments                                                                    |
+     |Past history of psychological or counselling care for patient     |No                                                                                    |
+     |Past history of psychological or counselling care of family member|Yes                                                                                   |
+     |By who (NGO / private)                                            |NGO                                                                                   |
+     |Past history of psychiatric care for patient                      |Unknown                                                                               |
+     |Past history of psychiatric care of family member                 |No                                                                                    |
+     |History of psychotropic drugs                                     |Yes                                                                                   |
+     |Drug                                                              |drug details                                                                          |
+     |SQR20 (score)                                                     |20                                                                                    |
+     |PTSD (score)                                                      |4                                                                                     |
+     |PSYca 3-6 (child)                                                 |44                                                                                    |
+     |Needed Mental Health Support                                      |Followed daily by counselor;Referred to clinical psychologist;Referred to psychiatrist|
+     |Comments from counsellor                                          |counsellor comments                                                                   |
+
+* Save the consultation
