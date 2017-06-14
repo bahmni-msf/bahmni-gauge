@@ -16,7 +16,7 @@ Create Patient and Verify Programs Queue
 
      |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|isCareTakerRequiredCheckBox|statusofOfficialIDdocuments|caretakerNameEnglish|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
      |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|---------------------------|---------------------------|--------------------|---------------|--------------------|---------------------|
-     |Abdulla  |Yonus   |عبدالله |حسن          |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
+     |Abdulla  |Yonus   |عبدالله        |حسن             |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
 
 * Start "First Stage Validation" visit and navigate to Programs page
 * Enroll patient to the following program 
@@ -218,7 +218,7 @@ Patient in Validated Patients queue - FSTG
 * Search patient "Abdulla Yonus" from "Validated Patients" queue
 * Verify patient details of "Abdulla Yonus" in queue 
 
-     |Date Of Presentation|Name         |Age|Country|Name Of MLO   |Stage|Specialty |Priority|Comments About Validation|Does The Patient Need Surgical Final Validation|Is Caretaker Required?|Status Of Official ID Documents|
+     |Date Of Presentation|Name         |Age|Country|Name Of MLO   |Stage|Speciality|Priority|Comments About Validation|Does The Patient Need Surgical Final Validation|Is Caretaker Required?|Status Of Official ID Documents|
      |--------------------|-------------|---|-------|--------------|-----|----------|--------|-------------------------|-----------------------------------------------|----------------------|-------------------------------|
      |08/10/2016          |Abdulla Yonus|30 |Jordan |Dr. Feras Nasr|2    |Orthopedic|Low     |validation done          |Yes                                            |Yes                   |Waiting                        |
 
