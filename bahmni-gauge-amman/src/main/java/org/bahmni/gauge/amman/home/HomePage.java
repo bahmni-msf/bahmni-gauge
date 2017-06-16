@@ -7,10 +7,11 @@ import org.openqa.selenium.support.How;
 /**
  * Created by jaseenam on 4/28/17.
  */
-public class HomePage extends org.bahmni.gauge.common.home.HomePage{
+public class HomePage extends org.bahmni.gauge.common.home.HomePage {
 
-    @FindBy(how= How.ID, using = "bahmni.ipd")
+    @FindBy(how = How.ID, using = "bahmni.ipd")
     public WebElement bedManagement;
+
 
     public void clickBedManagementApp() {
         bedManagement.click();
