@@ -12,8 +12,14 @@ public class HomePage extends org.bahmni.gauge.common.home.HomePage {
     @FindBy(how = How.ID, using = "bahmni.ipd")
     public WebElement bedManagement;
 
+    @FindBy(how = How.ID, using = "bahmni.ot")
+    public WebElement operationTheatre;
 
     public void clickBedManagementApp() {
         bedManagement.click();
+    }
+
+    public void clickOperationTheatreApp() {
+        operationTheatre.click();
     }
 }

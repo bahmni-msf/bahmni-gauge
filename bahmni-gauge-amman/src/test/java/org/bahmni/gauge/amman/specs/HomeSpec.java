@@ -22,4 +22,12 @@ public class HomeSpec {
         homePage.clickBedManagementApp();
         waitForAppReady();
     }
+
+    @Step("Click on operation theatre app")
+    public void goToOperationTheatrePage() {
+        HomePage homePage = PageFactory.get(HomePage.class);
+        waitForAppReady();
+        homePage.clickOperationTheatreApp();
+        waitForAppReady();
+    }
 }
