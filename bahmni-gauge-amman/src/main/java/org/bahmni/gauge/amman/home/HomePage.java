@@ -15,11 +15,18 @@ public class HomePage extends org.bahmni.gauge.common.home.HomePage {
     @FindBy(how = How.ID, using = "bahmni.ot")
     public WebElement operationTheatre;
 
+    @FindBy(how = How.ID, using = "bahmni.radiology.document.upload")
+    public WebElement medicalDocUpload;
+
     public void clickBedManagementApp() {
         bedManagement.click();
     }
 
     public void clickOperationTheatreApp() {
         operationTheatre.click();
+    }
+
+    public void clickMedicalDocUploadApp() {
+        medicalDocUpload.click();
     }
 }

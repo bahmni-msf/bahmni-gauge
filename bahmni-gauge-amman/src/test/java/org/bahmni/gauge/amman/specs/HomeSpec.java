@@ -30,4 +30,23 @@ public class HomeSpec {
         homePage.clickOperationTheatreApp();
         waitForAppReady();
     }
+
+    @Step("Click on <module> module")
+    public void goToAppPage(String module) {
+        HomePage homePage = PageFactory.get(HomePage.class);
+        switch (module) {
+            case "bed management":
+                homePage.clickBedManagementApp();
+                break;
+
+            case "operation theatre":
+                homePage.clickOperationTheatreApp();
+                break;
+
+            case "medical doc upload":
+                homePage.clickMedicalDocUploadApp();
+                break;
+        }
+        waitForAppReady();
+    }
 }

@@ -25,14 +25,14 @@ Verify Admit to RC flow through Disposition
 * Open the current visit
 * Verify details on visit page "Disposition" display control
 * Navigate to dashboard
-* Click on bed management app
+* Click on "bed management" module
 * Verify patient "Sid rc" is present only in "Admit to RC" queue
 
 Admit Patient in RC
 -------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on bed management app
+* Click on "bed management" module
 * Search patient "Sid rc" from "Admit to RC" queue
 * Verify patient details of "Sid rc" in queue 
 
@@ -70,14 +70,14 @@ Verify Admit to Ward flow through Disposition
 * Open the current visit
 * Verify details on visit page "Disposition" display control
 * Navigate to dashboard
-* Click on bed management app
+* Click on "bed management" module
 * Verify patient "Sid ward" is present only in "Admit to Ward" queue
 
 Admit Patient in Ward
 ---------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on bed management app
+* Click on "bed management" module
 * Search patient "Sid ward" from "Admit to Ward" queue
 * Verify patient details of "Sid ward" in queue 
 
@@ -115,14 +115,14 @@ Verify Admit to Kahramana Patient flow through Disposition
 * Open the current visit
 * Verify details on visit page "Disposition" display control
 * Navigate to dashboard
-* Click on bed management app
+* Click on "bed management" module
 * Verify patient "Sid kahramana" is present only in "Admit to Kahramana" queue
 
 Admit Patient in Kahramana
 --------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on bed management app
+* Click on "bed management" module
 * Search patient "Sid kahramana" from "Admit to Kahramana" queue
 * Verify patient details of "Sid kahramana" in queue 
 
