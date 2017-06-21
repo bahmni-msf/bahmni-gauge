@@ -15,25 +15,26 @@ public class HomeSpec {
         BahmniPage.waitForSpinner(DriverFactory.getDriver());
     }
 
-    @Step("Click on bed management app")
-    public void goToBedManagementPage() {
-        HomePage homePage = PageFactory.get(HomePage.class);
-        waitForAppReady();
-        homePage.clickBedManagementApp();
-        waitForAppReady();
-    }
-
-    @Step("Click on operation theatre app")
-    public void goToOperationTheatrePage() {
-        HomePage homePage = PageFactory.get(HomePage.class);
-        waitForAppReady();
-        homePage.clickOperationTheatreApp();
-        waitForAppReady();
-    }
+//    @Step("Click on bed management app")
+//    public void goToBedManagementPage() {
+//        HomePage homePage = PageFactory.get(HomePage.class);
+//        waitForAppReady();
+//        homePage.clickBedManagementApp();
+//        waitForAppReady();
+//    }
+//
+//    @Step("Click on operation theatre app")
+//    public void goToOperationTheatrePage() {
+//        HomePage homePage = PageFactory.get(HomePage.class);
+//        waitForAppReady();
+//        homePage.clickOperationTheatreApp();
+//        waitForAppReady();
+//    }
 
     @Step("Click on <module> module")
     public void goToAppPage(String module) {
         HomePage homePage = PageFactory.get(HomePage.class);
+        waitForAppReady();
         switch (module) {
             case "bed management":
                 homePage.clickBedManagementApp();
