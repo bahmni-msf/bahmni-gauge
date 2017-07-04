@@ -22,12 +22,8 @@ public class PatientQueuePage extends PatientListingPage {
     public List<WebElement> rowsList;
 
     public void enterPatientIDOrName(String Patient) {
+        searchbox_txt.clear();
         searchbox_txt.sendKeys(Patient);
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public String getColumnData(String columnName) {
@@ -88,7 +84,6 @@ public class PatientQueuePage extends PatientListingPage {
         if (rowsList.size() > 0) presentOneInGivenTab = true;
 
         for (WebElement tab : tabs) {
-            //System.out.println(tab.getText());
             if (tab.getText().contains("Program") || tab.getText().contains("All") || tab.getText().contains(queueName))
                 continue;
             new Actions(driver).moveToElement(tab).click().perform();
@@ -98,7 +93,6 @@ public class PatientQueuePage extends PatientListingPage {
                 Assert.fail("patient also found in" + tab.findElement(By.tagName("span")).getText());
             }
         }
-        //System.out.println(presentOneInGivenTab);
         return presentOneInGivenTab;
     }
 }

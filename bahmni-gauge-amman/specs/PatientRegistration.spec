@@ -5,7 +5,7 @@ Patient Registration Scenarios
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
-* Enter Patient Details 
+* Enter Patient Details
 
      |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
      |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
@@ -13,7 +13,7 @@ Patient Registration Scenarios
 
 Create Patient Under Age 18 and Fill Legal Rep
 ----------------------------------------------
-* Enter Legal Rep Details 
+* Enter Legal Rep Details
 
      |legalRepFullNameEnglish|legalRepFullNameArabic|legalRepRelationWithPatient|legalRepGender|legalRepNationality|
      |-----------------------|----------------------|---------------------------|--------------|-------------------|
@@ -24,13 +24,13 @@ Create Patient Under Age 18 and Fill Legal Rep
 
 Create Patient And Verify Legal Rep Same As Caretaker
 -----------------------------------------------------
-* Enter Patient Details 
+* Enter Patient Details
 
      |isCareTakerRequiredCheckBox|
      |---------------------------|
      |True                       |
 
-* Enter Caretaker Details 
+* Enter Caretaker Details
 
      |caretakerNameEnglish|caretakerNameArabic|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
      |--------------------|-------------------|---------------|--------------------|---------------------|
@@ -42,13 +42,13 @@ Create Patient And Verify Legal Rep Same As Caretaker
 
 Create Patient and Fill ID Documents
 ------------------------------------
-* Enter Patient Details 
+* Enter Patient Details
 
      |statusofOfficialIDdocuments|
      |---------------------------|
      |Received                   |
 
-* Enter ID Document Details 
+* Enter ID Document Details
 
      |id1DocumentType|id1DocNumber|id1FullNameEnglish|
      |---------------|------------|------------------|

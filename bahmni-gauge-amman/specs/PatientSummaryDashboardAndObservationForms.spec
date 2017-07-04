@@ -10,6 +10,34 @@ Create Patient Via Api for Patient Summary Dashboard Display Verification
 * Create patient "Niya" using API with "Hospital" visit
 * Enroll patient to reconstructive surgery program using API
 
+Verify the Patient Summary Dashboard display controls visibility
+----------------------------------------------------------------
+* On the login page
+* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Click on programs app
+* Search and select patient "Niya" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Verify the following display controls are visible 
+
+     |Display Control Title                       |
+     |--------------------------------------------|
+     |Patient Information                         |
+     |Medication                                  |
+     |Physical Examination                        |
+     |Nursing Assessment                          |
+     |Diagnoses                                   |
+     |Surgical Ward Assessment                    |
+     |Physician Progress Note-Ward                |
+     |Post-Op Ward Monitoring                     |
+     |Baseline Vital Signs                        |
+     |Orders                                      |
+     |MD Initial Assessment                       |
+     |Surgeon Pre-Op Assessment and Treatment Plan|
+     |OPD Nursing Note                            |
+     |Ward Nursing Note                           |
+     |Complications                               |
+     |Surgical Appointments                       |
+
 OPD Nurse - Baseline Vital Signs, Social and Medical History forms
 ------------------------------------------------------------------
 * On the login page
@@ -57,7 +85,7 @@ OPD Nurse - Baseline Vital Signs, Social and Medical History forms
      |Comments about allergy        |Nothing                  |
      |Currently taking medication   |Yes                      |
      |Type of medication            |Some drug                |
-     |Dose and freqency             |daily                    |
+     |Dose and frequency            |daily                    |
      |Date of last dose             |01/01/2017               |
      |Pain severity                 |2                        |
      |Side of pain                  |Right                    |
@@ -102,7 +130,7 @@ OPD Nurse - Baseline Vital Signs, Social and Medical History forms
      |Comments about allergy        |Nothing                   |
      |Currently taking medication   |Yes                       |
      |Type of medication            |Some drug                 |
-     |Dose and freqency             |daily                     |
+     |Dose and frequency            |daily                     |
      |Date of last dose             |01 Jan 17                 |
      |Pain severity (0 - 10)        |2                         |
      |Side of pain                  |Right                     |
@@ -326,9 +354,13 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |Site of injury                          |Site, Shoulder                                                                                 |
      |Side of injury                          |Right                                                                                          |
      |Condition of soft tissue at presentation|Bad (need soft tissue coverage)                                                                |
-     |Planned procedure                       |Debridement of bone                                                                            |
+     |Is patient for surgery                  |Yes                                                                                            |
+     |Has Patient Consent Been Obtained?      |Yes                                                                                            |
+     |Surgical summary                        |surgery summary comment                                                                        |
+     |Planned Procedure (surgical)            |Debridement of bone                                                                            |
      |Side of surgical procedure              |Right                                                                                          |
-     |Surgical summary                        |surgery comment                                                                                |
+     |Est Hrs                                 |1                                                                                              |
+     |Est Mins                                |20                                                                                             |
      |Initial general plan                    |Needs Physio / Other consultation                                                              |
      |Objectives of physiotherapy             |physio comments                                                                                |
      |Surgical objective                      |Repair anatomy;Prevent future problems;Uncertain;Replace the loss of;Manage long-term pathology|
@@ -386,8 +418,10 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
 
      |FIELD                                   |VALUE              |
      |----------------------------------------|-------------------|
-     |Planned procedure                       |Debridement of bone|
+     |Planned Procedure (surgical)            |Debridement of bone|
      |Side of surgical procedure              |Right              |
+     |Est Hrs                                 |1                  |
+     |Est Mins                                |20                 |
      |Estimated length of stay                |30-60 days         |
      |Does the patient need further admissions|Yes                |
 
@@ -407,8 +441,8 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |Pre-anaesthesia orders|LFT, CBC, KFT, Electrolytes, CRP                      |
      |Investigations needed |Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
 
-Other Observation Forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring
---------------------------------------------------------------------------------------------------------------------------------------------------------
+OPD and Ward Nurse - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring
+---------------------------------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
@@ -666,7 +700,7 @@ Other Observation Forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing N
      |Insulin given                           |Yes             |
      |How much insulin given                  |15              |
 
-* Verify following details of "Surgical Ward Assessment" in Patient Dashboard
+* Verify following details of "Surgical Ward Assessment" in Patient Dashboard 
 
      |FIELD                                                 |VALUE                                                                                                                              |
      |------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
