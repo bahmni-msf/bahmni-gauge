@@ -17,6 +17,7 @@ Verify the Patient Summary Dashboard display controls visibility
 * Click on programs app
 * Search and select patient "Niya" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
+* Click on "Patient Summary" dashboard
 * Verify the following display controls are visible 
 
      |Display Control Title                       |
@@ -37,6 +38,9 @@ Verify the Patient Summary Dashboard display controls visibility
      |Ward Nursing Note                           |
      |Complications                               |
      |Surgical Appointments                       |
+     |Surgeon Follow-up                           |
+     |Operation Report                            |
+     |OPD MD Follow-Up Note                       |
 
 OPD Nurse - Baseline Vital Signs, Social and Medical History forms
 ------------------------------------------------------------------
@@ -441,8 +445,8 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |Pre-anaesthesia orders|LFT, CBC, KFT, Electrolytes, CRP                      |
      |Investigations needed |Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
 
-OPD and Ward Nurse - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring
----------------------------------------------------------------------------------------------------------------------------------------------------
+R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring, Surgeon Follow-up, Operation Report, OPD MD Follow-Up Note
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
@@ -607,6 +611,27 @@ OPD and Ward Nurse - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, 
      |Patient Position                 |sitting              |
 
 * Verify "Post-Op Ward Monitoring" is added to the left pane
+* Select template "Surgeon Follow-up" from observation page and fill details 
+
+     |FIELD          |VALUE                             |
+     |---------------|----------------------------------|
+     |Early Follow-up|As per planned surgical objectives|
+
+* Verify "Surgeon Follow-up" is added to the left pane
+* Select template "Operation Report" from observation page and fill details 
+
+     |FIELD          |VALUE    |
+     |---------------|---------|
+     |Date of surgery|11 Aug 17|
+ 
+* Verify "Operation Report" is added to the left pane
+* Select template "OPD MD Follow-Up Note" from observation page and fill details 
+
+     |FIELD          |VALUE|
+     |---------------|-----|
+     |Chief complaint|Pain |
+
+* Verify "OPD MD Follow-Up Note" is added to the left pane
 * Save the consultation
 * Verify these forms are saved and disabled to add 
 
@@ -617,6 +642,9 @@ OPD and Ward Nurse - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, 
      |Surgical Ward Admission Nursing Assessment|
      |Nursing Needs - Ward                      |
      |Post-Op Ward Monitoring                   |
+     |Surgeon Follow-up                         |
+     |Operation Report                          |
+     |OPD MD Follow-Up Note                     |
 
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
@@ -759,3 +787,22 @@ OPD and Ward Nurse - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, 
      |Site of drain                 |Toe                  |
      |Drainage                      |2000                 |
      |Patient Position              |sitting              |
+
+* Verify following details of "Surgeon Follow-up" in Patient Dashboard 
+
+     |FIELD          |VALUE                             |
+     |---------------|----------------------------------|
+     |Early Follow-up|As per planned surgical objectives|
+     
+* Verify following details of "Operation Report" in Patient Dashboard 
+
+     |FIELD          |VALUE    |
+     |---------------|---------|
+     |Date of surgery|11 Aug 17|
+     
+* Verify following details of "OPD MD Follow-Up Note" in Patient Dashboard 
+
+     |FIELD          |VALUE|
+     |---------------|-----|
+     |Chief complaint|Pain |
+     
