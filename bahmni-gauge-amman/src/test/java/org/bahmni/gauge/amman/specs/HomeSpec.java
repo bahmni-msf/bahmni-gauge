@@ -44,8 +44,8 @@ public class HomeSpec {
                 homePage.clickOperationTheatreApp();
                 break;
 
-            case "medical doc upload":
-                homePage.clickMedicalDocUploadApp();
+            case "ID doc upload":
+                homePage.clickIDDocUploadApp();
                 break;
         }
         waitForAppReady();

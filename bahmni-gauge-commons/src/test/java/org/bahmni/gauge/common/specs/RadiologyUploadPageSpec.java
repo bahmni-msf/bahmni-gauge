@@ -10,6 +10,7 @@ public class RadiologyUploadPageSpec {
     private RadiologyUploadPage radiologyUploadPage;
 
     public RadiologyUploadPageSpec(){
+
         radiologyUploadPage = PageFactory.get(RadiologyUploadPage.class);
     }
     @BeforeClassSteps

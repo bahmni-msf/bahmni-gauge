@@ -62,6 +62,7 @@ public class PatientListingPage extends BahmniPage {
     		if (patient.findElement(By.cssSelector(".patient-id")).getText().contains(Patient) ||
 					patient.findElement(By.cssSelector(".patient-name")).getText().contains(Patient)){
     			lastElement = patient;
+    			break;
 			}
 		}
 		if(lastElement!=null)
@@ -86,8 +87,8 @@ public class PatientListingPage extends BahmniPage {
 			}
 			waitForSpinner();
 			selectPatient(patientID);
+			waitForSpinner();
 		}
-
     }
 
 	public boolean isPatientListedOnTab(String patientID, String tab) {

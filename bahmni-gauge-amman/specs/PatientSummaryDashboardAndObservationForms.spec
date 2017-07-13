@@ -39,7 +39,7 @@ Verify the Patient Summary Dashboard display controls visibility
      |Complications                               |
      |Surgical Appointments                       |
      |Surgeon Follow-up                           |
-     |Operation Report                            |
+     |Operative Report                            |
      |OPD MD Follow-Up Note                       |
 
 OPD Nurse - Baseline Vital Signs, Social and Medical History forms
@@ -160,21 +160,17 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
 
      |FIELD                                                       |VALUE                                                                                                         |
      |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-     |Date of consultation                                        |05/16/2017                                                                                                    |
-     |Chief complaint                                             |swollen leg                                                                                                   |
+     |Date of consultation                                        |01/01/2017                                                                                                    |
+     |Reason for admission to program                             |swollen leg                                                                                                   |
      |History of present illness                                  |6 months                                                                                                      |
-     |Associated neural injury                                    |Yes                                                                                                           |
-     |Comments (neural injury)                                    |comments                                                                                                      |
-     |Associated vascular injury                                  |Yes                                                                                                           |
-     |Comments (vascular injury)                                  |comments                                                                                                      |
-     |Function of injured part                                    |Deformed, stiff                                                                                               |
+     |Function of injured part                                    |Limitation of function                                                                                        |
      |Sensation of injured part                                   |Reduced (Regional)                                                                                            |
      |History of previous surgery                                 |Yes                                                                                                           |
      |Surgical procedures performed outside AMH                   |Debridement of bone                                                                                           |
      |Site of procedure                                           |Site, Leg                                                                                                     |
      |Side of procedure                                           |Right                                                                                                         |
      |Comment of procedure                                        |comments                                                                                                      |
-     |Date of procedure                                           |05/01/2017                                                                                                    |
+     |Date of procedure                                           |01/01/2017                                                                                                    |
      |Type of previous fixation                                   |External;Internal;Other                                                                                       |
      |Type of internal fixation                                   |Intramedullary nails;Plate;Wires;Screws                                                                       |
      |Duration of External fixation                               |Less than 6 months                                                                                            |
@@ -216,17 +212,17 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
      |FIELD                                      |VALUE                                                                                    |
      |-------------------------------------------|-----------------------------------------------------------------------------------------|
      |Patient complication                       |Anaesthetic complication in OT                                                           |
-     |Start date of complication                 |12/30/2016                                                                               |
+     |Start date of complication                 |12/12/2016                                                                               |
      |Anaesthetic complication in OT, description|Hypoxia;Severe nausea and vomiting;Hypotension;Spinal headache;Aspiration;Pneumonia;Other|
      |Outcome of complication                    |Resolved                                                                                 |
-     |End date of complication                   |02/20/2017                                                                               |
+     |End date of complication                   |02/02/2017                                                                               |
 
 * Verify "Complications" is added to the left pane
 * Select template "Physician Progress Note-Ward" from observation page and fill details 
 
      |FIELD                                 |VALUE                                                                    |
      |--------------------------------------|-------------------------------------------------------------------------|
-     |Date recorded                         |04/30/2017                                                               |
+     |Date recorded                         |04/04/2017                                                               |
      |Patient complaints                    |None;Pain;Nausea and vomiting;Diarrhea;Fever;Dyspnea;Abdominal Pain;Other|
      |Patient complaints, other             |Chilling                                                                 |
      |Patient appetite                      |Poor                                                                     |
@@ -248,16 +244,16 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
      |FIELD                                      |VALUE                                                                                          |
      |-------------------------------------------|-----------------------------------------------------------------------------------------------|
      |Patient complication                       |Anaesthetic complication in OT                                                                 |
-     |Start date of complication                 |30 Dec 16                                                                                      |
+     |Start date of complication                 |12 Dec 16                                                                                      |
      |Anaesthetic complication in OT, description|Hypoxia, Hypotension, Pneumonia, Aspiration, Severe nausea and vomiting, Other, Spinal headache|
      |Outcome of complication                    |Resolved                                                                                       |
-     |End date of complication                   |20 Feb 17                                                                                      |
+     |End date of complication                   |02 Feb 17                                                                                      |
 
 * Verify following details of "Physician Progress Note-Ward" in Patient Dashboard 
 
      |FIELD                                 |VALUE                                                                           |
      |--------------------------------------|--------------------------------------------------------------------------------|
-     |Date recorded                         |30 Apr 17                                                                       |
+     |Date recorded                         |04 Apr 17                                                                       |
      |Patient complaints                    |Other, Diarrhea, Fever, None, Dyspnea, Pain, Abdominal Pain, Nausea and vomiting|
      |Patient complaints, other             |Chilling                                                                        |
      |Patient appetite                      |Poor                                                                            |
@@ -275,21 +271,17 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
 
      |FIELD                                                       |VALUE                                                                                                                  |
      |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-     |Date of consultation                                        |16 May 17                                                                                                              |
-     |Chief complaint                                             |swollen leg                                                                                                            |
+     |Date of consultation                                        |01 Jan 17                                                                                                              |
+     |Reason for admission to program                             |swollen leg                                                                                                            |
      |History of present illness                                  |6 months                                                                                                               |
-     |Associated neural injury                                    |Yes                                                                                                                    |
-     |Comments (neural injury)                                    |comments                                                                                                               |
-     |Associated vascular injury                                  |Yes                                                                                                                    |
-     |Comments (vascular injury)                                  |comments                                                                                                               |
-     |Function of injured part                                    |Deformed, stiff                                                                                                        |
+     |Function of injured part                                    |Limitation of function                                                                                                 |
      |Sensation of injured part                                   |Reduced (Regional)                                                                                                     |
      |History of previous surgery                                 |Yes                                                                                                                    |
      |Surgical procedures performed outside AMH                   |Debridement of bone                                                                                                    |
      |Site of procedure                                           |Leg                                                                                                                    |
      |Side of procedure                                           |Right                                                                                                                  |
      |Comment of procedure                                        |comments                                                                                                               |
-     |Date of procedure                                           |01 May 17                                                                                                              |
+     |Date of procedure                                           |01 Jan 17                                                                                                              |
      |Type of previous fixation                                   |Internal, Other, External                                                                                              |
      |Type of internal fixation                                   |Plate, Screws, Intramedullary nails, Wires                                                                             |
      |Duration of External fixation                               |Less than 6 months                                                                                                     |
@@ -336,7 +328,7 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
      |Abdomen examination             |Soft, no hepatosplenomegaly, no tenderness, no mass                                                                                                                                 |
      |Rectal and genitalia examination|Deferred                                                                                                                                                                            |
      |Extremities examination         |No clubbing, cyanosis or edema, normal joints with full range of motion                                                                                                             |
-     |Neurologic examination          |Cranial nerves intact, normal muscular deep tendon reflexes, normal strength, normal sensitivity                                                                                    |
+     |Neurologic examination          |Cranial nerves intact, normal muscular deep tendon reflexes, sensation intact throughout, muscle power intact, gait intact, mental status intact                                    |
 
 Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx plan and Anesthesia Initial Assessment form
 ----------------------------------------------------------------------------------------------------------------------------
@@ -348,30 +340,33 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
-* Verify "Surgeon Pre-Op Assessment & Tx Plan" is added to the left pane
+* Verify "Surgeon Pre-Op Assessment and Treatment Plan" is added to the left pane
 * Verify "Surgical Diagnoses" is added to the left pane
-* Select template "Surgeon Pre-Op Assessment & Tx Plan" from observation page and fill details 
+* Select template "Surgeon Pre-Op Assessment and Treatment Plan" from observation page and fill details 
 
      |FIELD                                   |VALUE                                                                                          |
      |----------------------------------------|-----------------------------------------------------------------------------------------------|
-     |Date of consultation                    |05/17/2017                                                                                     |
+     |Date of consultation                    |05/05/2017                                                                                     |
      |Site of injury                          |Site, Shoulder                                                                                 |
      |Side of injury                          |Right                                                                                          |
      |Condition of soft tissue at presentation|Bad (need soft tissue coverage)                                                                |
+     |Associated neural injury                |Yes                                                                                            |
+     |Comments (neural injury)                |comments                                                                                       |
+     |Associated vascular injury              |Yes                                                                                            |
      |Is patient for surgery                  |Yes                                                                                            |
      |Has Patient Consent Been Obtained?      |Yes                                                                                            |
      |Surgical summary                        |surgery summary comment                                                                        |
      |Planned Procedure (surgical)            |Debridement of bone                                                                            |
      |Side of surgical procedure              |Right                                                                                          |
-     |Est Hrs                                 |1                                                                                              |
-     |Est Mins                                |20                                                                                             |
+     |Est Hours (Hrs)                         |1                                                                                              |
+     |Est Minutes (Mins)                      |20                                                                                             |
      |Initial general plan                    |Needs Physio / Other consultation                                                              |
      |Objectives of physiotherapy             |physio comments                                                                                |
      |Surgical objective                      |Repair anatomy;Prevent future problems;Uncertain;Replace the loss of;Manage long-term pathology|
      |Side of surgical objective              |Left;Right                                                                                     |
      |Site of surgical objective              |Site, Nose                                                                                     |
      |Comments of uncertainty                 |uncertainty comments                                                                           |
-     |Comments about sugical objectives       |comments                                                                                       |
+     |Comments about surgical objectives      |comments                                                                                       |
      |Frequency of Operations                 |Multiple Operations (+2)                                                                       |
      |Estimated number of surgeries           |3                                                                                              |
      |Sites (donor areas excluded)            |Multi-site, different surgery                                                                  |
@@ -400,7 +395,7 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
 
      |FIELD                                                                         |VALUE                       |
      |------------------------------------------------------------------------------|----------------------------|
-     |Date of consultation                                                          |05/04/2017                  |
+     |Date of consultation                                                          |05/05/2017                  |
      |Previous Anaesthesia history                                                  |GAI;GAO                     |
      |Adverse reaction to anaesthesia                                               |Yes                         |
      |Comments about adverse reaction                                               |comments                    |
@@ -424,8 +419,6 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |----------------------------------------|-------------------|
      |Planned Procedure (surgical)            |Debridement of bone|
      |Side of surgical procedure              |Right              |
-     |Est Hrs                                 |1                  |
-     |Est Mins                                |20                 |
      |Estimated length of stay                |30-60 days         |
      |Does the patient need further admissions|Yes                |
 
@@ -445,7 +438,7 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |Pre-anaesthesia orders|LFT, CBC, KFT, Electrolytes, CRP                      |
      |Investigations needed |Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
 
-R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring, Surgeon Follow-up, Operation Report, OPD MD Follow-Up Note
+R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring, Surgeon Follow-up, Operative Report, OPD MD Follow-Up Note
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
@@ -458,7 +451,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                                   |VALUE     |
      |----------------------------------------|----------|
-     |Date recorded                           |05/11/2017|
+     |Date recorded                           |05/05/2017|
      |Temperature (C)                         |32        |
      |Pulse (bpm)                             |77        |
      |Respiratory rate (breaths/minute)       |85        |
@@ -488,7 +481,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                    |VALUE                                                   |
      |-------------------------|--------------------------------------------------------|
-     |Date recorded            |06/11/2016                                              |
+     |Date recorded            |06/06/2016                                              |
      |Draining wound(s)?       |Yes                                                     |
      |IV/IM needed?            |IV Antibiotics;PICC line;IM Narcotics;IV Narcotics;Other|
      |Twice daily Physiotherapy|No                                                      |
@@ -501,7 +494,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                                   |VALUE       |
      |----------------------------------------|------------|
-     |Date recorded                           |05/10/2017  |
+     |Date recorded                           |05/05/2017  |
      |Temperature (C)                         |32          |
      |Pulse (bpm)                             |77          |
      |Respiratory rate (breaths/minute)       |85          |
@@ -525,14 +518,14 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Dressing, comments                      |dressed     |
      |Does the patient have a peripheral line?|Yes         |
      |Site of peripheral line                 |Site, Wrist |
-     |Date of insertion, peripheral line      |05/10/2017  |
-     |Date of removal, peripheral line        |07/10/2017  |
+     |Date of insertion, peripheral line      |05/05/2017  |
+     |Date of removal, peripheral line        |07/07/2017  |
      |Comments, peripheral line               |comments    |
      |Does the patient have a PICC line?      |Yes         |
-     |Date of insertion, PICC line            |05/10/2017  |
-     |Date of dressing                        |05/10/2017  |
+     |Date of insertion, PICC line            |05/05/2017  |
+     |Date of dressing                        |05/05/2017  |
      |Comments, dressing PICC line            |comments    |
-     |Date of removal, PICC line              |08/10/2017  |
+     |Date of removal, PICC line              |08/08/2017  |
      |Does the patient have a Foley catheter? |No          |
      |Does the patient have a tissue expander?|Yes         |
      |Site of tissue expander                 |Site, Toe   |
@@ -553,7 +546,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                                                 |VALUE                                                                                                                      |
      |------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-     |Date recorded                                         |05/11/2017                                                                                                                 |
+     |Date recorded                                         |05/05/2017                                                                                                                 |
      |Reason for admission                                  |Other                                                                                                                      |
      |Reason for admission, other                           |Physio                                                                                                                     |
      |Temperature (C)                                       |32                                                                                                                         |
@@ -583,7 +576,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                            |VALUE                |
      |---------------------------------|---------------------|
-     |Date recorded                    |05/11/2017           |
+     |Date recorded                    |05/05/2017           |
      |Consciousness                    |Awake                |
      |Oxygen (L/min)                   |80                   |
      |Blood oxygen saturation (%)      |56                   |
@@ -618,13 +611,13 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Early Follow-up|As per planned surgical objectives|
 
 * Verify "Surgeon Follow-up" is added to the left pane
-* Select template "Operation Report" from observation page and fill details 
+* Select template "Operative Report" from observation page and fill details 
 
-     |FIELD          |VALUE    |
-     |---------------|---------|
-     |Date of surgery|11 Aug 17|
- 
-* Verify "Operation Report" is added to the left pane
+     |FIELD  |VALUE         |
+     |-------|--------------|
+     |Surgeon|Dr. Ali Al-Ani|
+
+* Verify "Operative Report" is added to the left pane
 * Select template "OPD MD Follow-Up Note" from observation page and fill details 
 
      |FIELD          |VALUE|
@@ -643,7 +636,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Nursing Needs - Ward                      |
      |Post-Op Ward Monitoring                   |
      |Surgeon Follow-up                         |
-     |Operation Report                          |
+     |Operative Report                          |
      |OPD MD Follow-Up Note                     |
 
 * Navigate to patient dashboard
@@ -652,7 +645,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                                   |VALUE           |
      |----------------------------------------|----------------|
-     |Date recorded                           |11 May 17       |
+     |Date recorded                           |05 May 17       |
      |Temperature                             |32C             |
      |Pulse                                   |77bpm           |
      |Respiratory rate                        |85breaths/minute|
@@ -681,7 +674,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                                   |VALUE           |
      |----------------------------------------|----------------|
-     |Date recorded                           |10 May 17       |
+     |Date recorded                           |05 May 17       |
      |Temperature                             |32C             |
      |Pulse                                   |77bpm           |
      |Respiratory rate                        |85breaths/minute|
@@ -705,14 +698,14 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Dressing, comments                      |dressed         |
      |Does the patient have a peripheral line?|Yes             |
      |Site of peripheral line                 |Wrist           |
-     |Date of insertion, peripheral line      |10 May 17       |
-     |Date of removal, peripheral line        |10 Jul 17       |
+     |Date of insertion, peripheral line      |05 May 17       |
+     |Date of removal, peripheral line        |07 Jul 17       |
      |Comments, peripheral line               |comments        |
      |Does the patient have a PICC line?      |Yes             |
-     |Date of insertion, PICC line            |10 May 17       |
-     |Date of dressing                        |10 May 17       |
+     |Date of insertion, PICC line            |05 May 17       |
+     |Date of dressing                        |05 May 17       |
      |Comments, dressing PICC line            |comments        |
-     |Date of removal, PICC line              |10 Aug 17       |
+     |Date of removal, PICC line              |08 Aug 17       |
      |Does the patient have a Foley catheter? |No              |
      |Does the patient have a tissue expander?|Yes             |
      |Site of tissue expander                 |Toe             |
@@ -732,7 +725,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                                                 |VALUE                                                                                                                              |
      |------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-     |Date recorded                                         |11 May 17                                                                                                                          |
+     |Date recorded                                         |05 May 17                                                                                                                          |
      |Reason for admission                                  |Other                                                                                                                              |
      |Reason for admission, other                           |Physio                                                                                                                             |
      |Temperature                                           |32C                                                                                                                                |
@@ -761,7 +754,7 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
 
      |FIELD                         |VALUE                |
      |------------------------------|---------------------|
-     |Date recorded                 |11 May 17            |
+     |Date recorded                 |05 May 17            |
      |Consciousness                 |Awake                |
      |Oxygen                        |80L/min              |
      |Blood oxygen saturation       |56%                  |
@@ -793,16 +786,16 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |FIELD          |VALUE                             |
      |---------------|----------------------------------|
      |Early Follow-up|As per planned surgical objectives|
-     
-* Verify following details of "Operation Report" in Patient Dashboard 
 
-     |FIELD          |VALUE    |
-     |---------------|---------|
-     |Date of surgery|11 Aug 17|
-     
+* Verify following details of "Operative Report" in Patient Dashboard 
+
+     |FIELD  |VALUE         |
+     |-------|--------------|
+     |Surgeon|Dr. Ali Al-Ani|
+
 * Verify following details of "OPD MD Follow-Up Note" in Patient Dashboard 
 
      |FIELD          |VALUE|
      |---------------|-----|
      |Chief complaint|Pain |
-     
+
