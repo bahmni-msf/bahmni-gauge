@@ -438,8 +438,8 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx
      |Pre-anaesthesia orders|LFT, CBC, KFT, Electrolytes, CRP                      |
      |Investigations needed |Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
 
-R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring, Surgeon Follow-up, Operative Report, OPD MD Follow-Up Note
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring
+--------------------------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
@@ -604,27 +604,6 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Patient Position                 |sitting              |
 
 * Verify "Post-Op Ward Monitoring" is added to the left pane
-* Select template "Surgeon Follow-up" from observation page and fill details 
-
-     |FIELD          |VALUE                             |
-     |---------------|----------------------------------|
-     |Early Follow-up|As per planned surgical objectives|
-
-* Verify "Surgeon Follow-up" is added to the left pane
-* Select template "Operative Report" from observation page and fill details 
-
-     |FIELD  |VALUE         |
-     |-------|--------------|
-     |Surgeon|Dr. Ali Al-Ani|
-
-* Verify "Operative Report" is added to the left pane
-* Select template "OPD MD Follow-Up Note" from observation page and fill details 
-
-     |FIELD          |VALUE|
-     |---------------|-----|
-     |Chief complaint|Pain |
-
-* Verify "OPD MD Follow-Up Note" is added to the left pane
 * Save the consultation
 * Verify these forms are saved and disabled to add 
 
@@ -634,10 +613,6 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Ward Nursing Note                         |
      |Surgical Ward Admission Nursing Assessment|
      |Nursing Needs - Ward                      |
-     |Post-Op Ward Monitoring                   |
-     |Surgeon Follow-up                         |
-     |Operative Report                          |
-     |OPD MD Follow-Up Note                     |
 
 * Navigate to patient dashboard
 * Click on "Patient Summary" dashboard
@@ -781,21 +756,130 @@ R 3.1 and R 3.2 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Not
      |Drainage                      |2000                 |
      |Patient Position              |sitting              |
 
+R 3.2 forms - Surgeon Follow-up, Operative Report, OPD MD Follow-Up Note
+------------------------------------------------------------------------
+* On the login page
+* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Click on programs app
+* Search and select patient "Niya" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Go to "Observations" tab
+* Select template "Surgeon Follow-up" from observation page and fill details 
+
+     |FIELD                             |VALUE                                        |
+     |----------------------------------|---------------------------------------------|
+     |Early Follow-up                   |Complications developed                      |
+     |Impact of complication            |Did not effect the results of flow           |
+     |Patient requires amputation       |Yes                                          |
+     |Is patient for surgery            |Yes                                          |
+     |Has patient consent been obtained?|Yes                                          |
+     |Planned Procedure (surgical)      |Dental extraction                            |
+     |Side of surgical procedure        |Left                                         |
+     |Est Hours (Hrs)                   |1                                            |
+     |Est Minutes (Mins)                |30                                           |
+     |Surgical summary                  |need periodic monitoring of patient condition|
+
+
+* Verify "Surgeon Follow-up" is added to the left pane
+* Select template "Operative Report" from observation page and fill details 
+
+     |FIELD                         |VALUE                                                                                                                                                               |
+     |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+     |Surgeon                       |Dr. Ali Al-Ani;Dr. Sofian Al-Qassab;Dr. Hanna Janho;Dr. Ashraf Nabhan;Dr. Rasheed Al Samerai;Dr. Muckhaled Naseef;Dr. Ashraf Bustangi;Dr.Ghassan S. Abu-Sittah;Other|
+     |Surgeon assistant             |Dr. Azeez                                                                                                                                                           |
+     |Anaesthetist                  |Dr. Hadeel Al-Ani;Dr. Abdelraouf Alhamad;Dr. Ammar Subhi;Other                                                                                                      |
+     |Anaesthesia technician        |Dr. Hani                                                                                                                                                            |
+     |Type of anaesthesia           |None;GAI;GAO;GAL;RSA;RPX;RTA;RAO;LOA;SED;INF                                                                                                                        |
+     |Scrub nurse                   |Nurse Hanna                                                                                                                                                         |
+     |Operation performed           |Quadricepsplasty                                                                                                                                                    |
+     |Size of tissue expander       |2                                                                                                                                                                   |
+     |Side of operation             |Right                                                                                                                                                               |
+     |Findings                      |New findings                                                                                                                                                        |
+     |Operation details             |operation successful                                                                                                                                                |
+     |Does the patient have a drain?|Yes                                                                                                                                                                 |
+     |Side of drain                 |Left                                                                                                                                                                |
+     |Site of drain                 |Site, Leg                                                                                                                                                           |
+     |Type of drain inserted        |Vacuum drain                                                                                                                                                        |
+     |Specimen sent to lab          |Yes                                                                                                                                                                 |
+     |Estimated blood loss          |6                                                                                                                                                                   |
+     |Blood transfusion             |Yes                                                                                                                                                                 |
+     |Number of units               |7                                                                                                                                                                   |
+
+* Verify "Operative Report" is added to the left pane
+* Select template "OPD MD Follow-Up Note" from observation page and fill details 
+
+     |FIELD                     |VALUE                                                                                         |
+     |--------------------------|----------------------------------------------------------------------------------------------|
+     |Chief complaint           |Pain;Diabetes;Hypertension;URI symptoms;Heartburn;N/V, Diarrhea;Rash;Cough;Poor appetite;Other|
+     |Other chief complaint     |New other complaint                                                                           |
+     |History of present illness|No improvement                                                                                |
+     |Allergies                 |New allergies                                                                                 |
+     |Current plan              |Physio bone lengthening;Physio Other;Antibiotics;Dressings;Neuropathic pain clinic;None       |
+     |Impression                |New impression                                                                                |
+     |Plan                      |New plan                                                                                      |
+
+* Verify "OPD MD Follow-Up Note" is added to the left pane
+* Save the consultation
+* Verify these forms are saved and disabled to add 
+
+     |FORM                 |
+     |---------------------|
+     |Surgeon Follow-up    |
+     |Operative Report     |
+     |OPD MD Follow-Up Note|
+
+* Navigate to patient dashboard
+* Click on "Patient Summary" dashboard
 * Verify following details of "Surgeon Follow-up" in Patient Dashboard 
 
-     |FIELD          |VALUE                             |
-     |---------------|----------------------------------|
-     |Early Follow-up|As per planned surgical objectives|
+     |FIELD                             |VALUE                                        |
+     |----------------------------------|---------------------------------------------|
+     |Early Follow-up                   |Complications developed                      |
+     |Impact of complication            |Did not effect the results of flow           |
+     |Patient requires amputation       |Yes                                          |
+     |Is patient for surgery            |Yes                                          |
+     |Has patient consent been obtained?|Yes                                          |
+     |Planned Procedure (surgical)      |Dental extraction                            |
+     |Side of surgical procedure        |Left                                         |
+     |Est Hours (0 - 23)                |1Hrs                                         |
+     |Est Minutes (0 - 59)              |30Mins                                       |
+     |Surgical summary                  |need periodic monitoring of patient condition|
 
 * Verify following details of "Operative Report" in Patient Dashboard 
 
-     |FIELD  |VALUE         |
-     |-------|--------------|
-     |Surgeon|Dr. Ali Al-Ani|
+     |FIELD                         |VALUE                                                                                                                                                                       |
+     |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+     |Surgeon                       |Dr. Rasheed Al Samerai, Dr. Hanna Janho, Dr. Sofian Al-Qassab, Dr. Ashraf Bustangi, Other, Dr. Ashraf Nabhan, Dr.Ghassan S. Abu-Sittah, Dr. Ali Al-Ani, Dr. Muckhaled Naseef|
+     |Surgeon assistant             |Dr. Azeez                                                                                                                                                                   |
+     |Anaesthetist                  |Dr. Ammar Subhi, Dr. Abdelraouf Alhamad, Dr. Hadeel Al-Ani, Other                                                                                                           |
+     |Anaesthesia technician        |Dr. Hani                                                                                                                                                                    |
+     |Type of anaesthesia           |RTA, RPX, INF, RAO, GAL, LOA, GAI, GAO, None, SED, RSA                                                                                                                      |
+     |Scrub nurse                   |Nurse Hanna                                                                                                                                                                 |
+     |Operation performed           |Quadricepsplasty                                                                                                                                                            |
+     |Size of tissue expander       |2                                                                                                                                                                           |
+     |Side of operation             |Right                                                                                                                                                                       |
+     |Findings                      |New findings                                                                                                                                                                |
+     |Operation details             |operation successful                                                                                                                                                        |
+     |Does the patient have a drain?|Yes                                                                                                                                                                         |
+     |Side of drain                 |Left                                                                                                                                                                        |
+     |Site of drain                 |Leg                                                                                                                                                                   |
+     |Type of drain inserted        |Vacuum drain                                                                                                                                                                |
+     |Specimen sent to lab          |Yes                                                                                                                                                                         |
+     |Estimated blood loss          |6                                                                                                                                                                           |
+     |Blood transfusion             |Yes                                                                                                                                                                         |
+     |Number of units               |7                                                                                                                                                                           |
 
 * Verify following details of "OPD MD Follow-Up Note" in Patient Dashboard 
 
-     |FIELD          |VALUE|
-     |---------------|-----|
-     |Chief complaint|Pain |
+     |FIELD                     |VALUE                                                                                                  |
+     |--------------------------|-------------------------------------------------------------------------------------------------------|
+     |Chief complaint           |URI symptoms, Cough, Heartburn, Pain, Other, Poor appetite, Rash, N/V, Diarrhea, Hypertension, Diabetes|
+     |Other chief complaint     |New other complaint                                                                                    |
+     |History of present illness|No improvement                                                                                         |
+     |Allergies                 |New allergies                                                                                          |
+     |Current plan              |Neuropathic pain clinic, Physio bone lengthening, Physio Other, Dressings, None, Antibiotics           |
+     |Impression                |New impression                                                                                         |
+     |Plan                      |New plan                                                                                               |
+
 
