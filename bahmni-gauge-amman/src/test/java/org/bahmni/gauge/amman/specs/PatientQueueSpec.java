@@ -68,4 +68,10 @@ public class PatientQueueSpec {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         Assert.assertTrue(patientQueuePage.isNotPatientPresentInAnyTab(patientName));
     }
+
+    @Step("Verify patient <Kasm> is not present in any queues")
+    public void implementation3(String patientName) {
+        PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
+        Assert.assertTrue(patientQueuePage.isNotPatientPresentInAnyTab(patientName));
+    }
 }

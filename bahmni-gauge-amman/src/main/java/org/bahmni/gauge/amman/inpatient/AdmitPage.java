@@ -1,19 +1,14 @@
 package org.bahmni.gauge.amman.inpatient;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.inpatient.BedAssignmentPage;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 public class AdmitPage extends BedAssignmentPage {
 
@@ -22,6 +17,12 @@ public class AdmitPage extends BedAssignmentPage {
 
     @FindBy(how = How.CSS, using = ".adt-admit")
     public WebElement AdmitBtn;
+
+    @FindBy(how = How.CSS, using = ".adt-transfer")
+    public WebElement MovementBtn;
+
+    @FindBy(how = How.CSS, using = ".adt-discharge")
+    public WebElement DischargeBtn;
 
     @FindBy(how = How.CSS, using = "#modal-revise-button1")
     public WebElement AdtAdmitBtn;
@@ -58,7 +59,11 @@ public class AdmitPage extends BedAssignmentPage {
 
     private Boolean assignBed(WebElement ward, WebElement bed) {
         bed.click();
-        AdmitBtn.click();
+        if (AdmitBtn.isEnabled()) {
+            AdmitBtn.click();
+        } else if (MovementBtn.isEnabled()) {
+            MovementBtn.click();
+        }
         waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
         AdtAdmitBtn.click();
         waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
@@ -99,5 +104,15 @@ public class AdmitPage extends BedAssignmentPage {
     public void goToWard2ndFloor() {
 
         Ward2ndFloor.click();
+    }
+
+    public Boolean dischargePatient() {
+        waitForSpinner();
+        DischargeBtn.click();
+        waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
+        AdtAdmitBtn.click();
+        waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
+        waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.id("overlay")));
+        return Boolean.TRUE;
     }
 }

@@ -4,12 +4,9 @@ Roles and Privileges - Registration Read and Registration Write
      |username  |
      |----------|
      |eman_f    |
-     |hamza_s   |
      |mahmoud_h |
-     |mohammad_d|
      |nabil_j   |
      |weaam_a   |
-     |khouloud_s|
 
 Login with the user which have Registration role (Registration-Read and Registration-Write) assigned and register a new patient
 -------------------------------------------------------------------------------------------------------------------------------

@@ -357,7 +357,6 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment and 
      |Has Patient Consent Been Obtained?      |Yes                                                                                            |
      |Surgical summary                        |surgery summary comment                                                                        |
      |Planned Procedure (surgical)            |Debridement of bone                                                                            |
-     |Side of surgical procedure              |Right                                                                                          |
      |Est Hours (Hrs)                         |1                                                                                              |
      |Est Minutes (Mins)                      |20                                                                                             |
      |Initial general plan                    |Needs Physio / Other consultation                                                              |
@@ -418,7 +417,6 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment and 
      |FIELD                                   |VALUE              |
      |----------------------------------------|-------------------|
      |Planned Procedure (surgical)            |Debridement of bone|
-     |Side of surgical procedure              |Right              |
      |Estimated length of stay                |30-60 days         |
      |Does the patient need further admissions|Yes                |
 

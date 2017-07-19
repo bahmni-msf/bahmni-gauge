@@ -29,7 +29,6 @@ public class InpatientSpec {
     }
 
 
-
     @Step("Assign an empty bed to the patient")
     public void assignBed() {
         AdmitPage admitPage = PageFactory.get(AdmitPage.class);
@@ -85,4 +84,11 @@ public class InpatientSpec {
                 break;
         }
     }
+
+    @Step("Discharge the patient")
+    public void transferHome() {
+        AdmitPage admitPage = PageFactory.get(AdmitPage.class);
+        admitPage.dischargePatient();
+    }
+
 }

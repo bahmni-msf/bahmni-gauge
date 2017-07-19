@@ -84,13 +84,13 @@ public class PatientQueuePage extends PatientListingPage {
         if (rowsList.size() > 0) presentOneInGivenTab = true;
 
         for (WebElement tab : tabs) {
-            if (tab.getText().contains("Program") || tab.getText().contains("All") || tab.getText().contains(queueName))
+            if (tab.getText().contains("Program") || tab.getText().contains("All") || tab.getText().contains(queueName) || tab.getText().contains("Admitted"))
                 continue;
             new Actions(driver).moveToElement(tab).click().perform();
             waitForSpinner();
             enterPatientIDOrName(patientName);
             if (rowsList.size() == 1) {
-                Assert.fail("patient also found in" + tab.findElement(By.tagName("span")).getText());
+                Assert.fail("patient also found in " + tab.findElement(By.tagName("span")).getText());
             }
         }
         return presentOneInGivenTab;
