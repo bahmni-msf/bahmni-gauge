@@ -330,8 +330,8 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
      |Extremities examination         |No clubbing, cyanosis or edema, normal joints with full range of motion                                                                                                             |
      |Neurologic examination          |Cranial nerves intact, normal muscular deep tendon reflexes, sensation intact throughout, muscle power intact, gait intact, mental status intact                                    |
 
-Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment & Tx plan and Anesthesia Initial Assessment form
-----------------------------------------------------------------------------------------------------------------------------
+Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment and Treatment plan and Anesthesia Initial Assessment form
+-------------------------------------------------------------------------------------------------------------------------------------
 
 * On the login page
 * Login with user "ashraf_n" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
@@ -449,32 +449,32 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
 * Go to "Observations" tab
 * Select template "OPD Nursing Note" from observation page and fill details 
 
-     |FIELD                                   |VALUE     |
-     |----------------------------------------|----------|
-     |Date recorded                           |05/05/2017|
-     |Temperature (C)                         |32        |
-     |Pulse (bpm)                             |77        |
-     |Respiratory rate (breaths/minute)       |85        |
-     |Systolic blood pressure (mmHg)          |120       |
-     |Diastolic blood pressure (mmHg)         |80        |
-     |Pain Severity                           |1         |
-     |Side of pain                            |Right     |
-     |Site of pain                            |Site, Face|
-     |Type of pain                            |severe    |
-     |When does the pain occur                |always    |
-     |Does the patient have a dressing?       |Yes       |
-     |Side of dressing                        |Right     |
-     |Site of dressing                        |Site, Ear |
-     |Description of wound                    |Other     |
-     |Description of wound, other             |wet wound |
-     |Dressing, comments                      |dressed   |
-     |Does the patient have a tissue expander?|Yes       |
-     |Site of tissue expander                 |Site, Leg |
-     |Quantity injected (cc)                  |1         |
-     |Quantity withdrawn (cc)                 |2         |
-     |Total volume in tissue expander (cc)    |3         |
-     |Condition of tissue expander            |normal    |
-     |Nursing consultation notes              |recorded  |
+     |FIELD                                   |VALUE      |
+     |----------------------------------------|-----------|
+     |Date recorded                           |05/05/2017 |
+     |Temperature (C)                         |32         |
+     |Pulse (bpm)                             |77         |
+     |Respiratory rate (breaths/minute)       |85         |
+     |Systolic blood pressure (mmHg)          |120        |
+     |Diastolic blood pressure (mmHg)         |80         |
+     |Pain Severity                           |1          |
+     |Side of pain                            |Right      |
+     |Site of pain                            |Site, Face |
+     |Type of pain                            |severe     |
+     |When does the pain occur                |always     |
+     |Does the patient have a dressing?       |Yes        |
+     |Side of dressing                        |Right      |
+     |Site of dressing                        |Site, Femur|
+     |Description of wound                    |Other      |
+     |Description of wound, other             |wet wound  |
+     |Dressing, comments                      |dressed    |
+     |Does the patient have a tissue expander?|Yes        |
+     |Site of tissue expander                 |Site, Leg  |
+     |Quantity injected (cc)                  |1          |
+     |Quantity withdrawn (cc)                 |2          |
+     |Total volume in tissue expander (cc)    |3          |
+     |Condition of tissue expander            |normal     |
+     |Nursing consultation notes              |recorded   |
 
 * Verify "OPD Nursing Note" is added to the left pane
 * Select template "Nursing Needs - Ward" from observation page and fill details 
@@ -492,54 +492,55 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
 * Verify "Nursing Needs - Ward" is added to the left pane
 * Select template "Ward Nursing Note" from observation page and fill details 
 
-     |FIELD                                   |VALUE       |
-     |----------------------------------------|------------|
-     |Date recorded                           |05/05/2017  |
-     |Temperature (C)                         |32          |
-     |Pulse (bpm)                             |77          |
-     |Respiratory rate (breaths/minute)       |85          |
-     |Systolic blood pressure (mmHg)          |120         |
-     |Diastolic blood pressure (mmHg)         |80          |
-     |Pain Severity                           |1           |
-     |Side of pain                            |Right       |
-     |Site of pain                            |Site, Hand  |
-     |Type of pain                            |severe      |
-     |When does the pain occur                |always      |
-     |Does the patient have a drain?          |Yes         |
-     |Side of drain                           |Left        |
-     |Site of drain                           |Site, Arm   |
-     |Drainage                                |1000        |
-     |Change Position                         |Done        |
-     |Does the patient have a dressing?       |Yes         |
-     |Side of dressing                        |Right       |
-     |Site of dressing                        |Site, Finger|
-     |Description of wound                    |Other       |
-     |Description of wound, other             |wet wound   |
-     |Dressing, comments                      |dressed     |
-     |Does the patient have a peripheral line?|Yes         |
-     |Site of peripheral line                 |Site, Wrist |
-     |Date of insertion, peripheral line      |05/05/2017  |
-     |Date of removal, peripheral line        |07/07/2017  |
-     |Comments, peripheral line               |comments    |
-     |Does the patient have a PICC line?      |Yes         |
-     |Date of insertion, PICC line            |05/05/2017  |
-     |Date of dressing                        |05/05/2017  |
-     |Comments, dressing PICC line            |comments    |
-     |Date of removal, PICC line              |08/08/2017  |
-     |Does the patient have a Foley catheter? |No          |
-     |Does the patient have a tissue expander?|Yes         |
-     |Site of tissue expander                 |Site, Toe   |
-     |Quantity injected (cc)                  |1           |
-     |Quantity withdrawn (cc)                 |2           |
-     |Total volume in tissue expander (cc)    |3           |
-     |Condition of tissue expander            |no          |
-     |Nursing consultation notes              |done        |
-     |Blood sugar                             |Yes         |
-     |RBS before meal                         |6           |
-     |RBS after meal                          |7           |
-     |FBS                                     |10          |
-     |Insulin given                           |Yes         |
-     |How much insulin given                  |15          |
+     |FIELD                                   |VALUE      |
+     |----------------------------------------|-----------|
+     |Date recorded                           |05/05/2017 |
+     |Temperature (C)                         |32         |
+     |Pulse (bpm)                             |77         |
+     |Respiratory rate (breaths/minute)       |85         |
+     |Systolic blood pressure (mmHg)          |120        |
+     |Diastolic blood pressure (mmHg)         |80         |
+     |Pain Severity                           |1          |
+     |Side of pain                            |Right      |
+     |Site of pain                            |Site, Hand |
+     |Type of pain                            |severe     |
+     |When does the pain occur                |always     |
+     |Does the patient have a drain?          |Yes        |
+     |Side of drain                           |Left       |
+     |Site of drain                           |Site, Arm  |
+     |Drainage                                |1000       |
+     |Total quantity evacuated from the drain |10         |
+     |Change Position                         |Done       |
+     |Does the patient have a dressing?       |Yes        |
+     |Side of dressing                        |Right      |
+     |Site of dressing                        |Site, Iliac|
+     |Description of wound                    |Other      |
+     |Description of wound, other             |wet wound  |
+     |Dressing, comments                      |dressed    |
+     |Does the patient have a peripheral line?|Yes        |
+     |Site of peripheral line                 |Site, Wrist|
+     |Date of insertion, peripheral line      |05/05/2017 |
+     |Date of removal, peripheral line        |07/07/2017 |
+     |Comments, peripheral line               |comments   |
+     |Does the patient have a PICC line?      |Yes        |
+     |Date of insertion, PICC line            |05/05/2017 |
+     |Date of dressing                        |05/05/2017 |
+     |Comments, dressing PICC line            |comments   |
+     |Date of removal, PICC line              |08/08/2017 |
+     |Does the patient have a Foley catheter? |No         |
+     |Does the patient have a tissue expander?|Yes        |
+     |Site of tissue expander                 |Site, Toe  |
+     |Quantity injected (cc)                  |1          |
+     |Quantity withdrawn (cc)                 |2          |
+     |Total volume in tissue expander (cc)    |3          |
+     |Condition of tissue expander            |no         |
+     |Nursing consultation notes              |done       |
+     |Blood sugar                             |Yes        |
+     |RBS before meal                         |6          |
+     |RBS after meal                          |7          |
+     |FBS                                     |10         |
+     |Insulin given                           |Yes        |
+     |How much insulin given                  |15         |
 
 * Verify "Ward Nursing Note" is added to the left pane
 * Select template "Surgical Ward Admission Nursing Assessment" from observation page and fill details 
@@ -593,7 +594,7 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |Nausea                           |Yes                  |
      |Vomiting                         |No                   |
      |Side of dressing                 |Right                |
-     |Site of dressing                 |Site, Leg            |
+     |Site of dressing                 |Site, Iliac          |
      |Description of wound             |Other                |
      |Description of wound, other      |fresh since one month|
      |Urine                            |Yes                  |
@@ -633,7 +634,7 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |When does the pain occur                |always          |
      |Does the patient have a dressing?       |Yes             |
      |Side of dressing                        |Right           |
-     |Site of dressing                        |Ear             |
+     |Site of dressing                        |Femur           |
      |Description of wound                    |Other           |
      |Description of wound, other             |wet wound       |
      |Dressing, comments                      |dressed         |
@@ -664,10 +665,11 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |Side of drain                           |Left            |
      |Site of drain                           |Arm             |
      |Drainage                                |1000            |
+     |Total quantity evacuated from the drain |10              |
      |Change Position                         |Done            |
      |Does the patient have a dressing?       |Yes             |
      |Side of dressing                        |Right           |
-     |Site of dressing                        |Finger          |
+     |Site of dressing                        |Iliac           |
      |Description of wound                    |Other           |
      |Description of wound, other             |wet wound       |
      |Dressing, comments                      |dressed         |
@@ -746,7 +748,7 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |Nausea                        |Yes                  |
      |Vomiting                      |No                   |
      |Side of dressing              |Right                |
-     |Site of dressing              |Leg                  |
+     |Site of dressing              |Iliac                |
      |Description of wound          |Other                |
      |Description of wound, other   |fresh since one month|
      |Urine                         |Yes                  |
@@ -863,7 +865,7 @@ R 3.2 forms - Surgeon Follow-up, Operative Report, OPD MD Follow-Up Note
      |Operation details             |operation successful                                                                                                                                                        |
      |Does the patient have a drain?|Yes                                                                                                                                                                         |
      |Side of drain                 |Left                                                                                                                                                                        |
-     |Site of drain                 |Leg                                                                                                                                                                   |
+     |Site of drain                 |Leg                                                                                                                                                                         |
      |Type of drain inserted        |Vacuum drain                                                                                                                                                                |
      |Specimen sent to lab          |Yes                                                                                                                                                                         |
      |Estimated blood loss          |6                                                                                                                                                                           |
