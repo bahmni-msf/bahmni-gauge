@@ -22,7 +22,7 @@ Upload Medical documents
 
      |type                  |startDate |endDate   |
      |----------------------|----------|----------|
-     |First Stage Validation|01-03-2017|02-03-2017|
+     |First Stage Validation|02-02-2017|02-02-2017|
      
 * Upload following images in visit "0" 
 

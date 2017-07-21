@@ -22,7 +22,7 @@ Upload ID documents
 
      |type                  |startDate |endDate   |
      |----------------------|----------|----------|
-     |First Stage Validation|01-03-2017|02-03-2017|
+     |First Stage Validation|03-03-2017|03-03-2017|
 
 * Upload following documents in visit "0" 
 
