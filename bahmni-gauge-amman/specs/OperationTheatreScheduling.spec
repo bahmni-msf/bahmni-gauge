@@ -249,28 +249,28 @@ Verify the paients are in "To Be Scheduled" queue of Operation Theatre Schedulin
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on "operation theatre" module
-* Search and select patient "ot schedule" from "To Be Scheduled" queue
+* Search patient "ot schedule" from "To Be Scheduled" queue
 * Verify patient details of "ot schedule" in queue 
 
      |Name             |Planned Procedure  |Surgeon Name  |Speciality|Outcome Of Anaesthesia|
      |-----------------|-------------------|--------------|----------|----------------------|
      |ot schedule Hasan|Debridement of bone|Dr. Ali Al-Ani|Orthopedic|Ready for surgery     |
 
-* Search and select patient "ot cancel" from "To Be Scheduled" queue
+* Search patient "ot cancel" from "To Be Scheduled" queue
 * Verify patient details of "ot cancel" in queue 
 
      |Name           |Planned Procedure  |Surgeon Name  |Speciality|Outcome Of Anaesthesia|
      |---------------|-------------------|--------------|----------|----------------------|
      |ot cancel Hasan|Debridement of bone|Dr. Ali Al-Ani|Orthopedic|Ready for surgery     |
 
-* Search and select patient "ot postpone" from "To Be Scheduled" queue
+* Search patient "ot postpone" from "To Be Scheduled" queue
 * Verify patient details of "ot postpone" in queue 
 
      |Name             |Planned Procedure  |Surgeon Name  |Speciality|Outcome Of Anaesthesia|
      |-----------------|-------------------|--------------|----------|----------------------|
      |ot postpone Hasan|Debridement of bone|Dr. Ali Al-Ani|Orthopedic|Ready for surgery     |
 
-* Search and select patient "ot complete" from "To Be Scheduled" queue
+* Search patient "ot complete" from "To Be Scheduled" queue
 * Verify patient details of "ot complete" in queue 
 
      |Name             |Planned Procedure  |Surgeon Name  |Speciality|Outcome Of Anaesthesia|
@@ -282,6 +282,15 @@ Create Surgical Block and add surgeries
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on "operation theatre" module
-Click on "OT Scheduling" link
+* Navigate to OT Scheduling tab
+* Create a new surgical block for "Ashraf Bustanji" in "OT 2" from date "08/08/2017" time "08:00 AM" to date "08/08/2017" time "11:00 AM"
+//* Add surgery with below details
+//
+//     |Patient ID or Name|Other Surgeon        |Surgical Assistant|Anaesthetist|Scrub Nurse|Circulating Nurse|Notes        |
+//     |------------------|---------------------|------------------|------------|-----------|-----------------|-------------|
+//     |ot schedule Hasan |Hanna Janho          |Dr. SA            |Dr. A       |S nurse    |C nurse          |surgery notes|
+//     |ot complete Hasan |Rasheed Al Sammarraie|Dr. SA            |Dr. A       |S nurse    |C nurse          |surgery notes|
+//
+
 
 

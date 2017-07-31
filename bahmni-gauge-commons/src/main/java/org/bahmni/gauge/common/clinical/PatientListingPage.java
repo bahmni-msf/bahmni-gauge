@@ -10,96 +10,92 @@ import java.util.List;
 
 public class PatientListingPage extends BahmniPage {
 
-	@FindBy(how= How.CSS, using = ".tabs .tab-item")
+    @FindBy(how = How.CSS, using = ".tabs .tab-item")
     public List<WebElement> tab;
 
-    @FindBy(how= How.CSS, using = "#patientIdentifier")
+    @FindBy(how = How.CSS, using = "#patientIdentifier")
     public WebElement searchbox_txt;
-    
-    @FindBy(how= How.CSS, using = ".active-patient")
+
+    @FindBy(how = How.CSS, using = ".active-patient")
     public List<WebElement> patient_list;
-    
-    @FindBy(how= How.CSS, using = ".patient-list-table")
+
+    @FindBy(how = How.CSS, using = ".patient-list-table")
     public WebElement patient_table;
 
-	@FindBy(how= How.CSS, using = "button[type='submit']")
-	public WebElement search_btn;
+    @FindBy(how = How.CSS, using = "button[type='submit']")
+    public WebElement search_btn;
 
-	@FindBy(how = How.XPATH, using = ".//span[contains(text(),\"General Ward\")]/following-sibling::*")
-	public WebElement availableBeds;
+    @FindBy(how = How.XPATH, using = ".//span[contains(text(),\"General Ward\")]/following-sibling::*")
+    public WebElement availableBeds;
 
-    public WebElement findTab(String Tab){
-    	for(int i=0;i<=tab.size();i++)
-    	{
-    		if(tab.get(i).getText().contains(Tab))
-    			return tab.get(i);
-    	}
-    	return tab.get(tab.size()-1);
+    public WebElement findTab(String Tab) {
+        for (int i = 0; i <= tab.size(); i++) {
+            if (tab.get(i).getText().contains(Tab))
+                return tab.get(i);
+        }
+        return tab.get(tab.size() - 1);
     }
-    
-    public void clickTab(String Tab){
-    	WebElement tab = findTab(Tab);
-		//System.out.println(tab.getText());
-    	tab.click();
-		while (tab.getText().contains("...")){
-			try {
-				Thread.sleep(1000);
-			}
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 
+    public void clickTab(String Tab) {
+        WebElement tab = findTab(Tab);
+        tab.click();
+        while (tab.getText().contains("...")) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
-    
-    public void enterPatientIDOrName(String Patient){
-    	searchbox_txt.sendKeys(Patient);
+
+    public void enterPatientIDOrName(String Patient) {
+        searchbox_txt.sendKeys(Patient);
     }
-    
-    private void selectPatient(String Patient){
-		WebElement lastElement = null;
-    	for (WebElement patient : patient_list){
-    		if (patient.findElement(By.cssSelector(".patient-id")).getText().contains(Patient) ||
-					patient.findElement(By.cssSelector(".patient-name")).getText().contains(Patient)){
-    			lastElement = patient;
-    			break;
-			}
-		}
-		if(lastElement!=null)
-			lastElement.click();
-	}
-  
+
+    private void selectPatient(String Patient) {
+        WebElement lastElement = null;
+        for (WebElement patient : patient_list) {
+            if (patient.findElement(By.cssSelector(".patient-id")).getText().contains(Patient) ||
+                    patient.findElement(By.cssSelector(".patient-name")).getText().contains(Patient)) {
+                lastElement = patient;
+                break;
+            }
+        }
+        if (lastElement != null)
+            lastElement.click();
+    }
+
     public void searchSelectPatientFromTab(String patientID, String tab) {
-		clickTab(tab);
-		if("Ward List".equals(tab)){
-			for(WebElement rightArrow:driver.findElements(By.cssSelector(".fa-caret-right"))){
-				if(rightArrow.isDisplayed()) {
-					rightArrow.click();
-					waitForSpinner();
-				}
-			}
-			findElement(By.xpath("//a[contains(text(),\""+patientID+"\")]")).click();
-			//a[contains(text(),"GAN2032")]
-		} else {
-			enterPatientIDOrName(patientID);
-			if("All".equals(tab)){
-				search_btn.click();
-			}
-			waitForSpinner();
-			selectPatient(patientID);
-			waitForSpinner();
-		}
+        clickTab(tab);
+        if ("Ward List".equals(tab)) {
+            for (WebElement rightArrow : driver.findElements(By.cssSelector(".fa-caret-right"))) {
+                if (rightArrow.isDisplayed()) {
+                    rightArrow.click();
+                    waitForSpinner();
+                }
+            }
+            findElement(By.xpath("//a[contains(text(),\"" + patientID + "\")]")).click();
+            //a[contains(text(),"GAN2032")]
+        } else {
+            enterPatientIDOrName(patientID);
+            if ("All".equals(tab)) {
+                search_btn.click();
+            }
+            waitForSpinner();
+            selectPatient(patientID);
+            waitForSpinner();
+        }
     }
 
-	public boolean isPatientListedOnTab(String patientID, String tab) {
-		clickTab(tab);
-		enterPatientIDOrName(patientID);
-		waitForSpinner();
-		return driver.findElements(By.cssSelector(".active-patient")).size() != 0;
-	}
+    public boolean isPatientListedOnTab(String patientID, String tab) {
+        clickTab(tab);
+        enterPatientIDOrName(patientID);
+        waitForSpinner();
+        return driver.findElements(By.cssSelector(".active-patient")).size() != 0;
+    }
 
     public int getAvailableBedCount() {
 
-		return Integer.parseInt(availableBeds.getText().substring(availableBeds.getText().indexOf("Available Beds: ") + 16, availableBeds.getText().indexOf(")")));
+        return Integer.parseInt(availableBeds.getText().substring(availableBeds.getText().indexOf("Available Beds: ") + 16, availableBeds.getText().indexOf(")")));
     }
 }

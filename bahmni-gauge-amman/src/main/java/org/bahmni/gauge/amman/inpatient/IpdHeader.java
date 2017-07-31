@@ -8,7 +8,6 @@ import org.openqa.selenium.support.How;
 
 public class IpdHeader extends InpatientHeader{
     @FindBy(how = How.CSS, using = ".bed-management-nav li:nth-child(1)")
-
     public WebElement admitTab;
 
     @FindBy(how = How.CSS, using = ".bed-management-nav li:nth-child(2)")
