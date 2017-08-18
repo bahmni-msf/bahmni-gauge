@@ -18,6 +18,9 @@ public class HomePage extends org.bahmni.gauge.common.home.HomePage {
     @FindBy(how = How.ID, using = "bahmni.patient.document.upload")
     public WebElement IDDocUpload;
 
+    @FindBy(how = How.ID, using = "bahmni.appointment.scheduling")
+    public WebElement appointmentScheduling;
+
     public void clickBedManagementApp() {
         bedManagement.click();
     }
@@ -28,5 +31,9 @@ public class HomePage extends org.bahmni.gauge.common.home.HomePage {
 
     public void clickIDDocUploadApp() {
         IDDocUpload.click();
+    }
+
+    public void clickAppointmentSchedulingApp() {
+        appointmentScheduling.click();
     }
 }

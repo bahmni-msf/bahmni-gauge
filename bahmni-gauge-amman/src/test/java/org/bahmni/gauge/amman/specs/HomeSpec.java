@@ -47,6 +47,10 @@ public class HomeSpec {
             case "ID doc upload":
                 homePage.clickIDDocUploadApp();
                 break;
+
+            case "Appointment Scheduling":
+                homePage.clickAppointmentSchedulingApp();
+                break;
         }
         waitForAppReady();
     }
