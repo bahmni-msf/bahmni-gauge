@@ -493,11 +493,6 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |FIELD                                   |VALUE      |
      |----------------------------------------|-----------|
      |Date recorded                           |05/05/2017 |
-     |Temperature (C)                         |32         |
-     |Pulse (bpm)                             |77         |
-     |Respiratory rate (breaths/minute)       |85         |
-     |Systolic blood pressure (mmHg)          |120        |
-     |Diastolic blood pressure (mmHg)         |80         |
      |Pain Severity                           |1          |
      |Side of pain                            |Right      |
      |Site of pain                            |Site, Hand |
@@ -548,13 +543,6 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |Date recorded                                         |05/05/2017                                                                                                                 |
      |Reason for admission                                  |Other                                                                                                                      |
      |Reason for admission, other                           |Physio                                                                                                                     |
-     |Temperature (C)                                       |32                                                                                                                         |
-     |Pulse (bpm)                                           |77                                                                                                                         |
-     |Respiratory rate (breaths/minute)                     |85                                                                                                                         |
-     |Systolic blood pressure (mmHg)                        |120                                                                                                                        |
-     |Diastolic blood pressure (mmHg)                       |80                                                                                                                         |
-     |Blood oxygen saturation (%)                           |56                                                                                                                         |
-     |Blood glucose (mg/dl)                                 |59                                                                                                                         |
      |Pain Severity                                         |1                                                                                                                          |
      |Side of pain                                          |Right                                                                                                                      |
      |Site of pain                                          |Site, Leg                                                                                                                  |
@@ -646,55 +634,50 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
 
 * Verify following details of "Ward Nursing Note" in Patient Dashboard 
 
-     |FIELD                                   |VALUE           |
-     |----------------------------------------|----------------|
-     |Date recorded                           |05 May 17       |
-     |Temperature                             |32C             |
-     |Pulse                                   |77bpm           |
-     |Respiratory rate                        |85breaths/minute|
-     |Systolic blood pressure                 |120mmHg         |
-     |Diastolic blood pressure                |80mmHg          |
-     |Pain Severity                           |1               |
-     |Side of pain                            |Right           |
-     |Site of pain                            |Hand            |
-     |Type of pain                            |severe          |
-     |When does the pain occur                |always          |
-     |Does the patient have a drain?          |Yes             |
-     |Side of drain                           |Left            |
-     |Site of drain                           |Arm             |
-     |Drainage                                |1000            |
-     |Total quantity evacuated from the drain |10              |
-     |Change Position                         |Done            |
-     |Does the patient have a dressing?       |Yes             |
-     |Side of dressing                        |Right           |
-     |Site of dressing                        |Iliac           |
-     |Description of wound                    |Other           |
-     |Description of wound, other             |wet wound       |
-     |Dressing, comments                      |dressed         |
-     |Does the patient have a peripheral line?|Yes             |
-     |Site of peripheral line                 |Wrist           |
-     |Date of insertion, peripheral line      |05 May 17       |
-     |Date of removal, peripheral line        |07 Jul 17       |
-     |Comments, peripheral line               |comments        |
-     |Does the patient have a PICC line?      |Yes             |
-     |Date of insertion, PICC line            |05 May 17       |
-     |Date of dressing                        |05 May 17       |
-     |Comments, dressing PICC line            |comments        |
-     |Date of removal, PICC line              |08 Aug 17       |
-     |Does the patient have a Foley catheter? |No              |
-     |Does the patient have a tissue expander?|Yes             |
-     |Site of tissue expander                 |Toe             |
-     |Quantity injected                       |1cc             |
-     |Quantity withdrawn                      |2cc             |
-     |Total volume in tissue expander         |3cc             |
-     |Condition of tissue expander            |no              |
-     |Nursing consultation notes              |done            |
-     |Blood sugar                             |Yes             |
-     |RBS before meal                         |6               |
-     |RBS after meal                          |7               |
-     |FBS                                     |10              |
-     |Insulin given                           |Yes             |
-     |How much insulin given                  |15              |
+     |FIELD                                   |VALUE    |
+     |----------------------------------------|---------|
+     |Date recorded                           |05 May 17|
+     |Pain Severity                           |1        |
+     |Side of pain                            |Right    |
+     |Site of pain                            |Hand     |
+     |Type of pain                            |severe   |
+     |When does the pain occur                |always   |
+     |Does the patient have a drain?          |Yes      |
+     |Side of drain                           |Left     |
+     |Site of drain                           |Arm      |
+     |Drainage                                |1000     |
+     |Total quantity evacuated from the drain |10       |
+     |Change Position                         |Done     |
+     |Does the patient have a dressing?       |Yes      |
+     |Side of dressing                        |Right    |
+     |Site of dressing                        |Iliac    |
+     |Description of wound                    |Other    |
+     |Description of wound, other             |wet wound|
+     |Dressing, comments                      |dressed  |
+     |Does the patient have a peripheral line?|Yes      |
+     |Site of peripheral line                 |Wrist    |
+     |Date of insertion, peripheral line      |05 May 17|
+     |Date of removal, peripheral line        |07 Jul 17|
+     |Comments, peripheral line               |comments |
+     |Does the patient have a PICC line?      |Yes      |
+     |Date of insertion, PICC line            |05 May 17|
+     |Date of dressing                        |05 May 17|
+     |Comments, dressing PICC line            |comments |
+     |Date of removal, PICC line              |08 Aug 17|
+     |Does the patient have a Foley catheter? |No       |
+     |Does the patient have a tissue expander?|Yes      |
+     |Site of tissue expander                 |Toe      |
+     |Quantity injected                       |1cc      |
+     |Quantity withdrawn                      |2cc      |
+     |Total volume in tissue expander         |3cc      |
+     |Condition of tissue expander            |no       |
+     |Nursing consultation notes              |done     |
+     |Blood sugar                             |Yes      |
+     |RBS before meal                         |6        |
+     |RBS after meal                          |7        |
+     |FBS                                     |10       |
+     |Insulin given                           |Yes      |
+     |How much insulin given                  |15       |
 
 * Verify following details of "Surgical Ward Assessment" in Patient Dashboard 
 
@@ -703,13 +686,6 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |Date recorded                                         |05 May 17                                                                                                                          |
      |Reason for admission                                  |Other                                                                                                                              |
      |Reason for admission, other                           |Physio                                                                                                                             |
-     |Temperature                                           |32C                                                                                                                                |
-     |Pulse                                                 |77bpm                                                                                                                              |
-     |Respiratory rate                                      |85breaths/minute                                                                                                                   |
-     |Systolic blood pressure                               |120mmHg                                                                                                                            |
-     |Diastolic blood pressure                              |80mmHg                                                                                                                             |
-     |Blood oxygen saturation                               |56%                                                                                                                                |
-     |Blood glucose                                         |59mg/dl                                                                                                                            |
      |Pain Severity                                         |1                                                                                                                                  |
      |Side of pain                                          |Right                                                                                                                              |
      |Site of pain                                          |Leg                                                                                                                                |
