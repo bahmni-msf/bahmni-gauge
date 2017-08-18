@@ -42,8 +42,8 @@ Verify the Patient Summary Dashboard display controls visibility
      |Operative Report                            |
      |OPD MD Follow-Up Note                       |
 
-OPD Nurse - Baseline Vital Signs, Social and Medical History forms
-------------------------------------------------------------------
+OPD Nurse - Baseline Vital Signs, OPD Nursing Initial Assessment forms
+----------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_USER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
@@ -57,7 +57,7 @@ OPD Nurse - Baseline Vital Signs, Social and Medical History forms
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Verify "Baseline Vital Signs" is added to the left pane
-* Verify "Social and Medical History" is added to the left pane
+Verify "OPD Nursing Initial Assessment" is added to the left pane
 * Select template "Baseline Vital Signs" from observation page and fill details 
 
      |FIELD                              |VALUE       |
@@ -71,33 +71,18 @@ OPD Nurse - Baseline Vital Signs, Social and Medical History forms
      |Blood oxygen saturation (%)        |92          |
      |Comments about baseline vital signs|Low pressure|
 
-* Select template "Social and Medical History" from observation page and fill details 
+* Select template "OPD Nursing Initial Assessment" from observation page and fill details 
 
-     |FIELD                         |VALUE                    |
-     |------------------------------|-------------------------|
-     |Date of consultation          |01/01/2017               |
-     |Marital status                |Single                   |
-     |Highest education level       |No formal education      |
-     |Pregnancy status              |No                       |
-     |Current smoker                |Yes                      |
-     |Number of cigarettes per day  |1                        |
-     |Duration of smoking (in years)|2                        |
-     |Drug and Alcohol use          |Never                    |
-     |Medical History               |Hypertension;Tuberculosis|
-     |Other medical problems        |HIV                      |
-     |History of Allergy            |Drugs;Food               |
-     |Comments about allergy        |Nothing                  |
-     |Currently taking medication   |Yes                      |
-     |Type of medication            |Some drug                |
-     |Dose and frequency            |daily                    |
-     |Date of last dose             |01/01/2017               |
-     |Pain severity                 |2                        |
-     |Side of pain                  |Right                    |
-     |Site of pain                  |Arm                      |
-     |Number of wounds              |2                        |
-     |Site                          |Ear;Nose                 |
-     |Description                   |None                     |
-     |Nursing notes                 |captured                 |
+     |FIELD               |VALUE     |
+     |--------------------|----------|
+     |Date of consultation|01/01/2017|
+     |Pain severity       |2         |
+     |Side of pain        |Right     |
+     |Site of pain        |Arm       |
+     |Number of wounds    |2         |
+     |Site                |Ear;Nose  |
+     |Description         |None      |
+     |Nursing notes       |captured  |
 
 * Save the consultation
 * Navigate to patient dashboard
@@ -118,31 +103,16 @@ OPD Nurse - Baseline Vital Signs, Social and Medical History forms
 
 * Verify following details of "Nursing Assessment" in Patient Dashboard 
 
-     |FIELD                         |VALUE                     |
-     |------------------------------|--------------------------|
-     |Date of consultation          |01 Jan 17                 |
-     |Marital status                |Single                    |
-     |Highest education level       |No formal education       |
-     |Pregnancy status              |No                        |
-     |Current smoker                |Yes                       |
-     |Number of cigarettes per day  |1                         |
-     |Duration of smoking (in years)|2                         |
-     |Drug and Alcohol use          |Never                     |
-     |Medical History               |Tuberculosis, Hypertension|
-     |Other medical problems        |HIV                       |
-     |History of Allergy            |Food, Drugs               |
-     |Comments about allergy        |Nothing                   |
-     |Currently taking medication   |Yes                       |
-     |Type of medication            |Some drug                 |
-     |Dose and frequency            |daily                     |
-     |Date of last dose             |01 Jan 17                 |
-     |Pain severity (0 - 10)        |2                         |
-     |Side of pain                  |Right                     |
-     |Site of pain                  |Arm                       |
-     |Number of wounds              |2                         |
-     |Site                          |Nose, Ear                 |
-     |Description                   |None                      |
-     |Nursing notes                 |captured                  |
+     |FIELD                 |VALUE    |
+     |----------------------|---------|
+     |Date of consultation  |01 Jan 17|
+     |Pain severity (0 - 10)|2        |
+     |Side of pain          |Right    |
+     |Site of pain          |Arm      |
+     |Number of wounds      |2        |
+     |Site                  |Nose, Ear|
+     |Description           |None     |
+     |Nursing notes         |captured |
 
 MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complications and Physician Progress Note-Ward forms
 ----------------------------------------------------------------------------------------------------------------------------
@@ -163,6 +133,14 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
      |Date of consultation                                        |01/01/2017                                                                                                    |
      |Reason for admission to program                             |swollen leg                                                                                                   |
      |History of present illness                                  |6 months                                                                                                      |
+     |Medical History                                             |Hypertension;Tuberculosis                                                                                     |
+     |Other medical problems                                      |HIV                                                                                                           |
+     |History of Allergy                                          |Drugs;Food                                                                                                    |
+     |Comments about allergy                                      |Nothing                                                                                                       |
+     |Currently taking medication                                 |Yes                                                                                                           |
+     |Type of medication                                          |Some drug                                                                                                     |
+     |Dose and frequency                                          |daily                                                                                                         |
+     |Date of last dose                                           |01/01/2017                                                                                                    |
      |Function of injured part                                    |Limitation of function                                                                                        |
      |Sensation of injured part                                   |Reduced (Regional)                                                                                            |
      |History of previous surgery                                 |Yes                                                                                                           |
@@ -274,6 +252,14 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
      |Date of consultation                                        |01 Jan 17                                                                                                              |
      |Reason for admission to program                             |swollen leg                                                                                                            |
      |History of present illness                                  |6 months                                                                                                               |
+     |Medical History                                             |Tuberculosis, Hypertension                                                                                             |
+     |Other medical problems                                      |HIV                                                                                                                    |
+     |History of Allergy                                          |Food, Drugs                                                                                                            |
+     |Comments about allergy                                      |Nothing                                                                                                                |
+     |Currently taking medication                                 |Yes                                                                                                                    |
+     |Type of medication                                          |Some drug                                                                                                              |
+     |Dose and frequency                                          |daily                                                                                                                  |
+     |Date of last dose                                           |01 Jan 17                                                                                                              |
      |Function of injured part                                    |Limitation of function                                                                                                 |
      |Sensation of injured part                                   |Reduced (Regional)                                                                                                     |
      |History of previous surgery                                 |Yes                                                                                                                    |

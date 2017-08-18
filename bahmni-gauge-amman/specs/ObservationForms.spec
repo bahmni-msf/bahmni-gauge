@@ -24,17 +24,22 @@ OPD Nurse and HE - Health Education form
 * Verify "Health Education" is added to the left pane
 * Select template "Health Education" from observation page and fill details 
 
-     |FIELD                                          |VALUE         |
-     |-----------------------------------------------|--------------|
-     |Date of consultation                           |01/01/2017    |
-     |External devices, present                      |Big tube;Other|
-     |Other type of external device                  |Some device   |
-     |Nutritional Assessment                         |Regular       |
-     |Personal hygiene (presence of head lice / bugs)|No            |
-     |SMFA functional index                          |1             |
-     |SMFA bothersome index                          |2             |
-     |Education learning needs                       |Yes           |
-     |Referral care plan                             |No care plan  |
+     |FIELD                                          |VALUE              |
+     |-----------------------------------------------|-------------------|
+     |Date of consultation                           |01/01/2017         |
+     |Marital status                                 |Single             |
+     |Highest education level                        |No formal education|
+     |Pregnancy status                               |No                 |
+     |Current smoker                                 |Yes                |
+     |Number of cigarettes per day                   |1                  |
+     |Duration of smoking (in years)                 |2                  |
+     |Drug and Alcohol use                           |Never              |
+     |External devices, present                      |Big tube;Other     |
+     |Other type of external device                  |Some device        |
+     |Nutritional Assessment                         |Regular            |
+     |Personal hygiene (presence of head lice / bugs)|No                 |
+     |Education learning needs                       |Yes                |
+     |Referral care plan                             |No care plan       |
 
 * Save the consultation
 
