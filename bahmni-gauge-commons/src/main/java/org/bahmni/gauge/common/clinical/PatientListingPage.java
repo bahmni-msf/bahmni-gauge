@@ -39,9 +39,14 @@ public class PatientListingPage extends BahmniPage {
     public void clickTab(String Tab) {
         WebElement tab = findTab(Tab);
         tab.click();
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         while (tab.getText().contains("...")) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

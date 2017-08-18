@@ -40,6 +40,7 @@ public class DispositionPage extends BahmniPage {
         WebElement option = find(dispositionOptions.getOptions(), dispositionType);
         option.click();
 
+        txtNotes.clear();
         txtNotes.sendKeys(notes);
 
         Disposition disposition=new Disposition();
