@@ -19,29 +19,33 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
     @Override
     public void selectTemplate(String templateName) {
         int formSelected = 0;
-        List <WebElement> templateList = driver.findElements(By.cssSelector("section.concept-set-panel-left  li .concept-set-name"));
-        if (templateList.size()>0) {
+        List<WebElement> templateList = driver.findElements(By.cssSelector("section.concept-set-panel-left  li .concept-set-name"));
+        if (templateList.size() > 0) {
             for (WebElement form : templateList) {
-                if (form.getText().contains(templateName)) {
-                    form.click();
-                    formSelected = 1;
-                    break;
+                if (form.getText().equals(templateName)) {
+                    if (!(templateName.equals("Vital Signs") && form.getText().equals("Baseline Vital Signs"))) {
+                        form.click();
+                        formSelected = 1;
+                        break;
+                    }
                 }
             }
         }
-        if (formSelected==0){
+        if (formSelected == 0) {
             clickTemplateButton();
             List<WebElement> allForms = templatePanel.findElements(By.tagName("button"));
 
             for (WebElement form : allForms) {
                 if (form.getText().contains(templateName)) {
-                    form.click();
-                    formSelected = 1;
-                    break;
+                    if (!(templateName.equals("Vital Signs") && form.getText().equals("Baseline Vital Signs"))) {
+                        form.click();
+                        formSelected = 1;
+                        break;
+                    }
                 }
             }
         }
-        if(formSelected==0) {
+        if (formSelected == 0) {
             Assert.fail("Form " + templateName + " not found");
         }
     }
@@ -63,8 +67,7 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                             fillAutocomplete(autoComplete, value);
                         else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
                             fillAutocomplete(autoComplete, value);
-                        }
-                        else {
+                        } else {
                             observationNode.findElement(By.tagName("input")).sendKeys(value, Keys.TAB);
                         }
                     } else if (hasTag(observationNode, "textarea")) {
@@ -109,11 +112,11 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         return val;
     }
 
-    public void fillAutocomplete(WebElement autoComplete, String value){
-            autoComplete.sendKeys(value);
-            autoComplete.sendKeys(Keys.DOWN);
-            waitForElementOnPage(By.xpath(".//a[text()=\"" + value + "\"]"));
-            findElement(By.xpath(".//a[text()=\"" + value + "\"]")).click();
+    public void fillAutocomplete(WebElement autoComplete, String value) {
+        autoComplete.sendKeys(value);
+        autoComplete.sendKeys(Keys.DOWN);
+        waitForElementOnPage(By.xpath(".//a[text()=\"" + value + "\"]"));
+        findElement(By.xpath(".//a[text()=\"" + value + "\"]")).click();
     }
 
     public void verifyFormSaved(Table table) {

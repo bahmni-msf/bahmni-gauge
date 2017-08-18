@@ -109,3 +109,26 @@ Psych - Psycho-Social Initial Assessment form
      |Comments from counsellor                                          |counsellor comments                                                                   |
 
 * Save the consultation
+
+R 3.3 form - Vital Signs
+------------------------
+* On the login page
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on programs app
+* Search and select patient "Sara" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Go to "Observations" tab
+* Select template "Vital Signs" from observation page and fill details 
+
+     |FIELD                            |VALUE|
+     |---------------------------------|-----|
+     |Temperature (C)                  |32   |
+     |Pulse (bpm)                      |77   |
+     |Respiratory rate (breaths/minute)|85   |
+     |Systolic blood pressure (mmHg)   |120  |
+     |Diastolic blood pressure (mmHg)  |80   |
+     |Blood oxygen saturation (%)      |56   |
+     |Blood glucose (mg/dl)            |59   |
+
+* Save the consultation
