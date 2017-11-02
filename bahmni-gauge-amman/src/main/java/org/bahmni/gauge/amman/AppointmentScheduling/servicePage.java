@@ -3,7 +3,6 @@ package org.bahmni.gauge.amman.AppointmentScheduling;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -15,7 +14,7 @@ import java.util.List;
 /**
  * Created by jaseenam on 07/08/17.
  */
-public class servicePage extends manageAppointmentsPage {
+public class servicePage extends appointmentSchedulingAdminPage {
     @FindBy(how = How.ID, using = "name")
     WebElement serviceName;
 

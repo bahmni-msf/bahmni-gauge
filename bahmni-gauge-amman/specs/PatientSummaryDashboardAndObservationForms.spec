@@ -5,17 +5,17 @@ Created by jaseena, swarup on 2/16/17
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
-Create Patient Via Api for Patient Summary Dashboard Display Verification
--------------------------------------------------------------------------
-* Create patient "Niya" using API with "Hospital" visit
-* Enroll patient to reconstructive surgery program using API
+//Create Patient Via Api for Patient Summary Dashboard Display Verification
+//-------------------------------------------------------------------------
+//* Create patient "Sara" using API with "Hospital" visit
+//* Enroll patient to reconstructive surgery program using API
 
 Verify the Patient Summary Dashboard display controls visibility
 ----------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Niya" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Click on "Patient Summary" dashboard
 * Verify the following display controls are visible 
@@ -47,7 +47,7 @@ OPD Nurse - Baseline Vital Signs, OPD Nursing Initial Assessment forms
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_USER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
-* Search and select patient "Niya" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 
 
      |programStatus|
@@ -119,7 +119,7 @@ MD - MD Initial Assessment, Physical Examination and Medical Diagnoses, Complica
 * On the login page
 * Login with user "zaid_se" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Niya" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -322,7 +322,7 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment and 
 * On the login page
 * Login with user "ashraf_n" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Niya" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -378,22 +378,29 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment and 
 
 * Select template "Anesthesia Initial Assessment" from observation page and fill details 
 
-     |FIELD                                                                         |VALUE                       |
-     |------------------------------------------------------------------------------|----------------------------|
-     |Date of consultation                                                          |05/05/2017                  |
-     |Previous Anaesthesia history                                                  |GAI;GAO                     |
-     |Adverse reaction to anaesthesia                                               |Yes                         |
-     |Comments about adverse reaction                                               |comments                    |
-     |Personal history of blood transfusion                                         |Yes                         |
-     |Did an incident occur during previous blood transfusion                       |Yes                         |
-     |Describe                                                                      |comments                    |
-     |Mallampati class                                                              |Class IV                    |
-     |ASA score *                                                                   |ASA II                      |
-     |Planned anaesthesia technique                                                 |RSA;GAI;GAO                 |
-     |Remarks-anaesthetist                                                          |remarks                     |
-     |Pre-anaesthesia orders                                                        |CRP;Electrolytes;KFT;CBC;LFT|
-     |Outcome of anaesthesia initial assessment                                     |Ready for surgery           |
-     |I discussed the risks and benefits of anaesthesia and answered all questions *|Yes                         |
+     |FIELD                                                                         |VALUE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+     |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+     |Date of consultation                                                          |05/05/2017                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+     |Past medical history                                                          |None;Congenital lung disease;Cough or cold (present time);Sleep apnea;Asthma;Emphysema;Congential heart disease;History of hypertension;History of Rheumatic fever;History of valve disease;History of MI;History of palpitations;History of heart problems (within last six months);Congenital renal disease;History of renal infection;History of renal stones;History of renal failure;Diabetes;Thyroid hormone diseases;History of corticosteroid drugs;Congenital disorders of the nervous system;Epilepsy or seizure;History of CVA - TIA;Spinal cord disease;History of upper GI bleeding;History of jaundice;History of cirrhosis;History of hepatitis;History of blood disorder;History of anemia;History of frequent bleeding;Abnormal blood clotting;History of cancer;Other|
+     |Past medical history, other                                                   |Other comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+     |Is the patient allergic to any drugs / medications ?                          |Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+     |Type of medication allergy                                                    |Dust allergy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+     |Previous Anaesthesia history                                                  |None;Local;General;Regional                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+     |Specify number of times receiving anaesthesia                                 |3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+     |Adverse reaction to anaesthesia                                               |None;Delayed recovery;Admission to ICU;Suffocation or cyanosis;Difficult intubation;Other                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+     |Comments about adverse reaction                                               |comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+     |Personal history of blood transfusion                                         |Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+     |Did an incident occur during previous blood transfusion                       |Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+     |Describe                                                                      |comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+     |Mallampati class                                                              |Class IV                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+     |Mouth opening                                                                 |5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+     |ASA score *                                                                   |ASA II                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+     |Planned anaesthesia technique                                                 |RSA;GAI;GAO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+     |Does the patient need fiberoptic ?                                            |No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+     |Remarks-anaesthetist                                                          |remarks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+     |Outcome of anaesthesia initial assessment                                     |Ready for surgery                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+     |Outcome of anaesthesia initial assessment, comments                           |anaes. comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+     |I discussed the risks and benefits of anaesthesia and answered all questions *|Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 * Save the consultation
 * Navigate to patient dashboard
@@ -417,17 +424,16 @@ Surgeon and Anaesthetist - Surgical Diagnoses and Surgeon Pre-Op Assessment and 
 
 * Verify following details of "Orders" in Patient Dashboard 
 
-     |FIELD                 |VALUE                                                 |
-     |----------------------|------------------------------------------------------|
-     |Pre-anaesthesia orders|LFT, CBC, KFT, Electrolytes, CRP                      |
-     |Investigations needed |Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
+     |FIELD                |VALUE                                                 |
+     |---------------------|------------------------------------------------------|
+     |Investigations needed|Swab for c/s, CT scan, X-ray, CRP, EMG & NCS, CBC, MRI|
 
 R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgical Ward Admission Nursing Assessment, Post-Op Ward Monitoring
 --------------------------------------------------------------------------------------------------------------------------------------------
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Niya" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -538,6 +544,7 @@ R 3.1 forms - OPD Nursing Note, Nursing Needs - Ward, Ward Nursing Note, Surgica
      |Patient mood, other                                   |Excited                                                                                                                    |
      |Does the patient have suicidal or depressive thoughts?|No                                                                                                                         |
      |Number of wounds                                      |4                                                                                                                          |
+     |Site of wound                                         |Site, Scalp                                                                                                                |
      |Description                                           |Wound needs dressing                                                                                                       |
      |Nutritional Assessment                                |Regular;Low salt;High protein;Diabetic diet;Other                                                                          |
      |Nutritional Assessment, other                         |Bitter                                                                                                                     |
@@ -723,7 +730,7 @@ R 3.2 forms - Surgeon Follow-up, Operative Report, OPD MD Follow-Up Note
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Niya" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -845,3 +852,25 @@ R 3.2 forms - Surgeon Follow-up, Operative Report, OPD MD Follow-Up Note
      |Plan                      |New plan                                                                                               |
 
 
+R 3.3 form - Vital Signs
+------------------------
+* On the login page
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on programs app
+* Search and select patient "Sara" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
+* Navigate to consultation
+* Go to "Observations" tab
+* Select template "Vital Signs" from observation page and fill details 
+
+     |FIELD                            |VALUE|
+     |---------------------------------|-----|
+     |Temperature (C)                  |32   |
+     |Pulse (bpm)                      |77   |
+     |Respiratory rate (breaths/minute)|85   |
+     |Systolic blood pressure (mmHg)   |120  |
+     |Diastolic blood pressure (mmHg)  |80   |
+     |Blood oxygen saturation (%)      |56   |
+     |Blood glucose (mg/dl)            |59   |
+
+* Save the consultation

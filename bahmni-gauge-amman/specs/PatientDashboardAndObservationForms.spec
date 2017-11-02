@@ -7,12 +7,12 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 
 Verify the Patient Dashboard display controls visibility
 --------------------------------------------------------
-* Create patient "Safa" using API with "First Stage Validation" visit
+* Create patient "Sara" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Safa" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Verify the following display controls are visible 
 
@@ -39,7 +39,7 @@ tags: regression
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Safa" from "Programs" queue
+* Search and select patient "Sara" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -108,7 +108,7 @@ Final Validation form
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
-* Search patient with name "Safa"
+* Search patient with name "Sara"
 * Select the patient from the search results
 * Start "First Stage Validation" visit and navigate to Programs page
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -144,7 +144,7 @@ Follow up Validation and Medical History Forms
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
-* Search patient with name "Safa"
+* Search patient with name "Sara"
 * Select the patient from the search results
 * Start "Follow-Up Validation" visit and navigate to Programs page
 * Navigate to "Reconstructive Surgery" program dashboard

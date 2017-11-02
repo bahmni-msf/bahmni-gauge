@@ -3,11 +3,8 @@ package org.bahmni.gauge.amman.specs;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
-import org.bahmni.gauge.amman.AppointmentScheduling.appointmentSchedulingAdminPage;
-import org.bahmni.gauge.amman.AppointmentScheduling.appointmentSchedulingHeader;
-import org.bahmni.gauge.amman.AppointmentScheduling.manageAppointmentsPage;
-import org.bahmni.gauge.amman.AppointmentScheduling.servicePage;
-import org.bahmni.gauge.amman.clinical.PatientQueuePage;
+import org.bahmni.gauge.amman.AppointmentScheduling.*;
+import org.bahmni.gauge.amman.home.HomePage;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
@@ -22,14 +19,15 @@ public class AppointmentSchedulingSpec {
 
     appointmentSchedulingAdminPage AppointmentSchedulingAdminPage;
     appointmentSchedulingHeader AppointmentSchedulingHeader;
-    manageAppointmentsPage ManageAppointmentsPage;
+    manageWeeklySummaryView ManageAppointmentsPage;
     servicePage ServicePage;
+    manageAppointmentsHeaders ManageAppointmentsHeaders;
 
 
     public AppointmentSchedulingSpec() {
         AppointmentSchedulingAdminPage = PageFactory.get(appointmentSchedulingAdminPage.class);
         AppointmentSchedulingHeader = PageFactory.get(appointmentSchedulingHeader.class);
-        ManageAppointmentsPage = PageFactory.get(manageAppointmentsPage.class);
+        ManageAppointmentsPage = PageFactory.get(manageWeeklySummaryView.class);
         ServicePage = PageFactory.get(servicePage.class);
     }
 
@@ -91,5 +89,39 @@ public class AppointmentSchedulingSpec {
     @Step("Delete service <Servicename>")
     public void deleteService(String serviceName) {
         AppointmentSchedulingAdminPage.deleteService(serviceName);
+    }
+
+
+    @Step("Add appointment with below details <table>")
+    public void implementation1(Table table) {
+        List<String> columnNames = table.getColumnNames();
+        ManageAppointmentsHeaders.addNewAppointment(table, columnNames);
+        waitForAppReady();
+    }
+
+    @Step("Click on link <button>")
+    public void clickButton(String button) {
+        waitForAppReady();
+        switch (button) {
+            case "Appointments List":
+                ManageAppointmentsHeaders.clickAppointmentsList();
+                break;
+            case "Add new appointment":
+                ManageAppointmentsHeaders.clickAddNewAppointment();
+                break;
+
+            case "Today":
+                ManageAppointmentsHeaders.clickToday();
+                break;
+
+            case "List view":
+                ManageAppointmentsHeaders.clickListView();
+                break;
+
+            case "Calendar":
+                ManageAppointmentsHeaders.clickCalendarView();
+                break;
+        }
+        waitForAppReady();
     }
 }
