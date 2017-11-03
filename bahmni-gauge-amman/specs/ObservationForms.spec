@@ -7,12 +7,12 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 
 OPD Nurse and HE - Health Education form
 ----------------------------------------
-* Create patient "Sara" using API with "Hospital" visit
+* Create patient "Santa" using API with "Hospital" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with user "alaa_s" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
-* Search and select patient "Sara" from "Programs" queue
+* Search and select patient "Santa" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 
 
      |programStatus|
@@ -48,7 +48,7 @@ Physio - Physiotherapy Initial Assessment form
 * On the login page
 * Login with user "hussein_am" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
-* Search and select patient "Sara" from "Programs" queue
+* Search and select patient "Santa" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Verify "Physiotherapy Initial Assessment" is added to the left pane
@@ -89,7 +89,7 @@ Psych - Psycho-Social Initial Assessment form
 * On the login page
 * Login with user "muntaha_m" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
-* Search and select patient "Sara" from "Programs" queue
+* Search and select patient "Santa" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Verify "Psycho-Social Initial Assessment" is added to the left pane

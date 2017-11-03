@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by jaseenam on 20/07/17.
  */
-public class OTSchedulingSpec {
+public class OTSchedulingSpec extends otSchedulingPage{
     private otSchedulingPage OTSchedulingPage;
     private otHomePage OTHomePage;
     private otSurgicalBlockPage OTSurgicalBlockPage;
@@ -38,13 +38,16 @@ public class OTSchedulingSpec {
 
     @Step("Create a new surgical block for <Surgeon> in <OT> from date <startDate> time <startTime> to date <endDate> time <endTime>")
     public void createNewSurgicalBlock(String surgeon, String OT, String startdate, String starttime, String enddate, String endtime) {
+        waitForAppReady();
         OTSchedulingPage.gotoCreateSurgicalBlock();
         waitForAppReady();
         OTSurgicalBlockPage.selectSurgeon(surgeon);
+        waitForAppReady();
         OTSurgicalBlockPage.selectLocation(OT);
         OTSurgicalBlockPage.selectDateTime(startdate, starttime, enddate, endtime);
-        OTSurgicalBlockPage.clickSave();
         waitForAppReady();
+        OTSurgicalBlockPage.clickSave();
+       waitForSpinner(driver);
     }
 
     @Step("Edit surgical block <surgicalBlock> in <OT> on <date> with following details <table>")
@@ -60,7 +63,9 @@ public class OTSchedulingSpec {
 
     @Step("Add surgery with below details <table>")
     public void addSurgeriesInBlock(Table table) {
+        waitForAppReady();
         OTSurgicalBlockPage.addSugery(table);
+        waitForAppReady();
         OTSurgicalBlockPage.clickSave();
         waitForAppReady();
     }

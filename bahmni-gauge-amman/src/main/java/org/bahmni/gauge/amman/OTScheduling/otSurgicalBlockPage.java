@@ -69,6 +69,7 @@ public class otSurgicalBlockPage extends otSchedulingPage {
     public void selectLocation(String ot) {
         for (WebElement otLocation : otLocations) {
             if (otLocation.getText().equalsIgnoreCase(ot)) {
+                waitForSpinner(driver);
                 otLocation.click();
                 break;
             }
@@ -116,7 +117,8 @@ public class otSurgicalBlockPage extends otSchedulingPage {
             scrubNurse.sendKeys(surgery.getCell("Scrub Nurse"));
             circulatingNurse.sendKeys(surgery.getCell("Circulating Nurse"));
             notes.sendKeys(surgery.getCell("Notes"));
-            WebElement addSurgery = driver.findElement(By.xpath(".//*[@id='ngdialog1']/div[2]/form/div/p[11]/input[1]"));
+            waitForSpinner(driver);
+            WebElement addSurgery = driver.findElement(By.cssSelector(".add"));
             addSurgery.click();
             waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-content")));
         }

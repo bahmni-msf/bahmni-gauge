@@ -48,6 +48,7 @@ public class PatientQueueSpec {
 
         for (String columnName : columnNames) {
             String actualData = patientQueuePage.getColumnData(columnName);
+            System.out.println(actualData);
             Assert.assertEquals(requiredRow.getCell(columnName), actualData);
         }
     }
@@ -60,6 +61,7 @@ public class PatientQueueSpec {
     @Step("Verify patient <Kasm> is present only in <Awaiting Validation - 1st Stage > queue")
     public void implementation1(String patientName, String queueName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
+        System.out.println(queueName);
         Assert.assertTrue(patientQueuePage.isPatientPresentOnlyInGivenTab(patientName, queueName));
     }
 

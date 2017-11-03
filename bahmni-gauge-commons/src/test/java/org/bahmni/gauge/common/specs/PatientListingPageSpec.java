@@ -9,7 +9,8 @@ import org.bahmni.gauge.common.clinical.PatientListingPage;
 import org.bahmni.gauge.common.registration.domain.Patient;
 import org.junit.Assert;
 
-public class PatientListingPageSpec {
+public class
+PatientListingPageSpec {
 //    PatientListingPage patientListing;
 //    PatientListingPageSpec(){
 //        //patientListing = PageFactory.get(PatientListingPage.class);

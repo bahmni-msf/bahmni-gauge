@@ -33,8 +33,8 @@ public class servicePage extends appointmentSchedulingAdminPage {
     @FindBy(how = How.ID, using = "max-load")
     WebElement serviceMaxLoad;
 
-    @FindBy(how = How.ID, using = "speciality")
-    WebElement serviceSpeciality;
+//    @FindBy(how = How.ID, using = "speciality")
+//    WebElement serviceSpeciality;
 
     @FindBy(how = How.ID, using = "location")
     WebElement serviceLocation;
@@ -86,7 +86,7 @@ public class servicePage extends appointmentSchedulingAdminPage {
                     break;
             }
         }
-        new Select(serviceSpeciality).selectByIndex(1);
+//        new Select(serviceSpeciality).selectByIndex(1);
 //      new Select(serviceLocation).selectByIndex(1);
         clickSaveServiceBtn();
     }
