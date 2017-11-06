@@ -60,9 +60,10 @@ Create appointment
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on "Appointment Scheduling" module
 * Navigate to Admin Tab
+* Delete service "Service Physio1"
 * Verify "Add New Service" button is "displayed"
 * Click on "Add New Service" button
-* Create new service with below details 
+* Create new service with below details
 
    |Service Name   |Description    |Duration|Start Time|End Time|Max Load|
    |---------------|---------------|--------|----------|--------|--------|
@@ -70,8 +71,15 @@ Create appointment
 * Navigate to Manage Appointments Tab
 * Click on link "Appointments List"
 * Click on link "Add new appointment"
-* Add appointment with below details 
+* Add appointment with below details
 
-   |Patient|Service        |Provider      |Date      |Start Time|
-   |-------|---------------|--------------|----------|----------|
-   |Mala   |Service Physio1|Billing System|10/10/2017|10:00 am  |
+   |Patient|Service        |Provider          |Date          |Start Time|Notes    |
+   |-------|---------------|------------------|--------------|----------|---------|
+   |Mala   |Service Physio1|Abdallah Abu Dayeh|NOW[dd MMM yy]|10:00 am  |Test note|
+
+* Click on "List view" link
+* Verify appointment with below details 
+
+   |Patient Name|Service        |Provider          |Start Time|End Time|Notes    |Status   |
+   |------------|---------------|------------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Physio1|Abdallah Abu Dayeh|10:00 am  |10:20 am|Test note|Scheduled|

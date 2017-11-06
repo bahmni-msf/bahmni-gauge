@@ -158,6 +158,7 @@ public class InpatientSpec extends BaseSpec{
         if(disposition.findElementByText("a",linkText).isDisplayed()) {
             disposition.findElementByText("a", linkText).click();
             disposition.switchToLatestTab();
+            waitForAppReady();
         }
     }
 

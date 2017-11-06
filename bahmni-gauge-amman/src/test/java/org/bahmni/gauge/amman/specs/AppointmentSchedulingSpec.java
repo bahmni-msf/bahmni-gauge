@@ -4,13 +4,14 @@ import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.amman.AppointmentScheduling.*;
-import org.bahmni.gauge.amman.home.HomePage;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
-import org.junit.Assert;
 
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by jaseenam on 01/08/17.
@@ -22,6 +23,7 @@ public class AppointmentSchedulingSpec {
     manageWeeklySummaryView ManageAppointmentsPage;
     servicePage ServicePage;
     manageAppointmentsHeaders ManageAppointmentsHeaders;
+    manageAppointmentsListView ManageAppointmentsListView;
 
 
     public AppointmentSchedulingSpec() {
@@ -29,6 +31,8 @@ public class AppointmentSchedulingSpec {
         AppointmentSchedulingHeader = PageFactory.get(appointmentSchedulingHeader.class);
         ManageAppointmentsPage = PageFactory.get(manageWeeklySummaryView.class);
         ServicePage = PageFactory.get(servicePage.class);
+        ManageAppointmentsHeaders = PageFactory.get(manageAppointmentsHeaders.class);
+        ManageAppointmentsListView = PageFactory.get(manageAppointmentsListView.class);
     }
 
     public void waitForAppReady() {
@@ -69,10 +73,8 @@ public class AppointmentSchedulingSpec {
         }
 
         for (String coulmnName : columnNames) {
-            //System.out.println(requiredRow.getCell(coulmnName));
             String actualData = AppointmentSchedulingAdminPage.getColumnData(coulmnName, servicename);
-            //System.out.println(actualData);
-            Assert.assertEquals(requiredRow.getCell(coulmnName), actualData);
+            assertEquals(requiredRow.getCell(coulmnName), actualData);
         }
     }
 
@@ -123,5 +125,11 @@ public class AppointmentSchedulingSpec {
                 break;
         }
         waitForAppReady();
+    }
+
+    @Step("Verify appointment with below details <table>")
+    public void verifyAppointmentDetails(Table appointmentInfo) {
+        waitForAppReady();
+        assertTrue(ManageAppointmentsListView.isAppointmentMatched(appointmentInfo));
     }
 }

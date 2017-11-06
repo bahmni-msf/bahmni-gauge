@@ -1,7 +1,5 @@
 package org.bahmni.gauge.amman.AppointmentScheduling;
 
-import com.thoughtworks.gauge.Table;
-import com.thoughtworks.gauge.TableRow;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -76,6 +74,9 @@ public class appointmentSchedulingAdminPage extends appointmentSchedulingHeader 
 
     public void deleteService(String serviceName) {
         WebElement row = selectGivenServiceRow(serviceName);
+        if (row == null){
+            return;
+        }
         row.findElement(By.linkText("Delete")).click();
         waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
         serviceDeleteBtn.click();

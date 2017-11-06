@@ -7,12 +7,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
-
-import static org.bahmni.gauge.common.BahmniPage.waitForElement;
 
 /**
  * Created by jaseenam on 08/09/17.
@@ -67,7 +67,7 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     @FindBy(how = How.CSS, using = ".create-new-app-container")
     WebElement addAppointmentSlider;
 
-    @FindBy(how = How.CSS, using = ".service-save-btn .create-appointment-action-btn")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"create-appointment-form\"]/button")
     WebElement saveAppointmentBtn;
 
 
@@ -105,6 +105,9 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
                     break;
 
                 case "Date":
+                    if (cellVal.contains("NOW")) {
+                        cellVal = todayDateAsString();
+                    }
                     appointmentDate.sendKeys(cellVal);
                     break;
 
@@ -127,14 +130,22 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
             }
         }
         saveAppointmentBtn.click();
-        waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.className("create-new-app-container")));
+//        waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.className("create-new-app-container")));
+        waitForSpinner(driver);
+    }
+
+    private String todayDateAsString() {
+        DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+        Date today = new Date();
+        return dateFormat.format(today);
     }
 
 
     public void fillAutocomplete(WebElement autoComplete, String value) {
         autoComplete.sendKeys(value);
         List<WebElement> patientSearchResults = driver.findElements(By.className("ui-corner-all"));
-        waitForElement(driver, ExpectedConditions.visibilityOfAllElements(patientSearchResults));
+//        waitForElement(driver, ExpectedConditions.visibilityOfAllElements(patientSearchResults));
+        waitForSpinner(driver);
         autoComplete.sendKeys(Keys.DOWN, Keys.RETURN);
     }
 
