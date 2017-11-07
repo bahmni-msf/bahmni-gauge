@@ -21,18 +21,22 @@ public class manageAppointmentsListView extends manageAppointmentsHeaders {
     @FindBy(how = How.CSS, using = ".app-list-view table thead tr th")
     public List<WebElement> appointmentHeaders;
 
-    public boolean isAppointmentMatched(Table appointmentInfo) {
-        System.out.println(allAppointmentDetails.size());
-        if (allAppointmentDetails.isEmpty()) {
-            Assert.fail("No appointments found");
-            return false;
+    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/div/section/div[2]/div/div[2]/div/fieldset/button[6]")
+    public WebElement cancelStatus;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"yes\"]")
+    public WebElement yesPopup;
+
+    public WebElement isAppointmentMatched(Table appointmentInfo) {
+        if (!hasAppointments()) {
+            return null;
         }
         for (WebElement appointment: allAppointmentDetails){
             if (compareAppointments(appointmentInfo, appointment)){
-                return true;
+                return appointment;
             }
         }
-        return false;
+        return null;
     }
 
     private boolean compareAppointments(Table appointmentInfo, WebElement appointment) {
@@ -60,4 +64,14 @@ public class manageAppointmentsListView extends manageAppointmentsHeaders {
         return -1;
     }
 
+    public void cancelAppointment(WebElement appointment) {
+        appointment.click();
+        cancelStatus.click();
+        waitForSpinner(driver);
+        yesPopup.click();
+    }
+
+    public boolean hasAppointments() {
+        return !allAppointmentDetails.isEmpty();
+    }
 }

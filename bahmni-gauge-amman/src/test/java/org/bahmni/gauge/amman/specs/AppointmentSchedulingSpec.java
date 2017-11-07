@@ -7,11 +7,13 @@ import org.bahmni.gauge.amman.AppointmentScheduling.*;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
+import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by jaseenam on 01/08/17.
@@ -130,6 +132,16 @@ public class AppointmentSchedulingSpec {
     @Step("Verify appointment with below details <table>")
     public void verifyAppointmentDetails(Table appointmentInfo) {
         waitForAppReady();
-        assertTrue(ManageAppointmentsListView.isAppointmentMatched(appointmentInfo));
+        assertTrue(ManageAppointmentsListView.hasAppointments());
+        assertNotNull(ManageAppointmentsListView.isAppointmentMatched(appointmentInfo));
+    }
+
+    @Step("Mark cancel if appointment with below details exists <table>")
+    public void cancelAppointmentDetails(Table appointmentInfo) {
+        waitForAppReady();
+        WebElement matchedAppointment = ManageAppointmentsListView.isAppointmentMatched(appointmentInfo);
+        if(matchedAppointment != null) {
+            ManageAppointmentsListView.cancelAppointment(matchedAppointment);
+        }
     }
 }
