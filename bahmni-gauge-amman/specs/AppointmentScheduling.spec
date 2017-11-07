@@ -91,3 +91,46 @@ Create appointment
    |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
    |------------|---------------|-------------|----------|--------|---------|---------|
    |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
+
+Conflict appointment
+--------------------
+* Create patient "Mala Sinha" using API with "Hospital" visit
+* Enroll patient to reconstructive surgery program using API
+* On the login page
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on "Appointment Scheduling" module
+* Navigate to Admin Tab
+* Delete service "Service Physio1"
+* Verify "Add New Service" button is "displayed"
+* Click on "Add New Service" button
+* Create new service with below details
+
+   |Service Name   |Description    |Duration|Start Time|End Time|Max Load|
+   |---------------|---------------|--------|----------|--------|--------|
+   |Service Physio1|description new|20      |08:30 AM  |02:00 PM|10      |
+* Navigate to Manage Appointments Tab
+* Click on link "Appointments List"
+* Click on "List view" link
+* Mark cancel if appointment with below details exists
+
+   |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
+   |------------|---------------|-------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
+
+* Click on "Calendar" link
+* Click on link "Add new appointment"
+* Add appointment with below details
+
+   |Patient|Service        |Provider     |Date          |Start Time|Notes    |
+   |-------|---------------|-------------|--------------|----------|---------|
+   |Mala   |Service Physio1|Abeer Mustafa|NOW[dd MMM yy]|10:00 am  |Test note|
+
+* Click on link "Add new appointment"
+* Add appointment with below details
+
+   |Patient|Service        |Provider     |Date          |Start Time|Notes    |
+   |-------|---------------|-------------|--------------|----------|---------|
+   |Mala   |Service Physio1|Abeer Mustafa|NOW[dd MMM yy]|10:01 am  |Test note|
+
+* Verify popup message as same as "This patient already has an appointment booked at this time. Would you like to proceed or edit the timings?"
+* Click on "Back to edit" on popup

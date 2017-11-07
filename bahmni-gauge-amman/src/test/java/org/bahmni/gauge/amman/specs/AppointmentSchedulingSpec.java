@@ -26,6 +26,7 @@ public class AppointmentSchedulingSpec {
     servicePage ServicePage;
     manageAppointmentsHeaders ManageAppointmentsHeaders;
     manageAppointmentsListView ManageAppointmentsListView;
+    manageAppointmentsCalendarView ManageAppointmentsCalendarView;
 
 
     public AppointmentSchedulingSpec() {
@@ -35,6 +36,7 @@ public class AppointmentSchedulingSpec {
         ServicePage = PageFactory.get(servicePage.class);
         ManageAppointmentsHeaders = PageFactory.get(manageAppointmentsHeaders.class);
         ManageAppointmentsListView = PageFactory.get(manageAppointmentsListView.class);
+        ManageAppointmentsCalendarView = PageFactory.get(manageAppointmentsCalendarView.class);
     }
 
     public void waitForAppReady() {
@@ -140,8 +142,18 @@ public class AppointmentSchedulingSpec {
     public void cancelAppointmentDetails(Table appointmentInfo) {
         waitForAppReady();
         WebElement matchedAppointment = ManageAppointmentsListView.isAppointmentMatched(appointmentInfo);
-        if(matchedAppointment != null) {
+        if (matchedAppointment != null) {
             ManageAppointmentsListView.cancelAppointment(matchedAppointment);
         }
+    }
+
+    @Step("Click on <button> on popup")
+    public void clickGivenButton(String buttonName) {
+        ManageAppointmentsCalendarView.click(buttonName);
+    }
+
+    @Step("Verify popup message as same as <message>")
+    public void verifyPopupMessage(String message) {
+        assertEquals(message, ManageAppointmentsCalendarView.conflictPopupMessage());
     }
 }
