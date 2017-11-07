@@ -70,6 +70,9 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     @FindBy(how = How.XPATH, using = "//*[@id=\"create-appointment-form\"]/button")
     WebElement saveAppointmentBtn;
 
+    @FindBy(how = How.CSS, using = "a.create-appointment-action-btn.ng-binding")
+    WebElement cancelAppointmentBtn;
+
 
     public void clickAddNewAppointment() {
         //waitForElementOnPage(addAppointmentBtn);
@@ -163,5 +166,10 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
 
     public void clickAppointmentsList() {
         appointmentsList.click();
+    }
+
+    public void cancel() {
+        waitForSpinner();
+        cancelAppointmentBtn.click();
     }
 }

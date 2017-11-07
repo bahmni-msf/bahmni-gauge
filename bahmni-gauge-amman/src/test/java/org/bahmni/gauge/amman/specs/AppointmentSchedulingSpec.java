@@ -156,4 +156,9 @@ public class AppointmentSchedulingSpec {
     public void verifyPopupMessage(String message) {
         assertEquals(message, ManageAppointmentsCalendarView.conflictPopupMessage());
     }
+
+    @Step("Click cancel on create appointment")
+    public void dontSaveAppointment() {
+        ManageAppointmentsHeaders.cancel();
+    }
 }

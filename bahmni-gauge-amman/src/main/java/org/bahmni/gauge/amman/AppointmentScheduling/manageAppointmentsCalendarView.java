@@ -16,14 +16,22 @@ public class manageAppointmentsCalendarView extends manageAppointmentsHeaders {
     @FindBy(how = How.CSS, using = "p.ng-binding")
     public WebElement conflictPopupMessage;
 
+    @FindBy(how = How.CSS, using = "button#modal-revise-button2.secondary-button.ng-binding")
+    public WebElement dontSavePopup;
+
     public void click(String buttonName) {
+        waitForSpinner();
         switch (buttonName) {
             case "Back to edit":
                 backToEditConflictPopup.click();
                 break;
+            case "Don't save":
+                dontSavePopup.click();
+                break;
             default:
                 Assert.fail("There is no such " + buttonName + "button");
         }
+        waitForSpinner();
     }
 
     public String conflictPopupMessage() {

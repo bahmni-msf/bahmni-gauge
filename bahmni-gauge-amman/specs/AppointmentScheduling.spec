@@ -91,7 +91,16 @@ Create appointment
    |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
    |------------|---------------|-------------|----------|--------|---------|---------|
    |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
+making environment clean again
 
+* Mark cancel if appointment with below details exists
+
+   |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
+   |------------|---------------|-------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
+* Click on link "Calendar"
+* Navigate to Admin Tab
+* Delete service "Service Physio1"
 
 Conflict appointment
 --------------------
@@ -135,3 +144,17 @@ Conflict appointment
 
 * Verify popup message as same as "This patient already has an appointment booked at this time. Would you like to proceed or edit the timings?"
 * Click on "Back to edit" on popup
+
+making environment clean again
+
+* Click cancel on create appointment
+* Click on "Don't save" on popup
+* Click on link "List view"
+* Mark cancel if appointment with below details exists
+
+   |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
+   |------------|---------------|-------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
+* Click on link "Calendar"
+* Navigate to Admin Tab
+* Delete service "Service Physio1"
