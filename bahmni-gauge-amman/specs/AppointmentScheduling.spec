@@ -70,14 +70,14 @@ Create appointment
    |Service Physio1|description new|20      |08:30 AM  |02:00 PM|10      |
 * Navigate to Manage Appointments Tab
 * Click on link "Appointments List"
-* Click on "List view" link
+* Click on link "List view"
 * Mark cancel if appointment with below details exists 
 
    |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
    |------------|---------------|-------------|----------|--------|---------|---------|
    |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
 
-* Click on "Calendar" link
+* Click on link "Calendar"
 * Click on link "Add new appointment"
 * Add appointment with below details 
 
@@ -85,12 +85,13 @@ Create appointment
    |-------|---------------|-------------|--------------|----------|---------|
    |Mala   |Service Physio1|Abeer Mustafa|NOW[dd MMM yy]|10:00 am  |Test note|
 
-* Click on "List view" link
+* Click on link "List view"
 * Verify appointment with below details 
 
    |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
    |------------|---------------|-------------|----------|--------|---------|---------|
    |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
+
 
 Conflict appointment
 --------------------
@@ -110,14 +111,14 @@ Conflict appointment
    |Service Physio1|description new|20      |08:30 AM  |02:00 PM|10      |
 * Navigate to Manage Appointments Tab
 * Click on link "Appointments List"
-* Click on "List view" link
+* Click on link "List view"
 * Mark cancel if appointment with below details exists
 
    |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
    |------------|---------------|-------------|----------|--------|---------|---------|
    |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
 
-* Click on "Calendar" link
+* Click on link "Calendar"
 * Click on link "Add new appointment"
 * Add appointment with below details
 
