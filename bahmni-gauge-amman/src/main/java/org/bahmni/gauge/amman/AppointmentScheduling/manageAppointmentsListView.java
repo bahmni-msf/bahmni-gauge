@@ -31,8 +31,8 @@ public class manageAppointmentsListView extends manageAppointmentsHeaders {
         if (!hasAppointments()) {
             return null;
         }
-        for (WebElement appointment: allAppointmentDetails){
-            if (compareAppointments(appointmentInfo, appointment)){
+        for (WebElement appointment : allAppointmentDetails) {
+            if (compareAppointments(appointmentInfo, appointment)) {
                 return appointment;
             }
         }
@@ -40,9 +40,9 @@ public class manageAppointmentsListView extends manageAppointmentsHeaders {
     }
 
     private boolean compareAppointments(Table appointmentInfo, WebElement appointment) {
-        for (String columName: appointmentInfo.getColumnNames()) {
+        for (String columName : appointmentInfo.getColumnNames()) {
             int columnIndex = getColumnIndex(columName, appointmentHeaders);
-            if (columnIndex < 0){
+            if (columnIndex < 0) {
                 Assert.fail("Column names were not matching!");
                 return false;
             }

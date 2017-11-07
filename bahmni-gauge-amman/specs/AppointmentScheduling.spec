@@ -73,22 +73,21 @@ Create appointment
 * Click on "List view" link
 * Mark cancel if appointment with below details exists 
 
-   |Patient Name|Service        |Provider   |Start Time|End Time|Notes    |Status   |
-   |------------|---------------|-----------|----------|--------|---------|---------|
-   |Mala Sinha  |Service Physio1|Devi Shetty|10:00 am  |10:20 am|Test note|Scheduled|
+   |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
+   |------------|---------------|-------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
 
 * Click on "Calendar" link
 * Click on link "Add new appointment"
 * Add appointment with below details 
 
-   |Patient|Service        |Provider   |Date          |Start Time|Notes    |
-   |-------|---------------|-----------|--------------|----------|---------|
-   |Mala   |Service Physio1|Devi Shetty|NOW[dd MMM yy]|10:00 am  |Test note|
+   |Patient|Service        |Provider     |Date          |Start Time|Notes    |
+   |-------|---------------|-------------|--------------|----------|---------|
+   |Mala   |Service Physio1|Abeer Mustafa|NOW[dd MMM yy]|10:00 am  |Test note|
 
 * Click on "List view" link
 * Verify appointment with below details 
 
-   |Patient Name|Service        |Provider   |Start Time|End Time|Notes    |Status   |
-   |------------|---------------|-----------|----------|--------|---------|---------|
-   |Mala Sinha  |Service Physio1|Devi Shetty|10:00 am  |10:20 am|Test note|Scheduled|
-
+   |Patient Name|Service        |Provider     |Start Time|End Time|Notes    |Status   |
+   |------------|---------------|-------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Physio1|Abeer Mustafa|10:00 am  |10:20 am|Test note|Scheduled|
