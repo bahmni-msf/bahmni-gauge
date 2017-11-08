@@ -22,6 +22,7 @@ public class PatientQueueSpec {
     public void selectPatientFromProgramTab(String patientName, String queueName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         patientQueuePage.clickTab(queueName);
+        waitForAppReady();
         patientQueuePage.enterPatientIDOrName(patientName);
         patientQueuePage.selectPatientFromQueue(patientName);
     }
@@ -30,6 +31,7 @@ public class PatientQueueSpec {
     public void searchPatientFromTab(String patientName, String queueName) throws InterruptedException {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         patientQueuePage.clickTab(queueName);
+        waitForAppReady();
         patientQueuePage.enterPatientIDOrName(patientName);
     }
 

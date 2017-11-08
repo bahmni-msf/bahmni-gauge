@@ -22,7 +22,7 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         List<WebElement> templateList = driver.findElements(By.cssSelector("section.concept-set-panel-left  li .concept-set-name"));
         if (templateList.size() > 0) {
             for (WebElement form : templateList) {
-                if (form.getText().equals(templateName)) {
+                if (form.getText().startsWith(templateName)) {
                     if (!(templateName.equals("Vital Signs") && form.getText().equals("Baseline Vital Signs"))) {
                         form.click();
                         formSelected = 1;

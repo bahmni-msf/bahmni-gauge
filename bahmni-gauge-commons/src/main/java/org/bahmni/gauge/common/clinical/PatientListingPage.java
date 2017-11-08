@@ -52,6 +52,7 @@ public class PatientListingPage extends BahmniPage {
                 e.printStackTrace();
             }
         }
+        waitForSpinner(driver);
     }
 
     public void enterPatientIDOrName(String Patient) {
