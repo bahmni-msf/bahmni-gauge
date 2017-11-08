@@ -36,6 +36,12 @@ public class OTSchedulingSpec extends otSchedulingPage{
         waitForAppReady();
     }
 
+    @Step("Navigate to Surgical Queues tab")
+    public void goToSurgicalQueues() {
+        OTHomePage.goToSurgicalQueues();
+        waitForAppReady();
+    }
+
     @Step("Create a new surgical block for <Surgeon> in <OT> from date <startDate> time <startTime> to date <endDate> time <endTime>")
     public void createNewSurgicalBlock(String surgeon, String OT, String startdate, String starttime, String enddate, String endtime) {
         waitForAppReady();
@@ -47,11 +53,11 @@ public class OTSchedulingSpec extends otSchedulingPage{
         OTSurgicalBlockPage.selectDateTime(startdate, starttime, enddate, endtime);
         waitForAppReady();
         OTSurgicalBlockPage.clickSave();
-       waitForSpinner(driver);
+//       waitForSpinner(driver);
     }
 
     @Step("Edit surgical block <surgicalBlock> in <OT> on <date> with following details <table>")
-    public void editSurgicalBlock(String surgicalBlock, String OT, Date date, Table table) {
+    public void editSurgicalBlock(String surgicalBlock, String OT, String date, Table table) {
         OTSchedulingPage.goToSurgeryBlockDate(date);
         OTSchedulingPage.clickEditService(surgicalBlock, OT);
         waitForAppReady();
@@ -65,6 +71,15 @@ public class OTSchedulingSpec extends otSchedulingPage{
     public void addSurgeriesInBlock(Table table) {
         waitForAppReady();
         OTSurgicalBlockPage.addSugery(table);
+        waitForAppReady();
+        OTSurgicalBlockPage.clickSave();
+        waitForAppReady();
+    }
+
+    @Step(" Verify populated surgery details <table>")
+    public void verifySurgeryDetails(Table table) {
+        waitForAppReady();
+        OTSurgicalBlockPage.editSurgery(table);
         waitForAppReady();
         OTSurgicalBlockPage.clickSave();
         waitForAppReady();

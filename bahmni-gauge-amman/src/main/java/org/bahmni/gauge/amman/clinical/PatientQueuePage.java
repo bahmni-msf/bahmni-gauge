@@ -95,4 +95,10 @@ public class PatientQueuePage extends PatientListingPage {
         }
         return presentOneInGivenTab;
     }
+
+    public boolean isPatientNotPresentInGivenTab(String patientName, String queueName){
+        clickTab(queueName);
+        enterPatientIDOrName(patientName);
+        return rowsList.size() == 0;
+    }
 }

@@ -30,8 +30,9 @@ public class PatientListingPage extends BahmniPage {
 
     public WebElement findTab(String Tab) {
         for (int i = 0; i <= tab.size(); i++) {
-            if (tab.get(i).getText().contains(Tab))
+            if (tab.get(i).getText().startsWith(Tab)) {
                 return tab.get(i);
+            }
         }
         return tab.get(tab.size() - 1);
     }

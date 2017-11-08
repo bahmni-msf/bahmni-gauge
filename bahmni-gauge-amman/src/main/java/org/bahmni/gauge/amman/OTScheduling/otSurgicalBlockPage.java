@@ -9,6 +9,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebElement;
+import org.junit.Assert;
+
 import java.util.List;
 
 /**
@@ -57,6 +59,24 @@ public class otSurgicalBlockPage extends otSchedulingPage {
 
     @FindBy(how = How.ID, using = "notesID")
     WebElement notes;
+
+    @FindBy(how = How.ID, using = "edit-appointment")
+    WebElement editAppointment;
+
+    @FindBy(how = How.ID, using = "procedureID")
+    WebElement procedure;
+
+    @FindBy(how = How.ID, using = "estTimeHoursID")
+    WebElement estHours;
+
+    @FindBy(how = How.ID, using = "estTimeMinutesID")
+    WebElement estMinutes;
+
+    @FindBy(how = How.CSS, using = ".add")
+    WebElement addSurgery;
+
+    @FindBy(how = How.CSS, using = "input.cancel")
+    WebElement cancel;
 
     //@FindBy(how = How.XPATH, using = ".//*[@id='ngdialog1']/div[2]/form/div/p[11]/input[1]")
     //WebElement addSurgery;
@@ -118,7 +138,6 @@ public class otSurgicalBlockPage extends otSchedulingPage {
             circulatingNurse.sendKeys(surgery.getCell("Circulating Nurse"));
             notes.sendKeys(surgery.getCell("Notes"));
             waitForSpinner(driver);
-            WebElement addSurgery = driver.findElement(By.cssSelector(".add"));
             addSurgery.click();
             waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-content")));
         }
@@ -142,4 +161,21 @@ public class otSurgicalBlockPage extends otSchedulingPage {
 
     public static void editSurgicalBlock(Table table, List<String> columnNames) {
     }
+
+    public void editSurgery(Table table) {
+        editAppointment.click();
+        TableRow requiredRow = null;
+        for (TableRow row : table.getTableRows()) {
+            if (row.getCell("Name").contains(patientIDorName.getText())) {
+                requiredRow = row;
+                break;
+            }
+        }
+        Assert.assertEquals(requiredRow.getCell("Procedure(s)"), procedure.getAttribute("value"));
+        Assert.assertEquals(requiredRow.getCell("Est Time Hours"), estHours.getAttribute("value"));
+        Assert.assertEquals(requiredRow.getCell("Est Time Minutes"), estMinutes.getAttribute("value"));
+        waitForSpinner(driver);
+        cancel.click();
+    }
+
 }
