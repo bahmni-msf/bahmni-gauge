@@ -7,6 +7,7 @@ import org.bahmni.gauge.amman.AppointmentScheduling.*;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -99,7 +100,7 @@ public class AppointmentSchedulingSpec {
 
 
     @Step("Add appointment with below details <table>")
-    public void implementation1(Table table) {
+    public void addNewAppointment(Table table) {
         List<String> columnNames = table.getColumnNames();
         ManageAppointmentsHeaders.addNewAppointment(table, columnNames);
         waitForAppReady();
@@ -160,5 +161,16 @@ public class AppointmentSchedulingSpec {
     @Step("Click cancel on create appointment")
     public void dontSaveAppointment() {
         ManageAppointmentsHeaders.cancel();
+    }
+
+    @Step("Mark as missed appointment with below details <table>")
+    public void markAsMissed(Table appointmentInfo) {
+        waitForAppReady();
+        WebElement matchedAppointment = ManageAppointmentsListView.isAppointmentMatched(appointmentInfo);
+        if (matchedAppointment == null) {
+            Assert.fail("There is no matching appointment to mark as missed");
+            return;
+        }
+        ManageAppointmentsListView.missAppointment(matchedAppointment);
     }
 }

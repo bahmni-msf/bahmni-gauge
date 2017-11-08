@@ -24,6 +24,9 @@ public class manageAppointmentsListView extends manageAppointmentsHeaders {
     @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/div/section/div[2]/div/div[2]/div/fieldset/button[6]")
     public WebElement cancelStatus;
 
+    @FindBy(how = How.XPATH, using = "/html/body/div[2]/div[3]/div/div/section/div[2]/div/div[2]/div/fieldset/button[5]")
+    public WebElement missStatus;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"yes\"]")
     public WebElement yesPopup;
 
@@ -73,5 +76,12 @@ public class manageAppointmentsListView extends manageAppointmentsHeaders {
 
     public boolean hasAppointments() {
         return !allAppointmentDetails.isEmpty();
+    }
+
+    public void missAppointment(WebElement appointment) {
+        appointment.click();
+        missStatus.click();
+        waitForSpinner();
+        yesPopup.click();
     }
 }
