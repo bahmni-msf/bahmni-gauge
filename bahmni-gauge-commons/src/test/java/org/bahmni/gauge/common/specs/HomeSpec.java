@@ -37,6 +37,7 @@ public class HomeSpec {
     public void goToProgramsPage() {
         homePage = PageFactory.getHomePage();
         homePage.clickProgramsApp();
+        BahmniPage.waitForSpinner(driver);
     }
 
     @Step("Click on clinical app")

@@ -30,6 +30,7 @@ public class PatientQueueSpec {
     @Step("Search patient <patientName> from <queue> queue")
     public void searchPatientFromTab(String patientName, String queueName) throws InterruptedException {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
+        waitForAppReady();
         patientQueuePage.clickTab(queueName);
         waitForAppReady();
         patientQueuePage.enterPatientIDOrName(patientName);
@@ -38,6 +39,7 @@ public class PatientQueueSpec {
     @Step("Verify patient details of <patientName> in queue <table>")
     public void verifyPatientDetailsinQueue(String patientName, Table table) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
+        waitForAppReady();
         List<String> columnNames = table.getColumnNames();
         TableRow requiredRow = null;
         for (TableRow row : table.getTableRows()) {
@@ -50,7 +52,6 @@ public class PatientQueueSpec {
 
         for (String columnName : columnNames) {
             String actualData = patientQueuePage.getColumnData(columnName);
-//            System.out.println(actualData);
             Assert.assertEquals(requiredRow.getCell(columnName), actualData);
         }
     }
