@@ -10,7 +10,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Create Patient and Verify Programs Queue.
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
 * Enter Patient Details 
@@ -110,7 +110,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 Patient In More Information queue when FSTG Outcome is More Information
 -----------------------------------------------------------------------
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
 * Enter Patient Details 
@@ -163,7 +163,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 -----------------------------------------------------------------------------------------------------------------------------
 // Verify Patient in Validated Patients queue - FSTG
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
 * Enter Patient Details 
@@ -180,7 +180,7 @@ Patient In More Information queue when FSTG Outcome is More Information
    |Reconstructive Surgery|09/09/2016        |Identification|
 
 * On the login page
-* Login with user "hani_i" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_DOCTOR" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
 * Click on programs app
 * Search and select patient "Kabir Yonus" from "Awaiting Validation - 1st Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -232,7 +232,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 // Patient In Expected arrival queue
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on registration app
 * Search patient with name "Kabir Yonus"
 * Select the patient from the search results
@@ -255,7 +255,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 // Patient In Hospital RSP queue
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on registration app
 * Search patient with name "Kabir Yonus"
 * Select the patient from the search results
@@ -318,7 +318,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 ----------------------------------------------------------------------------------------------------
  Create Patient and Verify Programs Queue.
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
 * Enter Patient Details
@@ -385,7 +385,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 // Patient In Continue Follow up validation queue
 * On the login page
-* Login with user "mahmoud_h" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
 * Click on programs app
 * Search and select patient "Shazia Yonus" from "Awaiting Validation - Follow Up Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -414,7 +414,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 Patient in Validated Patients queue - FUP
 -----------------------------------------
 * On the login page
-* Login with user "weaam_a" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
 * Enter Patient Details 
