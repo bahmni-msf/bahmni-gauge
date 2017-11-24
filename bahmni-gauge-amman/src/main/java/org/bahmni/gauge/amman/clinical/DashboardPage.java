@@ -14,4 +14,12 @@ import java.util.List;
  */
 public class DashboardPage extends org.bahmni.gauge.common.clinical.DashboardPage {
 
+    public boolean dashboardName(String dashboardname) {
+        boolean val = false;
+        String dashboardNameonUI = selectedTab.getText();
+        if (dashboardNameonUI.equalsIgnoreCase(dashboardname)) {
+            val = true;
+        }
+        return val;
+    }
 }

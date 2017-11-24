@@ -111,4 +111,12 @@ public class DashboardPageSpec {
         Assert.assertFalse("Consultation button is present", dashboardPage.isEnterDataPresent());
     }
 
+    @Step("Verify the dashboard name is <Name of dashboard>")
+    public void verifyDashboardName(String dashboardname) {
+        org.bahmni.gauge.amman.clinical.DashboardPage dashboardPage;
+        dashboardPage = PageFactory.get(org.bahmni.gauge.amman.clinical.DashboardPage.class);
+        waitForAppReady();
+        Assert.assertTrue("Dashboard name is different", dashboardPage.dashboardName(dashboardname));
+    }
+
 }

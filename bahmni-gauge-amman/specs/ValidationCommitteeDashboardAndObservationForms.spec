@@ -5,37 +5,41 @@ Created by jaseena, swarup on 1/2/17
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
-Verify the Patient Dashboard display controls visibility
---------------------------------------------------------
-* Create patient "Sara" using API with "First Stage Validation" visit
+Verify the Validation Committee Dashboard display controls visibility
+---------------------------------------------------------------------
+* Create patient "Meera" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Sara" from "Programs" queue
+* Search and select patient "Meera" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
+* Verify the dashboard name is "Validation Committee"
 * Verify the following display controls are visible 
 
-     |Display Control Title      |
-     |---------------------------|
-     |Programs                   |
-     |Edit forms                 |
-     |Visits                     |
-     |Patient Medical Documents  |
-     |Patient Encounter Locations|
+   |Display Control Title          |
+   |-------------------------------|
+   |Programs                       |
+   |Edit forms                     |
+   |Microbiology Results           |
+   |Visits                         |
+   |Patient Medical Documents (MLO)|
+   |Patient Encounter Locations    |
 
 * Verify the following display controls are hidden 
 
-     |Display Control Title |
-     |----------------------|
-     |Medical History       |
-     |First Stage Validation|
-     |Followup Validation   |
-     |Final Validation      |
+   |Display Control Title |
+   |----------------------|
+   |Medical History       |
+   |First Stage Validation|
+   |Followup Validation   |
+   |Final Validation      |
 
 First Stage Validation and Medical History Forms
 ------------------------------------------------
+
 tags: regression
+
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
