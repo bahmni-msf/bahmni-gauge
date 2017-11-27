@@ -68,10 +68,16 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                         else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
                             fillAutocomplete(autoComplete, value);
                         } else {
-                            observationNode.findElement(By.tagName("input")).sendKeys(value, Keys.TAB);
+                            WebElement inputField = observationNode.findElement(By.tagName("input"));
+                            if (inputField.getText().isEmpty()) {
+                                inputField.sendKeys(value, Keys.TAB);
+                            }
                         }
                     } else if (hasTag(observationNode, "textarea")) {
-                        observationNode.findElement(By.tagName("textarea")).sendKeys(value);
+                        WebElement textField = observationNode.findElement(By.tagName("textarea"));
+                        if (textField.getText().isEmpty()) {
+                            textField.sendKeys(value);
+                        }
                     } else if (hasTag(observationNode, "select")) {
                         new Select(observationNode.findElement(By.tagName("select"))).selectByVisibleText(value);
                     } else if (hasTag(observationNode, "button")) {
