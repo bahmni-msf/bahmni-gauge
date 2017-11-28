@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebElement;
 import org.junit.Assert;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -97,6 +100,12 @@ public class otSurgicalBlockPage extends otSchedulingPage {
     }
 
     public void selectDateTime(String startdate, String stime, String enddate, String etime) {
+        if (startdate.contains("NOW")) {
+            startdate = todayDateAsString();
+        }
+        if (enddate.contains("NOW")) {
+            enddate = todayDateAsString();
+        }
         startdate = startdate.replace("/", "");
         stime = stime.replace(":", "");
         stime = stime.replace(" ", "");
@@ -112,6 +121,15 @@ public class otSurgicalBlockPage extends otSchedulingPage {
         otEndDateTime.sendKeys(enddate);
         otEndDateTime.sendKeys(Keys.TAB);
         otEndDateTime.sendKeys(etime);
+    }
+
+    public String DateTimeToString(String startdate, String stime) {
+        if (startdate.contains("NOW")) {
+            startdate = todayDateAsString();
+        }
+
+        startdate = startdate + ", " + stime;
+        return startdate;
     }
 
     public void clickSave() {
@@ -178,4 +196,36 @@ public class otSurgicalBlockPage extends otSchedulingPage {
         cancel.click();
     }
 
+    private String todayDateAsString() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date today = new Date();
+        return dateFormat.format(today);
+    }
+
+    public int verifyBlockdata(String surgeon, String ot, String startdate, String starttime, String enddate, String endtime) {
+        if (surgeonDropdown.getText().equalsIgnoreCase(surgeon)) {
+            for (WebElement otloc : otLocations) {
+                if (otloc.isSelected()) {
+                    if (otloc.getText().equalsIgnoreCase(ot)) {
+                        if (otStartDateTime.getText().equalsIgnoreCase(DateTimeToString(startdate, starttime))) {
+                            if (otEndDateTime.getText().equalsIgnoreCase(DateTimeToString(enddate, endtime))) {
+                                return 1;
+                            } else {
+                                Assert.fail("End Time is different");
+                            }
+                        } else {
+                            Assert.fail("Start Time is different");
+                        }
+
+
+                    } else {
+                        Assert.fail("OT location is different");
+                    }
+                }
+            }
+        } else {
+            Assert.fail("Surgeon name is different");
+        }
+        return 0;
+    }
 }

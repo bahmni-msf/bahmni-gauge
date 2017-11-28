@@ -8,14 +8,14 @@ import org.bahmni.gauge.amman.OTScheduling.otSurgicalBlockPage;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
+import org.junit.Assert;
 
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by jaseenam on 20/07/17.
  */
-public class OTSchedulingSpec extends otSchedulingPage{
+public class OTSchedulingSpec {
     private otSchedulingPage OTSchedulingPage;
     private otHomePage OTHomePage;
     private otSurgicalBlockPage OTSurgicalBlockPage;
@@ -27,11 +27,13 @@ public class OTSchedulingSpec extends otSchedulingPage{
     }
 
     public void waitForAppReady() {
+
         BahmniPage.waitForSpinner(DriverFactory.getDriver());
     }
 
     @Step("Navigate to OT Scheduling tab")
     public void gotoOTScheduling() {
+        waitForAppReady();
         OTHomePage.goToOTScheduling();
         waitForAppReady();
     }
@@ -53,7 +55,17 @@ public class OTSchedulingSpec extends otSchedulingPage{
         OTSurgicalBlockPage.selectDateTime(startdate, starttime, enddate, endtime);
         waitForAppReady();
         OTSurgicalBlockPage.clickSave();
-//       waitForSpinner(driver);
+    }
+
+    @Step("Verify block is created for <Surgeon> in <OT> from date <startDate> time <startTime> to date <endDate> time <endTime>")
+    public void verifySurgicalBlockIsCreated(String surgeon, String OT, String startdate, String starttime, String enddate, String endtime) {
+        waitForAppReady();
+        OTSchedulingPage.verifySurgicalBlockIsCreated(surgeon, OT, startdate, enddate);
+        waitForAppReady();
+        int check = OTSurgicalBlockPage.verifyBlockdata(surgeon, OT, startdate, starttime, enddate, endtime);
+        if (check == 0) {
+            Assert.fail("Block not found");
+        }
     }
 
     @Step("Edit surgical block <surgicalBlock> in <OT> on <date> with following details <table>")
@@ -102,6 +114,11 @@ public class OTSchedulingSpec extends otSchedulingPage{
 
     @Step("Postpone surgical block from Calendar for <Hanna Janho> in <OT 1> on <09 Sep 2017, Sat> with reason <Postpone reason from calendar>")
     public void postponeSurgicalBlockFromCalendar(Object arg0, Object arg1, Object arg2, Object arg3) {
+
+    }
+
+    @Step("Verify block is created")
+    public void implementation1() {
 
     }
 

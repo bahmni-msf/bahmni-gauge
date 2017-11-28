@@ -9,10 +9,10 @@ import org.openqa.selenium.support.How;
  * Created by jaseenam on 20/07/17.
  */
 public class otHomePage extends HomePage {
-    @FindBy(how = How.CSS, using = ".ot-scheduling-nav li:nth-child(1)")
+    @FindBy(how = How.LINK_TEXT, using = "Surgical Queues")
     WebElement surgicalQueues;
 
-    @FindBy(how = How.CSS, using = ".ot-scheduling-nav li:nth-child(2)")
+    @FindBy(how = How.LINK_TEXT, using = "OT Scheduling")
     WebElement OTScheduling;
 
     public void goToSurgicalQueues() {
