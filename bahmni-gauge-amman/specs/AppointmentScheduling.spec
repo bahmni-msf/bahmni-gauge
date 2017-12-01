@@ -50,7 +50,6 @@ Create appointment and verify appointment details in List View
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on "Appointment Scheduling" module
 * Navigate to Admin Tab
-* Delete service "Service Physio"
 * Verify "Add New Service" button is "displayed"
 * Click on "Add New Service" button
 * Create new service with below details 
@@ -102,7 +101,6 @@ Conflict appointment
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on "Appointment Scheduling" module
 * Navigate to Admin Tab
-* Delete service "Service Physio"
 * Verify "Add New Service" button is "displayed"
 * Click on "Add New Service" button
 * Create new service with below details 
@@ -160,7 +158,6 @@ Miss appointment
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on "Appointment Scheduling" module
 * Navigate to Admin Tab
-* Delete service "Service Cardio"
 * Verify "Add New Service" button is "displayed"
 * Click on "Add New Service" button
 * Create new service with below details 
