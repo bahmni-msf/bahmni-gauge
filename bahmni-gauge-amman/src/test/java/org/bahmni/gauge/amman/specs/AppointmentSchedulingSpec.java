@@ -56,6 +56,7 @@ public class AppointmentSchedulingSpec {
     public void gotoManageAppointmentsTab() {
         waitForAppReady();
         AppointmentSchedulingHeader.gotoManageAppointments();
+        waitForAppReady();
     }
 
     @Step("Create new service with below details <table>")
@@ -86,6 +87,7 @@ public class AppointmentSchedulingSpec {
 
     @Step("Edit service <Servicename> with following details <table>")
     public void editService(String serviceName, Table table) {
+        waitForAppReady();
         AppointmentSchedulingAdminPage.clickEditService(serviceName);
         waitForAppReady();
         List<String> columnNames = table.getColumnNames();
@@ -95,6 +97,7 @@ public class AppointmentSchedulingSpec {
 
     @Step("Delete service <Servicename>")
     public void deleteService(String serviceName) {
+        waitForAppReady();
         AppointmentSchedulingAdminPage.deleteService(serviceName);
     }
 
@@ -155,7 +158,7 @@ public class AppointmentSchedulingSpec {
 
     @Step("Verify popup message as same as <message>")
     public void verifyPopupMessage(String message) {
-        assertEquals(message, ManageAppointmentsCalendarView.conflictPopupMessage());
+        Assert.assertTrue(ManageAppointmentsCalendarView.conflictPopupMessage().contains(message));
     }
 
     @Step("Click cancel on create appointment")

@@ -13,10 +13,10 @@ public class manageAppointmentsCalendarView extends manageAppointmentsHeaders {
     @FindBy(how = How.XPATH, using = "//*[@id=\"modal-revise-button3\"]")
     public WebElement backToEditConflictPopup;
 
-    @FindBy(how = How.CSS, using = "p.ng-binding")
+    @FindBy(how = How.CSS, using = ".ngdialog-content")
     public WebElement conflictPopupMessage;
 
-    @FindBy(how = How.CSS, using = "button#modal-revise-button2.secondary-button.ng-binding")
+    @FindBy(how = How.ID, using = "modal-revise-button2")
     public WebElement dontSavePopup;
 
     public void click(String buttonName) {

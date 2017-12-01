@@ -1,12 +1,10 @@
 Roles and Privileges - Registration Read and Registration Write
 ===============================================================
 
-   |username|
-   |--------|
-   |eman_f  |
-   |majdi_s |
-   |nabil_j |
-   |weaam_a |
+   |username                    |
+   |----------------------------|
+   |BAHMNI_GAUGE_DATA_ADMIN_USER|
+   |BAHMNI_GAUGE_OPD_REGISTER   |
 
 Login with the user which have Registration role (Registration-Read and Registration-Write) assigned and register a new patient
 -------------------------------------------------------------------------------------------------------------------------------
@@ -14,7 +12,7 @@ Login with the user which have Registration role (Registration-Read and Registra
 tags: regression, sanity
 
 * On the login page
-* Login with user <username> and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username <username> and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Verify only the following application is available 
 
    |Application~ID(tagName)|Is Available|

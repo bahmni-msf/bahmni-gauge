@@ -67,17 +67,15 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     @FindBy(how = How.CSS, using = ".create-new-app-container")
     WebElement addAppointmentSlider;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"create-appointment-form\"]/button")
+    @FindBy(how = How.CSS, using = ".service-save-btn")
     WebElement saveAppointmentBtn;
 
-    @FindBy(how = How.CSS, using = "a.create-appointment-action-btn.ng-binding")
+    @FindBy(how = How.LINK_TEXT, using = "Cancel")
     WebElement cancelAppointmentBtn;
 
 
     public void clickAddNewAppointment() {
-        //waitForElementOnPage(addAppointmentBtn);
         addAppointmentBtn.click();
-        //waitForElement(driver, ExpectedConditions.visibilityOf(addAppointmentSlider));
     }
 
     public void addNewAppointment(Table table, List<String> colNames) {
@@ -133,12 +131,11 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
             }
         }
         saveAppointmentBtn.click();
-//        waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.className("create-new-app-container")));
         waitForSpinner(driver);
     }
 
     private String todayDateAsString() {
-        DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date today = new Date();
         return dateFormat.format(today);
     }
