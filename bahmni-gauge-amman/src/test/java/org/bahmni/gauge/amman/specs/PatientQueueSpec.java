@@ -21,6 +21,7 @@ public class PatientQueueSpec {
     @Step("Search and select patient <patient> from <queue> queue")
     public void selectPatientFromProgramTab(String patientName, String queueName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
+        waitForAppReady();
         patientQueuePage.clickTab(queueName);
         waitForAppReady();
         patientQueuePage.enterPatientIDOrName(patientName);
