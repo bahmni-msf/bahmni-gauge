@@ -33,8 +33,7 @@ public class ObservationsSpec {
     @Step("Verify this form is Add More form <template>")
     public void verifyFormsSavedAndAddMore(String template) {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
-        observationsPage.selectTemplate(template);
-        waitForAppReady();
+        observationsPage.verifyFormIsAddMore(template);
     }
 
     @Step("Select template <template> from the Observation Page")

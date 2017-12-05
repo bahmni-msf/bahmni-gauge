@@ -15,7 +15,7 @@ tags: sanity, regression
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_USER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
 * Click on programs app
-* Search and select patient "Patient Summary Dashboard" from "Programs" queue
+* Select patient "Patient Summary Dashboard" in tab "All"
 * Edit "Reconstructive Surgery" Program with following details 
 
    |programStatus|

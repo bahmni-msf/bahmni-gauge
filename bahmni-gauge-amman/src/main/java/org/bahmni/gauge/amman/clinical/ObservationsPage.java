@@ -133,4 +133,29 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
             Assert.assertTrue(isDisabled);
         }
     }
+
+    public void verifyFormIsAddMore(String templateName) {
+        clickTemplateButton();
+        List<WebElement> allForms = templatePanel.findElements(By.tagName("button"));
+        for (WebElement form : allForms) {
+            if (form.getText().contains(templateName)) {
+                Boolean isAddMore = isAttribtuePresent(form, "disabled");
+                Assert.assertFalse(isAddMore);
+                break;
+            }
+        }
+        clickTemplateButton();
+    }
+
+    private boolean isAttribtuePresent(WebElement element, String attribute) {
+        Boolean result = false;
+        try {
+            String value = element.getAttribute(attribute);
+            if (value != null) {
+                result = true;
+            }
+        } catch (Exception e) {
+        }
+        return result;
+    }
 }

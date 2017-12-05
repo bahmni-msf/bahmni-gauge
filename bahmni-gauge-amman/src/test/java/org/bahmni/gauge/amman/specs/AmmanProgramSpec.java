@@ -33,7 +33,7 @@ public class AmmanProgramSpec {
     public void editProgram(String programName, Table updatedProgramTable) {
         Program updatedProgram=TableTransformer.asEntity(updatedProgramTable, Program.class);
         AmmanProgramPage ammanProgramPage = PageFactory.get(AmmanProgramPage.class);
-//        System.out.println(programName);
+        waitForAppReady();
         ammanProgramPage.editProgram(programName,updatedProgram);
     }
 
