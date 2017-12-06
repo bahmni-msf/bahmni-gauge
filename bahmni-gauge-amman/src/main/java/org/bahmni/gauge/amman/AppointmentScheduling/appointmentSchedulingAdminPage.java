@@ -81,7 +81,6 @@ public class appointmentSchedulingAdminPage extends appointmentSchedulingHeader 
         waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
         serviceDeleteBtn.click();
         waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
-        //waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
     }
 
     public WebElement selectGivenServiceRow(String serviceName) {

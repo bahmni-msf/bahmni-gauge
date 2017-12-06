@@ -66,6 +66,15 @@ public class AppointmentSchedulingSpec {
         waitForAppReady();
     }
 
+    @Step("Verify user cannot create service with existing service name <Servicename> <table>")
+    public void createNewServiceWithExistingServiceName(String servicename, Table table) {
+        List<String> columnNames = table.getColumnNames();
+        waitForAppReady();
+        ServicePage.addService(table, columnNames);
+        Assert.assertTrue(ServicePage.confirmSaveServiceError().contains("Please correct the values in the fields to proceed"));
+        Assert.assertTrue(ServicePage.cautionServiceText().equalsIgnoreCase("Service name already exists"));
+    }
+
     @Step("Verify service details of <servicename> in Admin Service Page <table>")
     public void verifyServiceDetails(String servicename, Table table) {
         waitForAppReady();

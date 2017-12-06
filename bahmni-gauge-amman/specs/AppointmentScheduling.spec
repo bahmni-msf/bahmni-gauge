@@ -42,6 +42,70 @@ Edit a Service
 Delete a Service
 * Delete service "Servicename Edited"
 
+Verify user cannot create service with existing service name
+------------------------------------------------------------
+Create a Service
+* On the login page
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on "Appointment Scheduling" module
+* Navigate to Admin Tab
+* Verify "Add New Service" button is "displayed"
+* Click on "Add New Service" button
+* Create new service with below details 
+
+   |Service Name   |Description    |Duration|Start Time|End Time|Max Load|Location|
+   |---------------|---------------|--------|----------|--------|--------|--------|
+   |Servicename One|description One|20      |08:30 AM  |02:00 PM|10      |OPD     |
+
+* Verify service details of "Servicename One" in Admin Service Page 
+
+   |Service Name   |Location|Duration|Description    |Action     |
+   |---------------|--------|--------|---------------|-----------|
+   |Servicename One|OPD     |20      |description One|Edit Delete|
+
+* Click on "Add New Service" button
+* Verify user cannot create service with existing service name "Servicename One" 
+
+   |Service Name   |Description    |Duration|Start Time|End Time|Max Load|Location|
+   |---------------|---------------|--------|----------|--------|--------|--------|
+   |Servicename One|description Two|30      |10:30 AM  |02:00 PM|10      |OPD     |
+
+Verify user can create service with deleted service name
+--------------------------------------------------------
+Create a Service
+* On the login page
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Click on "Appointment Scheduling" module
+* Navigate to Admin Tab
+* Verify "Add New Service" button is "displayed"
+* Click on "Add New Service" button
+* Create new service with below details 
+
+   |Service Name   |Description    |Duration|Start Time|End Time|Max Load|Location|
+   |---------------|---------------|--------|----------|--------|--------|--------|
+   |Servicename Two|description Two|20      |08:30 AM  |02:00 PM|10      |OPD     |
+
+* Verify service details of "Servicename Two" in Admin Service Page 
+
+   |Service Name   |Location|Duration|Description    |Action     |
+   |---------------|--------|--------|---------------|-----------|
+   |Servicename Two|OPD     |20      |description Two|Edit Delete|
+
+Delete a Service
+* Delete service "Servicename Two"
+* Click on "Add New Service" button
+* Create new service with below details 
+
+   |Service Name   |Description                          |Duration|Start Time|End Time|Max Load|Location|
+   |---------------|-------------------------------------|--------|----------|--------|--------|--------|
+   |Servicename Two|new service with deleted service name|30      |09:30 AM  |05:00 PM|10      |OPD     |
+
+* Verify service details of "Servicename Two" in Admin Service Page 
+
+   |Service Name   |Location|Duration|Description                          |Action     |
+   |---------------|--------|--------|-------------------------------------|-----------|
+   |Servicename Two|OPD     |30      |new service with deleted service name|Edit Delete|
+
 Create appointment and verify appointment details in List View
 --------------------------------------------------------------
 * Create patient "Mala Sinha" using API with "Hospital" visit

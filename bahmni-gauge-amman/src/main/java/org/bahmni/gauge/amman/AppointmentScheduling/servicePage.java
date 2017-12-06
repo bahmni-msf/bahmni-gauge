@@ -42,6 +42,12 @@ public class servicePage extends appointmentSchedulingAdminPage {
     @FindBy(how = How.ID, using = "ok")
     WebElement saveEditServiceBtn;
 
+    @FindBy(how = How.CLASS_NAME, using = "caution")
+    WebElement cautionService;
+
+    @FindBy(how = How.CSS, using = ".show-btn.fr")
+    WebElement errorOkBtn;
+
     public String changeTimeFormat(String serviceTime) {
         serviceTime = serviceTime.replace(":", "");
         serviceTime = serviceTime.replace(" ", "");
@@ -89,9 +95,21 @@ public class servicePage extends appointmentSchedulingAdminPage {
         clickSaveServiceBtn();
     }
 
+    public String cautionServiceText() {
+        return cautionService.getText();
+    }
+
     public void confirmEditService() {
         waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
         saveEditServiceBtn.click();
         waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
+    }
+
+    public String confirmSaveServiceError() {
+        waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".error-message-container")));
+        String serviceSaveError = driver.findElement(By.cssSelector(".error-message")).getText();
+        errorOkBtn.click();
+        waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".message-container.error-message-container")));
+        return serviceSaveError;
     }
 }
