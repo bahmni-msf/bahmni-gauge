@@ -1,10 +1,10 @@
 Roles and Privileges - Registration Read and Registration Write
 ===============================================================
 
-   |username                    |
-   |----------------------------|
-   |BAHMNI_GAUGE_DATA_ADMIN_USER|
-   |BAHMNI_GAUGE_OPD_REGISTER   |
+   |username                 |
+   |-------------------------|
+   |BAHMNI_GAUGE_OPD_MO      |
+   |BAHMNI_GAUGE_OPD_REGISTER|
 
 Login with the user which have Registration role (Registration-Read and Registration-Write) assigned and register a new patient
 -------------------------------------------------------------------------------------------------------------------------------

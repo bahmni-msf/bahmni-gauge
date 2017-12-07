@@ -8,7 +8,7 @@ Verify Admit to RC, Movement to Kahramana and Transfer Home flow through Disposi
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Bed RC" from "Programs" queue
+* Select patient "Bed RC" in tab "All"
 * Edit "Reconstructive Surgery" Program with following details 
 
    |programStatus |
@@ -98,7 +98,7 @@ Verify Admit to Ward, Movement to RC and Transfer Home flow through Disposition 
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Bed ward" from "Programs" queue
+* Select patient "Bed ward" in tab "All"
 * Edit "Reconstructive Surgery" Program with following details 
 
    |programStatus             |
@@ -125,7 +125,7 @@ Verify Admit to Ward, Movement to RC and Transfer Home flow through Disposition 
 
 * Click on "Admit To Ward" link
 * Click on "Ward" button
-* Navigate to "Ward (3rd floor)"
+* Navigate to "Ward 3rd floor"
 * Assign an empty bed to the patient
 * Navigate to patient ADT queues
 * Verify patient "Bed ward" is present only in "Admitted" queue
@@ -188,7 +188,7 @@ Verify Admit to Kahramana, Movement to Ward and Transfer Home flow through Dispo
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Bed kahramana" from "Programs" queue
+* Select patient "Bed kahramana" in tab "All"
 * Edit "Reconstructive Surgery" Program with following details 
 
    |programStatus|
