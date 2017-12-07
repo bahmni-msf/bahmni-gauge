@@ -75,6 +75,15 @@ public class AppointmentSchedulingSpec {
         Assert.assertTrue(ServicePage.cautionServiceText().equalsIgnoreCase("Service name already exists"));
     }
 
+    @Step("Cancel service creation")
+    public void cancelServiceCreation() {
+
+        ManageAppointmentsHeaders.gotoAdminPage();
+        waitForAppReady();
+        ServicePage.clickButton("Don't save");
+        waitForAppReady();
+    }
+
     @Step("Verify service details of <servicename> in Admin Service Page <table>")
     public void verifyServiceDetails(String servicename, Table table) {
         waitForAppReady();
@@ -160,19 +169,19 @@ public class AppointmentSchedulingSpec {
         }
     }
 
-    @Step("Click on <button> on popup")
-    public void clickGivenButton(String buttonName) {
-        ManageAppointmentsCalendarView.click(buttonName);
+    @Step("Cancel appointment creation")
+    public void cancelAppointmentCreation() {
+        ManageAppointmentsCalendarView.click("Back to edit");
+        waitForAppReady();
+        ManageAppointmentsCalendarView.cancel();
+        waitForAppReady();
+        ManageAppointmentsCalendarView.click("Don't save");
+        waitForAppReady();
     }
 
     @Step("Verify popup message as same as <message>")
     public void verifyPopupMessage(String message) {
         Assert.assertTrue(ManageAppointmentsCalendarView.conflictPopupMessage().contains(message));
-    }
-
-    @Step("Click cancel on create appointment")
-    public void dontSaveAppointment() {
-        ManageAppointmentsHeaders.cancel();
     }
 
     @Step("Mark as missed appointment with below details <table>")

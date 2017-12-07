@@ -2,6 +2,7 @@ package org.bahmni.gauge.amman.AppointmentScheduling;
 
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,6 +48,21 @@ public class servicePage extends appointmentSchedulingAdminPage {
 
     @FindBy(how = How.CSS, using = ".show-btn.fr")
     WebElement errorOkBtn;
+
+    @FindBy(how = How.ID, using = "modal-revise-button2")
+    public WebElement dontSavePopup;
+
+    public void clickButton(String buttonName) {
+        waitForSpinner();
+        switch (buttonName) {
+            case "Don't save":
+                dontSavePopup.click();
+                break;
+            default:
+                Assert.fail("There is no such " + buttonName + "button");
+        }
+        waitForSpinner();
+    }
 
     public String changeTimeFormat(String serviceTime) {
         serviceTime = serviceTime.replace(":", "");

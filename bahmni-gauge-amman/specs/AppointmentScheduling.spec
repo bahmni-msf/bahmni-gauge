@@ -70,6 +70,10 @@ Create a Service
    |---------------|---------------|--------|----------|--------|--------|--------|
    |Servicename One|description Two|30      |10:30 AM  |02:00 PM|10      |OPD     |
 
+making environment clean again
+* Cancel service creation
+* Delete service "Servicename One"
+
 Verify user can create service with deleted service name
 --------------------------------------------------------
 Create a Service
@@ -106,6 +110,9 @@ Delete a Service
    |---------------|--------|--------|-------------------------------------|-----------|
    |Servicename Two|OPD     |30      |new service with deleted service name|Edit Delete|
 
+making environment clean again
+* Delete service "Servicename Two"
+
 Create appointment and verify appointment details in List View
 --------------------------------------------------------------
 * Create patient "Mala Sinha" using API with "Hospital" visit
@@ -124,14 +131,6 @@ Create appointment and verify appointment details in List View
 
 * Navigate to Manage Appointments Tab
 * Click on link "Appointments List"
-* Click on link "List view"
-* Mark cancel if appointment with below details exists 
-
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
-   |------------|--------------|---------|----------|--------|---------|---------|
-   |Mala Sinha  |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
-
-* Click on link "Calendar"
 * Click on link "Add new appointment"
 * Add appointment with below details 
 
@@ -153,7 +152,6 @@ making environment clean again
    |------------|--------------|---------|----------|--------|---------|---------|
    |Mala Sinha  |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
 
-* Click on link "Calendar"
 * Navigate to Admin Tab
 * Delete service "Service Physio"
 
@@ -175,14 +173,6 @@ Conflict appointment
 
 * Navigate to Manage Appointments Tab
 * Click on link "Appointments List"
-* Click on link "List view"
-* Mark cancel if appointment with below details exists 
-
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
-   |------------|--------------|---------|----------|--------|---------|---------|
-   |Maya Appt   |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
-
-* Click on link "Calendar"
 * Click on link "Add new appointment"
 * Add appointment with below details 
 
@@ -198,19 +188,15 @@ Conflict appointment
    |Maya Appt|Service Physio|Super Man|NOW[dd MMM yy]|10:01 am  |Test note|
 
 * Verify popup message as same as "This patient already has an appointment booked at this time. Would you like to proceed or edit the timings?"
-* Click on "Back to edit" on popup
+* Cancel appointment creation
 
 making environment clean again
-
-* Click cancel on create appointment
-* Click on "Don't save" on popup
 * Click on link "List view"
 * Mark cancel if appointment with below details exists 
 
    |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
    |------------|--------------|---------|----------|--------|---------|---------|
    |Maya Appt   |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
-* Click on link "Calendar"
 * Navigate to Admin Tab
 * Delete service "Service Physio"
 
@@ -231,14 +217,6 @@ Miss appointment
    |Service Cardio|description new|20      |08:30 AM  |02:00 PM|10      |
 * Navigate to Manage Appointments Tab
 * Click on link "Appointments List"
-* Click on link "List view"
-* Mark cancel if appointment with below details exists 
-
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
-   |------------|--------------|---------|----------|--------|---------|---------|
-   |Sana Appt   |Service Cardio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
-
-* Click on link "Calendar"
 * Click on link "Add new appointment"
 * Add appointment with below details 
 
@@ -258,6 +236,7 @@ Miss appointment
    |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status|
    |------------|--------------|---------|----------|--------|---------|------|
    |Sana Appt   |Service Cardio|Super Man|10:00 am  |10:20 am|Test note|Missed|
-environment clean
+
+making environment clean again
 * Navigate to Admin Tab
 * Delete service "Service Cardio"
