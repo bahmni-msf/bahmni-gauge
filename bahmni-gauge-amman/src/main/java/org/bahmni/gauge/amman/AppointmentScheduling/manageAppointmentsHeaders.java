@@ -150,18 +150,22 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     }
 
     public void clickCalendarView() {
+        waitForElementOnPage(calendarViewBtn);
         calendarViewBtn.click();
     }
 
     public void clickListView() {
+        waitForElementOnPage(listViewBtn);
         listViewBtn.click();
     }
 
     public void clickToday() {
+        waitForElementOnPage(todayBtn);
         todayBtn.click();
     }
 
     public void clickAppointmentsList() {
+        waitForElementOnPage(appointmentsList);
         appointmentsList.click();
     }
 
