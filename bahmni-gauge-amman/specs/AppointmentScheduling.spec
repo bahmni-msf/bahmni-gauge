@@ -192,7 +192,7 @@ Conflict appointment
 
 making environment clean again
 * Click on link "List view"
-* Mark cancel if appointment with below details exists 
+* Mark cancel if appointment with below details exists
 
    |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
    |------------|--------------|---------|----------|--------|---------|---------|

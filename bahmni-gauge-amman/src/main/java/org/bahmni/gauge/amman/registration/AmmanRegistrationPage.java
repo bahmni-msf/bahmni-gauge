@@ -144,4 +144,30 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     public void clickBackButton(){
         backButton.click();
     }
+
+   public void verifyPatientDetails(AmmanPatient patient) {
+        String patientID = Fields.getPatientAttribute("patientIdentifier").getValue();
+        String patientFirstName = Fields.getPatientAttribute("firstName").getValue();
+        String patientLastName = Fields.getPatientAttribute("lastName").getValue();
+        String patientGivenNameLocal = Fields.getPatientAttribute("givenNameArabic").getValue();
+        String patientFamilyNameLocal = Fields.getPatientAttribute("familyNameArabic").getValue();
+        String patientGender = Fields.getPatientAttribute("gender").getValue();
+        String patientAge = Fields.getPatientAttribute("age").getValue();
+        String patientCountry = Fields.getPatientAttribute("country").getValue();
+
+        try{
+            if(enterID_checkbox.isDisplayed() && patient.getIdNumber()!= null) {
+                Assert.assertEquals("Identifier dont match",patientID,txtRegistrationNumber.getAttribute("value"));
+            }} catch (NoSuchElementException ex){
+
+        }
+
+        Assert.assertEquals("First Name dont match",patientFirstName, txtPatientName.getAttribute("value"));
+        Assert.assertEquals("Last Name dont match",patientLastName, familyName.getAttribute("value"));
+        Assert.assertEquals("Gender dont match",patientGender, new Select(gender).getFirstSelectedOption().getText());
+        Assert.assertEquals("Age dont match",patientAge, ageYears.getAttribute("value"));
+        Assert.assertEquals("Given Name Local dont match", patientGivenNameLocal, givenNameLocal.getAttribute("value"));
+        Assert.assertEquals("Family Name Local dont match",patientFamilyNameLocal, familyNameLocal.getAttribute("value"));
+        Assert.assertEquals("Country dont match",patientCountry, country.getAttribute("value"));
+    }
 }

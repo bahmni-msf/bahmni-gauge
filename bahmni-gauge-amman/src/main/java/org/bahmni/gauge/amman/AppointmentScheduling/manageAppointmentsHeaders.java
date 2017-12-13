@@ -2,7 +2,6 @@ package org.bahmni.gauge.amman.AppointmentScheduling;
 
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -143,8 +142,6 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
 
     public void fillAutocomplete(WebElement autoComplete, String value) {
         autoComplete.sendKeys(value);
-        List<WebElement> patientSearchResults = driver.findElements(By.className("ui-corner-all"));
-//        waitForElement(driver, ExpectedConditions.visibilityOfAllElements(patientSearchResults));
         waitForSpinner(driver);
         autoComplete.sendKeys(Keys.DOWN, Keys.RETURN);
     }
