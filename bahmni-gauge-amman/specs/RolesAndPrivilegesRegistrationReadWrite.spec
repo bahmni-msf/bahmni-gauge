@@ -3,6 +3,7 @@ Roles and Privileges - Registration Read and Registration Write
 
    |username                 |
    |-------------------------|
+   |BAHMNI_GAUGE_APP_USER    |
    |BAHMNI_GAUGE_OPD_MO      |
    |BAHMNI_GAUGE_OPD_REGISTER|
 

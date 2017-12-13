@@ -34,15 +34,15 @@ public class RegistrationSpec {
 
     @Step("Save Patient and refresh page")
     public void savePatient() {
-        registrationPage.clickSave();
-        waitForAppReady();
+        AmmanPatient ammnPatient = registrationPage.clickSave(ammanPatient);
+        SpecStoreHelper.store(AmmanPatient.class,ammnPatient);
         DriverFactory.getDriver().navigate().refresh();
     }
 
     @Step("Save Patient")
     public void clickSavePatient() {
-        registrationPage.clickSave();
-        waitForAppReady();
+        AmmanPatient ammnPatient = registrationPage.clickSave(ammanPatient);
+        SpecStoreHelper.store(AmmanPatient.class,ammnPatient);
     }
 
     @Step("Go to Home Page")
@@ -62,7 +62,6 @@ public class RegistrationSpec {
         registrationPage.findVisit(visitType).click();
         waitForAppReady();
         RegistrationVisitDetailsPage registrationVisitPage = PageFactory.get(RegistrationVisitDetailsPage.class);
-        //registrationVisitPage.saveButton.click();
     }
 
     @Step("Verify Legal Rep Values for autocomplete")
@@ -124,4 +123,10 @@ public class RegistrationSpec {
     public void implementation6() {
         registrationPage.verifyIDDocumentsAfterSave();
     }
+
+    @Step("Verify the patient details")
+    public void verifyPatientDetails(){
+        registrationPage.verifyPatientDetails(SpecStoreHelper.getLatest(AmmanPatient.class));
+    }
+
 }

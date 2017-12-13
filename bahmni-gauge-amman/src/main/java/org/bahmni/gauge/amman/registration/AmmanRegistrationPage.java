@@ -8,7 +8,7 @@ import org.bahmni.gauge.rest.BahmniRestClient;
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -18,6 +18,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class AmmanRegistrationPage extends RegistrationFirstPage {
 
@@ -26,6 +27,21 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
 
     @FindBy(how = How.CSS, using = ".submit-btn")
     public WebElement save;
+
+    @FindBy(how = How.CSS, using = "#givenNameLocal")
+    public WebElement givenNameLocal;
+
+    @FindBy(how = How.CSS, using = "#familyNameLocal")
+    public WebElement familyNameLocal;
+
+    @FindBy(how = How.CSS, using = "#familyName")
+    public WebElement familyName;
+
+    @FindBy(how = How.CSS, using = "#gender")
+    public WebElement gender;
+
+    @FindBy(how = How.CSS, using = "#address3")
+    public WebElement country;
 
     public void fillAttributes(List<PatientAttribute> patientAttributes) {
         for (PatientAttribute patientAttribute : patientAttributes) {
@@ -77,8 +93,17 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         BahmniRestClient.get().createPatient(ammanPatient,"patient_create.ftl");
     }
 
-    public void clickSave() {
+    public AmmanPatient clickSave(AmmanPatient patient) {
         save.click();
+        waitForSpinner();
+
+        String path = driver.getCurrentUrl();
+        String uuid = path.substring(path.lastIndexOf('/') + 1);
+        if (!Objects.equals(uuid, "new")) {
+            Fields.getPatientAttribute("patientIdentifier").setValue(patientIdentifierValue.getText());
+            patient.setUuid(uuid);
+        }
+        return patient;
     }
 
     public void startVisitUsingApi(AmmanPatient ammanPatient) {

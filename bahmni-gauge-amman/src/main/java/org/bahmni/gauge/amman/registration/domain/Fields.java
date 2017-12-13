@@ -5,6 +5,7 @@ import java.util.List;
 
 public enum Fields {
 
+    patientIdentifier("patientIdentifier", "readonly", "#patientIdentifierValue"),
     firstName("firstName", "text", "#givenName"),
     lastName("lastName", "text", "#familyName"),
     gender("gender", "dropdown", "#gender"),
@@ -41,8 +42,6 @@ public enum Fields {
     legalRepalsoCaretaker("legalRepalsoCaretaker", "dropdown", "#legalRepalsoCaretaker"),
     expectedDateofArrival("expectedDateofArrival","date","#expectedDateofArrival"),
     dateofArrival("dateofArrival","date","#dateofArrival");
-
-
 
     private PatientAttribute patientAttribute;
 

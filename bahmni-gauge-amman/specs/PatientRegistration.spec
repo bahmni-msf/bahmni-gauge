@@ -1,9 +1,39 @@
 Patient Registration Scenarios
 ==============================
 
+Create a new patient, search by name & validate patient details
+---------------------------------------------------------------
+
+tags: regression, sanity
+
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login to the application
 * Click on registration app
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test New |Patient |أل             |حسن             |Male  |20 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
+
+* Save Patient
+* Verify the patient details
+* Click on search patient link
+* Search previously created patient with patient name
+* Verify previous patient details is listed in search result
+* Click on previous patient id link from search results
+* Verify the patient details
+* Logout the user
+
+Create Patient Under Age 18 and Fill Legal Rep
+----------------------------------------------
+
+tags: regression, sanity
+
+* On the login page
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Click on registration app
+* Verify Create New button is displayed
 * Click on create new patient link
 * Enter Patient Details 
 
@@ -11,8 +41,6 @@ Patient Registration Scenarios
    |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
    |Albert   |Hassan  |أل             |حسن             |Male  |12 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
 
-Create Patient Under Age 18 and Fill Legal Rep
-----------------------------------------------
 * Enter Legal Rep Details 
 
    |legalRepFullNameEnglish|legalRepFullNameArabic|legalRepRelationWithPatient|legalRepGender|legalRepNationality|
@@ -24,6 +52,19 @@ Create Patient Under Age 18 and Fill Legal Rep
 
 Create Patient And Verify Legal Rep Same As Caretaker
 -----------------------------------------------------
+
+tags: regression, sanity
+
+* On the login page
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Click on registration app
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Albert   |Hassan  |أل             |حسن             |Male  |12 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
+
 * Enter Patient Details 
 
    |isCareTakerRequiredCheckBox|
@@ -42,6 +83,19 @@ Create Patient And Verify Legal Rep Same As Caretaker
 
 Create Patient and Fill ID Documents
 ------------------------------------
+
+tags: regression, sanity
+
+* On the login page
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Click on registration app
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Albert   |Hassan  |أل             |حسن             |Male  |12 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
+
 * Enter Patient Details 
 
    |statusofOfficialIDdocuments|

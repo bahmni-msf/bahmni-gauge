@@ -119,7 +119,6 @@ public class AppointmentSchedulingSpec {
         AppointmentSchedulingAdminPage.deleteService(serviceName);
     }
 
-
     @Step("Add appointment with below details <table>")
     public void addNewAppointment(Table table) {
         List<String> columnNames = table.getColumnNames();
@@ -127,10 +126,11 @@ public class AppointmentSchedulingSpec {
         waitForAppReady();
     }
 
-    @Step("Click on link <button>")
-    public void clickButton(String button) {
+    @Step("Click on link <link>")
+    public void clickButton(String linkText) {
+
         waitForAppReady();
-        switch (button) {
+        switch (linkText) {
             case "Appointments List":
                 ManageAppointmentsHeaders.clickAppointmentsList();
                 break;
