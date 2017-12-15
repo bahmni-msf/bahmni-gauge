@@ -35,7 +35,7 @@ public class AmmanRegistrationSearch extends AmmanRegistrationPage{
     public WebElement txtName;
 
 	@FindBy(how= How.CSS, using = "#addressFieldValue")
-	public WebElement txtGramPanchayat;
+	public WebElement txtCountry;
 	
 	@FindBy(how= How.CSS, using = "#identifierPrefix")
     public List<WebElement> txtIdentifier;
@@ -49,8 +49,8 @@ public class AmmanRegistrationSearch extends AmmanRegistrationPage{
 	@FindBy(how= How.CSS, using = ".registraition-search-results-container > table")
     public WebElement gridSearchResults;
 
-	@FindBy(how= How.CSS, using = "#programAttribute")
-	public WebElement prgm_attribute;
+	@FindBy(how= How.CSS, using = "#customAttribute")
+	public WebElement custom_attribute;
 
     public void clickSearch() {
     	iconSearch.click();
@@ -85,9 +85,7 @@ public class AmmanRegistrationSearch extends AmmanRegistrationPage{
 		}
 	}
 
-	public void searchByIdentifier(String prefix, String id){
-		selectPrefix(prefix);
-
+	public void searchByIdentifier(String id){
 		txtRegistration.sendKeys(id);
 		btnIdentifierSearch.click();
     }
@@ -97,8 +95,13 @@ public class AmmanRegistrationSearch extends AmmanRegistrationPage{
 		btnRegSearch.click();
 	}
 
-	public void searchByProgramAttribute(String attribute){
-		prgm_attribute.sendKeys(attribute);
+	public void searchByCountry(String country) {
+		txtCountry.sendKeys(country);
+		btnRegSearch.click();
+	}
+
+	public void searchByCustomAttribute(String attribute){
+		custom_attribute.sendKeys(attribute);
 		btnRegSearch.click();
 	}
 
@@ -120,11 +123,16 @@ public class AmmanRegistrationSearch extends AmmanRegistrationPage{
 		for(TableRow row : dataOnUI.getTableRows()){
 			if(row.getCell("ID").equals(patientID))
 			{
+
 				Assert.assertEquals("Name dont match",patientName,row.getCell("Name"));
 				Assert.assertEquals("Gender dont match",patientGender.equals("Male")?"M":patientGender.equals("Female")?"F":"O",row.getCell("Gender"));
 				Assert.assertEquals("Age dont match",patientAge,row.getCell("Age"));
-				Assert.assertEquals("Given Name Local dont match",givenNameLocal,row.getCell("Given Name Local"));
-				Assert.assertEquals("Family Name Local dont match",familyNameLocal,row.getCell("Family Name Local"));
+				if(row.getCell("Given Name Local")!=null) {
+					Assert.assertEquals("Given Name Local dont match", givenNameLocal, row.getCell("Given Name Local"));
+				}
+				if(row.getCell("Family Name Local")!=null) {
+					Assert.assertEquals("Family Name Local dont match", familyNameLocal, row.getCell("Family Name Local"));
+				}
 				Assert.assertEquals("Country dont match",patientCountry,row.getCell("Country"));
 			}
 		}

@@ -20,6 +20,7 @@ tags: regression, sanity
 * Verify the patient details
 * Click on search patient link
 * Search previously created patient with patient name
+* Verify search result contains "Test New" in column "Name"
 * Verify previous patient details is listed in search result
 * Click on previous patient id link from search results
 * Verify the patient details
@@ -50,8 +51,8 @@ tags: regression, sanity
 * Save Patient and refresh page
 * Verify Legal Rep Details after Save
 
-Create Patient And Verify Legal Rep Same As Caretaker
------------------------------------------------------
+Create Patient And Verify Legal Rep Same As Caretaker, Search by Identifier, fetch & validate patient details
+-------------------------------------------------------------------------------------------------------------
 
 tags: regression, sanity
 
@@ -80,9 +81,13 @@ tags: regression, sanity
 * Verify Legal Rep Values for autocomplete
 * Save Patient and refresh page
 * Verify caretaker details after save
+* Click on search patient link
+* Search previously created patient with identifier
+* Verify the patient details
+* Logout the user
 
-Create Patient and Fill ID Documents
-------------------------------------
+Create Patient and Fill ID Documents, Search by Name in Arabic, fetch & validate patient details
+------------------------------------------------------------------------------------------------
 
 tags: regression, sanity
 
@@ -110,3 +115,149 @@ tags: regression, sanity
 
 * Save Patient and refresh page
 * Verify patient id documents after save
+* Click on search patient link
+* Search previously created patient with Name in Arabic
+* Verify search result contains "أل" in column "Given Name Local"
+* Verify previous patient details is listed in search result
+* Click on previous patient id link from search results
+* Verify the patient details
+* Logout the user
+
+Edit patient details, Search by Country, fetch & validate patient details
+-------------------------------------------------------------------------
+
+tags: regression
+
+* On the login page
+* Login to the application
+* Click on registration app
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test New |Patient |أل             |حسن             |Male  |20 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
+
+* Save Patient
+* Verify the patient details
+* Click on search patient link
+* Search previously created patient with Country
+* Verify search result contains "Jordan" in column "Country"
+* Verify previous patient details is listed in search result
+* Click on previous patient id link from search results
+* Edit previous patient details 
+
+   |age|phoneNumber1|spokenLanguages|
+   |---|------------|---------------|
+   |30 |+9898980000 |New Language   |
+* Save Patient
+* Verify the patient details
+* Logout the user
+
+Verify auto generated patient identifier
+----------------------------------------
+
+tags: regression
+
+* On the login page
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Click on registration app
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |----------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Egypt|Patient |أل             |حسن             |Male  |20 |Red Sea    |Egypt  |+9898989898 |English        |Egyptian    |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "EG" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Iraq|Patient |أل             |حسن             |Female|25 |Najaf      |Iraq   |+9898989898 |English        |Iraqi       |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "IQ" and ends with gender code "F"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName     |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |--------------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Palestine|Patient |أل             |حسن             |Male  |20 |Murzuq     |Libya  |+9898989898 |English        |Palestinian |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "PS" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName  |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |-----------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Jordan|Patient |أل             |حسن             |Male  |20 |Amman      |Jordan |+9898989898 |English        |Jordanian   |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "JO" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName   |lastName|givenNameArabic|familyNameArabic|gender|age|governorate      |country|phoneNumber1|spokenLanguages|nationality1|
+   |------------|--------|---------------|----------------|------|---|-----------------|-------|------------|---------------|------------|
+   |Test Lebanon|Patient |أل             |حسن             |Male  |20 |Baalbek-El-Hermel|Lebanon|+9898989898 |English        |Lebanese    |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "LB" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |----------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Libya|Patient |أل             |حسن             |Male  |20 |Darnah     |Libya  |+9898989898 |English        |Libyan      |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "LY" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |----------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Sudan|Patient |أل             |حسن             |Male  |20 |Sanliurfa  |Turkey |+9898989898 |English        |Sudan       |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "SD" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName        |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country     |phoneNumber1|spokenLanguages|nationality1 |
+   |-----------------|--------|---------------|----------------|------|---|-----------|------------|------------|---------------|-------------|
+   |Test Saudi Arabia|Patient |أل             |حسن             |Male  |20 |Baha       |Saudi Arabia|+9898989898 |English        |Saudi Arabian|
+
+* Save Patient
+* Verify patient identifier begins with nationality code "SA" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |----------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Yemen|Patient |أل             |حسن             |Male  |20 |Marib      |Yemen  |+9898989898 |English        |Yemeni      |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "YE" and ends with gender code "M"
+
+* Click on create new patient link
+* Enter Patient Details 
+
+   |firstName |lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
+   |----------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
+   |Test Syria|Patient |أل             |حسن             |Male  |20 |Hama       |Syria  |+9898989898 |English        |Syrian      |
+
+* Save Patient
+* Verify patient identifier begins with nationality code "SY" and ends with gender code "M"

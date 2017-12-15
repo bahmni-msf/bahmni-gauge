@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class AmmanRegistrationPage extends RegistrationFirstPage {
 
-    @FindBy(how=How.CSS, using = ".back-btn")
+    @FindBy(how = How.CSS, using = ".back-btn")
     public WebElement backButton;
 
     @FindBy(how = How.CSS, using = ".submit-btn")
@@ -51,6 +51,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
             } else if (patientAttribute.getAttributeType().equals("checkbox") && patientAttribute.getValue().equals("True")) {
                 element.click();
             } else {
+                element.clear();
                 element.sendKeys(patientAttribute.getValue());
             }
         }
@@ -80,17 +81,17 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
             try {
                 Date expectedDate = simpleDateFormat1.parse(expectedValue);
                 Date actualDate = simpleDateFormat2.parse(actualValue);
-                Assert.assertEquals(expectedDate,actualDate);
+                Assert.assertEquals(expectedDate, actualDate);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         } else {
-            Assert.assertEquals(expectedValue,actualValue);
+            Assert.assertEquals(expectedValue, actualValue);
         }
     }
 
-    public void createPatientUsingApi(AmmanPatient ammanPatient){
-        BahmniRestClient.get().createPatient(ammanPatient,"patient_create.ftl");
+    public void createPatientUsingApi(AmmanPatient ammanPatient) {
+        BahmniRestClient.get().createPatient(ammanPatient, "patient_create.ftl");
     }
 
     public AmmanPatient clickSave(AmmanPatient patient) {
@@ -114,7 +115,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
 
     public void closeVisitUsingApi(AmmanPatient ammanPatient) {
         String requestJson = "{\"withCredentials\":true}";
-        BahmniRestClient.post("/openmrs/ws/rest/v1/bahmnicore/visit/endVisit?visitUuid="+ammanPatient.getActiveVisitUuid(),requestJson);
+        BahmniRestClient.post("/openmrs/ws/rest/v1/bahmnicore/visit/endVisit?visitUuid=" + ammanPatient.getActiveVisitUuid(), requestJson);
         ammanPatient.setActiveVisitUuid(null);
     }
 
@@ -141,33 +142,39 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         compareFields(Fields.id1FullNameEnglish, Fields.id1FullNameEnglish);
     }
 
-    public void clickBackButton(){
+    public void clickBackButton() {
         backButton.click();
     }
 
-   public void verifyPatientDetails(AmmanPatient patient) {
-        String patientID = Fields.getPatientAttribute("patientIdentifier").getValue();
-        String patientFirstName = Fields.getPatientAttribute("firstName").getValue();
-        String patientLastName = Fields.getPatientAttribute("lastName").getValue();
-        String patientGivenNameLocal = Fields.getPatientAttribute("givenNameArabic").getValue();
-        String patientFamilyNameLocal = Fields.getPatientAttribute("familyNameArabic").getValue();
-        String patientGender = Fields.getPatientAttribute("gender").getValue();
-        String patientAge = Fields.getPatientAttribute("age").getValue();
-        String patientCountry = Fields.getPatientAttribute("country").getValue();
+    public void verifyPatientDetails() {
+        String patientID = Fields.patientIdentifier.getPatientAttribute().getValue();
+        String patientFirstName = Fields.firstName.getPatientAttribute().getValue();
+        String patientLastName = Fields.lastName.getPatientAttribute().getValue();
+        String patientGivenNameLocal = Fields.givenNameArabic.getPatientAttribute().getValue();
+        String patientFamilyNameLocal = Fields.familyNameArabic.getPatientAttribute().getValue();
+        String patientGender = Fields.gender.getPatientAttribute().getValue();
+        String patientAge = Fields.age.getPatientAttribute().getValue();
+        String patientCountry = Fields.country.getPatientAttribute().getValue();
 
-        try{
-            if(enterID_checkbox.isDisplayed() && patient.getIdNumber()!= null) {
-                Assert.assertEquals("Identifier dont match",patientID,txtRegistrationNumber.getAttribute("value"));
-            }} catch (NoSuchElementException ex){
+        try {
+            if (patientIdentifierValue.getText() != null) {
+                Assert.assertEquals("Identifier dont match", patientID, patientIdentifierValue.getText());
+            }
+        } catch (NoSuchElementException ex) {
 
         }
 
-        Assert.assertEquals("First Name dont match",patientFirstName, txtPatientName.getAttribute("value"));
-        Assert.assertEquals("Last Name dont match",patientLastName, familyName.getAttribute("value"));
-        Assert.assertEquals("Gender dont match",patientGender, new Select(gender).getFirstSelectedOption().getText());
-        Assert.assertEquals("Age dont match",patientAge, ageYears.getAttribute("value"));
-        Assert.assertEquals("Given Name Local dont match", patientGivenNameLocal, givenNameLocal.getAttribute("value"));
-        Assert.assertEquals("Family Name Local dont match",patientFamilyNameLocal, familyNameLocal.getAttribute("value"));
-        Assert.assertEquals("Country dont match",patientCountry, country.getAttribute("value"));
+        Assert.assertEquals("First Name dont match", patientFirstName, txtPatientName.getAttribute("value"));
+        Assert.assertEquals("Last Name dont match", patientLastName, familyName.getAttribute("value"));
+        Assert.assertEquals("Gender dont match", patientGender, new Select(gender).getFirstSelectedOption().getText());
+        Assert.assertEquals("Age dont match", patientAge, ageYears.getAttribute("value"));
+
+        if (givenNameLocal.getAttribute("value") != null) {
+            Assert.assertEquals("Given Name Local dont match", patientGivenNameLocal, givenNameLocal.getAttribute("value"));
+        }
+        if (familyNameLocal.getAttribute("value") != null) {
+            Assert.assertEquals("Family Name Local dont match", patientFamilyNameLocal, familyNameLocal.getAttribute("value"));
+        }
+        Assert.assertEquals("Country dont match", patientCountry, country.getAttribute("value"));
     }
 }

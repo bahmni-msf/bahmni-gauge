@@ -13,6 +13,7 @@ import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
 import org.bahmni.gauge.common.registration.RegistrationVisitDetailsPage;
+import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class RegistrationSpec {
         BahmniPage.waitForSpinner(DriverFactory.getDriver());
     }
 
-    @Step({"Enter Patient Details <table>", "Enter Legal Rep Details <table>", "Enter Caretaker Details <table>", "Enter ID Document Details <table>"})
+    @Step({"Enter Patient Details <table>", "Enter Legal Rep Details <table>", "Enter Caretaker Details <table>", "Enter ID Document Details <table>", "Edit previous patient details <table>"})
     public void enterPatientDetails(Table table) throws Exception {
         List<PatientAttribute> patientAttributes = transformTableToPatientAttributes(table);
         registrationPage.fillAttributes(patientAttributes);
@@ -35,14 +36,14 @@ public class RegistrationSpec {
     @Step("Save Patient and refresh page")
     public void savePatient() {
         AmmanPatient ammnPatient = registrationPage.clickSave(ammanPatient);
-        SpecStoreHelper.store(AmmanPatient.class,ammnPatient);
+        SpecStoreHelper.store(AmmanPatient.class, ammnPatient);
         DriverFactory.getDriver().navigate().refresh();
     }
 
     @Step("Save Patient")
     public void clickSavePatient() {
         AmmanPatient ammnPatient = registrationPage.clickSave(ammanPatient);
-        SpecStoreHelper.store(AmmanPatient.class,ammnPatient);
+        SpecStoreHelper.store(AmmanPatient.class, ammnPatient);
     }
 
     @Step("Go to Home Page")
@@ -61,7 +62,7 @@ public class RegistrationSpec {
         registrationPage.showAllVisitTypeOptions();
         registrationPage.findVisit(visitType).click();
         waitForAppReady();
-        RegistrationVisitDetailsPage registrationVisitPage = PageFactory.get(RegistrationVisitDetailsPage.class);
+        PageFactory.get(RegistrationVisitDetailsPage.class);
     }
 
     @Step("Verify Legal Rep Values for autocomplete")
@@ -93,7 +94,7 @@ public class RegistrationSpec {
         patientAttribute.setValue(name);
         ammanPatient.addAttribute(patientAttribute);
         registrationPage.createPatientUsingApi(ammanPatient);
-        SpecStoreHelper.store(AmmanPatient.class,ammanPatient);
+        SpecStoreHelper.store(AmmanPatient.class, ammanPatient);
         ammanPatient.setVisitType(visitType);
         registrationPage.startVisitUsingApi(ammanPatient);
     }
@@ -125,8 +126,15 @@ public class RegistrationSpec {
     }
 
     @Step("Verify the patient details")
-    public void verifyPatientDetails(){
-        registrationPage.verifyPatientDetails(SpecStoreHelper.getLatest(AmmanPatient.class));
+    public void verifyPatientDetails() {
+        registrationPage.verifyPatientDetails();
     }
 
+    @Step("Verify patient identifier begins with nationality code <countryCode> and ends with gender code <genderCode>")
+    public void verifyPatientIdentifier(String countryCode, String genderCode) {
+        String actualCountryCode = Fields.patientIdentifier.getPatientAttribute().getValue().substring(0, 2);
+        String actualGenderCode = Fields.patientIdentifier.getPatientAttribute().getValue().substring(8);
+        Assert.assertTrue("Identifier country code is not as expected", actualCountryCode.equals(countryCode));
+        Assert.assertTrue("Identifier gender code is not as expected", actualGenderCode.equals(genderCode));
+    }
 }
