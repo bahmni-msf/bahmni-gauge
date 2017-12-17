@@ -29,7 +29,7 @@ tags: regression, sanity
 Create Patient Under Age 18 and Fill Legal Rep
 ----------------------------------------------
 
-tags: regression, sanity
+tags: regression
 
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
@@ -41,6 +41,7 @@ tags: regression, sanity
    |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|
    |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|
    |Albert   |Hassan  |أل             |حسن             |Male  |12 |Amman      |Jordan |+9898989898 |English        |Egyptian    |
+
 
 * Enter Legal Rep Details 
 
@@ -54,7 +55,7 @@ tags: regression, sanity
 Create Patient And Verify Legal Rep Same As Caretaker, Search by Identifier, fetch & validate patient details
 -------------------------------------------------------------------------------------------------------------
 
-tags: regression, sanity
+tags: regression
 
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
@@ -89,7 +90,7 @@ tags: regression, sanity
 Create Patient and Fill ID Documents, Search by Name in Arabic, fetch & validate patient details
 ------------------------------------------------------------------------------------------------
 
-tags: regression, sanity
+tags: regression
 
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
@@ -261,3 +262,238 @@ tags: regression
 
 * Save Patient
 * Verify patient identifier begins with nationality code "SY" and ends with gender code "M"
+
+Verify visibility of sections in registration page
+--------------------------------------------------
+
+tags: regression
+
+* On the login page
+* Login with username "BAHMNI_GAUGE_OPD_REGISTER" and password "BAHMNI_GAUGE_OPD_PASSWORD" with location "BAHMNI_GAUGE_OPD_LOCATION"
+* Click on registration app
+* Click on create new patient link
+* Verify below sections are visible by default in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+
+* Verify below sections are hidden by default in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Caretaker Details                                     |
+   |Caretaker Contact Details                             |
+   |Caretaker ID Documents                                |
+   |Patient ID Documents 1                                |
+   |Patient ID Documents 2                                |
+   |Legal Representative (for patient under 18 years only)|
+
+* Enter Patient Details 
+
+   |isCareTakerRequiredCheckBox|
+   |---------------------------|
+   |True                       |
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+   |Caretaker Details          |
+   |Caretaker Contact Details  |
+   |Caretaker ID Documents     |
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Patient ID Documents 1                                |
+   |Patient ID Documents 2                                |
+   |Legal Representative (for patient under 18 years only)|
+
+* Enter Patient Details 
+
+   |isCareTakerRequiredCheckBox|
+   |---------------------------|
+   |False                      |
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Caretaker Details                                     |
+   |Caretaker Contact Details                             |
+   |Caretaker ID Documents                                |
+   |Patient ID Documents 1                                |
+   |Patient ID Documents 2                                |
+   |Legal Representative (for patient under 18 years only)|
+
+* Enter Patient Details 
+
+   |statusofOfficialIDdocuments|
+   |---------------------------|
+   |Received                   |
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+   |Patient ID Documents 1     |
+   |Patient ID Documents 2     |
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Caretaker Details                                     |
+   |Caretaker Contact Details                             |
+   |Caretaker ID Documents                                |
+   |Legal Representative (for patient under 18 years only)|
+
+* Enter Patient Details 
+
+   |statusofOfficialIDdocuments|
+   |---------------------------|
+   |Waiting                    |
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Patient ID Documents 1                                |
+   |Patient ID Documents 2                                |
+   |Caretaker Details                                     |
+   |Caretaker Contact Details                             |
+   |Caretaker ID Documents                                |
+   |Legal Representative (for patient under 18 years only)|
+
+* Enter Patient Details 
+
+   |statusofOfficialIDdocuments|
+   |---------------------------|
+   |Unknown                    |
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Patient ID Documents 1                                |
+   |Patient ID Documents 2                                |
+   |Caretaker Details                                     |
+   |Caretaker Contact Details                             |
+   |Caretaker ID Documents                                |
+   |Legal Representative (for patient under 18 years only)|
+
+* Enter Patient Details 
+
+   |age|gender|
+   |---|------|
+   |17 |Male  |
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |NEW PATIENT                                           |
+   |Camp Address                                          |
+   |Patient Contact Details                               |
+   |Other Information                                     |
+   |Emergency Contact Details                             |
+   |Patient Arrival Information                           |
+   |Relationships                                         |
+   |Legal Representative (for patient under 18 years only)|
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                  |
+   |-------------------------|
+   |Caretaker Details        |
+   |Caretaker Contact Details|
+   |Caretaker ID Documents   |
+   |Patient ID Documents 1   |
+   |Patient ID Documents 2   |
+
+* Enter Patient Details 
+
+   |age|gender|
+   |---|------|
+   |18 |Female|
+
+* Verify below sections are visible in Registration page 
+
+   |SECTION                    |
+   |---------------------------|
+   |NEW PATIENT                |
+   |Camp Address               |
+   |Patient Contact Details    |
+   |Other Information          |
+   |Emergency Contact Details  |
+   |Patient Arrival Information|
+   |Relationships              |
+
+* Verify below sections are hidden in Registration page 
+
+   |SECTION                                               |
+   |------------------------------------------------------|
+   |Caretaker Details                                     |
+   |Caretaker Contact Details                             |
+   |Caretaker ID Documents                                |
+   |Patient ID Documents 1                                |
+   |Patient ID Documents 2                                |
+   |Legal Representative (for patient under 18 years only)|

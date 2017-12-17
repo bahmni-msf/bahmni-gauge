@@ -43,12 +43,17 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     @FindBy(how = How.CSS, using = "#address3")
     public WebElement country;
 
+    @FindBy(how = How.CSS, using = ".box-container")
+    public List<WebElement> registrationSections;
+
     public void fillAttributes(List<PatientAttribute> patientAttributes) {
         for (PatientAttribute patientAttribute : patientAttributes) {
             WebElement element = driver.findElement(By.cssSelector(patientAttribute.getIdentifier()));
             if (patientAttribute.getAttributeType().equals("dropdown")) {
                 new Select(element).selectByVisibleText(patientAttribute.getValue());
-            } else if (patientAttribute.getAttributeType().equals("checkbox") && patientAttribute.getValue().equals("True")) {
+            } else if (patientAttribute.getAttributeType().equals("checkbox") && patientAttribute.getValue().equals("True") && !(element.isSelected())) {
+                element.click();
+            } else if (patientAttribute.getAttributeType().equals("checkbox") && patientAttribute.getValue().equals("False") && element.isSelected()) {
                 element.click();
             } else {
                 element.clear();

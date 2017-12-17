@@ -14,6 +14,8 @@ import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
 import org.bahmni.gauge.common.registration.RegistrationVisitDetailsPage;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,11 +54,6 @@ public class RegistrationSpec {
         waitForAppReady();
     }
 
-    @Step("Enter Clinical Details")
-    public void enterClinicalDetails() {
-        registrationPage.enterVisitDetailsPage();
-    }
-
     @Step("Start <visitType> visit and navigate to Programs page")
     public void startVisitNavigateProgram(String visitType) {
         registrationPage.showAllVisitTypeOptions();
@@ -90,7 +87,7 @@ public class RegistrationSpec {
 
     @Step("Create patient <Name> using API with <visit Type> visit")
     public void implementation1(String name, String visitType) throws Exception {
-        PatientAttribute patientAttribute = Fields.getPatientAttribute("firstName");
+        PatientAttribute patientAttribute = Fields.firstName.getPatientAttribute();
         patientAttribute.setValue(name);
         ammanPatient.addAttribute(patientAttribute);
         registrationPage.createPatientUsingApi(ammanPatient);
@@ -136,5 +133,39 @@ public class RegistrationSpec {
         String actualGenderCode = Fields.patientIdentifier.getPatientAttribute().getValue().substring(8);
         Assert.assertTrue("Identifier country code is not as expected", actualCountryCode.equals(countryCode));
         Assert.assertTrue("Identifier gender code is not as expected", actualGenderCode.equals(genderCode));
+    }
+
+    @Step({"Verify below sections are hidden by default in Registration page <table>", "Verify below sections are hidden in Registration page <table>"})
+    public void verifyElementsHidden(Table table) {
+        List<TableRow> tableRows = table.getTableRows();
+        for (TableRow row : tableRows) {
+            String selectedRow = row.getCell("SECTION");
+            Assert.assertFalse(String.format("%s is not hidden", selectedRow), isElementPresent(selectedRow));
+        }
+    }
+
+    @Step({"Verify below sections are visible by default in Registration page <table>", "Verify below sections are visible in Registration page <table>"})
+    public void verifyElementsVisible(Table table) {
+        List<TableRow> tableRows = table.getTableRows();
+        for (TableRow row : tableRows) {
+            String selectedRow = row.getCell("SECTION");
+            Assert.assertTrue(String.format("%s is not visible", selectedRow), isElementPresent(selectedRow));
+        }
+    }
+
+    private Boolean isElementPresent(String titleID) {
+        List<WebElement> sectionList = registrationPage.registrationSections;
+        for (WebElement section : sectionList) {
+            String sectionHeaderText = "";
+            try {
+                sectionHeaderText = section.findElement(By.cssSelector("strong")).getText();
+            } catch (Exception e) {
+            }
+
+            if (sectionHeaderText.equalsIgnoreCase(titleID)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
