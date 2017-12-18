@@ -17,20 +17,6 @@ import java.util.List;
  * Created by jaseenam on 08/09/17.
  */
 public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
-    @FindBy(how = How.LINK_TEXT, using = "Appointments List")
-    WebElement appointmentsList;
-
-    @FindBy(how = How.LINK_TEXT, using = "Add new appointment")
-    WebElement addAppointmentBtn;
-
-    @FindBy(how = How.CSS, using = ".app-today-btn")
-    WebElement todayBtn;
-    @FindBy(how = How.LINK_TEXT, using = "List view")
-    WebElement listViewBtn;
-
-    @FindBy(how = How.LINK_TEXT, using = "Calendar")
-    WebElement calendarViewBtn;
-
     @FindBy(how = How.CSS, using = "#patientID")
     WebElement patientIDorName;
 
@@ -71,11 +57,6 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
 
     @FindBy(how = How.LINK_TEXT, using = "Cancel")
     WebElement cancelAppointmentBtn;
-
-
-    public void clickAddNewAppointment() {
-        addAppointmentBtn.click();
-    }
 
     public void addNewAppointment(Table table, List<String> colNames) {
         List<TableRow> services = table.getTableRows();
@@ -144,22 +125,6 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
         autoComplete.sendKeys(value);
         waitForSpinner(driver);
         autoComplete.sendKeys(Keys.DOWN, Keys.RETURN);
-    }
-
-    public void clickCalendarView() {
-        calendarViewBtn.click();
-    }
-
-    public void clickListView() {
-        listViewBtn.click();
-    }
-
-    public void clickToday() {
-        todayBtn.click();
-    }
-
-    public void clickAppointmentsList() {
-        appointmentsList.click();
     }
 
     public void cancel() {

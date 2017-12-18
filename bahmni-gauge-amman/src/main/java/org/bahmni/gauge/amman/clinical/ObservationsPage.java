@@ -50,7 +50,6 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         }
     }
 
-
     public void fillTemplateData(Table table) {
         List<TableRow> rows = table.getTableRows();
         for (TableRow row : rows) {
@@ -63,9 +62,9 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                     fieldFound = true;
                     if (hasTag(observationNode, "input")) {
                         WebElement autoComplete = observationNode.findElement(By.tagName("input"));
-                        if (autoComplete.getAttribute("class").contains("ui-autocomplete-input"))
+                        if (autoComplete.getAttribute("class").contains("ui-autocomplete-input")) {
                             fillAutocomplete(autoComplete, value);
-                        else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
+                        } else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
                             fillAutocomplete(autoComplete, value);
                         } else {
                             WebElement inputField = observationNode.findElement(By.tagName("input"));
@@ -97,6 +96,48 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                                         break;
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+            if (!fieldFound) {
+                Assert.fail("Field " + fieldName + " not found or disabled");
+            }
+        }
+    }
+
+    public void verifyTemplateData(Table table) {
+        List<TableRow> rows = table.getTableRows();
+        for (TableRow row : rows) {
+            boolean fieldFound = false;
+            String fieldName = row.getCell("FIELD").trim();
+            String value = row.getCell("VALUE");
+            System.out.println("first " + fieldName + " " + value);
+            for (WebElement observationNode : observationNodes) {
+                String observLabel = observationNode.findElement(By.tagName("label")).getText().trim();
+                System.out.println("second " + observLabel);
+                if (observLabel.equals(fieldName)) {
+                    System.out.println("third " + fieldName);
+                    fieldFound = true;
+                    if (hasTag(observationNode, "input")) {
+                        WebElement autoComplete = observationNode.findElement(By.tagName("input"));
+                        System.out.println("fourth " + autoComplete.getAttribute("value") + "qqqq");
+                        Assert.assertTrue(String.format("%s Data does not match", fieldName), autoComplete.getAttribute("value").equalsIgnoreCase(value));
+                    }
+                } else if (hasTag(observationNode, "textarea")) {
+                    WebElement textField = observationNode.findElement(By.tagName("textarea"));
+                    Assert.assertTrue(String.format("%s Data does not match", fieldName), textField.getAttribute("value").equalsIgnoreCase(value));
+
+                } else if (hasTag(observationNode, "select")) {
+                    Assert.assertTrue("Data does not match", new Select(observationNode.findElement(By.tagName("select"))).getFirstSelectedOption().getText().equalsIgnoreCase(value));
+                } else if (hasTag(observationNode, "button")) {
+                    List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
+                    String[] multiSelect = value.split(";");
+                    for (String val : multiSelect) {
+                        for (WebElement button : buttons) {
+                            if (button.getText().contains(val)) {
+                                Assert.assertTrue("Button is not selected", button.isSelected());
                             }
                         }
                     }

@@ -23,6 +23,14 @@ public class ObservationsSpec {
         observationsPage.fillTemplateData(table);
     }
 
+    @Step("Select template <template> from observation page and verify details <table>")
+    public void selectTemplateAndVerifyData(String template, Table table) {
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.selectTemplate(template);
+        waitForAppReady();
+        observationsPage.verifyTemplateData(table);
+    }
+
     @Step("Verify these forms are saved and disabled to add <table>")
     public void verifyFormsSavedAndDisabledToAdd(Table table) {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
