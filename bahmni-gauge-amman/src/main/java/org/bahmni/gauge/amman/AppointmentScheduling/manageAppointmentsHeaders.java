@@ -66,7 +66,7 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     @FindBy(how = How.CSS, using = ".create-new-app-container")
     WebElement addAppointmentSlider;
 
-    @FindBy(how = How.CSS, using = ".service-save-btn")
+    @FindBy(how = How.CSS, using = ".service-save-btn.create-appointment-action-btn")
     WebElement saveAppointmentBtn;
 
     @FindBy(how = How.LINK_TEXT, using = "Cancel")
@@ -129,8 +129,8 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
                     break;
             }
         }
+        waitForElementOnPage(saveAppointmentBtn);
         saveAppointmentBtn.click();
-        waitForSpinner(driver);
     }
 
     private String todayDateAsString() {
@@ -147,22 +147,18 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     }
 
     public void clickCalendarView() {
-        waitForElementOnPage(calendarViewBtn);
         calendarViewBtn.click();
     }
 
     public void clickListView() {
-        waitForElementOnPage(listViewBtn);
         listViewBtn.click();
     }
 
     public void clickToday() {
-        waitForElementOnPage(todayBtn);
         todayBtn.click();
     }
 
     public void clickAppointmentsList() {
-        waitForElementOnPage(appointmentsList);
         appointmentsList.click();
     }
 

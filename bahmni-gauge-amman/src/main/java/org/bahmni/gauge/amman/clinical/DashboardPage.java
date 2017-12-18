@@ -17,7 +17,7 @@ public class DashboardPage extends org.bahmni.gauge.common.clinical.DashboardPag
     public boolean dashboardName(String dashboardname) {
         boolean val = false;
         String dashboardNameonUI = selectedTab.getText();
-        if (dashboardNameonUI.equalsIgnoreCase(dashboardname)) {
+        if (dashboardNameonUI.contains(dashboardname)) {
             val = true;
         }
         return val;

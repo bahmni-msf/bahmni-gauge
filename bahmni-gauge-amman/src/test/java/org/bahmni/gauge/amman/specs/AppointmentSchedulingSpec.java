@@ -122,34 +122,8 @@ public class AppointmentSchedulingSpec {
     @Step("Add appointment with below details <table>")
     public void addNewAppointment(Table table) {
         List<String> columnNames = table.getColumnNames();
+        waitForAppReady();
         ManageAppointmentsHeaders.addNewAppointment(table, columnNames);
-        waitForAppReady();
-    }
-
-    @Step("Click on link <link>")
-    public void clickButton(String linkText) {
-
-        waitForAppReady();
-        switch (linkText) {
-            case "Appointments List":
-                ManageAppointmentsHeaders.clickAppointmentsList();
-                break;
-            case "Add new appointment":
-                ManageAppointmentsHeaders.clickAddNewAppointment();
-                break;
-
-            case "Today":
-                ManageAppointmentsHeaders.clickToday();
-                break;
-
-            case "List view":
-                ManageAppointmentsHeaders.clickListView();
-                break;
-
-            case "Calendar":
-                ManageAppointmentsHeaders.clickCalendarView();
-                break;
-        }
         waitForAppReady();
     }
 

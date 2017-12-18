@@ -5,8 +5,9 @@ Created by jaseena, swarup on 2/16/17
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
+Enter data in observation forms and verify Patient Summary Dashboard
+--------------------------------------------------------------------
 Verify the Patient Summary Dashboard display controls
------------------------------------------------------
 
 tags: sanity, regression
 
