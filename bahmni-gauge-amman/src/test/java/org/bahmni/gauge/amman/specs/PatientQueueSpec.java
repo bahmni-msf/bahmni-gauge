@@ -81,8 +81,8 @@ public class PatientQueueSpec {
     }
 
     @Step("Verify patient <Kasm> is not present <To Be Scheduled> queues")
-    public void implementation3(String patientName,String queueName) {
+    public void implementation3(String patientName, String queueName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
-        Assert.assertTrue(patientQueuePage.isPatientNotPresentInGivenTab(patientName,queueName));
+        Assert.assertTrue(patientQueuePage.isPatientNotPresentInGivenTab(patientName, queueName));
     }
 }

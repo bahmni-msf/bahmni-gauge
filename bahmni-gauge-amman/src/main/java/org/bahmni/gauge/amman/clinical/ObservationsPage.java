@@ -8,13 +8,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
 
 public class ObservationsPage extends org.bahmni.gauge.common.clinical.ObservationsPage {
 
     @FindBy(how = How.CSS, using = ".leaf-observation-node")
     public List<WebElement> observationNodes;
+
+    @FindBy(how = How.CSS, using = ".hasLegend .collapsible-set")
+    public List<WebElement> sections;
 
     @Override
     public void selectTemplate(String templateName) {
@@ -64,21 +66,26 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                         WebElement autoComplete = observationNode.findElement(By.tagName("input"));
                         if (autoComplete.getAttribute("class").contains("ui-autocomplete-input")) {
                             fillAutocomplete(autoComplete, value);
+                            break;
                         } else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
                             fillAutocomplete(autoComplete, value);
+                            break;
                         } else {
                             WebElement inputField = observationNode.findElement(By.tagName("input"));
                             if (inputField.getText().isEmpty()) {
                                 inputField.sendKeys(value, Keys.TAB);
+                                break;
                             }
                         }
                     } else if (hasTag(observationNode, "textarea")) {
                         WebElement textField = observationNode.findElement(By.tagName("textarea"));
                         if (textField.getText().isEmpty()) {
                             textField.sendKeys(value);
+                            break;
                         }
                     } else if (hasTag(observationNode, "select")) {
                         new Select(observationNode.findElement(By.tagName("select"))).selectByVisibleText(value);
+                        break;
                     } else if (hasTag(observationNode, "button")) {
                         List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
                         String[] multiSelect = value.split(";");
@@ -113,24 +120,23 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
             boolean fieldFound = false;
             String fieldName = row.getCell("FIELD").trim();
             String value = row.getCell("VALUE");
-            System.out.println("first " + fieldName + " " + value);
             for (WebElement observationNode : observationNodes) {
                 String observLabel = observationNode.findElement(By.tagName("label")).getText().trim();
-                System.out.println("second " + observLabel);
                 if (observLabel.equals(fieldName)) {
-                    System.out.println("third " + fieldName);
                     fieldFound = true;
                     if (hasTag(observationNode, "input")) {
                         WebElement autoComplete = observationNode.findElement(By.tagName("input"));
-                        System.out.println("fourth " + autoComplete.getAttribute("value") + "qqqq");
                         Assert.assertTrue(String.format("%s Data does not match", fieldName), autoComplete.getAttribute("value").equalsIgnoreCase(value));
+                        break;
                     }
                 } else if (hasTag(observationNode, "textarea")) {
                     WebElement textField = observationNode.findElement(By.tagName("textarea"));
                     Assert.assertTrue(String.format("%s Data does not match", fieldName), textField.getAttribute("value").equalsIgnoreCase(value));
+                    break;
 
                 } else if (hasTag(observationNode, "select")) {
                     Assert.assertTrue("Data does not match", new Select(observationNode.findElement(By.tagName("select"))).getFirstSelectedOption().getText().equalsIgnoreCase(value));
+                    break;
                 } else if (hasTag(observationNode, "button")) {
                     List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
                     String[] multiSelect = value.split(";");
@@ -141,6 +147,7 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                             }
                         }
                     }
+                    break;
                 }
             }
             if (!fieldFound) {
@@ -153,6 +160,26 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         boolean val = true;
         try {
             answer.findElement(By.tagName(input));
+        } catch (NoSuchElementException e) {
+            val = false;
+        }
+        return val;
+    }
+
+    private boolean hasClass(WebElement answer) {
+        boolean val = true;
+        try {
+            answer.findElement(By.cssSelector(".compuptedValue"));
+        } catch (NoSuchElementException e) {
+            val = false;
+        }
+        return val;
+    }
+
+    private boolean hasElement(WebElement parentElement) {
+        boolean val = true;
+        try {
+            parentElement.findElement(By.cssSelector(".mylegend"));
         } catch (NoSuchElementException e) {
             val = false;
         }
@@ -199,4 +226,148 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
         }
         return result;
     }
+
+
+    public void fillTemplateData(Table table, String section) {
+        List<TableRow> rows = table.getTableRows();
+        WebElement selectedSection = null;
+        for (WebElement eachSection : sections) {
+            if (hasElement(eachSection)) {
+                String sectionTitle = eachSection.findElement(By.cssSelector(".mylegend")).getText();
+                if (sectionTitle.equalsIgnoreCase(section)) {
+                    selectedSection = eachSection;
+                    break;
+                }
+            }
+        }
+        if (selectedSection != null) {
+            List<WebElement> obsNode = selectedSection.findElements(By.cssSelector(".leaf-observation-node"));
+            for (TableRow row : rows) {
+                boolean fieldFound = false;
+                String fieldName = row.getCell("FIELD").trim();
+                String value = row.getCell("VALUE");
+                for (WebElement observationNode : obsNode) {
+                    String observLabel = observationNode.findElement(By.tagName("label")).getText().trim();
+                    if (observLabel.equals(fieldName)) {
+                        fieldFound = true;
+                        if (hasTag(observationNode, "input")) {
+                            WebElement autoComplete = observationNode.findElement(By.tagName("input"));
+                            if (autoComplete.getAttribute("class").contains("ui-autocomplete-input")) {
+                                fillAutocomplete(autoComplete, value);
+                                break;
+                            } else if (autoComplete.getAttribute("class").contains("input ng-pristine ng-untouched ng-valid")) {
+                                fillAutocomplete(autoComplete, value);
+                                break;
+                            } else {
+                                WebElement inputField = observationNode.findElement(By.tagName("input"));
+                                if (inputField.getText().isEmpty()) {
+                                    inputField.sendKeys(value, Keys.TAB);
+                                    break;
+                                }
+                            }
+                        } else if (hasTag(observationNode, "textarea")) {
+                            WebElement textField = observationNode.findElement(By.tagName("textarea"));
+                            if (textField.getText().isEmpty()) {
+                                textField.sendKeys(value);
+                                break;
+                            }
+                        } else if (hasTag(observationNode, "select")) {
+                            new Select(observationNode.findElement(By.tagName("select"))).selectByVisibleText(value);
+                            break;
+                        } else if (hasTag(observationNode, "button")) {
+                            List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
+                            String[] multiSelect = value.split(";");
+                            for (String val : multiSelect) {
+                                for (WebElement button : buttons) {
+                                    if (button.getText().contains(val)) {
+                                        try {
+                                            button.click();
+                                            break;
+                                        } catch (WebDriverException ee) {
+                                            JavascriptExecutor js = ((JavascriptExecutor) driver);
+                                            js.executeScript("scrollBy(0,1000)");
+                                            Actions actions = new Actions(driver);
+                                            actions.moveToElement(button).click().build().perform();
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+                if (!fieldFound) {
+                    Assert.fail("Field " + fieldName + " not found or disabled");
+                }
+            }
+        } else if (selectedSection == null) {
+            Assert.fail("Section " + section + " not found or disabled");
+        }
+    }
+
+    public void verifyTemplateData(Table table, String section) {
+        List<TableRow> rows = table.getTableRows();
+        WebElement selectedSection = null;
+        for (WebElement eachSection : sections) {
+            String sectionTitle = eachSection.findElement(By.cssSelector(".mylegend")).getText();
+            if (sectionTitle.equalsIgnoreCase(section)) {
+                selectedSection = eachSection;
+                break;
+            }
+        }
+        if (selectedSection != null) {
+            List<WebElement> obsNode = selectedSection.findElements(By.cssSelector(".leaf-observation-node"));
+            List<WebElement> obsNodeCalculated = selectedSection.findElements(By.cssSelector(".hasLegend .collapsible-set"));
+            for (WebElement element : obsNodeCalculated) {
+                obsNode.add(element);
+            }
+            for (TableRow row : rows) {
+                boolean fieldFound = false;
+                String fieldName = row.getCell("FIELD").trim();
+                String value = row.getCell("VALUE");
+                for (WebElement observationNode : obsNode) {
+                    String observLabel = observationNode.findElement(By.tagName("label")).getText().trim();
+                    if (observLabel.equals(fieldName)) {
+                        fieldFound = true;
+                        if (hasClass(observationNode)) {
+                            Assert.assertTrue(String.format("%s Data does not match", fieldName), observationNode.findElement(By.cssSelector(".compuptedValue")).getText().equalsIgnoreCase(value));
+                            break;
+                        }
+                        if (hasTag(observationNode, "input")) {
+                            WebElement autoComplete = observationNode.findElement(By.tagName("input"));
+                            Assert.assertTrue(String.format("%s Data does not match", fieldName), autoComplete.getAttribute("value").equalsIgnoreCase(value));
+                            break;
+                        } else if (hasTag(observationNode, "textarea")) {
+                            WebElement textField = observationNode.findElement(By.tagName("textarea"));
+                            Assert.assertTrue(String.format("%s Data does not match", fieldName), textField.getAttribute("value").equalsIgnoreCase(value));
+                            break;
+
+                        } else if (hasTag(observationNode, "select")) {
+                            Assert.assertTrue("Data does not match", new Select(observationNode.findElement(By.tagName("select"))).getFirstSelectedOption().getText().equalsIgnoreCase(value));
+                            break;
+                        } else if (hasTag(observationNode, "button")) {
+                            List<WebElement> buttons = observationNode.findElements(By.tagName("button"));
+                            String[] multiSelect = value.split(";");
+                            for (String val : multiSelect) {
+                                for (WebElement button : buttons) {
+                                    if (button.getText().contains(val)) {
+                                        Assert.assertTrue("Button is not selected", button.getAttribute("class").contains("active"));
+                                        break;
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+                if (!fieldFound) {
+                    Assert.fail("Field " + fieldName + " not found or disabled");
+                }
+            }
+        } else if (selectedSection == null) {
+            Assert.fail("Section " + section + " not found or disabled");
+        }
+    }
+
 }

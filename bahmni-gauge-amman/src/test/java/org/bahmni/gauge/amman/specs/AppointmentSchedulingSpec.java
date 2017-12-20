@@ -48,15 +48,32 @@ public class AppointmentSchedulingSpec {
     public void gotoAdminTab() {
         waitForAppReady();
         AppointmentSchedulingHeader.gotoAdminPage();
-        waitForAppReady();
-
     }
 
     @Step("Navigate to Manage Appointments Tab")
     public void gotoManageAppointmentsTab() {
         waitForAppReady();
         AppointmentSchedulingHeader.gotoManageAppointments();
+    }
+
+
+    @Step("Click on Appointments List link")
+    public void gotoAppointmentsListTab() {
         waitForAppReady();
+        AppointmentSchedulingHeader.gotoAppointmentsList();
+        waitForAppReady();
+    }
+
+    @Step("Click on List view link")
+    public void gotoListViewTab() {
+        waitForAppReady();
+        AppointmentSchedulingHeader.gotoListView();
+    }
+
+    @Step("Click on Add new appointment link")
+    public void clickAddNewAppointment() {
+        waitForAppReady();
+        AppointmentSchedulingHeader.clickAddNewAppointment();
     }
 
     @Step("Create new service with below details <table>")
@@ -77,11 +94,9 @@ public class AppointmentSchedulingSpec {
 
     @Step("Cancel service creation")
     public void cancelServiceCreation() {
-
         ManageAppointmentsHeaders.gotoAdminPage();
         waitForAppReady();
         ServicePage.clickButton("Don't save");
-        waitForAppReady();
     }
 
     @Step("Verify service details of <servicename> in Admin Service Page <table>")
@@ -124,7 +139,6 @@ public class AppointmentSchedulingSpec {
         List<String> columnNames = table.getColumnNames();
         waitForAppReady();
         ManageAppointmentsHeaders.addNewAppointment(table, columnNames);
-        waitForAppReady();
     }
 
     @Step("Verify appointment with below details <table>")

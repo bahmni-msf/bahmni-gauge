@@ -15,12 +15,37 @@ public class appointmentSchedulingHeader extends HomePage {
     @FindBy(how = How.LINK_TEXT, using = "Admin")
     WebElement adminTab;
 
+    @FindBy(how = How.LINK_TEXT, using = "Appointments List")
+    WebElement appointmentsListTab;
+
+    @FindBy(how = How.LINK_TEXT, using = "Add new appointment")
+    WebElement addNewAppointmentLink;
+
+    @FindBy(how = How.LINK_TEXT, using = "List view")
+    WebElement listViewLink;
+
     public void gotoManageAppointments() {
+        waitForElementOnPage(manageAppointments);
         manageAppointments.click();
     }
 
     public void gotoAdminPage() {
+        waitForElementOnPage(adminTab);
         adminTab.click();
     }
 
+    public void gotoAppointmentsList() {
+        waitForElementOnPage(appointmentsListTab);
+        appointmentsListTab.click();
+    }
+
+    public void clickAddNewAppointment() {
+        waitForElementOnPage(addNewAppointmentLink);
+        addNewAppointmentLink.click();
+    }
+
+    public void gotoListView() {
+        waitForElementOnPage(listViewLink);
+        listViewLink.click();
+    }
 }

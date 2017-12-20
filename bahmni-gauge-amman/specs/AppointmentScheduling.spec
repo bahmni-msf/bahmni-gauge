@@ -130,15 +130,15 @@ Create appointment and verify appointment details in List View
    |Service Physio|description new|20      |08:30 AM  |02:00 PM|10      |OPD     |
 
 * Navigate to Manage Appointments Tab
-* Click on "Appointments List" link
-* Click on "Add new appointment" link
+* Click on Appointments List link
+* Click on Add new appointment link
 * Add appointment with below details 
 
    |Patient|Service       |Provider |Date          |Start Time|Notes    |
    |-------|--------------|---------|--------------|----------|---------|
    |Mala   |Service Physio|Super Man|NOW[dd MMM yy]|10:00 am  |Test note|
 
-* Click on "List view" link
+* Click on List view link
 * Verify appointment with below details 
 
    |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |Location|
@@ -172,8 +172,8 @@ Conflict appointment
    |Service Physio|description new|20      |08:30 AM  |02:00 PM|10      |
 
 * Navigate to Manage Appointments Tab
-* Click on "Appointments List" link
-* Click on "Add new appointment" link
+* Click on Appointments List link
+* Click on Add new appointment link
 * Add appointment with below details 
 
    |Patient  |Service       |Provider |Date          |Start Time|Notes    |
@@ -191,7 +191,7 @@ Conflict appointment
 * Cancel appointment creation
 
 making environment clean again
-* Click on "List view" link
+* Click on List view link
 * Mark cancel if appointment with below details exists
 
    |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
@@ -216,15 +216,15 @@ Miss appointment
    |--------------|---------------|--------|----------|--------|--------|
    |Service Cardio|description new|20      |08:30 AM  |02:00 PM|10      |
 * Navigate to Manage Appointments Tab
-* Click on "Appointments List" link
-* Click on "Add new appointment" link
+* Click on Appointments List link
+* Click on Add new appointment link
 * Add appointment with below details 
 
    |Patient  |Service       |Provider |Date          |Start Time|Notes    |
    |---------|--------------|---------|--------------|----------|---------|
    |Sana Appt|Service Cardio|Super Man|NOW[dd MMM yy]|10:00 am  |Test note|
 
-* Click on "List view" link
+* Click on List view link
 * Mark as missed appointment with below details 
 
    |Patient Name|Service       |Provider |Start Time|Notes    |Status   |

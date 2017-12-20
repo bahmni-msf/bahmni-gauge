@@ -50,7 +50,6 @@ public class AdmitPage extends BedAssignmentPage {
 
     public Boolean assignAnEmptyBed() {
         waitForSpinner();
-        //System.out.println(beds.size());
         if (!CollectionUtils.isEmpty(beds)) {
             return assignBed(RC4thFloor, beds.get(0));
         }

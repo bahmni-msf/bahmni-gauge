@@ -31,6 +31,22 @@ public class ObservationsSpec {
         observationsPage.verifyTemplateData(table);
     }
 
+    @Step({"Select template <template> from observation page and fill details in <sectionName> section <table>", "Select template <template> from observation page and edit details in <sectionName> section <table>"})
+    public void selectTemplateSectionAndFillData(String template, String section, Table table) {
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.selectTemplate(template);
+        waitForAppReady();
+        observationsPage.fillTemplateData(table, section);
+    }
+
+    @Step("Select template <template> from observation page and verify details in <sectionName> section <table>")
+    public void selectTemplateSectionAndVerifyData(String template, String section, Table table) {
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.selectTemplate(template);
+        waitForAppReady();
+        observationsPage.verifyTemplateData(table, section);
+    }
+
     @Step("Verify these forms are saved and disabled to add <table>")
     public void verifyFormsSavedAndDisabledToAdd(Table table) {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
