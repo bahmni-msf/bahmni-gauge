@@ -139,6 +139,7 @@ public class AppointmentSchedulingSpec {
         List<String> columnNames = table.getColumnNames();
         waitForAppReady();
         ManageAppointmentsHeaders.addNewAppointment(table, columnNames);
+        waitForAppReady();
     }
 
     @Step("Verify appointment with below details <table>")
