@@ -73,6 +73,7 @@ public class RegistrationSearchSpec {
 	public void ensureThatTheSearchResultsAreShown(){
         RegistrationSearch registrationSearch = PageFactory.get(RegistrationSearch.class);
 		registrationSearch.getFirstResult();
+		waitForAppReady();
 	}
 
 	@Step("Validate that the search results are displayed")

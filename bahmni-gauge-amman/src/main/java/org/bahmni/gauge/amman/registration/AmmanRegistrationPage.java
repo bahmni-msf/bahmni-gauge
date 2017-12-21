@@ -28,6 +28,9 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
     @FindBy(how = How.CSS, using = ".submit-btn")
     public WebElement save;
 
+    @FindBy(how = How.CSS, using = ".confirm")
+    public WebElement enterVisitDetails;
+
     @FindBy(how = How.CSS, using = "#givenNameLocal")
     public WebElement givenNameLocal;
 
@@ -181,5 +184,10 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
             Assert.assertEquals("Family Name Local dont match", patientFamilyNameLocal, familyNameLocal.getAttribute("value"));
         }
         Assert.assertEquals("Country dont match", patientCountry, country.getAttribute("value"));
+    }
+
+    public void clickVisitDetailsButton() {
+        enterVisitDetails.click();
+        waitForSpinner();
     }
 }

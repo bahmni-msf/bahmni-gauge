@@ -32,6 +32,7 @@ public class RegistrationSpec {
     @Step({"Enter Patient Details <table>", "Enter Legal Rep Details <table>", "Enter Caretaker Details <table>", "Enter ID Document Details <table>", "Edit previous patient details <table>"})
     public void enterPatientDetails(Table table) throws Exception {
         List<PatientAttribute> patientAttributes = transformTableToPatientAttributes(table);
+        waitForAppReady();
         registrationPage.fillAttributes(patientAttributes);
     }
 
@@ -58,6 +59,13 @@ public class RegistrationSpec {
     public void startVisitNavigateProgram(String visitType) {
         registrationPage.showAllVisitTypeOptions();
         registrationPage.findVisit(visitType).click();
+        waitForAppReady();
+        PageFactory.get(RegistrationVisitDetailsPage.class);
+    }
+
+    @Step("Click Enter <hospital> visit Details button and navigate to Programs page")
+    public void enterVisitNavigateProgram(String visitName) {
+        registrationPage.clickVisitDetailsButton();
         waitForAppReady();
         PageFactory.get(RegistrationVisitDetailsPage.class);
     }
