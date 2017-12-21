@@ -61,7 +61,7 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     public void addNewAppointment(Table table, List<String> colNames) {
         List<TableRow> services = table.getTableRows();
         TableRow service = services.get(0);
-
+        waitForSpinner();
         for (String cellname : colNames) {
             String cellVal = service.getCell(cellname);
             switch (cellname) {
