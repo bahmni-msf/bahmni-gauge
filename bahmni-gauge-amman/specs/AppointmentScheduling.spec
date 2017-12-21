@@ -125,35 +125,35 @@ Create appointment and verify appointment details in List View
 * Click on "Add New Service" button
 * Create new service with below details 
 
-   |Service Name  |Description    |Duration|Start Time|End Time|Max Load|Location|
-   |--------------|---------------|--------|----------|--------|--------|--------|
-   |Service Physio|description new|20      |08:30 AM  |02:00 PM|10      |OPD     |
+   |Service Name |Description    |Duration|Start Time|End Time|Max Load|Location|
+   |-------------|---------------|--------|----------|--------|--------|--------|
+   |Service Ortho|description new|20      |08:30 AM  |02:00 PM|10      |OPD     |
 
 * Navigate to Manage Appointments Tab
 * Click on Appointments List link
 * Click on Add new appointment link
 * Add appointment with below details 
 
-   |Patient|Service       |Provider |Date          |Start Time|Notes    |
-   |-------|--------------|---------|--------------|----------|---------|
-   |Mala   |Service Physio|Super Man|NOW[dd MMM yy]|10:00 am  |Test note|
+   |Patient|Service      |Date          |Start Time|Notes    |
+   |-------|-------------|--------------|----------|---------|
+   |Mala   |Service Ortho|NOW[dd MMM yy]|10:00 am  |Test note|
 
 * Click on List view link
 * Verify appointment with below details 
 
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |Location|
-   |------------|--------------|---------|----------|--------|---------|---------|--------|
-   |Mala Sinha  |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|OPD     |
+   |Patient Name|Service      |Start Time|End Time|Notes    |Status   |Location|
+   |------------|-------------|----------|--------|---------|---------|--------|
+   |Mala Sinha  |Service Ortho|10:00 am  |10:20 am|Test note|Scheduled|OPD     |
 
 making environment clean again
 * Mark cancel if appointment with below details exists 
 
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
-   |------------|--------------|---------|----------|--------|---------|---------|
-   |Mala Sinha  |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
+   |Patient Name|Service      |Start Time|End Time|Notes    |Status   |
+   |------------|-------------|----------|--------|---------|---------|
+   |Mala Sinha  |Service Ortho|10:00 am  |10:20 am|Test note|Scheduled|
 
 * Navigate to Admin Tab
-* Delete service "Service Physio"
+* Delete service "Service Ortho"
 
 Conflict appointment
 --------------------
@@ -176,27 +176,27 @@ Conflict appointment
 * Click on Add new appointment link
 * Add appointment with below details 
 
-   |Patient  |Service       |Provider |Date          |Start Time|Notes    |
-   |---------|--------------|---------|--------------|----------|---------|
-   |Maya Appt|Service Physio|Super Man|NOW[dd MMM yy]|10:00 am  |Test note|
+   |Patient  |Service       |Date          |Start Time|Notes    |
+   |---------|--------------|--------------|----------|---------|
+   |Maya Appt|Service Physio|NOW[dd MMM yy]|10:00 am  |Test note|
 
 * Click on "Add new appointment" link
 * Add appointment with below details 
 
-   |Patient  |Service       |Provider |Date          |Start Time|Notes    |
-   |---------|--------------|---------|--------------|----------|---------|
-   |Maya Appt|Service Physio|Super Man|NOW[dd MMM yy]|10:01 am  |Test note|
+   |Patient  |Service       |Date          |Start Time|Notes    |
+   |---------|--------------|--------------|----------|---------|
+   |Maya Appt|Service Physio|NOW[dd MMM yy]|10:01 am  |Test note|
 
 * Verify popup message as same as "This patient already has an appointment booked at this time. Would you like to proceed or edit the timings?"
 * Cancel appointment creation
 
 making environment clean again
 * Click on List view link
-* Mark cancel if appointment with below details exists
+* Mark cancel if appointment with below details exists 
 
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status   |
-   |------------|--------------|---------|----------|--------|---------|---------|
-   |Maya Appt   |Service Physio|Super Man|10:00 am  |10:20 am|Test note|Scheduled|
+   |Patient Name|Service       |Start Time|End Time|Notes    |Status   |
+   |------------|--------------|----------|--------|---------|---------|
+   |Maya Appt   |Service Physio|10:00 am  |10:20 am|Test note|Scheduled|
 * Navigate to Admin Tab
 * Delete service "Service Physio"
 
@@ -220,22 +220,22 @@ Miss appointment
 * Click on Add new appointment link
 * Add appointment with below details 
 
-   |Patient  |Service       |Provider |Date          |Start Time|Notes    |
-   |---------|--------------|---------|--------------|----------|---------|
-   |Sana Appt|Service Cardio|Super Man|NOW[dd MMM yy]|10:00 am  |Test note|
+   |Patient  |Service       |Date          |Start Time|Notes    |
+   |---------|--------------|--------------|----------|---------|
+   |Sana Appt|Service Cardio|NOW[dd MMM yy]|10:00 am  |Test note|
 
 * Click on List view link
 * Mark as missed appointment with below details 
 
-   |Patient Name|Service       |Provider |Start Time|Notes    |Status   |
-   |------------|--------------|---------|----------|---------|---------|
-   |Sana Appt   |Service Cardio|Super Man|10:00 am  |Test note|Scheduled|
+   |Patient Name|Service       |Start Time|Notes    |Status   |
+   |------------|--------------|----------|---------|---------|
+   |Sana Appt   |Service Cardio|10:00 am  |Test note|Scheduled|
 
 * Verify appointment with below details 
 
-   |Patient Name|Service       |Provider |Start Time|End Time|Notes    |Status|
-   |------------|--------------|---------|----------|--------|---------|------|
-   |Sana Appt   |Service Cardio|Super Man|10:00 am  |10:20 am|Test note|Missed|
+   |Patient Name|Service       |Start Time|End Time|Notes    |Status|
+   |------------|--------------|----------|--------|---------|------|
+   |Sana Appt   |Service Cardio|10:00 am  |10:20 am|Test note|Missed|
 
 making environment clean again
 * Navigate to Admin Tab

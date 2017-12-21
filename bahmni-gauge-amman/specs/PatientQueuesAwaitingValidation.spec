@@ -10,7 +10,7 @@ Test for queue when Medical File is required
 * Create patient "Ameer" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
 * Verify patient "Ameer" is present only in "Awaiting Validation - 1st Stage" queue
 * Search and select patient "Ameer" from "Programs" queue
@@ -33,7 +33,7 @@ Test for queue when Date of presentation of First stage validation is captured
 * Create patient "Sarah" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
 * Search and select patient "Sarah" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -56,9 +56,8 @@ Test for queue when Date of presentation of Final validation is captured in "Fir
 ----------------------------------------------------------------------------------------------------------
 * Create patient "Azeez" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
-* Start "First Stage Validation" visit using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
 * Search and select patient "Azeez" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -82,7 +81,7 @@ Test for queue when Date of presentation of Follow-up validation is captured
 * Create patient "Halah" using API with "Follow-Up Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
 * Verify patient "Halah" is not present in any queue except Programs and All queues
 * Search and select patient "Halah" from "Programs" queue
@@ -116,7 +115,7 @@ Test for queue when Date of Presentation of Final validation is captured in "Fol
 * Create patient "Yahya" using API with "Follow-Up Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
 * Verify patient "Yahya" is not present in any queue except Programs and All queues
 * Search and select patient "Yahya" from "Programs" queue

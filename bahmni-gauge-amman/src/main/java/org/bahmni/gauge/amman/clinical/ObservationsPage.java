@@ -352,7 +352,7 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
                             for (String val : multiSelect) {
                                 for (WebElement button : buttons) {
                                     if (button.getText().contains(val)) {
-                                        Assert.assertTrue("Button is not selected", button.getAttribute("class").contains("active"));
+                                        Assert.assertTrue(String.format("%s Button is not selected", val), button.getAttribute("class").contains("active"));
                                         break;
                                     }
                                 }

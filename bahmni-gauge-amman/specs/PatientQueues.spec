@@ -102,7 +102,8 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
    |--------------------|-------------|-----------|--------------|----------|------------------------------------------|-----------------------|------------------------------|-------------------------------------|
    |10/10/2016          |Abdulla Yonus|Egyptian   |Dr. Feras Nasr|Orthopedic|Postponed                                 |P2: Waiting for healing|postponed for a month         |01/01/2018                           |
 
-* Wait for the scheduler to run and close the visit
+//* Wait for the scheduler to run and close the visit
+* End visit for previously created patient using API
 * Search and select patient "Abdulla Yonus" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Verify Consultation button is not present
@@ -154,7 +155,8 @@ Patient In More Information queue when FSTG Outcome is More Information
    |--------------------|-----------|-----------|--------------|---------|------------------------------------------|---------------------------------------------|------------------------------------------------------|
    |10/10/2016          |Ameer Yonus|Egyptian   |Dr. Feras Nasr|Plastic  |More Information                          |Need complementary investigation             |more medical info                                     |
 
-* Wait for the scheduler to run and close the visit
+//* Wait for the scheduler to run and close the visit
+* End visit for previously created patient using API
 * Search and select patient "Ameer Yonus" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Verify Consultation button is not present
@@ -251,7 +253,9 @@ Patient In More Information queue when FSTG Outcome is More Information
    |Name       |Age|Country|Specialty |Stage|Priority|Comments About Validation|Name Of Surgeon     |Expected Date Of Arrival|Patient General Condition|Does The Patient Need Accomodation|Type Of Admission Recommended|Is Caretaker Required?|Caretaker Gender|Caretaker Name|
    |-----------|---|-------|----------|-----|--------|-------------------------|--------------------|------------------------|-------------------------|----------------------------------|-----------------------------|----------------------|----------------|--------------|
    |Kabir Yonus|30 |Jordan |Orthopedic|2    |Low     |validation done          |Dr. Sofian Al-Qassab|06/06/2017              |Walking Alone            |Yes                               |Normal admission             |Yes                   |Female          |Nadira        |
-* Wait for the scheduler to run and close the visit
+
+//* Wait for the scheduler to run and close the visit
+* End visit for previously created patient using API
 
 // Patient In Hospital RSP queue
 * On the login page
@@ -305,7 +309,8 @@ Patient In More Information queue when FSTG Outcome is More Information
    |-----------------|
    |Network Follow-up|
 
-* Wait for the scheduler to run and close the visit
+//* Wait for the scheduler to run and close the visit
+* End visit for previously created patient using API
 * Navigate to queues
 * Search patient "Kabir Yonus" from "To Continue Under Follow-Up" queue
 * Verify patient details of "Kabir Yonus" in queue
@@ -349,7 +354,7 @@ Patient In More Information queue when FSTG Outcome is More Information
    |------------|-----------|
    |Shazia Yonus|Egyptian   |
 
-   // Patient In Awaiting Follow up validation queue
+// Patient In Awaiting Follow up validation queue
 * Search and select patient "Shazia Yonus" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation

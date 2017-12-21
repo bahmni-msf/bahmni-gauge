@@ -71,6 +71,9 @@ public class PatientQueuePage extends PatientListingPage {
 
             new Actions(driver).moveToElement(tab).click().perform();
             waitForSpinner();
+            if (tab.getText().endsWith("(0)")) {
+                return true;
+            }
             enterPatientIDOrName(patientName);
             if (rowsList.size() != 0) return false;
         }
@@ -87,7 +90,9 @@ public class PatientQueuePage extends PatientListingPage {
             if (tab.getText().contains("Program") || tab.getText().contains("All") || tab.getText().contains(queueName) || tab.getText().contains("Admitted"))
                 continue;
             new Actions(driver).moveToElement(tab).click().perform();
-            waitForSpinner();
+            waitForSpinner(driver);
+            if (tab.getText().endsWith("(0)"))
+                continue;
             enterPatientIDOrName(patientName);
             if (rowsList.size() == 1) {
                 Assert.fail("patient also found in " + tab.findElement(By.tagName("span")).getText());

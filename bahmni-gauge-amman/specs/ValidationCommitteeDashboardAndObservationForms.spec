@@ -13,7 +13,7 @@ tags: sanity, regression
 * Create patient "MeeraOne" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
 * Search and select patient "MeeraOne" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -46,7 +46,7 @@ tags: regression
 * Create patient "MeeraFirst" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "MeeraFirst" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -118,7 +118,7 @@ Final Validation form
 * Create patient "MeeraFinal" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "MeeraFinal" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -156,7 +156,7 @@ Follow up Validation and Medical History Forms
 * Create patient "MeeraFollowup" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+* Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "MeeraFollowup" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
