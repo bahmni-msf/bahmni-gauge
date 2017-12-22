@@ -36,17 +36,11 @@ public class otSurgicalBlockPage extends otSchedulingPage {
     @FindBy(how = How.CSS, using = ".ot-nav-save")
     WebElement saveOTSurgicalBlock;
 
-    @FindBy(how = How.CSS, using = ".create-surgical-title>button")
-    WebElement addSurgeryBtn;
-
     @FindBy(how = How.CSS, using = ".ngdialog-content")
     WebElement addEditSurgeryForm;
 
     @FindBy(how = How.ID, using = "patientID")
     WebElement patientIDorName;
-
-    //@FindBy(how = How.XPATH, using = ".//*[@id='ngdialog1']/div[2]/form/div/p[5]/select")
-    //WebElement otherSurgeon;
 
     @FindBy(how = How.ID, using = "surgicalAssistant")
     WebElement surgicalAssistant;
@@ -80,9 +74,6 @@ public class otSurgicalBlockPage extends otSchedulingPage {
 
     @FindBy(how = How.CSS, using = "input.cancel")
     WebElement cancel;
-
-    //@FindBy(how = How.XPATH, using = ".//*[@id='ngdialog1']/div[2]/form/div/p[11]/input[1]")
-    //WebElement addSurgery;
 
     public void selectSurgeon(String surgeon) {
         Select surgeonDrpdwn = new Select(surgeonDropdown);
@@ -137,14 +128,14 @@ public class otSurgicalBlockPage extends otSchedulingPage {
     }
 
     public void clickAddSurgery() {
-        click(addSurgeryBtn);
+        click(findButtonByText("Add Surgery"));
+        waitForVisibilityOfElementOnPage(addEditSurgeryForm);
     }
 
     public void addSurgery(Table table) {
         List<TableRow> surgeries = table.getTableRows();
         for (TableRow surgery : surgeries) {
             clickAddSurgery();
-            waitForVisibilityOfElementOnPage(addEditSurgeryForm);
             fillAutocomplete(patientIDorName, surgery.getCell("Patient ID or Name"));
             WebElement otherSurgeon = driver.findElement(By.xpath(".//*[@id='ngdialog1']/div[2]/form/div/p[5]/select"));
             new Select(otherSurgeon).selectByVisibleText(surgery.getCell("Other Surgeon"));
@@ -165,15 +156,6 @@ public class otSurgicalBlockPage extends otSchedulingPage {
         List<WebElement> patientSearchResults = driver.findElements(By.className("ui-corner-all"));
         waitForElement(driver, ExpectedConditions.visibilityOfAllElements(patientSearchResults));
         autoComplete.sendKeys(Keys.DOWN, Keys.RETURN);
-        //List<WebElement> patientSearchResults = driver.findElements(By.className("ui-corner-all"));
-//        System.out.println(patientSearchResults.size());
-//        for (WebElement patientSearched: patientSearchResults) {
-//            if (patientSearched.getText().equalsIgnoreCase(value)) {
-//                System.out.println(patientSearched.getText());
-//                patientSearched.click();
-//                break;
-//            }
-        //}
     }
 
     public static void editSurgicalBlock(Table table, List<String> columnNames) {

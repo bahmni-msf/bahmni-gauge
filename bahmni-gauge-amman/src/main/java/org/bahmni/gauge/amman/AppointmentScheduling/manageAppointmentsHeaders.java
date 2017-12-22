@@ -20,14 +20,12 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     @FindBy(how = How.CSS, using = "#patientID")
     WebElement patientIDorName;
 
-    @FindBy(how = How.CSS, using = "#speciality")
-    WebElement speciality;
-
     @FindBy(how = How.CSS, using = "#service")
     WebElement serviceName;
 
     @FindBy(how = How.CSS, using = "#serviceType")
     WebElement serviceType;
+
     @FindBy(how = How.CSS, using = "#location")
     WebElement location;
 
@@ -43,7 +41,7 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     @FindBy(how = How.CSS, using = "#endTimeID")
     WebElement endTime;
 
-    @FindBy(how = How.CLASS_NAME, using = "walk-in-app")
+    @FindBy(how = How.CSS, using = "input[type='checkbox']")
     WebElement walkInAppCheckbox;
 
     @FindBy(how = How.CSS, using = "#notes")

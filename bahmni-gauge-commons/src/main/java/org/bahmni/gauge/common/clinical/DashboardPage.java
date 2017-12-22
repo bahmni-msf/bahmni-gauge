@@ -82,7 +82,7 @@ public class DashboardPage extends BahmniPage {
     }
 
     public void clickEnterData() {
-        waitForElementOnPage(clinical).click();
+        click(clinical);
     }
 
     public WebElement findElementById(String id) {

@@ -167,6 +167,7 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
         String patientCountry = Fields.country.getPatientAttribute().getValue();
 
         try {
+            waitForVisibilityOfElementOnPage(patientIdentifierValue);
             if (patientIdentifierValue.getText() != null) {
                 Assert.assertEquals("Identifier dont match", patientID, patientIdentifierValue.getText());
             }

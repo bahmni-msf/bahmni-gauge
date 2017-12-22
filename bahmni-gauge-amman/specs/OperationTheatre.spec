@@ -12,7 +12,6 @@ Create Surgical Block
 * Click on "operation theatre" module
 * Navigate to OT Scheduling tab
 * Create a new surgical block for "Hanna Janho" in "OT 1" from date "NOW[dd MMM yy]" time "09:00 AM" to date "NOW[dd MMM yy]" time "11:00 AM"
-* Navigate to OT Scheduling tab
 
 Verify the paients are in "To Be Scheduled" queue of Operation Theatre Scheduling Page when the forms are filled -> Create Surgical Block and add surgery -> Verify the patient is moved to the Scheduled queue
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
