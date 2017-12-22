@@ -117,7 +117,7 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     }
 
     private String todayDateAsString() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date today = new Date();
         return dateFormat.format(today);
     }
