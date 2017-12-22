@@ -66,26 +66,27 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
             String cellVal = service.getCell(cellname);
             switch (cellname) {
                 case "Patient":
-                    patientIDorName.clear();
                     fillAutocomplete(patientIDorName, cellVal);
                     break;
-                case "Speciality":
-                    new Select(speciality).selectByVisibleText(cellVal);
-                    break;
                 case "Service":
+                    waitForVisibilityOfElementOnPage(serviceName);
                     new Select(serviceName).selectByVisibleText(cellVal);
                     break;
                 case "Service App. Type":
+                    waitForVisibilityOfElementOnPage(serviceType);
                     new Select(serviceType).selectByVisibleText(cellVal);
                     break;
                 case "Location":
+                    waitForVisibilityOfElementOnPage(location);
                     new Select(location).selectByVisibleText(cellVal);
                     break;
                 case "Provider":
+                    waitForVisibilityOfElementOnPage(provider);
                     new Select(provider).selectByVisibleText(cellVal);
                     break;
 
                 case "Date":
+                    waitForVisibilityOfElementOnPage(appointmentDate);
                     if (cellVal.contains("NOW")) {
                         cellVal = todayDateAsString();
                     }
@@ -93,18 +94,22 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
                     break;
 
                 case "Start Time":
+                    waitForVisibilityOfElementOnPage(startTime);
                     startTime.sendKeys(cellVal);
                     break;
 
                 case "End Time":
+                    waitForVisibilityOfElementOnPage(endTime);
                     endTime.sendKeys(cellVal);
                     break;
                 case "Walk-in Appointment":
+                    waitForVisibilityOfElementOnPage(walkInAppCheckbox);
                     if (cellVal.equalsIgnoreCase("Yes")) {
                         walkInAppCheckbox.click();
                     }
                     break;
                 case "Notes":
+                    waitForVisibilityOfElementOnPage(notes);
                     notes.clear();
                     notes.sendKeys(cellVal);
                     break;
@@ -121,6 +126,8 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
 
 
     public void fillAutocomplete(WebElement autoComplete, String value) {
+        waitForVisibilityOfElementOnPage(autoComplete);
+        autoComplete.clear();
         autoComplete.sendKeys(value);
         waitForSpinner(driver);
         autoComplete.sendKeys(Keys.DOWN, Keys.RETURN);
