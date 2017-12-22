@@ -74,7 +74,6 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Attempts to rise|1 = Able, requires >1 attempt                  |
    |Sitting down    |2 = Safe, smooth motion                        |
    |Trunk           |0 = Marked sway or uses w. Aid                 |
-   |Walking time    |1 = Heels almost touching while walking        |
    |Foot clearance  |1 = L foot clears floor;1 = R foot clears floor|
    |Path            |2 = Straight without w. aid                    |
 
@@ -101,8 +100,7 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Step continuity                              |1 = Steps appear Continuous                         |
    |Path                                         |2 = Straight without w. aid                         |
    |Trunk                                        |0 = Marked sway or uses w. Aid                      |
-   |Walking time                                 |1 = Heels almost touching while walking             |
-   |Gait Score                                   |8                                                   |
+   |Gait Score                                   |7                                                   |
    |Total Score                                  |18                                                  |
    |Risk of Falls                                |High                                                |
 
@@ -145,12 +143,6 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Trunk                                        |2 = No sway, flex., use of arms or w. Aid                    |
 
 * Save the consultation
-* Verify these forms are saved and disabled to add 
-
-   |FORM                               |
-   |-----------------------------------|
-   |Lower Limb Physiotherapy Assessment|
-
 * Select template "Lower Limb Physiotherapy Assessment" from observation page and verify details in "Tinetti Balance Assessment Tool" section 
 
    |FIELD                                        |VALUE                                                        |
@@ -179,10 +171,10 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
 
    |FIELD                |VALUE                                  |
    |---------------------|---------------------------------------|
-   |Path                 |2 = Straight without w. aid            |
    |Rises from chair     |0 = Unable to without help             |
    |Turning 360 degrees_1|0 = Discontinuous steps                |
    |Walking time         |1 = Heels almost touching while walking|
+   |Path                 |2 = Straight without w. aid            |
 
 * Save the consultation
 * Select template "Lower Limb Physiotherapy Assessment" from observation page and verify details in "Tinetti Balance Assessment Tool" section 
@@ -235,7 +227,7 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |---------------------------------------------|-------------------------------------------------------------|
    |Sitting Balance                              |1 = Steady, safe                                             |
    |Rises from chair                             |2 = Able without use of arms                                 |
-   |Attempts to rise                             |2 = Able, requires, 1 attempt                                |
+   |Attempts to rise                             |2 = Able to rise, 1 attempt                                  |
    |Immediate standing, balance (first 5 seconds)|2 = Steady without walker or other support                   |
    |Standing balance                             |2 = Narrow stance without support                            |
    |Nudged                                       |1 = Staggers, grabs, catches self                            |
@@ -248,7 +240,7 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Foot clearance                               |0 = Foot drop;1 = L foot clears floor;1 = R foot clears floor|
    |Step symmetry                                |1 = Right and left step length appear equal                  |
    |Step continuity                              |1 = Steps appear Continuous                                  |
-   |Path                                         |2 = Straight without w. aid                                  |
+   |Path                                         |1 = Mild/moderate deviation or uses w. Aid                   |
    |Trunk                                        |2 = No sway, flex., use of arms or w. Aid                    |
    |Walking time                                 |1 = Heels almost touching while walking                      |
 
@@ -258,8 +250,8 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |FIELD                                        |VALUE                                                        |
    |---------------------------------------------|-------------------------------------------------------------|
    |Sitting Balance                              |1 = Steady, safe                                             |
-   |Rises from chair                             |0 = Unable to without help                                   |
-   |Attempts to rise                             |1 = Able, requires >1 attempt                                |
+   |Rises from chair                             |2 = Able without use of arms                                 |
+   |Attempts to rise                             |2 = Able to rise, 1 attempt                                  |
    |Immediate standing, balance (first 5 seconds)|2 = Steady without walker or other support                   |
    |Standing balance                             |2 = Narrow stance without support                            |
    |Nudged                                       |1 = Staggers, grabs, catches self                            |
@@ -273,19 +265,20 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Foot clearance                               |0 = Foot drop;1 = L foot clears floor;1 = R foot clears floor|
    |Step symmetry                                |1 = Right and left step length appear equal                  |
    |Step continuity                              |1 = Steps appear Continuous                                  |
+   |Path                                         |1 = Mild/moderate deviation or uses w. Aid                   |
    |Trunk                                        |2 = No sway, flex., use of arms or w. Aid                    |
-   |Walking time                                 |0 = Heels apart                                              |
+   |Walking time                                 |1 = Heels almost touching while walking                      |
    |Gait Score                                   |11                                                           |
    |Total Score                                  |24                                                           |
    |Risk of Falls                                |Low                                                          |
 
 * Select template "Lower Limb Physiotherapy Assessment" from observation page and edit details in "Tinetti Balance Assessment Tool" section 
 
-   |FIELD       |VALUE                                     |
-   |------------|------------------------------------------|
-   |Nudged      |2 = Steady                                |
-   |Sitting down|2 = Safe, smooth motion                   |
-   |Path        |1 = Mild/moderate deviation or uses w. Aid|
+   |FIELD       |VALUE                      |
+   |------------|---------------------------|
+   |Nudged      |2 = Steady                 |
+   |Sitting down|2 = Safe, smooth motion    |
+   |Path        |2 = Straight without w. aid|
 
 * Save the consultation
 * Select template "Lower Limb Physiotherapy Assessment" from observation page and verify details in "Tinetti Balance Assessment Tool" section 
@@ -293,8 +286,8 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |FIELD                                        |VALUE                                                        |
    |---------------------------------------------|-------------------------------------------------------------|
    |Sitting Balance                              |1 = Steady, safe                                             |
-   |Rises from chair                             |0 = Unable to without help                                   |
-   |Attempts to rise                             |1 = Able, requires >1 attempt                                |
+   |Rises from chair                             |2 = Able without use of arms                                 |
+   |Attempts to rise                             |2 = Able to rise, 1 attempt                                  |
    |Immediate standing, balance (first 5 seconds)|2 = Steady without walker or other support                   |
    |Standing balance                             |2 = Narrow stance without support                            |
    |Nudged                                       |2 = Steady                                                   |
@@ -308,9 +301,9 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Foot clearance                               |0 = Foot drop;1 = L foot clears floor;1 = R foot clears floor|
    |Step symmetry                                |1 = Right and left step length appear equal                  |
    |Step continuity                              |1 = Steps appear Continuous                                  |
-   |Path                                         |1 = Mild/moderate deviation or uses w. Aid                   |
+   |Path                                         |2 = Straight without w. aid                                  |
    |Trunk                                        |2 = No sway, flex., use of arms or w. Aid                    |
-   |Walking time                                 |0 = Heels apart                                              |
+   |Walking time                                 |1 = Heels almost touching while walking                      |
    |Gait Score                                   |12                                                           |
    |Total Score                                  |27                                                           |
    |Risk of Falls                                |Low                                                          |
