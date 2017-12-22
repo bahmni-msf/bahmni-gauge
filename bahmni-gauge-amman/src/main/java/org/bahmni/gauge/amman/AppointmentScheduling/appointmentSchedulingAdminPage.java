@@ -77,7 +77,7 @@ public class appointmentSchedulingAdminPage extends appointmentSchedulingHeader 
         if (row == null){
             return;
         }
-        row.findElement(By.linkText("Delete")).click();
+        click(row.findElement(By.linkText("Delete")));
         waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
         serviceDeleteBtn.click();
         waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));

@@ -25,27 +25,22 @@ public class appointmentSchedulingHeader extends HomePage {
     WebElement listViewLink;
 
     public void gotoManageAppointments() {
-        waitForElementOnPage(manageAppointments);
-        manageAppointments.click();
+        click(manageAppointments);
     }
 
     public void gotoAdminPage() {
-        waitForElementOnPage(adminTab);
-        adminTab.click();
+        click(adminTab);
     }
 
     public void gotoAppointmentsList() {
-        waitForElementOnPage(appointmentsListTab);
-        appointmentsListTab.click();
+        click(appointmentsListTab);
     }
 
     public void clickAddNewAppointment() {
-        waitForElementOnPage(addNewAppointmentLink);
-        addNewAppointmentLink.click();
+        click(addNewAppointmentLink);
     }
 
     public void gotoListView() {
-        waitForElementOnPage(listViewLink);
-        listViewLink.click();
+        click(listViewLink);
     }
 }

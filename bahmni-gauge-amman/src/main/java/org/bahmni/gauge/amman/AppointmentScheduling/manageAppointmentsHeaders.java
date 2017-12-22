@@ -59,9 +59,9 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
     WebElement cancelAppointmentBtn;
 
     public void addNewAppointment(Table table, List<String> colNames) {
+        waitForVisibilityOfElementOnPage(addAppointmentSlider);
         List<TableRow> services = table.getTableRows();
         TableRow service = services.get(0);
-        waitForSpinner();
         for (String cellname : colNames) {
             String cellVal = service.getCell(cellname);
             switch (cellname) {
@@ -110,8 +110,7 @@ public class manageAppointmentsHeaders extends appointmentSchedulingHeader {
                     break;
             }
         }
-        waitForElementOnPage(saveAppointmentBtn);
-        saveAppointmentBtn.click();
+        click(saveAppointmentBtn);
     }
 
     private String todayDateAsString() {

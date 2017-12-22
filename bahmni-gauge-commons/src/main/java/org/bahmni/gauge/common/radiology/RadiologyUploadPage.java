@@ -54,6 +54,6 @@ public class RadiologyUploadPage extends BahmniPage{
     }
 
     public void expandCurrentVisit() {
-        waitForElementOnPage(By.cssSelector(".fa-star")).click();
+        waitForElementOnPage(By.cssSelector(".currentVisitMarker")).click();
     }
 }

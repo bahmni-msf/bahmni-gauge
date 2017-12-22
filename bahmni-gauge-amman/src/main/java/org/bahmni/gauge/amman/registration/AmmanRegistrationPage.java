@@ -58,6 +58,8 @@ public class AmmanRegistrationPage extends RegistrationFirstPage {
                 element.click();
             } else if (patientAttribute.getAttributeType().equals("checkbox") && patientAttribute.getValue().equals("False") && element.isSelected()) {
                 element.click();
+            } else if (element.getAttribute("type").contains("date")) {
+                element.sendKeys(patientAttribute.getValue());
             } else {
                 element.clear();
                 element.sendKeys(patientAttribute.getValue());

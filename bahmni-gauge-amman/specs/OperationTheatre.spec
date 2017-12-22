@@ -13,55 +13,6 @@ Create Surgical Block
 * Navigate to OT Scheduling tab
 * Create a new surgical block for "Hanna Janho" in "OT 1" from date "NOW[dd MMM yy]" time "09:00 AM" to date "NOW[dd MMM yy]" time "11:00 AM"
 * Navigate to OT Scheduling tab
-// Under construction :) * Verify block is created for "Hanna Janho" in "OT 1" from date "NOW[dd MMM yy]" time "09:00 AM" to date "NOW[dd MMM yy]" time "11:00 AM"
-
-Edit Surgical Block - Under construction :)
--------------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on "operation theatre" module
-* Navigate to OT Scheduling tab
-//* Edit surgical block "Hanna Janho" in "OT 1" on "07 Nov 2017, Tue" with following details
-//
-//   |Surgeon         |Location|Start Date|Start Time|End Date  |End Time|
-//   |----------------|--------|----------|----------|----------|--------|
-//   |Muckhaled Naseef|OT 3    |12/12/2017|01:00 PM  |12/12/2017|05:00 PM|
-
-Cancel Surgical Block from Surgical Block - Under construction :)
------------------------------------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on "operation theatre" module
-* Navigate to OT Scheduling tab
-//* Create a new surgical block for "Hanna Janho" in "OT 1" from date "11/08/2017" time "09:00 AM" to date "11/08/2017" time "11:00 AM"
-//* Cancel surgical block from Surgical Block for "Hanna Janho" in "OT 1" on "07 Nov 2017, Tue" with reason "Cancel reason from Surgical Block"
-
-Cancel Surgical Block from Calendar - Under construction :)
------------------------------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on "operation theatre" module
-* Navigate to OT Scheduling tab
-//* Create a new surgical block for "Hanna Janho" in "OT 3" from date "11/08/2017" time "03:00 PM" to date "11/08/2017" time "06:00 PM"
-//* Cancel surgical block from Calendar for "Hanna Janho" in "OT 3" on "07 Nov 2017, Tue" with reason "Cancel reason from calendar"
-
-Postpone Surgical Block from Surgical Block - Under construction :)
--------------------------------------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on "operation theatre" module
-* Navigate to OT Scheduling tab
-//* Create a new surgical block for "Ashraf Nabhan" in "OT 2" from date "11/08/2017" time "09:00 AM" to date "11/08/2017" time "11:00 AM"
-//* Postpone surgical block from Surgical Block for "Ashraf Nabhan" in "OT 2" on "07 Nov 2017, Tue" with reason "Postpone reason from Surgical Block"
-
-Postpone Surgical Block from Calendar - Under construction :)
--------------------------------------------------------------
-* On the login page
-* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
-* Click on "operation theatre" module
-* Navigate to OT Scheduling tab
-//* Create a new surgical block for "Ali Al Ani" in "OT 3" from date "11/08/2017" time "09:00 AM" to date "11/08/2017" time "11:00 AM"
-//* Postpone surgical block from Calendar for "Ali Al-Ani" in "OT 3" on "07 Nov 2017, Tue" with reason "Postpone reason from calendar"
 
 Verify the paients are in "To Be Scheduled" queue of Operation Theatre Scheduling Page when the forms are filled -> Create Surgical Block and add surgery -> Verify the patient is moved to the Scheduled queue
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -162,6 +113,56 @@ Create Surgical Block and add surgery
    |ot schedule Hasan|Rehabilitation Center (4th floor)|Identification       |SCHEDULED|
 
 Commented sections will be removed while adding new test scenarios
+// Under construction :) * Verify block is created for "Hanna Janho" in "OT 1" from date "NOW[dd MMM yy]" time "09:00 AM" to date "NOW[dd MMM yy]" time "11:00 AM"
+
+//Edit Surgical Block - Under construction :)
+//-------------------------------------------
+//* On the login page
+//* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+//* Click on "operation theatre" module
+//* Navigate to OT Scheduling tab
+//* Edit surgical block "Hanna Janho" in "OT 1" on "07 Nov 2017, Tue" with following details
+//
+//   |Surgeon         |Location|Start Date|Start Time|End Date  |End Time|
+//   |----------------|--------|----------|----------|----------|--------|
+//   |Muckhaled Naseef|OT 3    |12/12/2017|01:00 PM  |12/12/2017|05:00 PM|
+
+//Cancel Surgical Block from Surgical Block - Under construction :)
+//-----------------------------------------------------------------
+//* On the login page
+//* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+//* Click on "operation theatre" module
+//* Navigate to OT Scheduling tab
+//* Create a new surgical block for "Hanna Janho" in "OT 1" from date "11/08/2017" time "09:00 AM" to date "11/08/2017" time "11:00 AM"
+//* Cancel surgical block from Surgical Block for "Hanna Janho" in "OT 1" on "07 Nov 2017, Tue" with reason "Cancel reason from Surgical Block"
+
+//Cancel Surgical Block from Calendar - Under construction :)
+//-----------------------------------------------------------
+//* On the login page
+//* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+//* Click on "operation theatre" module
+//* Navigate to OT Scheduling tab
+//* Create a new surgical block for "Hanna Janho" in "OT 3" from date "11/08/2017" time "03:00 PM" to date "11/08/2017" time "06:00 PM"
+//* Cancel surgical block from Calendar for "Hanna Janho" in "OT 3" on "07 Nov 2017, Tue" with reason "Cancel reason from calendar"
+
+//Postpone Surgical Block from Surgical Block - Under construction :)
+//-------------------------------------------------------------------
+//* On the login page
+//* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+//* Click on "operation theatre" module
+//* Navigate to OT Scheduling tab
+//* Create a new surgical block for "Ashraf Nabhan" in "OT 2" from date "11/08/2017" time "09:00 AM" to date "11/08/2017" time "11:00 AM"
+//* Postpone surgical block from Surgical Block for "Ashraf Nabhan" in "OT 2" on "07 Nov 2017, Tue" with reason "Postpone reason from Surgical Block"
+
+//Postpone Surgical Block from Calendar - Under construction :)
+//-------------------------------------------------------------
+//* On the login page
+//* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
+//* Click on "operation theatre" module
+//* Navigate to OT Scheduling tab
+//* Create a new surgical block for "Ali Al Ani" in "OT 3" from date "11/08/2017" time "09:00 AM" to date "11/08/2017" time "11:00 AM"
+//* Postpone surgical block from Calendar for "Ali Al-Ani" in "OT 3" on "07 Nov 2017, Tue" with reason "Postpone reason from calendar"
+
 //* Search patient "ot complete" from "Admit to RC" queue
 //* Click on "Admit To RC" link
 //* Click on "Rehabilitation Center" button

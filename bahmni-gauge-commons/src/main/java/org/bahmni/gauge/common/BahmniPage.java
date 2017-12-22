@@ -168,6 +168,27 @@ public class BahmniPage {
         return waitForElement(this.driver, expectedCondition);
     }
 
+    public WebElement waitForVisibilityOfElementOnPage(WebElement element) {
+        ExpectedCondition<WebElement> expectedCondition = ExpectedConditions.visibilityOf(element);
+        return waitForElement(this.driver, expectedCondition);
+    }
+
+    public void click(WebElement element) {
+        try {
+            waitForVisibilityOfElementOnPage(element);
+        }
+        catch (Exception e) {
+            Assert.fail(element.getText() + " element is not visible");
+        }
+        try {
+            waitForElementOnPage(element);
+        }
+        catch (Exception e) {
+            Assert.fail(element.getText() + " element is not clickable");
+        }
+        element.click();
+    }
+
     public WebElement waitForElementOnPagewithTimeout(String cssLocator, long timeout) {
         ExpectedCondition<WebElement> expectedCondition = ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssLocator));
         return waitForElementwithTimeOut(this.driver, expectedCondition, timeout);

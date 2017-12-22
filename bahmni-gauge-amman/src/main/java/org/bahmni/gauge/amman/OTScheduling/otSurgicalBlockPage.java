@@ -133,21 +133,19 @@ public class otSurgicalBlockPage extends otSchedulingPage {
     }
 
     public void clickSave() {
-        saveOTSurgicalBlock.click();
+        click(saveOTSurgicalBlock);
     }
 
     public void clickAddSurgery() {
-        addSurgeryBtn.click();
+        click(addSurgeryBtn);
     }
 
-    public void addSugery(Table table) {
+    public void addSurgery(Table table) {
         List<TableRow> surgeries = table.getTableRows();
         for (TableRow surgery : surgeries) {
             clickAddSurgery();
-            //waitForElement(driver, ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".ngdialog-content")));
-            waitForElement(driver, ExpectedConditions.visibilityOf(addEditSurgeryForm));
+            waitForVisibilityOfElementOnPage(addEditSurgeryForm);
             fillAutocomplete(patientIDorName, surgery.getCell("Patient ID or Name"));
-            //waitForElementOnPage(otherSurgeon);
             WebElement otherSurgeon = driver.findElement(By.xpath(".//*[@id='ngdialog1']/div[2]/form/div/p[5]/select"));
             new Select(otherSurgeon).selectByVisibleText(surgery.getCell("Other Surgeon"));
             surgicalAssistant.sendKeys(surgery.getCell("Surgical Assistant"));
@@ -162,6 +160,7 @@ public class otSurgicalBlockPage extends otSchedulingPage {
     }
 
     public void fillAutocomplete(WebElement autoComplete, String value) {
+        waitForVisibilityOfElementOnPage(autoComplete);
         autoComplete.sendKeys(value);
         List<WebElement> patientSearchResults = driver.findElements(By.className("ui-corner-all"));
         waitForElement(driver, ExpectedConditions.visibilityOfAllElements(patientSearchResults));

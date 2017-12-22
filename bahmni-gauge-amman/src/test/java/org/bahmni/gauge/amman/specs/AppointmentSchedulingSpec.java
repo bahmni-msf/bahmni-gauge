@@ -54,12 +54,12 @@ public class AppointmentSchedulingSpec {
     public void gotoManageAppointmentsTab() {
         waitForAppReady();
         AppointmentSchedulingHeader.gotoManageAppointments();
+        waitForAppReady();
     }
 
 
     @Step("Click on Appointments List link")
     public void gotoAppointmentsListTab() {
-        waitForAppReady();
         AppointmentSchedulingHeader.gotoAppointmentsList();
         waitForAppReady();
     }

@@ -82,7 +82,7 @@ public class OTSchedulingSpec {
     @Step("Add surgery with below details <table>")
     public void addSurgeriesInBlock(Table table) {
         waitForAppReady();
-        OTSurgicalBlockPage.addSugery(table);
+        OTSurgicalBlockPage.addSurgery(table);
         waitForAppReady();
         OTSurgicalBlockPage.clickSave();
         waitForAppReady();
