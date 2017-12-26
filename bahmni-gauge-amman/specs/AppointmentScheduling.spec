@@ -39,9 +39,6 @@ Edit a Service
    |------------------|--------|--------|------------------|-----------|
    |Servicename Edited|OPD     |45      |description edited|Edit Delete|
 
-Delete a Service
-* Delete service "Servicename Edited"
-
 Verify user cannot create service with existing service name
 ------------------------------------------------------------
 Create a Service
@@ -72,7 +69,6 @@ Create a Service
 
 making environment clean again
 * Cancel service creation
-* Delete service "Servicename One"
 
 Verify user can create service with deleted service name
 --------------------------------------------------------
@@ -109,9 +105,6 @@ Delete a Service
    |Service Name   |Location|Duration|Description                          |Action     |
    |---------------|--------|--------|-------------------------------------|-----------|
    |Servicename Two|OPD     |30      |new service with deleted service name|Edit Delete|
-
-making environment clean again
-* Delete service "Servicename Two"
 
 Create appointment and verify appointment details in List View
 --------------------------------------------------------------
@@ -151,9 +144,6 @@ making environment clean again
    |Patient Name|Service      |Start Time|End Time|Notes    |Status   |
    |------------|-------------|----------|--------|---------|---------|
    |Mala Sinha  |Service Ortho|10:00 am  |10:20 am|Test note|Scheduled|
-
-* Navigate to Admin Tab
-* Delete service "Service Ortho"
 
 Conflict appointment
 --------------------
@@ -197,8 +187,6 @@ making environment clean again
    |Patient Name|Service       |Start Time|End Time|Notes    |Status   |
    |------------|--------------|----------|--------|---------|---------|
    |Maya Appt   |Service Physio|10:00 am  |10:20 am|Test note|Scheduled|
-* Navigate to Admin Tab
-* Delete service "Service Physio"
 
 Miss appointment
 ----------------
@@ -215,6 +203,7 @@ Miss appointment
    |Service Name  |Description    |Duration|Start Time|End Time|Max Load|
    |--------------|---------------|--------|----------|--------|--------|
    |Service Cardio|description new|20      |08:30 AM  |02:00 PM|10      |
+
 * Navigate to Manage Appointments Tab
 * Click on Appointments List link
 * Click on Add new appointment link
@@ -222,21 +211,27 @@ Miss appointment
 
    |Patient  |Service       |Date          |Start Time|Notes    |
    |---------|--------------|--------------|----------|---------|
-   |Sana Appt|Service Cardio|NOW[dd MMM yy]|10:00 am  |Test note|
+   |Sana Appt|Service Cardio|NOW[dd MMM yy]|02:30 am  |Test note|
 
 * Click on List view link
 * Mark as missed appointment with below details 
 
    |Patient Name|Service       |Start Time|Notes    |Status   |
    |------------|--------------|----------|---------|---------|
-   |Sana Appt   |Service Cardio|10:00 am  |Test note|Scheduled|
+   |Sana Appt   |Service Cardio|2:30 am   |Test note|Scheduled|
 
 * Verify appointment with below details 
 
    |Patient Name|Service       |Start Time|End Time|Notes    |Status|
    |------------|--------------|----------|--------|---------|------|
-   |Sana Appt   |Service Cardio|10:00 am  |10:20 am|Test note|Missed|
-
+   |Sana Appt   |Service Cardio|2:30 am   |2:50 am |Test note|Missed|
+___________________________________
 making environment clean again
 * Navigate to Admin Tab
-* Delete service "Service Cardio"
+* Delete service "Servicename One" if it exists
+* Delete service "Servicename Two" if it exists
+* Delete service "Servicename New" if it exists
+* Delete service "Service Ortho" if it exists
+* Delete service "Service Physio" if it exists
+* Delete service "Service Cardio" if it exists
+* Delete service "Servicename Edited" if it exists

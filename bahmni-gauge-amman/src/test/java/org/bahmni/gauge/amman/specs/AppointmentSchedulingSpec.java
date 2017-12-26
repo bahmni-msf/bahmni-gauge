@@ -128,6 +128,15 @@ public class AppointmentSchedulingSpec {
         ServicePage.confirmEditService();
     }
 
+    @Step("Delete service <Servicename> if it exists")
+    public void deleteServiceForTeardown(String serviceName) {
+        waitForAppReady();
+        WebElement row = AppointmentSchedulingAdminPage.selectGivenServiceRow(serviceName);
+        if (row != null){
+            AppointmentSchedulingAdminPage.deleteService(serviceName);
+        }
+    }
+
     @Step("Delete service <Servicename>")
     public void deleteService(String serviceName) {
         waitForAppReady();

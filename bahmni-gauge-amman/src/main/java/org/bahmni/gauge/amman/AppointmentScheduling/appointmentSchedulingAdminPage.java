@@ -75,6 +75,7 @@ public class appointmentSchedulingAdminPage extends appointmentSchedulingHeader 
     public void deleteService(String serviceName) {
         WebElement row = selectGivenServiceRow(serviceName);
         if (row == null){
+            Assert.fail("No Service found");
             return;
         }
         click(row.findElement(By.linkText("Delete")));
@@ -86,7 +87,6 @@ public class appointmentSchedulingAdminPage extends appointmentSchedulingHeader 
     public WebElement selectGivenServiceRow(String serviceName) {
         WebElement noRow = null;
         if (rowsList.isEmpty()) {
-            Assert.fail("No Service found");
             return noRow;
         }
         else {
