@@ -1,17 +1,17 @@
 Microbiology Results
-=============
-     
+====================
+
 Microbiology Results Sample Creation
-----------------------------
+------------------------------------
 
-Tags: regression, sanity
+tags: regression, sanity
 
-* Create patient "Sara" using API with "First Stage Validation" visit
+* Create patient "Sarat" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
-* Search and select patient "Sara" from "Programs" queue
+* Search and select patient "Sarat" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Microbiology Results" tab

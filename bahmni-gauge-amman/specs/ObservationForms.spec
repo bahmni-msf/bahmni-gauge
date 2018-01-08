@@ -21,18 +21,6 @@ Other Observation Forms
 
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
-* Select template "OPD Nursing Initial Assessment" from observation page and fill details
-
-   |FIELD               |VALUE                 |
-   |--------------------|----------------------|
-   |Date of consultation|01/01/2017            |
-   |Pain severity       |2                     |
-   |Side of pain        |Right                 |
-   |Site of pain        |Stump                 |
-   |Number of wounds    |2                     |
-   |Site                |Ear;Nose              |
-   |Description         |new Description       |
-   |Nursing notes       |captured Nursing notes|
 
 * Select template "Vital Signs" from observation page and fill details
 
@@ -321,7 +309,6 @@ Other Observation Forms
    |OPD Nursing Note                            |
    |Ward Nursing Note                           |
    |Surgical Ward Admission Nursing Assessment  |
-   |OPD Nursing Initial Assessment              |
    |Surgeon Pre-Op Assessment and Treatment Plan|
    |Vital Signs                                 |
 
