@@ -134,6 +134,7 @@ public class AppointmentSchedulingSpec {
         WebElement row = AppointmentSchedulingAdminPage.selectGivenServiceRow(serviceName);
         if (row != null){
             AppointmentSchedulingAdminPage.deleteService(serviceName);
+            waitForAppReady();
         }
     }
 
