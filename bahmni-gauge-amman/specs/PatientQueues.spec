@@ -172,7 +172,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
    |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|isCareTakerRequiredCheckBox|statusofOfficialIDdocuments|caretakerNameEnglish|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
    |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|---------------------------|---------------------------|--------------------|---------------|--------------------|---------------------|
-   |Kabir    |Yonus   |عبدالله        |حسن             |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
+   |Kabir    |Yonus   |       عبدالله |حسن             |Male  |30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
 
 * Start "First Stage Validation" visit and navigate to Programs page
 * Enroll patient to the following program 
@@ -297,9 +297,9 @@ Patient In More Information queue when FSTG Outcome is More Information
 * Search patient "Kabir Yonus" from "Hospital RSP" queue
 * Verify patient details of "Kabir Yonus" in queue 
 
-   |Date Of Arrival|Name       |Age|Country|Is Caretaker Required?|Specialty |Stage|Name Of Surgeon     |Date Of Consultation (Anaesth.)|Date Of Consultation (Surgeon)|Phase Of Treatment|
-   |---------------|-----------|---|-------|----------------------|----------|-----|--------------------|-------------------------------|------------------------------|------------------|
-   |05/05/2017     |Kabir Yonus|30 |Jordan |Yes                   |Orthopedic|2    |Dr. Sofian Al-Qassab|05/05/2017                     |05/05/2017                    |Pre-Operative     |
+   |Date Of Arrival|Name       |Age|Country|Is Caretaker Required?|Specialty |Stage|Name Of Surgeon     |OPD A     |OPD S     |Phase Of Treatment|
+   |---------------|-----------|---|-------|----------------------|----------|-----|--------------------|----------|----------|------------------|
+   |05/05/2017     |Kabir Yonus|30 |Jordan |Yes                   |Orthopedic|2    |Dr. Sofian Al-Qassab|05/05/2017|05/05/2017|Pre-Operative     |
 
 //* Search and select patient "Kabir Yonus" from "Programs" queue
 //* Edit "Reconstructive Surgery" Program with following details
@@ -325,14 +325,14 @@ Patient In More Information queue when FSTG Outcome is More Information
 * Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on registration app
 * Click on create new patient link
-* Enter Patient Details
+* Enter Patient Details 
 
    |firstName|lastName|givenNameArabic|familyNameArabic|gender|age|governorate|country|phoneNumber1|spokenLanguages|nationality1|isCareTakerRequiredCheckBox|statusofOfficialIDdocuments|caretakerNameEnglish|caretakerGender|caretakerNationality|legalRepalsoCaretaker|
    |---------|--------|---------------|----------------|------|---|-----------|-------|------------|---------------|------------|---------------------------|---------------------------|--------------------|---------------|--------------------|---------------------|
    |Shazia   |Yonus   |عبدالله        |حسن             |Female|30 |Amman      |Jordan |+9898989898 |English        |Egyptian    |True                       |Waiting                    |Nadira              |Female         |Iraqi               |Yes                  |
 
 * Start "Follow-Up Validation" visit and navigate to Programs page
-* Enroll patient to the following program
+* Enroll patient to the following program 
 
    |name                  |dateOfRegistration|programStatus    |
    |----------------------|------------------|-----------------|
@@ -340,14 +340,14 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 * Navigate to queues
 * Search patient "Shazia Yonus" from "Programs" queue
-* Verify patient details of "Shazia Yonus" in queue
+* Verify patient details of "Shazia Yonus" in queue 
 
    |Name        |
    |------------|
    |Shazia Yonus|
 
 * Search patient "Shazia Yonus" from "Awaiting Validation - Follow Up Stage" queue
-* Verify patient details of "Shazia Yonus" in queue
+* Verify patient details of "Shazia Yonus" in queue 
 
    |Name        |Nationality|
    |------------|-----------|
@@ -358,19 +358,19 @@ Patient In More Information queue when FSTG Outcome is More Information
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
-* Select template "Patient History" from observation page and fill details
+* Select template "Patient History" from observation page and fill details 
 
    |FIELD      |VALUE              |
    |-----------|-------------------|
    |Name of MLO|Dr. Aziz Abu Azizeh|
 
-* Select template "First Stage Validation" from observation page and fill details
+* Select template "First Stage Validation" from observation page and fill details 
 
    |FIELD    |VALUE     |
    |---------|----------|
    |Specialty|Orthopedic|
 
-* Select template "Final Validation" from observation page and fill details
+* Select template "Final Validation" from observation page and fill details 
 
    |FIELD            |VALUE               |
    |-----------------|--------------------|
@@ -380,7 +380,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 * Save the consultation
 * Navigate to queues
 * Search patient "Shazia Yonus" from "Awaiting Validation - Follow Up Stage" queue
-* Verify patient details of "Shazia Yonus" in queue
+* Verify patient details of "Shazia Yonus" in queue 
 
    |Name        |Name Of MLO        |Nationality|Specialty |Name Of Surgeon 1  |Name Of Surgeon 2   |
    |------------|-------------------|-----------|----------|-------------------|--------------------|
@@ -395,7 +395,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
-* Select template "Follow-up Validation" from observation page and fill details
+* Select template "Follow-up Validation" from observation page and fill details 
 
    |FIELD                                    |VALUE                   |
    |-----------------------------------------|------------------------|
@@ -409,7 +409,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 * Save the consultation
 * Navigate to queues
 * Search patient "Shazia Yonus" from "To Continue Under Follow-Up " queue
-* Verify patient details of "Shazia Yonus" in queue
+* Verify patient details of "Shazia Yonus" in queue 
 
    |Date Of Presentation|Name        |Specialty |Name Of MLO        |Time For Next Medical Follow-up|Date Of Next Medical Follow-up|Type Of Medical Investigations Requested|Comments              |
    |--------------------|------------|----------|-------------------|-------------------------------|------------------------------|----------------------------------------|----------------------|

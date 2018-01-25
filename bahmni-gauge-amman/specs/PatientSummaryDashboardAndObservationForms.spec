@@ -193,7 +193,7 @@ tags: sanity, regression
    |-----------------|---------------|
    |Medical Diagnosis|Atherosclerosis|
 
-* Select template "Psycho-Social Initial Assessment" from observation page and fill details 
+* Select template "Psycho-Social Assessment" from observation page and fill details 
 
    |FIELD                                                             |VALUE                                                                                 |
    |------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -207,11 +207,26 @@ tags: sanity, regression
    |Past history of psychiatric care of family member                 |No                                                                                    |
    |History of psychotropic drugs                                     |Yes                                                                                   |
    |Drug                                                              |drug details                                                                          |
-   |SQR20 (score)                                                     |20                                                                                    |
+   |SRQ20                                                             |20                                                                                    |
    |PTSD (score)                                                      |4                                                                                     |
    |PSYca 3-6 (child)                                                 |44                                                                                    |
+   |SDQ P7-10                                                         |8                                                                                     |
+   |SDQ S11-17                                                        |16                                                                                    |
    |Needed Mental Health Support                                      |Followed daily by counselor;Referred to clinical psychologist;Referred to psychiatrist|
    |Comments from counsellor                                          |counsellor comments                                                                   |
+
+* Select template "Psycho-Social Assessment" from observation page and fill details in "Discharge Assessment" section 
+
+   |FIELD                                    |VALUE                                                 |
+   |-----------------------------------------|------------------------------------------------------|
+   |SRQ20                                    |10                                                    |
+   |PTSD (score)                             |3                                                     |
+   |PSYca 3-6 (child)                        |30                                                    |
+   |SDQ P7-10                                |22                                                    |
+   |SDQ S11-17                               |13                                                    |
+   |Psychosocial overview and comments       |Comments for Psychosocial overview and comments       |
+   |Social needs or other referrals          |Comments for Social needs or other referrals          |
+   |Specific comments regarding the caretaker|Comments for Specific comments regarding the caretaker|
 
 * Select template "Complications" from observation page and fill details 
 
@@ -226,18 +241,18 @@ tags: sanity, regression
 * Save the consultation
 * Verify these forms are saved and disabled to add 
 
-   |FORM                            |
-   |--------------------------------|
-   |Health Education                |
-   |Patient History                 |
-   |First Stage Validation          |
-   |Final Validation                |
-   |Anesthesia Initial Assessment   |
-   |Psycho-Social Initial Assessment|
-   |MD Initial Assessment           |
-   |Physical Examination            |
-   |Surgical Diagnoses              |
-   |Medical Diagnoses               |
+   |FORM                         |
+   |-----------------------------|
+   |Health Education             |
+   |Patient History              |
+   |First Stage Validation       |
+   |Final Validation             |
+   |Anesthesia Initial Assessment|
+   |Psycho-Social Assessment     |
+   |MD Initial Assessment        |
+   |Physical Examination         |
+   |Surgical Diagnoses           |
+   |Medical Diagnoses            |
 
 * Verify this form is Add More form "Complications"
 * Navigate to patient dashboard
@@ -369,7 +384,11 @@ tags: sanity, regression
 
    |FIELD                   |VALUE              |
    |------------------------|-------------------|
-   |SQR20 (score) (< 20)    |20                 |
+   |SRQ20 (< 20)            |20                 |
+   |SRQ20 (< 20)            |10                 |
    |PTSD (score) (< 4)      |4                  |
+   |PTSD (score) (< 4)      |3                  |
    |PSYca 3-6 (child) (< 44)|44                 |
+   |PSYca 3-6 (child) (< 44)|30                 |
    |Comments from counsellor|counsellor comments|
+
