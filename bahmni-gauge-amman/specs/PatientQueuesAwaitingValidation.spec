@@ -7,13 +7,13 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 
 Test for queue when Medical File is required
 --------------------------------------------
-* Create patient "Ameer" using API with "First Stage Validation" visit
+* Create patient "Ameer Medical File" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Verify patient "Ameer" is present only in "Awaiting Validation - 1st Stage" queue
-* Search and select patient "Ameer" from "Programs" queue
+* Verify patient "Ameer Medical File" is present only in "Awaiting Validation - 1st Stage" queue
+* Search and select patient "Ameer Medical File" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -26,16 +26,16 @@ Test for queue when Medical File is required
 
 * Save the consultation
 * Navigate to queues
-* Verify patient "Ameer" is present only in "Awaiting Validation - 1st Stage" queue
+* Verify patient "Ameer Medical File" is present only in "Awaiting Validation - 1st Stage" queue
 
 Test for queue when Date of presentation of First stage validation is captured
 ------------------------------------------------------------------------------
-* Create patient "Sarah" using API with "First Stage Validation" visit
+* Create patient "Sarah Fstg" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Sarah" from "Programs" queue
+* Search and select patient "Sarah Fstg" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -47,19 +47,19 @@ Test for queue when Date of presentation of First stage validation is captured
 
 * Save the consultation
 * Navigate to queues
-* Verify patient "Sarah" is not present in any queue except Programs and All queues
+* Verify patient "Sarah Fstg" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Sarah" is not present in any queue except Programs and All queues
+* Verify patient "Sarah Fstg" is not present in any queue except Programs and All queues
 
 Test for queue when Date of presentation of Final validation is captured in "First Stage Validation" visit
 ----------------------------------------------------------------------------------------------------------
-* Create patient "Azeez" using API with "First Stage Validation" visit
+* Create patient "Azeez Final" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Search and select patient "Azeez" from "Programs" queue
+* Search and select patient "Azeez Final" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -71,20 +71,20 @@ Test for queue when Date of presentation of Final validation is captured in "Fir
 
 * Save the consultation
 * Navigate to queues
-* Verify patient "Azeez" is not present in any queue except Programs and All queues
+* Verify patient "Azeez Final" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Azeez" is not present in any queue except Programs and All queues
+* Verify patient "Azeez Final" is not present in any queue except Programs and All queues
 
 Test for queue when Date of presentation of Follow-up validation is captured
 ----------------------------------------------------------------------------
-* Create patient "Halah" using API with "Follow-Up Validation" visit
+* Create patient "Halah Fup" using API with "Follow-Up Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Verify patient "Halah" is not present in any queue except Programs and All queues
-* Search and select patient "Halah" from "Programs" queue
+* Verify patient "Halah Fup" is not present in any queue except Programs and All queues
+* Search and select patient "Halah Fup" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 
 
    |programStatus    |
@@ -92,8 +92,8 @@ Test for queue when Date of presentation of Follow-up validation is captured
    |Network Follow-up|
 
 * Navigate to queues
-* Verify patient "Halah" is present only in "Awaiting Validation - Follow Up Stage" queue
-* Search and select patient "Halah" from "Programs" queue
+* Verify patient "Halah Fup" is present only in "Awaiting Validation - Follow Up Stage" queue
+* Search and select patient "Halah Fup" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -105,20 +105,20 @@ Test for queue when Date of presentation of Follow-up validation is captured
 
 * Save the consultation
 * Navigate to queues
-* Verify patient "Halah" is not present in any queue except Programs and All queues
+* Verify patient "Halah Fup" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Halah" is not present in any queue except Programs and All queues
+* Verify patient "Halah Fup" is not present in any queue except Programs and All queues
 
 Test for queue when Date of Presentation of Final validation is captured in "Follow-Up Validation" visit
 --------------------------------------------------------------------------------------------------------
-* Create patient "Yahya" using API with "Follow-Up Validation" visit
+* Create patient "Yahya Final" using API with "Follow-Up Validation" visit
 * Enroll patient to reconstructive surgery program using API
 * On the login page
 * Login with username "BAHMNI_GAUGE_OPD_MO" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
 * Click on programs app
-* Verify patient "Yahya" is not present in any queue except Programs and All queues
-* Search and select patient "Yahya" from "Programs" queue
+* Verify patient "Yahya Final" is not present in any queue except Programs and All queues
+* Search and select patient "Yahya Final" from "Programs" queue
 * Edit "Reconstructive Surgery" Program with following details 
 
    |programStatus    |
@@ -126,8 +126,8 @@ Test for queue when Date of Presentation of Final validation is captured in "Fol
    |Network Follow-up|
 
 * Navigate to queues
-* Verify patient "Yahya" is present only in "Awaiting Validation - Follow Up Stage" queue
-* Search and select patient "Yahya" from "Programs" queue
+* Verify patient "Yahya Final" is present only in "Awaiting Validation - Follow Up Stage" queue
+* Search and select patient "Yahya Final" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Go to "Observations" tab
@@ -139,7 +139,7 @@ Test for queue when Date of Presentation of Final validation is captured in "Fol
 
 * Save the consultation
 * Navigate to queues
-* Verify patient "Yahya" is not present in any queue except Programs and All queues
+* Verify patient "Yahya Final" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
-* Verify patient "Yahya" is not present in any queue except Programs and All queues
+* Verify patient "Yahya Final" is not present in any queue except Programs and All queues
