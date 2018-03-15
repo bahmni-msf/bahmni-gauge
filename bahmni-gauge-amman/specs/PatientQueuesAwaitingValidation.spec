@@ -26,6 +26,7 @@ Test for queue when Medical File is required
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Verify patient "Ameer Medical File" is present only in "Awaiting Validation - 1st Stage" queue
 
 Test for queue when Date of presentation of First stage validation is captured
@@ -47,6 +48,7 @@ Test for queue when Date of presentation of First stage validation is captured
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Verify patient "Sarah Fstg" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
@@ -71,6 +73,7 @@ Test for queue when Date of presentation of Final validation is captured in "Fir
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Verify patient "Azeez Final" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
@@ -105,6 +108,7 @@ Test for queue when Date of presentation of Follow-up validation is captured
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Verify patient "Halah Fup" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page
@@ -139,6 +143,7 @@ Test for queue when Date of Presentation of Final validation is captured in "Fol
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Verify patient "Yahya Final" is not present in any queue except Programs and All queues
 * End visit for previously created patient using API
 * Refresh the queues page

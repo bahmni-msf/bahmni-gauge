@@ -14,11 +14,13 @@ import static org.openqa.selenium.By.id;
  * Created by swarup on 10/27/16.
  */
 public class AmmanProgramPage extends ProgramManagementPage {
-    @FindBy(how= How.CSS, using = "select[ng-model='$parent.workflowStateSelected']")
+    @FindBy(how = How.CSS, using = "select[ng-model='$parent.workflowStateSelected']")
     public WebElement programState;
 
-    @FindBy(how=How.CSS, using = ".back-btn")
+    @FindBy(how = How.CSS, using = ".back-btn")
     public WebElement backButton;
+
+
 
 
     public void enrollToProgram(Program program) {
@@ -46,5 +48,9 @@ public class AmmanProgramPage extends ProgramManagementPage {
         weProgram.findElement(cssSelector("input[value='Save']")).click();
     }
 
-    public void clickBackButton(){backButton.click();}
+    public void clickBackButton() {
+        backButton.click();
+    }
+
+
 }

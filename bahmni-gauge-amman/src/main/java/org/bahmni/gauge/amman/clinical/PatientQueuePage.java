@@ -22,6 +22,7 @@ public class PatientQueuePage extends PatientListingPage {
     public List<WebElement> rowsList;
 
     public void enterPatientIDOrName(String Patient) {
+        waitForSpinner(driver);
         searchbox_txt.clear();
         searchbox_txt.sendKeys(Patient);
     }

@@ -27,7 +27,6 @@ tags: sanity, regression
    |Microbiology Results           |
    |Visits                         |
    |Patient Medical Documents (MLO)|
-   |Patient Encounter Locations    |
 
 * Verify the following display controls are hidden 
 

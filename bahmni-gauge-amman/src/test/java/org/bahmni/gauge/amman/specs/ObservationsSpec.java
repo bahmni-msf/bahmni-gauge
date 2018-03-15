@@ -4,6 +4,7 @@ package org.bahmni.gauge.amman.specs;
 import com.thoughtworks.gauge.BeforeClassSteps;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
+import org.bahmni.gauge.amman.clinical.AmmanProgramPage;
 import org.bahmni.gauge.amman.clinical.ObservationsPage;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
@@ -65,5 +66,11 @@ public class ObservationsSpec {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
         observationsPage.selectTemplate(template);
         waitForAppReady();
+    }
+
+    @Step("Click save on Consultation Save Confirm pop up")
+    public void navigateToQueues(){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.clickSaveConfirmPopup();
     }
 }

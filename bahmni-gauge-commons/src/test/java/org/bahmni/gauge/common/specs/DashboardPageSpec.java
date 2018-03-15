@@ -96,7 +96,7 @@ public class DashboardPageSpec {
 
     @Step("Navigate to dashboard link")
     public void navigateToDashboardLink() {
-        dashboardPage.findElement(By.id("dashboard-link")).click();
+        dashboardPage.findElement(By.id("patients-link")).click();
     }
 
     @Step("Navigate to adt dashboard link")

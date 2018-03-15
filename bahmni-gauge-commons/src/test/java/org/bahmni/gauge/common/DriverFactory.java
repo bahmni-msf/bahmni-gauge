@@ -24,7 +24,7 @@ public class DriverFactory {
 
     //TODO: Remove this static method!!!!!
     public static WebDriver getDriver() {
-        
+
         return driver;
 
     }

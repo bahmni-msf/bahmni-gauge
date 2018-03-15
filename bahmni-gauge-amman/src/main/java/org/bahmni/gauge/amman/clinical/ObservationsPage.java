@@ -7,6 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
@@ -17,6 +18,9 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
 
     @FindBy(how = How.CSS, using = ".hasLegend .collapsible-set")
     public List<WebElement> sections;
+
+    @FindBy(how = How.ID, using = "modal-revise-button3")
+    public WebElement saveBtn;
 
     @Override
     public void selectTemplate(String templateName) {
@@ -369,5 +373,17 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
             Assert.fail("Section " + section + " not found or disabled");
         }
     }
+        public void clickSaveConfirmPopup() {
+            boolean foundAlert = false;
+            try {
+                waitForElement(driver, ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
+                saveBtn.click();
+                waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngdialog-overlay")));
+                foundAlert = true;
+            } catch (TimeoutException eT0) {
+                foundAlert = false;
+            }
+        }
+    }
 
-}
+

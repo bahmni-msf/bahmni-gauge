@@ -104,6 +104,8 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Total Score                                  |18                                                  |
    |Risk of Falls                                |High                                                |
 
+* Navigate to dashboard link
+* Click save on Consultation Save Confirm pop up
 
 Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment form - Verify Risk of falls is moderate when total score is between 19-23
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -203,6 +205,9 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Gait Score                                   |12                                                           |
    |Total Score                                  |22                                                           |
    |Risk of Falls                                |Moderate                                                     |
+
+* Navigate to dashboard link
+* Click save on Consultation Save Confirm pop up
 
 Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment form - Verify Risk of falls is low when total score is >=24
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -307,3 +312,6 @@ Tinetti Balance Assessment Tool section in Lower Limb Physiotherapy Assessment f
    |Gait Score                                   |12                                                           |
    |Total Score                                  |27                                                           |
    |Risk of Falls                                |Low                                                          |
+
+* Navigate to dashboard link
+* Click save on Consultation Save Confirm pop up

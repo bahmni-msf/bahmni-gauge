@@ -31,7 +31,7 @@ Verify Admit to RC, Movement to Kahramana and Transfer Home flow through Disposi
 
    |Name        |Age|Gender|
    |------------|---|------|
-   |Bed RC Hasan|11 |M     |
+   |Bed RC Hasan|12 |M     |
 
 * Click on "Admit To RC" link
 * Click on "Rehabilitation Center" button
@@ -54,7 +54,7 @@ Verify Admit to RC, Movement to Kahramana and Transfer Home flow through Disposi
 
    |Name        |Age|Gender|Department           |
    |------------|---|------|---------------------|
-   |Bed RC Hasan|11 |M     |Rehabilitation Center|
+   |Bed RC Hasan|12 |M     |Rehabilitation Center|
 
 * Click on "Movement to Kahramana" link
 * Click on "Kahramana" button
@@ -66,7 +66,7 @@ Verify Admit to RC, Movement to Kahramana and Transfer Home flow through Disposi
 
    |Name        |Age|Gender|Department|
    |------------|---|------|----------|
-   |Bed RC Hasan|11 |M     |Kahramana |
+   |Bed RC Hasan|12 |M     |Kahramana |
 
 * Verify patient "Bed RC" is present only in "Admitted" queue
 * Search patient "Bed RC" from "Admitted" queue
@@ -84,7 +84,7 @@ Verify Admit to RC, Movement to Kahramana and Transfer Home flow through Disposi
 
    |Name        |Age|Gender|Department|
    |------------|---|------|----------|
-   |Bed RC Hasan|11 |M     |Kahramana |
+   |Bed RC Hasan|12 |M     |Kahramana |
 
 * Click on "Transfer Home" link
 * Discharge the patient
@@ -121,7 +121,7 @@ Verify Admit to Ward, Movement to RC and Transfer Home flow through Disposition 
 
    |Name          |Age|Gender|
    |--------------|---|------|
-   |Bed ward Hasan|11 |M     |
+   |Bed ward Hasan|12 |M     |
 
 * Click on "Admit To Ward" link
 * Click on "Ward" button
@@ -144,7 +144,7 @@ Verify Admit to Ward, Movement to RC and Transfer Home flow through Disposition 
 
    |Name          |Age|Gender|Department|
    |--------------|---|------|----------|
-   |Bed ward Hasan|11 |M     |Ward      |
+   |Bed ward Hasan|12 |M     |Ward      |
 
 * Click on "Movement to RC" link
 * Click on "Rehabilitation Center" button
@@ -156,7 +156,7 @@ Verify Admit to Ward, Movement to RC and Transfer Home flow through Disposition 
 
    |Name          |Age|Gender|Department           |
    |--------------|---|------|---------------------|
-   |Bed ward Hasan|11 |M     |Rehabilitation Center|
+   |Bed ward Hasan|12 |M     |Rehabilitation Center|
 
 * Verify patient "Bed ward" is present only in "Admitted" queue
 * Search patient "Bed ward" from "Admitted" queue
@@ -174,7 +174,7 @@ Verify Admit to Ward, Movement to RC and Transfer Home flow through Disposition 
 
    |Name          |Age|Gender|Department           |
    |--------------|---|------|---------------------|
-   |Bed ward Hasan|11 |M     |Rehabilitation Center|
+   |Bed ward Hasan|12 |M     |Rehabilitation Center|
 
 * Click on "Transfer Home" link
 * Discharge the patient
@@ -211,7 +211,7 @@ Verify Admit to Kahramana, Movement to Ward and Transfer Home flow through Dispo
 
    |Name               |Age|Gender|
    |-------------------|---|------|
-   |Bed kahramana Hasan|11 |M     |
+   |Bed kahramana Hasan|12 |M     |
 
 * Click on "Admit to Kahramana" link
 * Click on "Kahramana" button
@@ -234,7 +234,7 @@ Verify Admit to Kahramana, Movement to Ward and Transfer Home flow through Dispo
 
    |Name               |Age|Gender|Department|
    |-------------------|---|------|----------|
-   |Bed kahramana Hasan|11 |M     |Kahramana |
+   |Bed kahramana Hasan|12 |M     |Kahramana |
 
 * Click on "Movement to Ward" link
 * Click on "Ward" button
@@ -246,7 +246,7 @@ Verify Admit to Kahramana, Movement to Ward and Transfer Home flow through Dispo
 
    |Name               |Age|Gender|Department|
    |-------------------|---|------|----------|
-   |Bed kahramana Hasan|11 |M     |Ward      |
+   |Bed kahramana Hasan|12 |M     |Ward      |
 
 * Verify patient "Bed kahramana" is present only in "Admitted" queue
 * Search patient "Bed kahramana" from "Admitted" queue
@@ -264,7 +264,7 @@ Verify Admit to Kahramana, Movement to Ward and Transfer Home flow through Dispo
 
    |Name               |Age|Gender|Department|
    |-------------------|---|------|----------|
-   |Bed kahramana Hasan|11 |M     |Ward      |
+   |Bed kahramana Hasan|12 |M     |Ward      |
 
 * Click on "Transfer Home" link
 * Discharge the patient

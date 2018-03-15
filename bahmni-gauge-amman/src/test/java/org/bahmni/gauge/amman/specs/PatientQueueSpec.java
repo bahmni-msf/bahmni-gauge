@@ -35,6 +35,7 @@ public class PatientQueueSpec {
         patientQueuePage.clickTab(queueName);
         waitForAppReady();
         patientQueuePage.enterPatientIDOrName(patientName);
+        waitForAppReady();
     }
 
     @Step("Verify patient details of <patientName> in queue <table>")

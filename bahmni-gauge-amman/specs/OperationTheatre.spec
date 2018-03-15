@@ -71,6 +71,8 @@ Prerequisite: Add forms
 * Save the consultation
 
 Admit Patient in RC
+* Navigate to dashboard link
+* Click save on Consultation Save Confirm pop up
 * Navigate to dashboard
 * Click on "bed management" module
 * Navigate to patient ADT queues

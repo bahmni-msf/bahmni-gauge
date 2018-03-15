@@ -70,6 +70,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Abdulla Yonus" from "Awaiting Validation - 1st Stage " queue
 * Verify patient details of "Abdulla Yonus" in queue 
 
@@ -95,6 +96,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Abdulla Yonus" from "Postponed" queue
 * Verify patient details of "Abdulla Yonus" in queue 
 
@@ -148,6 +150,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Ameer Yonus" from "More Information" queue
 * Verify patient details of "Ameer Yonus" in queue 
 
@@ -182,7 +185,7 @@ Patient In More Information queue when FSTG Outcome is More Information
    |Reconstructive Surgery|09/09/2016        |Identification|
 
 * On the login page
-* Login with username "BAHMNI_GAUGE_OPD_DOCTOR" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_VC_MEMBER_PASSWORD" with location "BAHMNI_GAUGE_VC_MEMBER_LOCATION"
 * Click on programs app
 * Search and select patient "Kabir Yonus" from "Awaiting Validation - 1st Stage" queue
 * Navigate to "Reconstructive Surgery" program dashboard
@@ -225,6 +228,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Kabir Yonus" from "Validated Patients" queue
 * Verify patient details of "Kabir Yonus" in queue 
 
@@ -294,6 +298,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Kabir Yonus" from "Hospital RSP" queue
 * Verify patient details of "Kabir Yonus" in queue 
 
@@ -379,6 +384,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Shazia Yonus" from "Awaiting Validation - Follow Up Stage" queue
 * Verify patient details of "Shazia Yonus" in queue 
 
@@ -408,6 +414,7 @@ Patient In More Information queue when FSTG Outcome is More Information
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Shazia Yonus" from "To Continue Under Follow-Up " queue
 * Verify patient details of "Shazia Yonus" in queue 
 
@@ -468,6 +475,7 @@ Patient in Validated Patients queue - FUP
 
 * Save the consultation
 * Navigate to queues
+* Click save on Consultation Save Confirm pop up
 * Search patient "Abdul Bari" from "Validated Patients" queue
 * Verify patient details of "Abdul Bari" in queue 
 

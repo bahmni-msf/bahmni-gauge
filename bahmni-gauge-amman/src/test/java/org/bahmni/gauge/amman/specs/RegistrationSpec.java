@@ -67,7 +67,7 @@ public class RegistrationSpec {
     public void enterVisitNavigateProgram(String visitName) {
         registrationPage.clickVisitDetailsButton();
         waitForAppReady();
-        PageFactory.get(RegistrationVisitDetailsPage.class);
+        //PageFactory.get(RegistrationVisitDetailsPage.class);
     }
 
     @Step("Verify Legal Rep Values for autocomplete")
