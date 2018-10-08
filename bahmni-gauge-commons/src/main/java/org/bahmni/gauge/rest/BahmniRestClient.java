@@ -34,6 +34,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.cert.X509Certificate;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -68,6 +69,8 @@ public class BahmniRestClient {
     private static final String PUBLISH_FORM_URL = "/bahmniie/form/publish?formUuid=";
 
     private static final String CREATE_FORM_URL = "/form";
+
+    private static final String GET_ALL_OBSERVATION_TEMPLATES="/concept?s=byFullySpecifiedName&name=All+Observation+Templates&v=custom:(setMembers:(display))";
 
     private Configuration freemarkerConfiguration;
 
@@ -389,6 +392,32 @@ public class BahmniRestClient {
             throw new BahmniAPIException(e);
         }
         return conceptAnswerDetailsMap;
+    }
+
+    public List<String> getAllObservationTemplates() {
+        List<String> obsTemplates = new LinkedList<>();
+
+        try {
+            String obsUrl = mrs_url + GET_ALL_OBSERVATION_TEMPLATES;
+
+            HttpResponse<JsonNode> response = Unirest.get(obsUrl)
+                    .basicAuth(username, password)
+                    .header("content-type", "application/json")
+                    .asJson();
+
+
+
+            JSONArray observations= (JSONArray) JSONs.get(response.getBody(), "results", 0, "setMembers");
+            if (null != observations) {
+                for (Object answer_ : observations) {
+                    JSONObject obs = (JSONObject) answer_;
+                    obsTemplates.add(obs.get("display").toString());
+                }
+            }
+        } catch (Exception e) {
+            throw new BahmniAPIException(e);
+        }
+        return obsTemplates;
     }
 
     public <T extends Model> JSONObject create(T entity) {

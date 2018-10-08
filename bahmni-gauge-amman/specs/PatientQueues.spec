@@ -27,7 +27,7 @@ Create Patient and Verify Programs Queue
 Patient In Medical File incomplete queue
 ----------------------------------------
 * On the login page
-* Login with username "BAHMNI_GAUGE_DATA_ADMIN_USER" and password "BAHMNI_GAUGE_DATA_ADMIN_PASSWORD" with location "BAHMNI_GAUGE_DATA_ADMIN_LOCATION"
+* Login with username "BAHMNI_GAUGE_APP_USER" and password "BAHMNI_GAUGE_APP_PASSWORD" with location "BAHMNI_GAUGE_APP_LOCATION"
 * Click on programs app
 * Search and select patient "Al Padasd Hassan" from "Programs" queue
 * Navigate to "Reconstructive Surgery" program dashboard

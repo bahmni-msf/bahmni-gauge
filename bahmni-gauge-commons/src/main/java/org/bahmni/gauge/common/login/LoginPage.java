@@ -30,7 +30,7 @@ public class LoginPage extends BahmniPage{
 	}
 
     public void login(String username, String password, String location){
-        login(username,password,location,"English");
+        login(username,password,location,"en");
     }
 
     public void login(String username, String password, String location, String locale){

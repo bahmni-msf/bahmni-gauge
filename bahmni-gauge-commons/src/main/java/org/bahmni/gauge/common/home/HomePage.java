@@ -54,9 +54,16 @@ public class HomePage extends BahmniPage {
 	@FindBy(how = How.CSS, using = "i.fa-user-secret")
 	public WebElement formBuilder;
 
+	@FindBy(xpath = "//a[@id=\"bahmni.print.forms\"]")
+	public WebElement printForms;
+
 	public void clickRegistrationApp(){
     	registration.click();
     }
+
+	public void clickPrintFormsApp(){
+		printForms.click();
+	}
 
     public void clickClinicalApp() {
     	clinical.click();

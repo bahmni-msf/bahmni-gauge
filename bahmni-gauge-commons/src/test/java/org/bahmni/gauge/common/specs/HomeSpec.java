@@ -51,6 +51,15 @@ public class HomeSpec {
         homePage.clickImplementerInterfaceApp();
     }
 
+    @Step("Click on Print Forms App")
+    public void goToPrintFormsPage() {
+        homePage = PageFactory.getHomePage();
+        homePage.clickPrintFormsApp();
+        BahmniPage.waitForSpinner(driver);
+    }
+
+
+
     @ContinueOnFailure
     @Step("Verify page load time for <app> app is less than <time> seconds")
     public void verifyPageLoadForClinical(String app, long loadTime) {
