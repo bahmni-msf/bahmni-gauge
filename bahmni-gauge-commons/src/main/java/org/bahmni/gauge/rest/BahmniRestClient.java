@@ -6,6 +6,7 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.mashape.unirest.request.body.RequestBodyEntity;
 
+import com.thoughtworks.gauge.Gauge;
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -138,6 +139,8 @@ public class BahmniRestClient {
             StringWriter stringWriter = new StringWriter();
             freemarkerTemplate.process(patientData, stringWriter);
             String requestJson = stringWriter.toString();
+
+            Gauge.writeMessage(requestJson);
 
             Object patientUuid = null;
             JsonNode body = post(url_mrsportion_rest + PATIENT_PROFILE_URL, requestJson);
@@ -604,21 +607,23 @@ public class BahmniRestClient {
     }
 
     public static JsonNode post(String restAPIUrl, String body) {
+
         HttpResponse<JsonNode> responseAsJson;
         String responseAsString = null;
         String url = baseUrl() + restAPIUrl;
-        RequestBodyEntity requestBodyEntity = Unirest.post(url)
+        try {
+        responseAsJson = Unirest.post(url)
                 .basicAuth(username(), password())
                 .header("content-type", "application/json")
-                .body(body);
-        try {
-            responseAsString = requestBodyEntity.getBody().toString();
-            responseAsJson = requestBodyEntity.asJson();
+                .body(body)
+                .asJson();
+
+
             if (responseAsJson.getStatus() != 200 && responseAsJson.getStatus() != 201) {
                 throw new BahmniAPIException("Post request failed!! Url: " + url + " Content:" + body.substring(0, 100));
             }
         } catch (UnirestException e) {
-            throw new BahmniAPIException(responseAsString.substring(0, 10000));
+            throw new BahmniAPIException(e);
         }
         return responseAsJson.getBody();
     }

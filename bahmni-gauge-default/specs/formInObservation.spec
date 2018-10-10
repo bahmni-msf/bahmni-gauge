@@ -37,7 +37,7 @@ tags: regression, sanity
 * Verify form is "v1" version and "Published" status
 
 * Create a new patient through API
-* Open visit of type "OPD" in "BAHMNI_GAUGE_APP_LOCATION" location for previous patient using api
+* Open visit of type "First Stage Validation" in "BAHMNI_GAUGE_APP_LOCATION" location for previous patient using api
 * Navigate to dashboard
 * Click on "Clinical" app
 * Select existing patient from patient listing page under tab "Active"

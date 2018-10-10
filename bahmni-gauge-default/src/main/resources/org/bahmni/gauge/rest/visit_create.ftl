@@ -1,4 +1,4 @@
 {
     "patient":"${object.uuid}",
-    "visitType":"${object.visitTypeUuid}",
+    "visitType":"${object.getVisitTypeUuid()}",
     "location":"${object.locationUuid}"}

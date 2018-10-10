@@ -1,5 +1,6 @@
 package org.bahmni.gauge.common.formBuilder;
 
+import com.thoughtworks.gauge.Gauge;
 import org.bahmni.gauge.common.BahmniPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -40,11 +41,22 @@ public class FormBuilderPage extends BahmniPage {
     }
 
     public WebElement findFormByNameAndVersion(String versionNum, String formName) {
-		WebElement formIcon = findFormIcon(formName, versionNum);
-		return formIcon.findElement(By.xpath("../.."));
+		List<WebElement> formList = formTableBody.findElements(By.cssSelector("tr"));
+		for (int i = 0; i < formList.size(); i++) {
+			if (formList.get(i).findElements(By.cssSelector("td")).get(0).getText().equals(formName) &&
+					formList.get(i).findElements(By.cssSelector("td")).get(1).getText().equals(versionNum)) {
+
+
+				return formList.get(i);
+			}
+		}
+		return null;
 	}
 
-	private WebElement findFormIcon(String formName, String versionNumber) {
+
+
+
+	public WebElement findFormIcon(String formName, String versionNumber) {
 		List<WebElement> formList = formTableBody.findElements(By.cssSelector("tr"));
 		for(int i = 0; i < formList.size(); i++) {
 			if(formList.get(i).findElements(By.cssSelector("td")).get(0).getText().equals(formName) &&
