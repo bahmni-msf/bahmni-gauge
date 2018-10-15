@@ -3,7 +3,6 @@ package org.bahmni.gauge.common.specs;
 import com.thoughtworks.gauge.BeforeClassSteps;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
-
 import org.bahmni.gauge.common.PageFactory;
 import org.bahmni.gauge.common.clinical.DashboardPage;
 import org.bahmni.gauge.common.clinical.displaycontrol.ObsDisplayControl;
@@ -91,7 +90,15 @@ public class DashboardPageSpec {
 
     @Step("Navigate to dashboard")
     public void navigateToHomePage() {
-        dashboardPage.get(HomePage.URL);
+       dashboardPage.get(HomePage.URL);
+
+    }
+
+    @Step("Navigate to home page from patient dashboard")
+
+     public void navigateToHomePageUsingToggle() {
+        dashboardPage.openHomeDashboardInNewTab();
+        waitForAppReady();
     }
 
     @Step("Navigate to dashboard link")

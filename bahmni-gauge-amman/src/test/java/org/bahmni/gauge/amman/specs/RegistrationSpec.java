@@ -13,6 +13,8 @@ import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
 import org.bahmni.gauge.common.registration.RegistrationVisitDetailsPage;
+import org.bahmni.gauge.common.registration.domain.Patient;
+import org.bahmni.gauge.data.StoreHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,12 +79,13 @@ public class RegistrationSpec {
     }
 
     @Step("Create patient <Name> using API with <visit Type> visit")
-    public void implementation1(String name, String visitType) throws Exception {
+    public void  implementation1(String name, String visitType) throws Exception {
         PatientAttribute patientAttribute = Fields.getPatientAttribute("firstName");
         patientAttribute.setValue(name);
         ammanPatient.addAttribute(patientAttribute);
         registrationPage.createPatientUsingApi(ammanPatient);
         SpecStoreHelper.store(AmmanPatient.class,ammanPatient);
+        StoreHelper.store(Patient.class,ammanPatient);
         ammanPatient.setVisitType(visitType);
         registrationPage.startVisitUsingApi(ammanPatient);
     }

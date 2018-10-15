@@ -219,6 +219,9 @@ public class FormDetailPageSpec {
             Assert.assertTrue(buttonText+" button is enable",formDetailPage.findButtonByText(buttonText).isDisplayed());
     }
 
+//    @Step("Drag a <control> to the form")
+//    public void
+
     private boolean hasLabel(List<WebElement> labelList, String labelName) {
         for(int i = 0; i < labelList.size(); i++) {
             if(labelList.get(i).getText().equals(labelName)) {

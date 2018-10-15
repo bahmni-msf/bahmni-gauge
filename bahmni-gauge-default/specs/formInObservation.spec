@@ -36,11 +36,12 @@ tags: regression, sanity
 * Verify the form is non-editable
 * Verify form is "v1" version and "Published" status
 
-* Create a new patient through API
-* Open visit of type "First Stage Validation" in "BAHMNI_GAUGE_APP_LOCATION" location for previous patient using api
+* Create patient "Nasim" using API with "First Stage Validation" visit
+* Enroll patient to reconstructive surgery program using API
 * Navigate to dashboard
-* Click on "Clinical" app
-* Select existing patient from patient listing page under tab "Active"
+* Click on programs app
+* Search and select patient "Nasim" from "Programs" queue
+* Navigate to "Reconstructive Surgery" program dashboard
 * Navigate to consultation
 * Add the "Observation test form" existing form
 * Verify "Observation test form" is added to the left pane

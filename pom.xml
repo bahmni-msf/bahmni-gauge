@@ -13,6 +13,7 @@
         <module>bahmni-gauge-amman</module>
         <module>bahmni-gauge-default</module>
         <module>bahmni-gauge-possible</module>
+        <module>bahmni-gauge-haiti</module>
     </modules>
 
     <dependencies>

@@ -63,6 +63,12 @@ public class DashboardPage extends BahmniPage {
     @FindBy(how = How.CSS, using = ".patient-gender-age")
     public WebElement patientGenderAndAge;
 
+    @FindBy(xpath = "//button[@class=\"toggle-patient\"]//i[@class=\"fa fa-bars fa-white fa-large\"]")
+    private WebElement toggleBtn;
+
+    @FindBy(xpath = "//a[contains(text(),'Home Dashboard')]")
+    private WebElement DashboardLink;
+
 
     public void selectDashboard(String name) {
         for (WebElement dashboardLink : driver.findElements(By.cssSelector(".tab-item a"))) {
@@ -260,5 +266,11 @@ public class DashboardPage extends BahmniPage {
         Calendar cal = getInstance(Locale.US);
         cal.setTime(date);
         return cal;
+    }
+
+    public void openHomeDashboardInNewTab() {
+        DashboardLink.click();
+        switchToLatestTab();
+
     }
 }

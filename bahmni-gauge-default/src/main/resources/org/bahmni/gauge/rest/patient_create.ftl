@@ -1,24 +1,23 @@
 {
-"patient":{
-"person":{
-"names":[
-{
-"givenName":"${patient.firstName}",
-"familyName":"${patient.lastName}",
-"preferred":false
-}
-],
-"addresses":[
-{
-"cityVillage": "SADVACHHAPAR",
-"countyDistrict":"${patient.district}",
-"stateProvince":"Chattisgarh"
-}
-],
-"birthdate":"${patient.dateOfBirth}",
-"gender":"${patient.gender}",
-"birthtime":null,
-"attributes": [
+  "patient": {
+    "person": {
+      "names": [
+        {
+          "givenName": "${patient.getPatientAttributeDataFor("firstName")}",
+          "familyName": "Hasan",
+          "preferred": false
+        }
+      ],
+      "addresses": [
+        {
+          "address3": "Gaza",
+          "stateProvince": "Gaza"
+        }
+      ],
+      "birthdate": "2006-02-06T15:02:38.787+0530",
+      "gender": "M",
+      "birthtime": null,
+      "attributes": [
         {
           "attributeType": {
             "uuid": "7e6db4ea-e42f-11e5-8c3e-08002715d519"
@@ -375,10 +374,10 @@
           "voided": true
         }
       ],
-"deathDate":null,
-"causeOfDeath":""
-},
- "identifiers": [
+      "deathDate": null,
+      "causeOfDeath": ""
+    },
+    "identifiers": [
       {
         "identifierSourceUuid": "cd4d17ed-3fc3-4f28-9edc-d3db62810131",
         "identifierPrefix": "",
@@ -387,9 +386,6 @@
         "voided": false
       }
     ]
-
-},
-"relationships":[
-
-]
+  },
+  "relationships": []
 }

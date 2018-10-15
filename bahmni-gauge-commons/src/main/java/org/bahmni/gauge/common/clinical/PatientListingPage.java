@@ -43,6 +43,7 @@ public class PatientListingPage extends BahmniPage {
     }
     
     public void enterPatientIDOrName(String Patient){
+		waitForElementOnPage(By.xpath("//thead//th//strong[text()=\"name\"]"));
     	searchbox_txt.sendKeys(Patient);
     }
     

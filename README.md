@@ -6,8 +6,8 @@ Installation instructions
 * Download Gauge from [here](http://getgauge.io/get-started/).
 
 * Install core plugins using the following commands
-    * `gauge --install java`
-    * `gauge --install html-report`
+    * `gauge install java`
+    * `gauge install html-report`
 
 Running functional tests
 ------------------------
