@@ -15,4 +15,9 @@ Verify print forms page
 * Validate if forms are listed in left hand side menu
 * Validate the skeleton of print view for "Patient History" form
 * Validate if form tab is selected by default
+* Click on Code Sheet
+* Validate if Code Sheet tab is enabled
+* Validate the title of the code sheet for form "Patient History"
+
+
 

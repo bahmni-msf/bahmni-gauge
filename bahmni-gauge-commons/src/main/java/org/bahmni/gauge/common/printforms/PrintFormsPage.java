@@ -26,6 +26,9 @@ public class PrintFormsPage extends BahmniPage {
     @FindBy(xpath = "//button[@class=\"print-button\"]")
     private WebElement printButton;
 
+    @FindBy(xpath = "//div[@class=\"code-sheet-name\"]")
+    private WebElement codeSheetTitle;
+
 
     public List<String> getListofFormsDisplayed() {
 
@@ -62,9 +65,20 @@ public class PrintFormsPage extends BahmniPage {
 
     }
 
-    public boolean validateDefaultTabisFormTab() {
+    public boolean validateActiveTab(String tabName) {
 
-        return formTab.getAttribute("class").contains("active");
+        if(tabName.equals("form" ))
+            return formTab.getAttribute("class").contains("active");
+        else
+            return codeSheetTab.getAttribute("class").contains("active");
 
+    }
+
+    public void clickOnCodeSheet() {
+        codeSheetTab.click();
+    }
+
+    public boolean checkTitleOfCodeSheet(String formName) {
+        return codeSheetTitle.getText().equals("Code Sheet: " + formName);
     }
 }

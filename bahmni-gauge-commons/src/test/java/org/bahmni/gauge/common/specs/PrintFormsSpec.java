@@ -36,8 +36,30 @@ public class PrintFormsSpec {
     @Step("Validate if form tab is selected by default")
     public void checkIfFormTabSelectedByDefault(){
         PrintFormsPage printFormsPage = PageFactory.get(PrintFormsPage.class);
-        Assert.assertTrue("Form Tab is not enabled by default",printFormsPage.validateDefaultTabisFormTab());
+        Assert.assertTrue("Form Tab is not enabled by default",printFormsPage.validateActiveTab("form"));
     }
+
+    @Step("Click on Code Sheet")
+    public void clickOnCodeSheet(){
+        PrintFormsPage printFormsPage = PageFactory.get(PrintFormsPage.class);
+        printFormsPage.clickOnCodeSheet();
+
+    }
+
+    @Step("Validate if Code Sheet tab is enabled")
+    public void checkIfCodeSheetIsEnabled(){
+        PrintFormsPage printFormsPage = PageFactory.get(PrintFormsPage.class);
+        Assert.assertTrue("Code Sheet is not enabled",printFormsPage.validateActiveTab("codeSheet"));
+
+    }
+
+    @Step("Validate the title of the code sheet for form <formName>")
+    public void checkCodeSheetTitle(String formName){
+        PrintFormsPage printFormsPage = PageFactory.get(PrintFormsPage.class);
+        Assert.assertTrue("Title of codesheet is wrong",printFormsPage.checkTitleOfCodeSheet(formName));
+
+    }
+
 
     private boolean validateFormsDisplayed(List<String> actualForms){
 
