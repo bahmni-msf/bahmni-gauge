@@ -1,5 +1,6 @@
 package org.bahmni.gauge.common;
 
+import com.google.common.collect.ImmutableMap;
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.AfterSpec;
 import com.thoughtworks.gauge.BeforeSpec;
@@ -13,9 +14,12 @@ import org.bahmni.gauge.rest.BahmniRestClient;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
 import java.util.List;
 
 public class DriverFactory {
@@ -31,14 +35,31 @@ public class DriverFactory {
 
     @BeforeSpec
     public void setup() {
+        if("true".equals(System.getenv("RUNS_IN_DOCKER"))){
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
 
+            ChromeDriverService service = new ChromeDriverService.Builder()
+                    .usingAnyFreePort()
+                    .withEnvironment(ImmutableMap.of("DISPLAY",":99"))
+                    .usingDriverExecutable(new File("/usr/local/bin/chromedriver"))
+                    .build();
 
-        ChromeDriverManager.getInstance().setup();
-        DesiredCapabilities capability = DesiredCapabilities.chrome();
-        capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-        //capability.setCapability(ChromeOptions.CAPABILITY,options);
-        driver = new ChromeDriver(capability);
-        driver.manage().window().setSize(new Dimension(1440, 900));
+            try{
+                service.start();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            driver = new ChromeDriver(service,options);
+        } else {
+            ChromeDriverManager.getInstance().setup();
+            DesiredCapabilities capability = DesiredCapabilities.chrome();
+            capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+            driver = new ChromeDriver(capability);
+        }
+
+        driver.manage().window().setSize(new Dimension(1440, 1200));
 
     }
 

@@ -39,7 +39,7 @@ public class PrintFormsPage extends BahmniPage {
         for (WebElement form : listofFormsAvaiable) {
 
             actualForms.add(form.getText());
-            Gauge.writeMessage(form.getText());
+        //    Gauge.writeMessage(form.getText());
         }
 
         return actualForms;
