@@ -30,6 +30,17 @@ Running functional tests
     * To run functional tests for a specific project, for example the endtb project
         * `cd bahmni-gauge-endtb`
         * `mvn gauge:execute`
+* Running tests in docker (useful to run tests in go cd)
+
+    * Export below environment variable:
+        
+        `export RUNS_IN_DOCKER=true`
+        
+    The run-docker.sh script contains instructions on running the functional tests inside a docker container
+    
+    * `docker run -v /var/go/.m2:/root/.m2:rw -v $PWD:/gauge -e ENV=$1 -e TAGS=$2 -i bharatak/docker-gauge-chromedriver:chromedriver-2.34 -- sh run.sh`
+    * It leverages a maven image and sets up chromedriver, Xvfb and Google Chrome
+    * The run.sh script runs inside the docker container which runs the functional tests
 
 FAQ
 --------------------------
