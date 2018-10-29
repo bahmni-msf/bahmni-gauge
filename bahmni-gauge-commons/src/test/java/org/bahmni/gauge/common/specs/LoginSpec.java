@@ -1,7 +1,6 @@
 package org.bahmni.gauge.common.specs;
 
 import com.thoughtworks.gauge.BeforeClassSteps;
-import com.thoughtworks.gauge.Gauge;
 import com.thoughtworks.gauge.Step;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
@@ -26,7 +25,6 @@ public class LoginSpec {
 	public void navigateToLoginPage() {
 		driver.manage().deleteAllCookies();
         driver.get(PageFactory.get(LoginPage.class).LOGIN_URL);
-		Gauge.writeMessage(driver.getCurrentUrl());
     }
 
 	@Step("Login with username <username> and password <password>")
