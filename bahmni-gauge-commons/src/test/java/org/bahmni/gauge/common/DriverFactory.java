@@ -66,8 +66,8 @@ public class DriverFactory {
     @AfterSpec
     public void tearDown() {
         if (driver != null) {
-            driver.close();
-            driver.quit();
+          driver.close();
+          driver.quit();
         }
     }
 

@@ -1,7 +1,6 @@
 package org.bahmni.gauge.common.specs;
 
 import com.thoughtworks.gauge.BeforeClassSteps;
-import com.thoughtworks.gauge.Gauge;
 import com.thoughtworks.gauge.Step;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
@@ -67,6 +66,13 @@ public class FormBuilderSpec {
         List<WebElement> allFormProperty = formBuilderPage.findFormByNameAndVersion(versionNum, formName).findElements(By.cssSelector("td"));
         String today = String.format("%1$td %1$tb %1$ty", new Date());
         Assert.assertTrue("The created date of this form is not " + today, allFormProperty.get(2).getText().equals(today));
+    }
+
+    @Step("Drag a <ControlName> control to form")
+
+    public void dragControls(String ControlName) {
+        formBuilderPage = PageFactory.getFormBuilderPage();
+        formBuilderPage.DragandDropControl(ControlName);
     }
 
     private void verifyFormProperty(String formProperty, String value, List<WebElement> allFormProperty) {
