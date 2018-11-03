@@ -16,10 +16,10 @@ Create a form by dragging controls
 * Change the "Label" label name to "Iron Man"
 * Drag a "Section" control to form
 * Change the "Section" label name to "Captain America"
-* Drag an "Obs" control to form
-* Associate "HI, Penicillin" concept to obs
-* Drag an "Obs Group" control to form
-* Associate  "History and Examination"concept to obs Group
+* Drag a "Obs" control to form
+* Associate "HI, Penicillin" concept to "obs"
+* Drag a "ObsGroup" control to form
+* Associate "History and Examination" concept to "obsGroup"
 * Click on save
 * Verify "Form Saved Successfully" showed up
 * Navigate to form list

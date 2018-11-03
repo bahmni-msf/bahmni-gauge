@@ -24,14 +24,6 @@ public class FormBuilderPage extends BahmniPage {
 	@FindBy(how= How.CSS, using = ".button")
 	public WebElement btnCreateForm;
 
-	@FindBy(className = "control-list")
-	private List<WebElement> controlList;
-
-	@FindBy(className = "cell")
-	private List<WebElement> controlHolderList;
-
-	@FindBy(xpath = "//div[@class='grid']//div[@class='grid']//div[@class=\"cell\"]")
-	private List<WebElement> sectionControlHoldersList;
 
 
 
@@ -79,44 +71,5 @@ public class FormBuilderPage extends BahmniPage {
 		return null;
 	}
 
-	public void DragandDropControl(String controlName) {
 
-
-
-		WebElement control= findControlByName(controlName);
-		WebElement controlHolder=findEmptyControlHolderInGrid();
-		DragAndDropInHTML5(control,controlHolder);
-	}
-
-	private WebElement findEmptyControlHolderInGrid() {
-
-		for (WebElement element:controlHolderList
-			 ) {
-
-			if(!checkIfCellBelongsToSection(element))
-				return element;
-
-		}
-		return null;
-
-	}
-
-	private boolean checkIfCellBelongsToSection(WebElement element){
-
-		if (sectionControlHoldersList.contains(element))
-			return true;
-		else
-			return false;
-
-	}
-
-	private WebElement findControlByName(String controlName) {
-		for (WebElement control : controlList) {
-
-			if(control.getText().equalsIgnoreCase(controlName))
-			   return control;
-		}
-		return null;
-
-	}
 }

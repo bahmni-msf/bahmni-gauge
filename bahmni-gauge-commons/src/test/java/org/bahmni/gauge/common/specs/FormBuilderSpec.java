@@ -68,12 +68,6 @@ public class FormBuilderSpec {
         Assert.assertTrue("The created date of this form is not " + today, allFormProperty.get(2).getText().equals(today));
     }
 
-    @Step("Drag a <ControlName> control to form")
-
-    public void dragControls(String ControlName) {
-        formBuilderPage = PageFactory.getFormBuilderPage();
-        formBuilderPage.DragandDropControl(ControlName);
-    }
 
     private void verifyFormProperty(String formProperty, String value, List<WebElement> allFormProperty) {
         if(formProperty.equalsIgnoreCase("version")) {

@@ -219,6 +219,19 @@ public class FormDetailPageSpec {
             Assert.assertTrue(buttonText+" button is enable",formDetailPage.findButtonByText(buttonText).isDisplayed());
     }
 
+    @Step("Drag a <ControlName> control to form")
+
+    public void dragControls(String ControlName) {
+
+        formDetailPage.DragandDropControl(ControlName);
+    }
+
+    @Step("Associate <concept> concept to <control>")
+    public void associateConceptToControlHolder(String conceptName,String controlType){
+        formDetailPage.associateConcept(conceptName,controlType);
+    }
+
+
 //    @Step("Drag a <control> to the form")
 //    public void
 
@@ -242,4 +255,6 @@ public class FormDetailPageSpec {
         String[] splitedString = driver.getCurrentUrl().split("/");
         return splitedString[splitedString.length - 1];
     }
+
+
 }

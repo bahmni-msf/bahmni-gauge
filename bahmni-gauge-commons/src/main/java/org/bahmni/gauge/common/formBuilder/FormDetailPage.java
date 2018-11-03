@@ -38,6 +38,25 @@ public class FormDetailPage extends BahmniPage {
     @FindBy(how = How.CSS, using = ".dialog--no-header")
     public WebElement editConfirmBox;
 
+    @FindBy(className = "control-list")
+    private List<WebElement> controlList;
+
+    @FindBy(className = "cell")
+    private List<WebElement> controlHolderList;
+
+    @FindBy(xpath = "//div[@class='grid']//div[@class='grid']//div[@class=\"cell\"]")
+    private List<WebElement> sectionControlHoldersList;
+
+    @FindBy(xpath = "//div[text()=\"Select Obs Source\"]")
+    private WebElement obsControl;
+
+    @FindBy(xpath = "//div[text()=\"Select ObsGroup Source\"]")
+    private WebElement obsGroupControl;
+
+    @FindBy(xpath = "//div[@class=\"Select-input\"]/input")
+    private WebElement conceptSearchBox;
+
+
     public void clickOnEdit() {
         editButton.click();
     }
@@ -133,4 +152,66 @@ public class FormDetailPage extends BahmniPage {
     public WebElement getEditConfirmBox() {
         return editConfirmBox;
     }
+
+    public void DragandDropControl(String controlName) {
+
+
+        WebElement control = findControlByName(controlName);
+        WebElement controlHolder = findEmptyControlHolderInGrid();
+        DragAndDropInHTML5(control, controlHolder);
+    }
+
+    private WebElement findEmptyControlHolderInGrid() {
+
+        for (WebElement element : controlHolderList
+                ) {
+
+            if (!checkIfCellBelongsToSection(element))
+                return element;
+
+        }
+        return null;
+
+    }
+
+    private boolean checkIfCellBelongsToSection(WebElement element) {
+
+        if (sectionControlHoldersList.contains(element))
+            return true;
+        else
+            return false;
+
+    }
+
+    private WebElement findControlByName(String controlName) {
+        for (WebElement control : controlList) {
+
+            if (control.getText().equalsIgnoreCase(controlName))
+                return control;
+        }
+            return null;
+
+    }
+
+    public void associateConcept(String conceptName, String controlType) {
+
+        Actions actions = new Actions(driver);
+
+        if (controlType.equalsIgnoreCase("obs"))
+            obsControl.click();
+        else
+            obsGroupControl.click();
+
+
+//        waitForElementOnPage(driver.findElement(By.className("Select-arrow")));
+//        driver.findElement(By.className("Select-arrow")).click();
+         actions.moveToElement(conceptSearchBox).click().sendKeys(conceptName).build().perform();
+        actions.moveToElement(findElement(By.className("Select-menu-outer"))).click().build().perform();
+
+
+
+
+//        conceptSearchBox.sendKeys(conceptName);
+    }
+
 }
