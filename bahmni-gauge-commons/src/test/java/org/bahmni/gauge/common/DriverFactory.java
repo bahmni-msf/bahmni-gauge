@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.AfterSpec;
 import com.thoughtworks.gauge.BeforeSpec;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.bahmni.gauge.common.admin.domain.OrderSet;
 import org.bahmni.gauge.common.formBuilder.domain.Form;
 import org.bahmni.gauge.common.registration.RegistrationFirstPage;
@@ -53,7 +53,7 @@ public class DriverFactory {
             }
             driver = new ChromeDriver(service,options);
         } else {
-            ChromeDriverManager.getInstance().setup("2.42");
+            WebDriverManager.chromedriver().version("2.42").setup();
             DesiredCapabilities capability = DesiredCapabilities.chrome();
             capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             driver = new ChromeDriver(capability);
