@@ -4,7 +4,7 @@ Add New Obs Form In Observation
 Enter the add new obs form dialog in observation page
 -----------------------------------------------------
 
-tags: regression, sanity
+tags: regression, sanity, formBuilderAPI
 
 * Login and create the "Observation test form" form by form builder
 * Verify form is "v1" version and "Draft" status
@@ -36,12 +36,11 @@ tags: regression, sanity
 * Verify the form is non-editable
 * Verify form is "v1" version and "Published" status
 
-* Create patient "Nasim" using API with "First Stage Validation" visit
-* Enroll patient to reconstructive surgery program using API
+* Create a new patient through API
+* Open visit of type "OPD" in "BAHMNI_GAUGE_APP_LOCATION" location for previous patient using api
 * Navigate to dashboard
-* Click on programs app
-* Search and select patient "Nasim" from "Programs" queue
-* Navigate to "Reconstructive Surgery" program dashboard
+* Click on "Clinical" app
+* Select existing patient from patient listing page under tab "Active"
 * Navigate to consultation
 * Add the "Observation test form" existing form
 * Verify "Observation test form" is added to the left pane
