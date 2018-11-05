@@ -56,6 +56,9 @@ public class FormDetailPage extends BahmniPage {
     @FindBy(xpath = "//div[@class=\"Select-input\"]/input")
     private WebElement conceptSearchBox;
 
+    @FindBy(xpath = "//button[@type=\"submit\"]")
+    private WebElement acceptDeleteControl;
+
 
     public void clickOnEdit() {
         editButton.click();
@@ -63,6 +66,10 @@ public class FormDetailPage extends BahmniPage {
 
     public void clickOnOK() {
         okButton.click();
+    }
+
+    public void clickOnAcceptDeleteControl(){
+        acceptDeleteControl.click();
     }
 
     public void clickOnFormBuilder() {
@@ -201,17 +208,14 @@ public class FormDetailPage extends BahmniPage {
             obsControl.click();
         else
             obsGroupControl.click();
-
-
-//        waitForElementOnPage(driver.findElement(By.className("Select-arrow")));
-//        driver.findElement(By.className("Select-arrow")).click();
          actions.moveToElement(conceptSearchBox).click().sendKeys(conceptName).build().perform();
-        actions.moveToElement(findElement(By.className("Select-menu-outer"))).click().build().perform();
+         waitForSpinnerOnSearchConcept(driver);
+         actions.moveToElement(findElement(By.className("Select-menu-outer"))).click().build().perform();
+   }
 
+    public boolean checkIfControlIsNotEditable(WebElement control) {
 
-
-
-//        conceptSearchBox.sendKeys(conceptName);
+        control.click();
+        return driver.findElement(By.xpath("//div[contains(@class,\"is-disabled\")]")).isDisplayed();
     }
-
 }

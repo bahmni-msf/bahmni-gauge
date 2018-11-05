@@ -24,19 +24,20 @@ Create a form by dragging controls
 * Verify "Form Saved Successfully" showed up
 * Navigate to form list
 * Enter version "1" of "formBuilderUITest" form details
-* Verify whether all the controls are placed properly
-
-Edit a form using UI
-----------------
+* Verify canvas has "Iron Man" label
+* Verify canvas has "HI, Penicillin" label
+* Verify canvas has "History and Examination" label
+* Click on publish
 * Navigate to form list
 * Enter version "1" of "formBuilderUITest" form details
-* Validate that concept associated with a obs control is not editable
+* Click on Edit
+* Confirm edit
+* Validate that control "HI, Penicillin" is not editable
 * Select "AddMore" property for "Captain America"
-* Drag a "label" control to form
-* Delete "label" control from form
-* Move label "Iron Man" to bottom
+* Drag a "Label" control to form
+* Delete "Label" control from form
 * Click on save
-* Verify "Form Saved Successfully" showed up
+* Click on publish
 
 Validate Control Properties associated with different concept types
 ------------------------------------

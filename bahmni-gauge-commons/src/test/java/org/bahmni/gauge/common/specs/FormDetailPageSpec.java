@@ -64,14 +64,19 @@ public class FormDetailPageSpec {
 
     @Step("Select <propertyType> property for <controlName>")
     public void setPropertyForControl(String propertyType, String controlName) {
-        List<WebElement> labelList = formDetailPage.getCanvasBodyLabelList();
-        WebElement control = findControl(labelList, controlName);
+        WebElement control = getControlByLabelName(controlName);
 
         Assert.assertTrue("No " + controlName + "in canvas", control != null);
 
         formDetailPage.clickOnControl(control);
         formDetailPage.clickOnProperty(propertyType);
     }
+
+    private WebElement getControlByLabelName(String controlName) {
+        List<WebElement> labelList = formDetailPage.getCanvasBodyLabelList();
+        return findControl(labelList, controlName);
+    }
+
 
     private WebElement findControl(List<WebElement> labelList, String controlName) {
         for (int i = 0; i < labelList.size(); i++) {
@@ -166,8 +171,7 @@ public class FormDetailPageSpec {
 
     @Step("Verify <controlName> checked <propertyType> property")
     public void verifyControlCheckedProperty(String controlName, String propertyType) {
-        List<WebElement> labelList = formDetailPage.getCanvasBodyLabelList();
-        WebElement control = findControl(labelList, controlName);
+        WebElement control = getControlByLabelName(controlName);
 
         formDetailPage.clickOnControl(control);
 
@@ -176,8 +180,7 @@ public class FormDetailPageSpec {
 
     @Step("Verify <controlName> has notes icon")
     public void verifyControlHasNoteIcon(String controlName) {
-        List<WebElement> labelList = formDetailPage.getCanvasBodyLabelList();
-        WebElement control = findControl(labelList, controlName);
+        WebElement control = getControlByLabelName(controlName);
         WebElement controlSuper = control.findElement(By.xpath("../../.."));
 
         controlSuper.findElement(By.cssSelector(".form-builder-comment-toggle"));
@@ -185,8 +188,7 @@ public class FormDetailPageSpec {
 
     @Step("Verify <controlName> is displayed by drop down style")
     public void verifyControlIsDropDown(String controlName) {
-        List<WebElement> labelList = formDetailPage.getCanvasBodyLabelList();
-        WebElement control = findControl(labelList, controlName);
+        WebElement control = getControlByLabelName(controlName);
         WebElement controlSuper = control.findElement(By.xpath("../../.."));
 
         controlSuper.findElement(By.cssSelector(".obs-control-select-wrapper"));
@@ -194,8 +196,7 @@ public class FormDetailPageSpec {
 
     @Step("Verify <controlName> has asterisk mark")
     public void verifyControlHasAsteriskMark(String controlName) {
-        List<WebElement> labelList = formDetailPage.getCanvasBodyLabelList();
-        WebElement control = findControl(labelList, controlName);
+        WebElement control = getControlByLabelName(controlName);
         WebElement controlSuper = control.findElement(By.xpath("../../.."));
 
         controlSuper.findElement(By.cssSelector(".form-builder-asterisk"));
@@ -230,6 +231,27 @@ public class FormDetailPageSpec {
     public void associateConceptToControlHolder(String conceptName,String controlType){
         formDetailPage.associateConcept(conceptName,controlType);
     }
+
+    @Step("Validate that control <control> is not editable")
+    public void checkIfControlIsEditable(String controlName){
+
+        WebElement control = getControlByLabelName(controlName);
+        Assert.assertTrue(formDetailPage.checkIfControlIsNotEditable(control));
+
+    }
+
+    @Step("Delete <label> control from form")
+    public void deleteControlUsingLabel(String label){
+        WebElement control = getControlByLabelName(label);
+        WebElement controlSuper = control.findElement(By.xpath("../../.."));
+        controlSuper.click();
+        controlSuper.findElement(By.className("remove-control-button")).click();
+        formDetailPage.clickOnAcceptDeleteControl();
+
+    }
+
+
+
 
 
 //    @Step("Drag a <control> to the form")

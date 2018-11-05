@@ -101,6 +101,11 @@ public class BahmniPage {
         }
     }
 
+    public static void waitForSpinnerOnSearchConcept(WebDriver driver) {
+            waitForElement(driver, ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[contains(@class,\"is-loading\")]")));
+
+           }
+
     public void waitForSpinnerOnDisplayControl() {
         waitForSpinnerOnDisplayControl(driver);
     }
