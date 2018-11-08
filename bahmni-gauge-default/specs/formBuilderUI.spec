@@ -39,6 +39,21 @@ Create a form by dragging controls
 * Click on save
 * Click on publish
 
+Create Table with table control
+------------------------
+Tags: Intest
+
+
+* Login and create the "formBuilderTableTest" form by form builder
+* Drag a "Table" control to form
+* Change the "Column1" label name to "left"
+* Change the "Column2" label name to "right"
+* Drag a obs control to "left" column of table
+* Drag a obs control to "right" column of table
+* Associate "HI, Penicillin" concept to "obs"
+* Associate "FSTG, Date received" concept to "obs"
+
+
 Validate Control Properties associated with different concept types
 ------------------------------------
 * Navigate to form list

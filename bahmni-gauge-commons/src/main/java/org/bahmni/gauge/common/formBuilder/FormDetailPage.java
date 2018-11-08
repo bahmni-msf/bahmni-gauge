@@ -59,6 +59,9 @@ public class FormDetailPage extends BahmniPage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement acceptDeleteControl;
 
+    @FindBy(xpath = "//div[@class=\"table-controls\"]//div[@class=\"form-builder-row row0\"]/div/div")
+    private List<WebElement> tableControlHoldersList;
+
 
     public void clickOnEdit() {
         editButton.click();
@@ -165,7 +168,7 @@ public class FormDetailPage extends BahmniPage {
 
         WebElement control = findControlByName(controlName);
         WebElement controlHolder = findEmptyControlHolderInGrid();
-        DragAndDropInHTML5(control, controlHolder);
+        dragAndDropInHTML5(control, controlHolder);
     }
 
     private WebElement findEmptyControlHolderInGrid() {
@@ -173,7 +176,7 @@ public class FormDetailPage extends BahmniPage {
         for (WebElement element : controlHolderList
                 ) {
 
-            if (!checkIfCellBelongsToSection(element))
+            if (!checkIfCellBelongsToSectionOrSection(element))
                 return element;
 
         }
@@ -181,9 +184,9 @@ public class FormDetailPage extends BahmniPage {
 
     }
 
-    private boolean checkIfCellBelongsToSection(WebElement element) {
+    private boolean checkIfCellBelongsToSectionOrSection(WebElement element) {
 
-        if (sectionControlHoldersList.contains(element))
+        if (sectionControlHoldersList.contains(element) || tableControlHoldersList.contains(element))
             return true;
         else
             return false;
@@ -217,5 +220,22 @@ public class FormDetailPage extends BahmniPage {
 
         control.click();
         return driver.findElement(By.xpath("//div[contains(@class,\"is-disabled\")]")).isDisplayed();
+    }
+
+    public void DragandDropObsToTable(String column) {
+
+        WebElement control = findControlByName("obs");
+        WebElement controlHolder = findEmptyControlHolderInTable(column);
+        dragAndDropInHTML5(control,controlHolder);
+
+
+    }
+
+    private WebElement findEmptyControlHolderInTable(String column) {
+
+        if (column.equalsIgnoreCase("left"))
+            return tableControlHoldersList.get(0);
+        else
+            return tableControlHoldersList.get(1);
     }
 }

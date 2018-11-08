@@ -405,7 +405,7 @@ public class BahmniPage {
         switchToLatestTab();
     }
 
-    public void DragAndDropInHTML5(WebElement elementToDrag, WebElement target) {
+    public void dragAndDropInHTML5(WebElement elementToDrag, WebElement target) {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("function createEvent(typeOfEvent) {\n" +

@@ -250,6 +250,11 @@ public class FormDetailPageSpec {
 
     }
 
+    @Step("Drag a obs control to <column> column of table")
+    public void dragAControlToTable(String column){
+        formDetailPage.DragandDropObsToTable(column);
+    }
+
 
 
 
