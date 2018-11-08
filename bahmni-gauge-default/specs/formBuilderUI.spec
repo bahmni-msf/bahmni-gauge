@@ -52,6 +52,8 @@ Tags: Intest
 * Drag a obs control to "right" column of table
 * Associate "HI, Penicillin" concept to "obs"
 * Associate "FSTG, Date received" concept to "obs"
+* Click on save
+* Click on publish
 
 
 Validate Control Properties associated with different concept types
