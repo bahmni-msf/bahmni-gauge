@@ -46,6 +46,7 @@ Tags: Intest
 
 * Login and create the "formBuilderTableTest" form by form builder
 * Drag a "Table" control to form
+* Validate that table control doesnot have any control properties
 * Change the "Column1" label name to "left"
 * Change the "Column2" label name to "right"
 * Drag a obs control to "left" column of table
@@ -53,11 +54,20 @@ Tags: Intest
 * Associate "HI, Penicillin" concept to "obs"
 * Associate "FSTG, Date received" concept to "obs"
 * Click on save
-* Click on publish
+* Navigate to form list
+* Enter version "1" of "formBuilderTableTest" form details
+* Verify canvas has "left" label
+* Verify canvas has "right" label
+* Verify canvas has "HI, Penicillin" label
+* Verify canvas has "FSTG, Date received" label
+* Validate that addMore property is not available for controls inside a table
+* Delete table from form
+
+
 
 
 Validate Control Properties associated with different concept types
 ------------------------------------
 * Navigate to form list
 * Enter version "1" of "formBuilderUITest" form details
-* Drag an "Obs" control to form
+* Drag a "Obs" control to form

@@ -127,13 +127,13 @@ tags: regression, sanity
 * Verify "Inner Section" section has "Systolic Data"
 * Select "Mandatory" property for "Systolic Abnormal"
 * Select "Notes" property for "Systolic Abnormal"
-* Select "Notes" property for "Systolic(mm Hg)"
+* Select "Notes" property for "Systolic(mm Hg) (mm Hg)"
 * Verify "Systolic Abnormal" checked "Mandatory" property
 * Verify "Systolic Abnormal" checked "Notes" property
 * Verify "Systolic Abnormal" has notes icon
 * Verify "Systolic Abnormal" has asterisk mark
-* Verify "Systolic(mm Hg)" checked "Notes" property
-* Verify "Systolic(mm Hg)" has notes icon
+* Verify "Systolic(mm Hg) (mm Hg)" checked "Notes" property
+* Verify "Systolic(mm Hg) (mm Hg)" has notes icon
 
 * Save "Observation test form" form using "innerSectionObsGroups" by API
 * Navigate to form list
