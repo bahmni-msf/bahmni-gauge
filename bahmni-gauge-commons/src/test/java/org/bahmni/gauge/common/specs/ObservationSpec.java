@@ -1,9 +1,6 @@
 package org.bahmni.gauge.common.specs;
 
-import com.thoughtworks.gauge.BeforeClassSteps;
-import com.thoughtworks.gauge.Step;
-import com.thoughtworks.gauge.Table;
-import com.thoughtworks.gauge.TableRow;
+import com.thoughtworks.gauge.*;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
@@ -230,7 +227,7 @@ public class ObservationSpec extends BaseSpec {
     }
 
     @Step("Enter <template> template with all observation details with hide label <table>")
-    public void enterAllValueWithHideLabel(String template, Table table) {
+    public void       enterAllValueWithHideLabel(String template, Table table) {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
         observationsPage.enterAllWithHideLabel(template, table);
     }

@@ -8,6 +8,7 @@ import org.bahmni.gauge.common.program.domain.PatientProgram;
 import org.bahmni.gauge.common.program.domain.Program;
 import org.bahmni.gauge.util.TableTransformer;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -99,6 +100,8 @@ public class ProgramManagementPage extends BahmniPage {
     }
 
     public WebElement findProgram(String programName) {
+
+        waitForElementOnPage(findElement(By.className("proggram-dashboard-text")));
         for (WebElement allActiveProgram : allActivePrograms) {
             if (allActiveProgram.getText().contains(programName)) {
                 return allActiveProgram;

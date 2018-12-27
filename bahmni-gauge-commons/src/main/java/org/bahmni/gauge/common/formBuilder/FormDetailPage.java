@@ -2,15 +2,18 @@ package org.bahmni.gauge.common.formBuilder;
 
 import org.bahmni.gauge.common.BahmniPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import java.util.LinkedList;
 import java.util.List;
 
 
 public class FormDetailPage extends BahmniPage {
+
     @FindBy(how = How.CSS, using = "button")
     public WebElement editButton;
 
@@ -61,6 +64,14 @@ public class FormDetailPage extends BahmniPage {
 
     @FindBy(xpath = "//div[@class=\"table-controls\"]//div[@class=\"form-builder-row row0\"]/div/div")
     private List<WebElement> tableControlHoldersList;
+
+    @FindBy(className = "table-controls")
+    private WebElement tableLocator;
+
+    @FindBy(xpath = "//i[@class='fa fa-trash']")
+    private WebElement deleteIcon;
+
+
 
 
     public void clickOnEdit() {
@@ -237,5 +248,45 @@ public class FormDetailPage extends BahmniPage {
             return tableControlHoldersList.get(0);
         else
             return tableControlHoldersList.get(1);
+    }
+
+
+
+    public List<String> getControlProperties() {
+
+        List<String> controlPropertiesList= new LinkedList<>();
+
+        for (WebElement element: propertiesBody.findElements(By.tagName("label")) ) {
+
+            controlPropertiesList.add(element.getText());
+        }
+        return controlPropertiesList;
+    }
+
+    public  void deleteControl(String label){
+
+        WebElement element;
+        if(label.equalsIgnoreCase("table"))
+            element=tableLocator;
+        else
+            element=findControlByName(label);
+
+        element.click();
+        waitForElementOnPage(By.xpath("//i[@class='fa fa-trash']"));
+        deleteIcon.click();
+    }
+
+    public boolean checkIfControlPropertiesIsEmpty() {
+
+        boolean check = false;
+
+        try{
+            propertiesBody.isDisplayed();
+        }
+        catch (NoSuchElementException exception){
+            check=true;
+        }
+
+        return check;
     }
 }

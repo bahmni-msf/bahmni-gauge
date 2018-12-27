@@ -38,7 +38,7 @@ public class FormDetailPageSpec {
         formDetailPage.clickOnEdit();
     }
 
-    @Step("Confirm edit")
+    @Step({"Confirm edit","Confirm Delete"})
     public void goToEditModal() {
         formDetailPage.clickOnOK();
     }
@@ -255,6 +255,30 @@ public class FormDetailPageSpec {
         formDetailPage.DragandDropObsToTable(column);
     }
 
+    @Step("Validate that table control doesn't have any control properties")
+    public void validateControlPropertiesOfTable() {
+
+
+        Assert.assertTrue(formDetailPage.checkIfControlPropertiesIsEmpty());
+    }
+
+    @Step("Validate that addMore property is not available for <controlName>")
+    public void validateAddMoreProperty(String controlName) {
+
+        boolean propertyPresent = false;
+        WebElement control = getControlByLabelName(controlName);
+        control.click();
+        for (String property:formDetailPage.getControlProperties()) {
+            if(property.equalsIgnoreCase("addmore"))
+                propertyPresent=true;
+        }
+        Assert.assertFalse("Addmore Is present for obs inside table",propertyPresent);
+    }
+
+    @Step("Delete control <controlName> from form")
+    public void deleteControlFromCanvas(String controlName) {
+        formDetailPage.deleteControl(controlName);
+    }
 
 
 

@@ -37,13 +37,13 @@ public class PatientListingPage extends BahmniPage {
     	return tab.get(tab.size()-1);
     }
     
-    public void clickTab(String Tab){
+    public void 	clickTab(String Tab){
     	WebElement tab = findTab(Tab);
     	tab.click();
     }
     
     public void enterPatientIDOrName(String Patient){
-		waitForElementOnPage(By.className("patient-name"));
+		waitForElementOnPage(By.xpath("//thead//th//strong[text()=\"name\"]"));
     	searchbox_txt.sendKeys(Patient);
     }
     

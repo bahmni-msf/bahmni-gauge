@@ -1,6 +1,6 @@
 Form Builder UI related tests
 =====================
-Tags: FormBuilder
+
 
 
 Created by bsantosh on 22/10/18
@@ -10,7 +10,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Create a form by dragging controls
 ----------------
-
+Tags: abc
 * Login and create the "formBuilderUITest" form by form builder
 * Drag a "label" control to form
 * Change the "Label" label name to "Iron Man"
@@ -41,12 +41,12 @@ Create a form by dragging controls
 
 Create Table with table control
 ------------------------
-Tags: Intest
+Tags: InTest
 
 
 * Login and create the "formBuilderTableTest" form by form builder
 * Drag a "Table" control to form
-* Validate that table control doesnot have any control properties
+* Validate that table control doesn't have any control properties
 * Change the "Column1" label name to "left"
 * Change the "Column2" label name to "right"
 * Drag a obs control to "left" column of table
@@ -60,8 +60,10 @@ Tags: Intest
 * Verify canvas has "right" label
 * Verify canvas has "HI, Penicillin" label
 * Verify canvas has "FSTG, Date received" label
-* Validate that addMore property is not available for controls inside a table
-* Delete table from form
+* Validate that addMore property is not available for "HI, Penicillin"
+* Delete control "table" from form
+* Confirm Delete
+
 
 
 
