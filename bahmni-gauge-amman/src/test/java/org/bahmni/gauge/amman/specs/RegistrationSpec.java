@@ -12,7 +12,6 @@ import org.bahmni.gauge.amman.registration.domain.PatientAttribute;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
-import org.bahmni.gauge.common.registration.RegistrationVisitDetailsPage;
 import org.bahmni.gauge.common.registration.domain.Patient;
 import org.bahmni.gauge.data.StoreHelper;
 
@@ -51,8 +50,8 @@ public class RegistrationSpec {
         registrationPage.showAllVisitTypeOptions();
         registrationPage.findVisit(visitType).click();
         waitForAppReady();
-        RegistrationVisitDetailsPage registrationVisitPage = PageFactory.get(RegistrationVisitDetailsPage.class);
-        registrationVisitPage.saveButton.click();
+//        RegistrationVisitDetailsPage registrationVisitPage = PageFactory.get(RegistrationVisitDetailsPage.class);
+//        registrationVisitPage.saveButton.click();
     }
 
     @Step("Verify Legal Rep Values for autocomplete")
