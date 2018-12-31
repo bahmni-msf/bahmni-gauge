@@ -1,11 +1,9 @@
 package org.bahmni.gauge.common.clinical;
 
 import com.thoughtworks.gauge.Table;
-import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.common.BahmniPage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -32,6 +30,12 @@ public class ConsultationPage extends BahmniPage {
 
     @FindBy(how = How.CSS, using = ".retro-date-widget-header.fr")
     public WebElement registrationDeskButton;
+
+    @FindBy(how=How.CSS, using = ".back-btn")
+    public WebElement backButton;
+
+    @FindBy(xpath="//button[@ng-click='saveAndContinue()']")
+    private WebElement savePromptBtn;
 
     public void saveConsultation() {
         save.click();
@@ -77,5 +81,15 @@ public class ConsultationPage extends BahmniPage {
             element = findElement(By.xpath(".//a[@ng-click='showBoard($index)' and contains(text(),'"+tabName+"')]"));
             Assert.assertTrue(element.isDisplayed());
         }
+    }
+
+    public void clickBackButton(){
+
+        backButton.click();
+        waitForElementOnPage(By.xpath("//button[@ng-click='saveAndContinue()']"));
+        saveAndContinue();
+    }
+    private void saveAndContinue(){
+        savePromptBtn.click();
     }
 }

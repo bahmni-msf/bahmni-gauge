@@ -3,12 +3,12 @@ package org.bahmni.gauge.common.specs;
 import com.thoughtworks.gauge.BeforeClassSteps;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
-import java.text.SimpleDateFormat;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
 import org.bahmni.gauge.common.clinical.ConsultationPage;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ConsultationPageSpec {
@@ -29,6 +29,7 @@ public class ConsultationPageSpec {
     public void saveConsultation() {
         consultationPage.saveConsultation();
         waitForAppReady();
+
     }
 
     @Step("Navigate to patient dashboard")

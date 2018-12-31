@@ -29,7 +29,7 @@ public class PatientListingPage extends BahmniPage {
 	public WebElement availableBeds;
 
     public WebElement findTab(String Tab){
-    	for(int i=0;i<=tab.size();i++)
+    	for(int i=0;i<=tab.size()-1;i++)
     	{
     		if(tab.get(i).getText().contains(Tab))
     			return tab.get(i);
@@ -71,11 +71,9 @@ public class PatientListingPage extends BahmniPage {
 			findElement(By.xpath("//a[contains(text(),\""+patientID+"\")]")).click();
 			//a[contains(text(),"GAN2032")]
 		} else {
-			enterPatientIDOrName(patientID);
 			if("All".equals(tab)){
-				search_btn.click();
+				enterPatientIDOrNameInAllTab(patientID);
 			}
-			waitForSpinner();
 			selectPatient(patientID);
 		}
 
@@ -92,4 +90,10 @@ public class PatientListingPage extends BahmniPage {
 
 		return Integer.parseInt(availableBeds.getText().substring(availableBeds.getText().indexOf("Available Beds: ") + 16, availableBeds.getText().indexOf(")")));
     }
+
+	public void enterPatientIDOrNameInAllTab(String Patient){
+		searchbox_txt.sendKeys(Patient);
+		search_btn.click();
+		waitForSpinner();
+	}
 }
