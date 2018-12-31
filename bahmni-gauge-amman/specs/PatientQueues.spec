@@ -50,9 +50,6 @@ Patient In Medical File incomplete queue
 * Save the consultation
 * Navigate to queues
 * Search patient "Al Padasd Hassan" from "Incomplete Medical File" queue
-* Verify patient details of "Al Padasd Hassan" in queue
-| Date Of File Received | Name             | Name Of MLO    | Documents Needed To Be Complete |
-| 09/09/2016            | Al Padasd Hassan | Dr. Feras Nasr | Sample                          |
 
 
 Patient In Awaiting 1st stage validation queue
