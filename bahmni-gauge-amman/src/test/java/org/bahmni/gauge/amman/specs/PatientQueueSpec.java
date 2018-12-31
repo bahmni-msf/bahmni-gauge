@@ -30,7 +30,10 @@ public class PatientQueueSpec {
     public void searchPatientFromTab(String patientName, String queueName) {
         PatientQueuePage patientQueuePage = PageFactory.get(PatientQueuePage.class);
         patientQueuePage.clickTab(queueName);
-        patientQueuePage.enterPatientIDOrNameInAllTab(patientName);
+        if(queueName.equalsIgnoreCase("All"))
+         patientQueuePage.enterPatientIDOrNameInAllTab(patientName);
+        else
+            patientQueuePage.enterPatientIDOrName(patientName);
     }
 
     @Step("Verify patient details of <patientName> in queue <table>")
