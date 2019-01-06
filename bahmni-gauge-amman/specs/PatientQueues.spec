@@ -18,7 +18,7 @@ Create Patient and Verify Programs Queue
 * Enroll patient to the following program
 | name                   | dateOfRegistration | programStatus  |
 | Reconstructive Surgery | 09/09/2016         | Identification |
-* Navigate to queues
+* Navigate to queues from program enrollment page
 * Search patient "Al Padasd Hassan" from "Programs" queue
 * Verify patient details of "Al Padasd Hassan" in queue
 | Name             |
@@ -90,7 +90,7 @@ Patient In MoreInformation/ Postponed queue
 | Postpone Reason                           | P2: Waiting for healing |
 * Save the consultation
 * Navigate to queues
-* Search patient "Al Padasd Hassan" from "More Information / Postponed " queue
+* Search patient "Al Padasd Hassan" from "Postponed " queue
 * Verify patient details of "Al Padasd Hassan" in queue
 | Date Of Presentation | Name             | Outcomes For 1st Stage Surgical Validation | Postpone Reason         |
 | 10/10/2016           | Al Padasd Hassan | Postponed                                  | P2: Waiting for healing |

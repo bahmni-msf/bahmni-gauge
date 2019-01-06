@@ -9,7 +9,6 @@ import org.bahmni.gauge.amman.registration.domain.AmmanPatient;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
 import org.bahmni.gauge.common.PageFactory;
-import org.bahmni.gauge.common.clinical.ConsultationPage;
 import org.bahmni.gauge.common.program.domain.PatientProgram;
 import org.bahmni.gauge.common.program.domain.Program;
 import org.bahmni.gauge.rest.BahmniRestClient;
@@ -37,10 +36,10 @@ public class AmmanProgramSpec {
         ammanProgramPage.editProgram(programName,updatedProgram);
     }
 
-    @Step("Navigate to queues")
+    @Step("Navigate to queues from program enrollment page")
     public void navigateToQueues(){
-        ConsultationPage consultationPage = PageFactory.get(ConsultationPage.class);
-        consultationPage.clickBackButton();
+        AmmanProgramPage ammanProgramPage = PageFactory.get(AmmanProgramPage.class);
+        ammanProgramPage.clickBackButton();
     }
 
     @Step("Enroll patient to reconstructive surgery program using API")

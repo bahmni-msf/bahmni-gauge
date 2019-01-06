@@ -61,4 +61,9 @@ public class ConsultationPageSpec {
     {
         consultationPage.verifyTabsPresent(tabs);
     }
+
+    @Step ("Navigate to queues")
+    public void navigateToQueues(){
+        consultationPage.clickBackButton();
+    }
 }
