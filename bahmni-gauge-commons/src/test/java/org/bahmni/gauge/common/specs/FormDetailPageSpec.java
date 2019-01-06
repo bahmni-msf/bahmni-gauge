@@ -181,7 +181,7 @@ public class FormDetailPageSpec {
     @Step("Verify <controlName> has notes icon")
     public void verifyControlHasNoteIcon(String controlName) {
         WebElement control = getControlByLabelName(controlName);
-        WebElement controlSuper = control.findElement(By.xpath("../../.."));
+        WebElement controlSuper = control.findElement(By.xpath("../../../.."));
 
         controlSuper.findElement(By.cssSelector(".form-builder-comment-toggle"));
     }
