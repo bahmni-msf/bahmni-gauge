@@ -9,7 +9,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Validate forms display control for forms 2.0
 -----------------------
-Tags: InTest
+Tags: formBuilder, displayControls
 
 * Login and create the "display test form" form by form builder
 * Save "display test form" form using "labelObs" by API

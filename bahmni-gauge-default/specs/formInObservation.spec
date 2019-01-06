@@ -94,7 +94,7 @@ tags: regression, sanity, formBuilderAPI
 
 Add a mix of combination of section controls, obs controls and obsGroup controls
 --------------------------------------------------------------------------------
-tags: regression, sanity
+tags: regression, sanity , InTest
 
 * Login and create the "Observation test form" form by form builder
 * Verify form is "v1" version and "Draft" status

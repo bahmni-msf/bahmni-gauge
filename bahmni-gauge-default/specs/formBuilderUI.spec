@@ -10,7 +10,8 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Create a form by dragging controls
 ----------------
-Tags: abc
+Tags: formBuilder
+
 * Login and create the "formBuilderUITest" form by form builder
 * Drag a "label" control to form
 * Change the "Label" label name to "Iron Man"
@@ -41,7 +42,7 @@ Tags: abc
 
 Create Table with table control
 ------------------------
-Tags: InTest
+Tags: formBuilder
 
 
 * Login and create the "formBuilderTableTest" form by form builder
