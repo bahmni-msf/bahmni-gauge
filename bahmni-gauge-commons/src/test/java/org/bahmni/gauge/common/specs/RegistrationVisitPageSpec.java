@@ -95,6 +95,7 @@ public class RegistrationVisitPageSpec {
         RegistrationVisitDetailsPage registrationVisitPage = PageFactory.getRegistrationVisitPage();
         registrationVisitPage.getPatientFromSpecStore().setLocation(System.getenv(visitLocation));
         registrationVisitPage.getPatientFromSpecStore().setVisitType(visitType);
+        registrationVisitPage.getPatientFromSpecStore().setVisitTypeUuid();
         BahmniRestClient.get().create(registrationVisitPage.getPatientFromSpecStore(), "visit");
     }
 

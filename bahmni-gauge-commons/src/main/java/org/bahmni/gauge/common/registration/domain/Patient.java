@@ -81,6 +81,10 @@ public class Patient extends Model {
         this.visitType = visitType;
     }
 
+    public void setVisitTypeUuid(){
+        this.visitTypeUuid=getVisitTypeUuid();
+    }
+
     public String getVisitTypeUuid() {
         if (visitType != null && visitTypeUuid == null) {
             visitTypeUuid = BahmniRestClient.get().getUuidwithDisplayOnPartialUrl(this.visitType, "visittype");
