@@ -49,11 +49,36 @@ public class ObservationForm {
         enterHideLabel(table, elementList);
     }
 
+    public void enterUpAllAddMore(Table table, WebElement element, String obs) {
+        List<WebElement> elementList = element.findElements(By.cssSelector(".form-builder-row"));
+        elementList = filterElementListExceptAddMore(elementList,obs);
+        enterHideLabel(table, elementList);
+    }
+
+
     private List<WebElement> filterElementList(List<WebElement> elementList) {
         List<WebElement> listClone = new ArrayList<>(elementList);
         for(WebElement element : listClone) {
             if(element.findElements(By.cssSelector("label")).size() > 1) {
                 elementList.remove(element);
+            }
+        }
+        return elementList;
+    }
+
+    private List<WebElement> filterElementListExceptAddMore(List<WebElement> elementList, String obs) {
+        List<WebElement> listClone = new ArrayList<>(elementList);
+        for(WebElement element : listClone) {
+
+            List<WebElement> childElements= element.findElements(By.cssSelector("label"));
+
+            if(childElements.size() > 1) {
+                for (WebElement e : childElements
+                ) {
+                    if(!e.getText().equalsIgnoreCase(obs))
+                        elementList.remove(element);
+                }
+
             }
         }
         return elementList;

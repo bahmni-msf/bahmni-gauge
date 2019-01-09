@@ -308,7 +308,7 @@ public class BahmniPage {
         }
     }
 
-    public static boolean hasChild(WebElement parent, By child) {
+    public static boolean   hasChild(WebElement parent, By child) {
         try {
             return null != parent.findElement(child);
         } catch (NoSuchElementException e) {

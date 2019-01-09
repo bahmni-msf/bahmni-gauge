@@ -334,11 +334,24 @@ public class ObservationsPage extends BahmniPage {
         storeObservationFormInSpecStore(observationForm);
     }
 
+    public void enterAllWithHideLabelAddMore(String template, Table data,String obs) {
+        WebElement element = expandObservationTemplate(template);
+        ObservationForm observationForm = new ObservationForm(expandObservationTemplate(template));
+        observationForm.enterUpAllAddMore(data, element,obs);
+        storeObservationFormInSpecStore(observationForm);
+    }
+
+
     public WebElement getLeftPane() {
         return leftPane;
     }
 
     private String parseFormName(String formName) {
         return formName.replace(" ", "_");
+    }
+
+    public void clickOnAddMoreOfObs(String obs){
+
+        driver.findElement(By.xpath("//span[text()='" + obs +"']/../../..//div[@class='form-builder-clone']")).click();
     }
 }

@@ -11,12 +11,18 @@ import java.util.Objects;
 public enum FormElement {
     INPUT("input") {
         public void fillUp(WebElement observationNode, String value) {
-            WebElement element = observationNode.findElement(getSelector());
-            if (!Objects.equals(element.getAttribute("type"), "date"))
-                element.clear();
-            element.sendKeys(value);
-            if (element.getAttribute("role") != null){
-                element.sendKeys(Keys.ENTER);
+            List<WebElement> elementList = observationNode.findElements(getSelector());
+            //WebElement element = observationNode.findElement(getSelector());
+            for (WebElement element : elementList) {
+                if(element.getText().isEmpty()) {
+                    if (!Objects.equals(element.getAttribute("type"), "date"))
+                        element.clear();
+                    element.sendKeys(value);
+                    if (element.getAttribute("role") != null) {
+                        element.sendKeys(Keys.ENTER);
+                    }
+                    break;
+                }
             }
         }
     },

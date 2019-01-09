@@ -232,6 +232,12 @@ public class ObservationSpec extends BaseSpec {
         observationsPage.enterAllWithHideLabel(template, table);
     }
 
+    @Step("Enter <template> template with all observation details with hide label and addMore <obs> <table>")
+    public void       enterAllValueWithHideLabelAddMore(String template, String obs, Table table) {
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.enterAllWithHideLabelAddMore(template, table,obs);
+    }
+
     @Step("Click the error message button")
     public void clickOkButton() {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
@@ -346,6 +352,12 @@ public class ObservationSpec extends BaseSpec {
         else {
             controlSuper.findElement(By.cssSelector(".closing-group-controls"));
         }
+    }
+
+    @Step("Click on AddMore for obs <obsName>")
+    public void clickAddMore(String obsName){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.clickOnAddMoreOfObs(obsName);
     }
 
     private String parsePropertyToCss(String property) {
