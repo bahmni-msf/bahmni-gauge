@@ -161,9 +161,35 @@ public class ObservationForm {
         return fieldset.findElement(By.tagName("label")).getText().contains(fieldName);
     }
 
+    /**
+     *
+     * @param table
+     * @param elementList
+     *
+     * Fills the form with given data passed as  @param table in the form webElements.
+     * Number of columns present in the table should be same as number of elements to fill in the form, as values are entered in the order of web elements present in form.
+     *
+     * Types of WebElements currently supported are:
+     *
+     *  INPUT, TEXT_AREA, SELECT, BUTTON, DIV_SELECT_SINGLE
+     *
+     * AddMore is supported for INPUT & TEXT_AREA.
+     *
+     * Pass the values ": :" separated for AddMore. For Example, if WEIGHT obs has addMore, in spec pass value as below
+     *
+     *  |WEIGHT|
+     *  |40: :50|
+     *
+     *  Pass the values ":" separated for Notes. For Example, if WEIGHT obs has Notes, in spec pass value as below
+     *
+     *  |WEIGHT|
+     *  |40:notes|
+     */
     private void enterHideLabel(Table table, List<WebElement> elementList){
         List<TableRow> rows = table.getTableRows();
         List<String> columnNames = table.getColumnNames();
+
+       //Only one patient data is expected to be passed
         if (rows.size() != 1) {
             throw new TestSpecException("Only one patient should be provided in the table");
         }
@@ -173,8 +199,13 @@ public class ObservationForm {
             String value = row.getCell(label);
             if(elementList.size() >= 1){
                 for (WebElement fieldset : elementList) {
+
+                    //checks is to support Notes and AddMore
                     if(value.contains(":")){
                         String values[] = value.split(":");
+
+                        //Gets the types of webelements inside the row element - useful when we have multiple (2 in below case)
+                        //elements inside same formbuilder-row. For example Note, AddMore
                         List<FormElement> elements = getAllFieldType(fieldset, 2);
                         int num = 0;
                         for (String val : values) {
