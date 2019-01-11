@@ -14,7 +14,7 @@ public enum FormElement {
             List<WebElement> elementList = observationNode.findElements(getSelector());
             //WebElement element = observationNode.findElement(getSelector());
             for (WebElement element : elementList) {
-                if(element.getText().isEmpty()) {
+                if( element.getAttribute("value").equals("")) {
                     if (!Objects.equals(element.getAttribute("type"), "date"))
                         element.clear();
                     element.sendKeys(value);
@@ -81,7 +81,7 @@ public enum FormElement {
         }
     };
 
-    public static final FormElement[] allTypes = {INPUT, TEXT_AREA, SELECT, BUTTON, DIV_SELECT_SINGLE};
+    public static final FormElement[] allTypes = {INPUT, TEXT_AREA, SELECT, DIV_SELECT_SINGLE, BUTTON};
 
     private final String cssSelector;
     FormElement(String cssSelector) {
