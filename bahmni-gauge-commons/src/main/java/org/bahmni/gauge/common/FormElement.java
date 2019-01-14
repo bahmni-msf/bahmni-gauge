@@ -91,7 +91,7 @@ public enum FormElement {
                     String values[] = value.split(";");
                     for (String val: values) {
 
-                        if (button.getText().contains(val)) {
+                        if (button.getText().contains(val) && !button.getAttribute("class").contains("active")) {
                             try {
                                 button.click();
                                 break;
@@ -106,7 +106,7 @@ public enum FormElement {
                     }
             }
             else {
-                    if (button.getText().contains(value)) {
+                    if (button.getText().contains(value) && !button.getAttribute("class").contains("active")) {
                         try {
                             button.click();
                             break;
