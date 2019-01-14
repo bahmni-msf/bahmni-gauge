@@ -72,7 +72,7 @@ public class ObservationForm {
     private List<WebElement> filterElementList(List<WebElement> elementList) {
         List<WebElement> listClone = new ArrayList<>(elementList);
         for(WebElement element : listClone) {
-            if(element.findElements(By.cssSelector("label")).size() > 1) {
+            if(element.findElements(By.cssSelector("label")).size() > 1 || hasChild(element,By.cssSelector(".table-header"))) {
                 elementList.remove(element);
             }
         }
@@ -93,6 +93,8 @@ public class ObservationForm {
                 }
 
             }
+            if (hasChild(element,By.cssSelector(".table-header")))
+                elementList.remove(element);
         }
         return elementList;
     }
