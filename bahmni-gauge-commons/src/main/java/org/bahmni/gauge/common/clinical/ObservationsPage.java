@@ -373,6 +373,41 @@ public class ObservationsPage extends BahmniPage {
 
     public void clickOnAddMoreOfObs(String obs){
 
-        driver.findElement(By.xpath("//span[text()='" + obs +"']/../../..//div[@class='form-builder-clone']")).click();
+        WebElement element=driver.findElement(By.xpath("//span[text()='" + obs +"']/../../..//div[@class='form-builder-clone']"));
+        //scrollToView(element);
+        scrollToTop();
+        element.click();
+    }
+
+    public void clickOnAddMoreOfObsGroup(String obsName) {
+
+        WebElement element=driver.findElement(By.xpath("//span[text()='"+obsName+"']/../../following-sibling::div/button[@class=\"form-builder-add-more\"]"));
+        //scrollToView(element);
+        scrollToTop();
+        element.click();
+    }
+
+    public void clickOnAddMoreOfSection(String sectionName) {
+
+        WebElement element=driver.findElement(By.xpath("//span[text()='"+sectionName+"']/../../preceding-sibling::div/button[@class=\"form-builder-add-more\"]"));
+        //scrollToView(element);
+        scrollToTop();
+        element.click();
+    }
+
+    public void deleteAddMoreOfObsGroup(String obsName) {
+
+       WebElement element= driver.findElement(By.xpath("//span[text()='"+obsName+"']/../../following-sibling::div/button[@class=\"form-builder-remove\"]"));
+       //scrollToView(element);
+        scrollToTop();
+       element.click();
+    }
+
+    public void deleteAddMoreOfSection(String sectionName) {
+
+        WebElement element=driver.findElement(By.xpath("//span[text()='"+sectionName+"']/../../preceding-sibling::div/button[@class=\"form-builder-remove\"]"));
+        //scrollToView(element);
+        scrollToTop();
+        element.click();
     }
 }
