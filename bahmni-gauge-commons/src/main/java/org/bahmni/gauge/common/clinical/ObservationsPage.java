@@ -1,5 +1,7 @@
 package org.bahmni.gauge.common.clinical;
 
+import com.google.common.collect.MapDifference;
+import com.google.common.collect.Maps;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
 import org.bahmni.gauge.common.BahmniPage;
@@ -7,6 +9,7 @@ import org.bahmni.gauge.common.clinical.domain.ObservationForm;
 import org.bahmni.gauge.common.formBuilder.domain.Form;
 import org.bahmni.gauge.data.StoreHelper;
 import org.bahmni.gauge.rest.BahmniRestClient;
+import org.bahmni.gauge.util.TableTransformer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
@@ -339,6 +342,24 @@ public class ObservationsPage extends BahmniPage {
         ObservationForm observationForm = new ObservationForm(expandObservationTemplate(template));
         observationForm.enterUpAllAddMore(data, element,obs);
         storeObservationFormInSpecStore(observationForm);
+    }
+
+    public MapDifference<String, String> validateFilledObsInFormHideLabelAddMore(String obs , Table data){
+
+        WebElement element= driver.findElement(getSectionWithChildHavingId());
+        ObservationForm observationForm = new ObservationForm();
+        return Maps.difference(TableTransformer.getTableAsMap(data),observationForm.getObsValueHideLabel(element,obs));
+
+
+    }
+
+    public MapDifference<String, String> validateFilledObsInForm( Table data){
+
+        WebElement element= driver.findElement(getSectionWithChildHavingId());
+        ObservationForm observationForm = new ObservationForm();
+        return Maps.difference(TableTransformer.getTableAsMap(data),observationForm.getObsValue(element));
+
+
     }
 
 

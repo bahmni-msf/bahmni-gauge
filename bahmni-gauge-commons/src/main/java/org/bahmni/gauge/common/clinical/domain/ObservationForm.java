@@ -7,10 +7,7 @@ import org.bahmni.gauge.common.TestSpecException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.bahmni.gauge.common.BahmniPage.hasChild;
 
@@ -28,7 +25,7 @@ public class ObservationForm {
         observationNodes = observationForm.findElements(By.cssSelector(".leaf-observation-node"));
     }
 
-    protected ObservationForm() {
+    public ObservationForm() {
         observationNodes = null;
     }
 
@@ -53,6 +50,22 @@ public class ObservationForm {
         List<WebElement> elementList = element.findElements(By.cssSelector(".form-builder-row"));
         elementList = filterElementListExceptAddMore(elementList,obs);
         enterHideLabel(table, elementList);
+    }
+
+    public Map<String,String> getObsValueHideLabel(WebElement element,String obs){
+
+        List<WebElement> elementList = element.findElements(By.cssSelector(".form-builder-row"));
+        elementList = filterElementListExceptAddMore(elementList,obs);
+        Map<String,String> obsValues= getValues(elementList);
+        return obsValues;
+    }
+
+    public Map<String,String>  getObsValue(WebElement element) {
+
+       List<WebElement> elementList = element.findElements(By.cssSelector(".form-builder-row"));
+        elementList = filterElementList(elementList);
+        Map<String,String> obsValues= getValues(elementList);
+        return obsValues;
     }
 
 
@@ -228,4 +241,18 @@ public class ObservationForm {
             }
         }
     }
+
+
+    public Map<String,String> getValues(List<WebElement> elementList){
+
+        Map<String,String> obsValues = new LinkedHashMap<>();
+
+        for (WebElement fieldset : elementList) {
+            Map<String, String> temp = getFieldType(fieldset).getValue(fieldset);
+            temp.forEach((k, v) -> obsValues.put(k, v));
+
+        }
+       return  obsValues;
+    }
+
 }

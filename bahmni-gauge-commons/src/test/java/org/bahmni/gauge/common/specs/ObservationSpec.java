@@ -1,5 +1,6 @@
 package org.bahmni.gauge.common.specs;
 
+import com.google.common.collect.MapDifference;
 import com.thoughtworks.gauge.*;
 import org.bahmni.gauge.common.BahmniPage;
 import org.bahmni.gauge.common.DriverFactory;
@@ -236,6 +237,26 @@ public class ObservationSpec extends BaseSpec {
     public void       enterAllValueWithHideLabelAddMore(String template, String obs, Table table) {
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
         observationsPage.enterAllWithHideLabelAddMore(template, table,obs);
+    }
+
+    @Step("Validate that filled form has below observation values with hide label and addMore <obs> <table>")
+    public void validateFilledObsInFormHideLabelAddMore(String obs, Table table){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        MapDifference<String,String> mapDifference=observationsPage.validateFilledObsInFormHideLabelAddMore(obs, table);
+        mapDifference.entriesDiffering().forEach( (k,v) -> Gauge.writeMessage("The value for " + k + "is not matching. Difference is" + v));
+        Assert.assertTrue(mapDifference.areEqual());
+
+
+    }
+
+    @Step("Validate that filled form has below observation values with hide label <table>")
+    public void validateFilledObsInFormHideLabel( Table table){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        MapDifference<String,String> mapDifference=observationsPage.validateFilledObsInForm( table);
+        mapDifference.entriesDiffering().forEach( (k,v) -> Gauge.writeMessage("The value for " + k + "is not matching. Difference is" + v));
+        Assert.assertTrue(mapDifference.areEqual());
+
+
     }
 
     @Step("Click the error message button")
