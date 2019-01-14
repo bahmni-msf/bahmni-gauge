@@ -6,6 +6,19 @@ Created by bsantosh on 14/11/18
 
 This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
+
+To use AddMore on different control follow below symantics -
+ -- If AddMore for obs is required [currently supported for only text and date inputs], in the same column separate the values with ": :"
+
+For Example :
+// |LLA, Pain Severity|
+    12: :11
+
+ -- If AddMore for ObsGroup or Section is required, have different columns for each value & suffix the column name with number of occurance.
+ // |LLA ROM, Left : Abduction|LLA ROM, Left : Abduction_1|
+ // |test|test1
+
+ where LLA ROM, Left : Abduction is in a section with addMore and you want click on addMore and fill both values.
      
 Validate forms display control for forms 2.0
 -----------------------
@@ -40,17 +53,10 @@ Add a mix of combination of section controls, obs controls and obsGroup controls
 tags: regression, sanity , InTest
 
 * Login and create the "Observation test form" form by form builder
-* Verify form is "v1" version and "Draft" status
-* Verify "Save" button is "enable" on form builder
-* Verify "Publish" button is "disabled" on form builder
-
 * Save "Observation test form" form using "threeObsInnerSectionObsGroups" by API
 * Navigate to form list
 * Enter version "1" of "Observation test form" form details
-* Click on save
-* Verify "Form Saved Successfully" showed up
 * Click on publish
-* Verify "Form Successfully Published" showed up
 * Navigate to dashboard
 * Create patient "Nasim" using API with "First Stage Validation" visit
 * Enroll patient to reconstructive surgery program using API
@@ -81,10 +87,6 @@ Fill a form with table control
 tags: regression, sanity , InTest
 
 * Login and create the "Observation test form" form by form builder
-* Verify form is "v1" version and "Draft" status
-* Verify "Save" button is "enable" on form builder
-* Verify "Publish" button is "disabled" on form builder
-
 * Save "Observation test form" form using "table" by API
 * Navigate to form list
 * Enter version "1" of "Observation test form" form details
