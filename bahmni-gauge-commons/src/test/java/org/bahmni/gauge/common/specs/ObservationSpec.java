@@ -253,7 +253,7 @@ public class ObservationSpec extends BaseSpec {
     public void validateFilledObsInFormHideLabel( Table table){
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
         MapDifference<String,String> mapDifference=observationsPage.validateFilledObsInForm( table);
-        mapDifference.entriesDiffering().forEach( (k,v) -> Gauge.writeMessage("The value for " + k + "is not matching. Difference is" + v));
+        mapDifference.entriesDiffering().forEach( (k,v) -> Gauge.writeMessage("The value for " + k + " is not matching. Difference is" + v));
         Assert.assertTrue(mapDifference.areEqual());
 
 
@@ -376,9 +376,33 @@ public class ObservationSpec extends BaseSpec {
     }
 
     @Step("Click on AddMore for obs <obsName>")
-    public void clickAddMore(String obsName){
+    public void clickAddMoreForObs(String obsName){
         ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
         observationsPage.clickOnAddMoreOfObs(obsName);
+    }
+
+    @Step("Click on AddMore for ObsGroup <obsName>")
+    public void clickAddMoreForObsGroup(String obsName){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.clickOnAddMoreOfObsGroup(obsName);
+    }
+
+    @Step("Click on AddMore for Section <obsName>")
+    public void clickAddMoreForSection(String sectionName){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.clickOnAddMoreOfSection(sectionName);
+    }
+
+    @Step("Delete AddMore for ObsGroup <obsName>")
+    public void deleteAddMoreForObsGroup(String obsName){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.deleteAddMoreOfObsGroup(obsName);
+    }
+
+    @Step("Delete AddMore for Section <obsName>")
+    public void deleteAddMoreForSection(String sectionName){
+        ObservationsPage observationsPage = PageFactory.get(ObservationsPage.class);
+        observationsPage.deleteAddMoreOfSection(sectionName);
     }
 
     private String parsePropertyToCss(String property) {

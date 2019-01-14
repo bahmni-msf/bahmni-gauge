@@ -248,10 +248,27 @@ public class ObservationForm {
     public Map<String,String> getValues(List<WebElement> elementList){
 
         Map<String,String> obsValues = new LinkedHashMap<>();
+        Map<String,Integer> labelCounter= new HashMap<>();
 
         for (WebElement fieldset : elementList) {
             Map<String, String> temp = getFieldType(fieldset).getValue(fieldset);
-            temp.forEach((k, v) -> obsValues.put(k, v));
+            temp.forEach((k, v) -> {
+
+                if(labelCounter.containsKey(k)){
+                    labelCounter.put(k, labelCounter.get(k)+1);
+
+                }
+                else
+                    labelCounter.put(k,0);
+
+                if (obsValues.containsKey(k)){
+                    obsValues.put(k+"_"+labelCounter.get(k).toString(),v);
+                }
+                else
+                    obsValues.put(k,v);
+
+            }
+            );
 
         }
        return  obsValues;
