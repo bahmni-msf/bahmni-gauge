@@ -61,4 +61,16 @@ public class TableTransformer {
 
     }
 
+    //Use this method to get a two column table as LinkedHashMap
+    public static Map<String,String> getTableAsMap(Table table){
+
+        Map<String,String> data = new LinkedHashMap<>();
+
+        for (TableRow tr: table.getTableRows()) {
+
+            data.put(tr.getCellValues().get(0),tr.getCellValues().get(1));
+        }
+        return data;
+    }
+
 }
