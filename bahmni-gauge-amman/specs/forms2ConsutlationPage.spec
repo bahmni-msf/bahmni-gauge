@@ -1,5 +1,5 @@
 Patient Obs in Forms 2.0
-=====================
+================================
 
 
 Created by bsantosh on 14/11/18
@@ -19,7 +19,7 @@ For Example :
  // |test|test1
 
  where LLA ROM, Left : Abduction is in a section with addMore and you want click on addMore and fill both values.
-     
+
 Validate forms display control for forms 2.0
 -----------------------
 Tags: formBuilder, displayControls
