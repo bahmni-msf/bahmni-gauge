@@ -16,8 +16,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.util.List;
@@ -54,9 +52,11 @@ public class DriverFactory {
             driver = new ChromeDriver(service,options);
         } else {
             WebDriverManager.chromedriver().version("2.42").setup();
-            DesiredCapabilities capability = DesiredCapabilities.chrome();
-            capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-            driver = new ChromeDriver(capability);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+
+            driver = new ChromeDriver(options);
         }
 
         driver.manage().window().setSize(new Dimension(1440, 1200));
@@ -66,8 +66,8 @@ public class DriverFactory {
     @AfterSpec
     public void tearDown() {
         if (driver != null) {
-          driver.close();
-          driver.quit();
+//          driver.close();
+//          driver.quit();
         }
     }
 

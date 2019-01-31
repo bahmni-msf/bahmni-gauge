@@ -18,6 +18,7 @@ import org.bahmni.gauge.data.StoreHelper;
 import org.bahmni.gauge.util.TableTransformer;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -368,6 +369,12 @@ public class BahmniPage {
 
         //scrolling
         js.executeScript("scrollBy(0,2500)");
+
+    }
+
+    public void scrollToView(WebElement element){
+        Actions actions= new Actions(driver);
+        actions.moveToElement(element);
 
     }
 

@@ -96,4 +96,11 @@ public class PatientListingPage extends BahmniPage {
 		search_btn.click();
 		waitForSpinner();
 	}
+
+    public void enterPatientIDOrNameInAllPatients(String Patient){
+        waitForElementOnPage(By.xpath("//thead//th//strong[contains(text(),*)]"));
+        searchbox_txt.sendKeys(Patient);
+        searchbox_txt.submit();
+        waitForSpinner();
+    }
 }

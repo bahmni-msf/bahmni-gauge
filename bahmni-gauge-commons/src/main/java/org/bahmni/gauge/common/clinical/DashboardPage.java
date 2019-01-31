@@ -69,6 +69,21 @@ public class DashboardPage extends BahmniPage {
     @FindBy(xpath = "//a[contains(text(),'Home Dashboard')]")
     private WebElement DashboardLink;
 
+    @FindBy(xpath = "//a[@class='back-btn']")
+    private WebElement patientListButton;
+
+    public void goBackToPatientLists() {
+        waitForSpinner();
+        try {
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String appUrl = System.getenv("BAHMNI_GAUGE_APP_URL");
+        get(appUrl + "/bahmni/clinical/#/default/patient/search");
+    }
+
 
     public void selectDashboard(String name) {
         for (WebElement dashboardLink : driver.findElements(By.cssSelector(".tab-item a"))) {
@@ -244,8 +259,8 @@ public class DashboardPage extends BahmniPage {
         Assert.assertTrue("Age don't match", patientGenderAndAge.getText().contains((age + "")));
     }
 
-    public void openRetrospectiveVisit(String date){
-       WebElement visitDate= driver.findElement(By.xpath("(//a[@class='visit']/span[contains(text(),'"+date+"')])[1]"));
+    public void openRetrospectiveVisit(String date) {
+        WebElement visitDate = driver.findElement(By.xpath("(//a[@class='visit']/span[contains(text(),'" + date + "')])[1]"));
         Actions builder = new Actions(driver);
         builder.moveToElement(visitDate).click().perform();
         waitForSpinner();
@@ -271,6 +286,22 @@ public class DashboardPage extends BahmniPage {
     public void openHomeDashboardInNewTab() {
         DashboardLink.click();
         switchToLatestTab();
+
+    }
+
+    public void saveObs(String date) {
+
+
+        String xpath = "//div[@class='template-container']//span[text()='Monthly Treatment Completeness']//following-sibling::span//span[contains(text(),\""+ date + "\")]//following-sibling::span//i[@class='fa fa-pencil']";
+        waitForElementOnPage(By.xpath(xpath));
+        for (WebElement element : driver.findElements(By.xpath(xpath))) {
+
+            if (element.isDisplayed()) {
+                element.click();
+                waitForSpinner(driver);
+                driver.findElement(By.xpath("//button[@class='confirm fr']")).click();
+            }
+        }
 
     }
 }

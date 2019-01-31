@@ -33,6 +33,13 @@ public class HomeSpec {
         BahmniPage.waitForSpinner(driver);
     }
 
+    @Step("Click on patient records")
+    public void goToPatientRecords() {
+        homePage = PageFactory.getHomePage();
+        homePage.clickPatientDocuments();
+        BahmniPage.waitForSpinner(driver);
+    }
+
     @Step("Click on programs app")
     public void goToProgramsPage() {
         homePage = PageFactory.getHomePage();

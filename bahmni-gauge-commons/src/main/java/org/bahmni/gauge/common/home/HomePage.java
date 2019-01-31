@@ -69,6 +69,8 @@ public class HomePage extends BahmniPage {
     	clinical.click();
     }
 
+    public void clickPatientDocuments(){patientDocuments.click();}
+
 
 	public void clickAdminApp() {
     	admin.click();
