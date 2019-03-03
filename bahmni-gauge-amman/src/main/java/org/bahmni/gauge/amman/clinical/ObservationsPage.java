@@ -20,7 +20,7 @@ public class ObservationsPage extends org.bahmni.gauge.common.clinical.Observati
     @Override
     public void selectTemplate(String templateName) {
         clickTemplateButton();
-        List<WebElement> allForms = templatePanel.findElements(By.tagName("button"));
+        List<WebElement> allForms = templatePanel.findElements(By.tagName(""));
 
         for (WebElement form: allForms){
             if (form.getText().contains(templateName)){
