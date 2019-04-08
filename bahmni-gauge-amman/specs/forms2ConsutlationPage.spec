@@ -80,7 +80,7 @@ tags: regression, sanity
 |VS, Systolic blood pressure (mmHg)|23|
 |VS, Diastolic blood pressure (mmHg)|100|
 |OR, Operation details|test|
-
+* Navigate to dashboard link
 
 
 Fill a form with addMore Section and table controls
