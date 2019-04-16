@@ -123,7 +123,7 @@ tags: regression, sanity , InTest
 |LLA, Left : Adductors_1|test4|
 |VS, Fasting (mg/dl)_2|500|
 |VS, Random (mg/dl)_2|600|
-|Documents, Date_1|2017-11-12|
+|Documents, Date_1|2017-12-11|
 * Delete AddMore for Section "Pain"
 * Save the consultation
 * Validate that filled form has below observation values with hide label
@@ -143,7 +143,7 @@ tags: regression, sanity , InTest
 * Click on AddMore for Section "Pain"
 * Enter "Observation test form" template with all observation details with hide label and addMore "Documents, Date"
 |HI, Chloramphenicol|POW, Site of pain|Does the patient have a passport?|SMH, Pain severity|LLA ROM, Left : Abduction|LLA, Left : Adductors|VS, Fasting (mg/dl)|VS, Random (mg/dl)|VS, Fasting (mg/dl)_1|VS, Random (mg/dl)_1|Documents, Date|Documents, Date_1|LLA ROM, Left : Abduction_1|LLA, Left : Adductors_1|VS, Fasting (mg/dl)_2|VS, Random (mg/dl)_2|Documents, Date_2|
-|Resistant|Site, Ear|Yes|23|test|test1|100|200|300|400|12/11/2017|test3|test4|500|600|13/11/2017|
+|Resistant|Site, Ear|Yes|23|test|test1|100|200|300|400|12/11/2017|test3|test4|500|600||
 * Save the consultation
 * Validate that filled form has below observation values with hide label and addMore "Documents, Date"
 |obs|values|
@@ -157,9 +157,9 @@ tags: regression, sanity , InTest
 |VS, Random (mg/dl)|200|
 |VS, Fasting (mg/dl)_1|300|
 |VS, Random (mg/dl)_1|400|
-|Documents, Date|2017-11-11:2017-11-12|
+|Documents, Date|2017-11-11:2017-12-11|
 |LLA ROM, Left : Abduction_1|test3|
 |LLA, Left : Adductors_1|test4|
 |VS, Fasting (mg/dl)_2|500|
 |VS, Random (mg/dl)_2|600|
-|Documents, Date_1|2017-11-13|
+|Documents, Date_1||
