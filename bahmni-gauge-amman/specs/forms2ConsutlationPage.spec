@@ -50,7 +50,7 @@ Tags: formBuilder, displayControls
 
 Add a mix of combination of section controls, obs controls and obsGroup controls
 --------------------------------------------------------------------------------
-tags: regression, sanity
+tags: regression, sanity, formBuilder
 
 * Login and create the "Observation test form" form by form builder
 * Save "Observation test form" form using "threeObsInnerSectionObsGroups" by API
@@ -85,7 +85,7 @@ tags: regression, sanity
 
 Fill a form with addMore Section and table controls
 --------------------------------------------------------------------------------
-tags: regression, sanity , InTest
+tags: regression, sanity , InTest , formBuilder
 
 * Login and create the "Observation test form" form by form builder
 * Save "Observation test form" form using "table" by API
