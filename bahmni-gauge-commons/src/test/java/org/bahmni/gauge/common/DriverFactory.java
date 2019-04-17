@@ -53,7 +53,7 @@ public class DriverFactory {
             }
             driver = new ChromeDriver(service,options);
         } else {
-            WebDriverManager.chromedriver().version("2.42").setup();
+            WebDriverManager.chromedriver().version("2.43").setup();
             DesiredCapabilities capability = DesiredCapabilities.chrome();
             capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             driver = new ChromeDriver(capability);

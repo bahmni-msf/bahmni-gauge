@@ -136,7 +136,7 @@ public class FormDetailPage extends BahmniPage {
 
                 WebElement childElement = parentElement.findElement(By.cssSelector(".form-builder-label"));
 
-                childElement.clear();
+                //childElement.clear();
                 childElement.sendKeys(name);
 
                 canvas.click();
@@ -145,7 +145,7 @@ public class FormDetailPage extends BahmniPage {
     }
 
     public void doubleClickOnLabel(WebElement label) {
-        Actions action = new Actions(driver).doubleClick(label);
+        Actions action = new Actions(driver).moveToElement(label).doubleClick();
         action.build().perform();
     }
 
@@ -182,12 +182,20 @@ public class FormDetailPage extends BahmniPage {
         dragAndDropInHTML5(control, controlHolder);
     }
 
+    public void DragandDropControltoSection(String controlName) {
+
+
+        WebElement control = findControlByName(controlName);
+        WebElement controlHolder = findEmptyControlHolderInSection();
+        dragAndDropInHTML5(control, controlHolder);
+    }
+
     private WebElement findEmptyControlHolderInGrid() {
 
         for (WebElement element : controlHolderList
                 ) {
 
-            if (!checkIfCellBelongsToSectionOrSection(element))
+            if (!checkIfCellBelongsToSectionOrTable(element))
                 return element;
 
         }
@@ -195,7 +203,20 @@ public class FormDetailPage extends BahmniPage {
 
     }
 
-    private boolean checkIfCellBelongsToSectionOrSection(WebElement element) {
+    private WebElement findEmptyControlHolderInSection() {
+
+        for (WebElement element : controlHolderList
+        ) {
+
+            if (sectionControlHoldersList.contains(element))
+                return element;
+
+        }
+        return null;
+
+    }
+
+    private boolean checkIfCellBelongsToSectionOrTable(WebElement element) {
 
         if (sectionControlHoldersList.contains(element) || tableControlHoldersList.contains(element))
             return true;

@@ -227,6 +227,14 @@ public class FormDetailPageSpec {
         formDetailPage.DragandDropControl(ControlName);
     }
 
+    @Step("Drag a <ControlName> control to section")
+
+    public void dragControlstosection(String ControlName) {
+
+        formDetailPage.DragandDropControltoSection(ControlName);
+    }
+
+
     @Step("Associate <concept> concept to <control>")
     public void associateConceptToControlHolder(String conceptName,String controlType){
         formDetailPage.associateConcept(conceptName,controlType);
