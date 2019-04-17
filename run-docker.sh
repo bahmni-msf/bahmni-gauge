@@ -7,8 +7,8 @@ sudo docker run -v /var/go/.m2:/root/.m2:rw -v $PWD:/gauge -e ENV=$1 -e TAGS=$2 
 #so, removing it so that the artifact is accessible from gocd server
 rc=$?
 if [[ $rc != 0 ]]; then
-	rm -f bahmni-gauge-$3/reports/html-report/html-report
+	rm -f bahmni-gauge-$3/reports/html-report/html-report || true
 	echo "The build is failed"
 	exit $rc; 
 fi
-rm -f bahmni-gauge-$3/reports/html-report/html-report
+rm -f bahmni-gauge-$3/reports/html-report/html-report || true
