@@ -10,7 +10,7 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Create a form by dragging controls
 ----------------
-Tags: formBuilder
+Tags: formBuilderIE
 
 * Login and create the "formBuilderUITest" form by form builder
 * Drag a "label" control to form
@@ -21,6 +21,10 @@ Tags: formBuilder
 * Associate "HI, Penicillin" concept to "obs"
 * Drag a "ObsGroup" control to form
 * Associate "History and Examination" concept to "obsGroup"
+* Click on save
+* Verify "Section/Table is empty" showed up
+* Drag a "obs" control to section
+* Associate "HE, Date of consultation" concept to "obs"
 * Click on save
 * Verify "Form Saved Successfully" showed up
 * Navigate to form list
@@ -42,14 +46,15 @@ Tags: formBuilder
 
 Create Table with table control
 ------------------------
-Tags: formBuilder
-
+Tags: formBuilderIE
 
 * Login and create the "formBuilderTableTest" form by form builder
 * Drag a "Table" control to form
 * Validate that table control doesn't have any control properties
 * Change the "Column1" label name to "left"
 * Change the "Column2" label name to "right"
+* Click on save
+* Verify "Section/Table is empty" showed up
 * Drag a obs control to "left" column of table
 * Drag a obs control to "right" column of table
 * Associate "HI, Penicillin" concept to "obs"
@@ -65,12 +70,3 @@ Tags: formBuilder
 * Delete control "table" from form
 * Confirm Delete
 
-
-
-
-
-Validate Control Properties associated with different concept types
-------------------------------------
-* Navigate to form list
-* Enter version "1" of "formBuilderUITest" form details
-* Drag a "Obs" control to form
