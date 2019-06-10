@@ -20,6 +20,7 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
@@ -27,6 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BahmniPage {
 
@@ -191,6 +193,17 @@ public class BahmniPage {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void waitForFileDownload(int totalTimeoutInMillis, String expectedFileName) throws IOException {
+
+        FluentWait<WebDriver> wait = new FluentWait(driver)
+                .withTimeout(totalTimeoutInMillis, TimeUnit.MILLISECONDS)
+                .pollingEvery(200, TimeUnit.MILLISECONDS);
+        File fileToCheck = new File(expectedFileName);
+
+        wait.until((WebDriver wd) -> fileToCheck.exists());
+
     }
 
     public static <T> T waitForElementwithTimeOut(WebDriver driver, ExpectedCondition<T> expectedCondition, long timeout) {

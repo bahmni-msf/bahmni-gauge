@@ -20,6 +20,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 public class DriverFactory {
@@ -54,8 +55,15 @@ public class DriverFactory {
             driver = new ChromeDriver(service,options);
         } else {
             WebDriverManager.chromedriver().version("2.43").setup();
+            String downloadFilepath = "/tmp/form2downloads";
+            HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+            chromePrefs.put("profile.default_content_settings.popups", 0);
+            chromePrefs.put("download.default_directory", downloadFilepath);
+            ChromeOptions options = new ChromeOptions();
+            options.setExperimentalOption("prefs", chromePrefs);
             DesiredCapabilities capability = DesiredCapabilities.chrome();
             capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+            capability.setCapability(ChromeOptions.CAPABILITY, options);
             driver = new ChromeDriver(capability);
         }
 

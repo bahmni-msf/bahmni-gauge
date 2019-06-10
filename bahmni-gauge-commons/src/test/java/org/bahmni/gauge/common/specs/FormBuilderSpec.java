@@ -51,6 +51,13 @@ public class FormBuilderSpec {
         formBuilderPage.clickOnAction(versionNumber, formName);
     }
 
+    @Step("Download version <version> of form <name>")
+    public void downloadFormJson(String versionNumber, String formName) {
+        formBuilderPage = PageFactory.getFormBuilderPage();
+        formBuilderPage.clickOnDownload(versionNumber, formName);
+    }
+
+
     @Step("Verify version <versionNum> of <formName> form <formProperty> is <value> on form dashboard")
     public void verifyFormPropertyOnFormDashboard(String versionNum, String formName, String formProperty, String value) {
         formBuilderPage = PageFactory.getFormBuilderPage();
@@ -58,6 +65,39 @@ public class FormBuilderSpec {
 
 
         verifyFormProperty(formProperty, value, allFormProperty);
+    }
+
+    @Step("Clean up previous downloads")
+    public void deleteJSONFiles(){
+
+        ProcessBuilder builder = new ProcessBuilder();
+        builder.command("bash", "-c", "rm -f /tmp/form2downloads/*.json");
+
+        try{
+
+            Process process = builder.start();
+            while (process.waitFor() != 0){
+
+                Thread.sleep(20);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Step("Wait for downloads to complete")
+    public void waitForDowloadtoComplete(){
+
+        formBuilderPage = PageFactory.getFormBuilderPage();
+        String formName= "/tmp/form2downloads/"+formBuilderPage.getLastFormDetails()+".json";
+        try{
+            formBuilderPage.waitForFileDownload(2000,formName);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     @Step("Verify version <versionNum> of <formName> form is created On today on form dashboard")
