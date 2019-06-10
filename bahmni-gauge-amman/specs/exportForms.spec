@@ -13,7 +13,7 @@ Land on Formbuilder page
 * Click on implementer interface app
 * Click on form builder app
 
-table: /Users/bsantosh/projects/bahmni/bahmni-gauge/bahmni-gauge-amman/src/main/resources/forms.csv
+table: /tmp/forms.csv
 Download Files
 ----------------
 * Download version <version> of form <name>
